@@ -1,0 +1,21 @@
+# Dependencias de Node (¡Nunca se suben, pesan una tonelada!)
+node_modules/
+
+# Variables de entorno y secretos (Contraseñas de BD, llaves de JWT)
+.env
+.env.local
+
+# Archivos cargados por los usuarios (Las fotos que suban con multer)
+public/uploads/*
+# Excepto este archivo para que la carpeta sí se cree en GitHub (Ver tip abajo)
+!public/uploads/.gitkeep
+
+# Registros del sistema (Logs de errores)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
