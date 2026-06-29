@@ -1,0 +1,229 @@
+/*---------------------
+        RESET
+------------------------*/
+/*Modelo de caja  para todo el proyecto */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*Elimina márgenes por defecto, sin involucrar los dialog, o sea, ventanas modales */
+*:not(dialog) {
+    margin: 0;
+    padding: 0;
+    /* esto último se añade para limpiar paddings de listas también */
+}
+
+/*Permite animar cosas hacia "auto"*/
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+        scroll-behavior: smooth;
+    }
+}
+
+/*Mejoras globales para el cuerpo de la página */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    /* Texto más nítido en appel como mac o ios*/
+}
+
+/*Valores por defecto para multimedia, así, no romperá el grid */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*Heredar fuentes del padre en elementos de formulario y enlaces */
+input,
+button,
+textarea,
+select,
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Limpiar los símbolos de las listas */
+ul,
+ol {
+    list-style: none;
+}
+
+/*Evitar que textos largos rompan el diseño y colapsen con overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* Distribución de texto, evita huérfanas y viudas */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*-------------------
+    VARIABLES
+--------------------*/
+
+:root{
+    /*colores*/
+    --navbar: #e4007c;
+    --principal-title: #0056cf;
+    --secundary-title: #099078;
+    --background: #fdf9f2;
+    --details: #ffd64d;
+    --text-colour: #22252a;
+    --background-secundary: #e2e8f0;
+    --footer-colour:#d4ccbd;
+
+    /*espaciados*/
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /*borders y esquinas*/
+    --border-thin: 1px solid #1a1a1a;
+    --border-thick: 3px solid #1a1a1a;
+    --radius-straight: 0px;       /* Esquinas completamente rectas */
+    --radius-smooth: 8px;
+
+    /*animaciones y transiciones*/
+
+    /*capas*/
+    --z-back: -1;
+    --z-normal: 1;
+    --z-header: 10;
+    --z-sidebar-nav: 50;
+    --z-modal: 100;
+
+    --border: 2px solid black;
+}
+/*ESTILOS BASE (ETIQUETAS LIMPIAS)*/
+
+/*LAYOUTS MAYORES (ESTRUCTURA DE LA PÁGINA)*/
+.sidebar, .content, .footer{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    padding: var(--space-sm);
+}
+.page{
+    background-color: var(--background);
+    display: grid;
+
+    /*define una grid de 3x3*/
+    grid-template-columns: 15% 66% 15%;
+
+    grid-template-rows: auto 1fr auto;
+
+    gap: 2%;/*espacio de separación entre bloques*/
+    min-height: 100vh; /*altura mínima, el footer siempre se irá para abajo aunque haya poco contenido*/
+    
+    grid-template-areas: /*le da nombre a cada cuadrícula, para así crear el mapa del sitio*/
+    "header header header"
+    ". main sidebar-add"
+    "footer footer footer";
+}
+
+.header{
+    grid-area: header;
+    background-color: transparent;
+    border: var(--border);
+    
+}
+
+.nav-mini{
+    padding: var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-mini__options{
+    display: flex;
+    gap: var(--space-lg);
+}
+.nav-mini__item{
+    font-size: 1.03rem;
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--secundary-title);
+}
+
+.nav-mini__item--name{
+    color: var(--principal-title);
+    font-size: 1.7rem;
+}
+
+.sidebar--menu{
+    
+    background-color: var(--navbar);
+    color: #ffffff;
+    /*supoerpone el sidebar*/
+    grid-row: 1/-1; /*empieza en la fila uno y termina en la última*/
+    grid-column: 1;/*abarca toda la columna 1*/
+    z-index: var(--z-sidebar-nav);/*se superpone*/
+
+    /*lo esconde en su estado inactivo*/
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    border: var(--border);
+}
+
+.sidebar--menu.sidebar--active{/*cuando se cliclea el menú, se despliega*/
+    transform: translateX(0);
+}
+
+.sidebar__nav{
+
+}
+.content{
+    grid-area: main;
+    background-color: transparent;
+    border: var(--border);
+}
+
+.sidebar--ads{
+    grid-area:sidebar-add;
+    background-color: transparent;
+    border: var(--border);
+}
+
+.footer{
+    grid-area: footer;
+    background-color: var(--footer-colour);
+    /* border: var(--border); */
+}
+/*COMPONENTES ESPECÍFICOS*/
+
+
+
+/*MEDIA QUERIES*/
