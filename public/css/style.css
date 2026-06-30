@@ -146,10 +146,9 @@ h6 {
 
 /*LAYOUTS MAYORES (ESTRUCTURA DE LA PÁGINA)*/
 .sidebar, .content, .footer{
-    font-family: "Nunito", sans-serif;
+    font-family: var(--font-body);
     font-optical-sizing: auto;
     font-style: normal;
-
     padding: var(--space-sm);
 }
 .page{
@@ -190,8 +189,8 @@ h6 {
     gap: var(--space-lg);
 }
 .nav-mini__item{
-    font-size: 1.03rem;
-    font-family: "Momo Trust Display", sans-serif;
+    font-size: var(--font-size-h3);
+    font-family: var(--font-titles);
     font-weight: 400;
     font-style: normal;
     color: var(--secundary-title);
@@ -199,7 +198,7 @@ h6 {
 
 .nav-mini__item--name{
     color: var(--principal-title);
-    font-size: 1.7rem;
+    font-size: var(--font-size-h1);
 }
 
 .sidebar--menu{
