@@ -98,6 +98,26 @@ h6 {
     --background-secundary: #e2e8f0;
     --footer-colour:#d4ccbd;
 
+    /*familias de fuentes*/
+    --font-body: "Nunito", sans-serif;
+    --font-titles: "Momo Trust Display", sans-serif;
+    --font-details: "Montserrat Alternates", sans-serif;
+
+    /*tamaños de fuente*/
+    --font-size-h1: 2rem; /* ~32px -> títulos principales */
+    --font-size-h2: 1.5rem; /* ~24px -> títulos de secciones o cards*/
+    --font-size-h3: 1.25rem; /* ~20px ->* subtítulos menores*/
+    --font-size-body: 1rem; /*16px -> texto base*/
+    --font-size-small: 0.875rem; /* 14px -> textos secundarios, como pies de fotos o alertas*/
+    
+    /*NOTA: MOMO TRUST DISPLAY SOLO TIENE GROSOR DE 400*/
+
+    /*grosores de fuente*/
+    --weight-light: 300; /*delgada y estilizada*/
+    --weight-normal: 400; /*el texto regular*/
+    --weight-medium: 500; /*intermedio stil para subtítulos*/
+    --weight-bold: 700;/*negrita para títulos*/
+
     /*espaciados*/
     --space-xs: 4px;
     --space-sm: 8px;
