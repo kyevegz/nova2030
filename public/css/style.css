@@ -98,6 +98,97 @@ h6 {
     --background-secundary: #e2e8f0;
     --footer-colour:#d4ccbd;
 
+    /*colores variaciones*/
+    --cerulean-blue-50: #ecf8ff;
+    --cerulean-blue-100: #d4eeff;
+    --cerulean-blue-200: #b2e2ff;
+    --cerulean-blue-300: #7dd2ff;
+    --cerulean-blue-400: #40b8ff;
+    --cerulean-blue-500: #1498ff;
+    --cerulean-blue-600: #007eff;
+    --cerulean-blue-700: #0071ff;
+    --cerulean-blue-900: #084ba0;
+    --cerulean-blue-950: #0a2e61;
+
+    --cerise-50: #fff0fa;
+    --cerise-100: #ffe4f7;
+    --cerise-200: #ffc9ef;
+    --cerise-300: #ff9cde;
+    --cerise-400: #ff5fc7;
+    --cerise-500: #ff30b1;
+    --cerise-600: #f50d92;
+    --cerise-800: #b0045f;
+    --cerise-900: #920952;
+    -cerise-950: #5b0030;
+
+
+    --observatory-50: #f0fdf9;
+    --observatory-100: #cbfced;
+    --observatory-200: #97f8dd;
+    --observatory-300: #5aeeca;
+    --observatory-400: #29d8b2;
+    --observatory-500: #10bc9a;
+    --observatory-700: #0c7967;
+    --observatory-800: #0f6054;
+    --observatory-900: #115046;
+    --observatory-950: #03302b;
+
+    --bright-sun-50: #fffbeb;
+    --bright-sun-100: #fff4c6;
+    --bright-sun-200: #ffe888;
+    --bright-sun-400: #ffc220;
+    --bright-sun-500: #f9a007;
+    --bright-sun-600: #dd7802;
+    --bright-sun-700: #b75306;
+    --bright-sun-800: #94400c;
+    --bright-sun-900: #7a350d;
+    --bright-sun-950: #461a02;
+
+    --bridal-heath-100: #f9efdb;
+    --bridal-heath-200: #f3dbb5;
+    --bridal-heath-300: #ebc286;
+    --bridal-heath-400: #e2a055;
+    --bridal-heath-500: #db8634;
+    --bridal-heath-600: #cc6f2a;
+    --bridal-heath-700: #aa5624;
+    --bridal-heath-800: #884524;
+    --bridal-heath-900: #6e3a20;
+    --bridal-heath-950: #3b1c0f;
+
+
+    --shark-50: #fafafa;
+    --shark-100: #f3f4f6;
+    --shark-200: #e1e4ea;
+    --shark-300: #d0d5dc;
+    --shark-400: #99a2b2;
+    --shark-500: #697282;
+    --shark-600: #4a5363;
+    --shark-700: #39404c;
+    --shark-900: #15181e;
+    --shark-950: #07090d;
+
+    --zumthor-50: #f4f7fa;
+    --zumthor-200: #d4dde9;
+    --zumthor-300: #b6c7da;
+    --zumthor-400: #93aac7;
+    --zumthor-500: #7991b8;
+    --zumthor-600: #677ca9;
+    --zumthor-700: #5b6c9a;
+    --zumthor-800: #4e597f;
+    --zumthor-900: #424b66;
+    --zumthor-950: #2b3040;
+
+    --sisal-50: #f8f7f4;
+    --sisal-100: #efece5;
+    --sisal-300: #c7bcaa;
+    --sisal-400: #b09e87;
+    --sisal-500: #a0896f;
+    --sisal-600: #937963;
+    --sisal-700: #7b6353;
+    --sisal-800: #655247;
+    --sisal-900: #52443c;
+    --sisal-950: #2b231f;
+
     /*familias de fuentes*/
     --font-body: "Nunito", sans-serif;
     --font-titles: "Momo Trust Display", sans-serif;
@@ -242,6 +333,61 @@ h6 {
     /* border: var(--border); */
 }
 /*COMPONENTES ESPECÍFICOS*/
+
+.card{
+    background-color: var(--cerulean-blue-50);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-smooth);
+    min-height: 250px;
+    /* padding: var(--space-md); */
+    width: 25%;
+}
+
+.card__header{
+    padding: var(--space-xs) var(--space-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    background-color: var(--cerulean-blue-300);
+}
+
+.card__title{
+    
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    font-weight: var(--weight-bold);
+    color: var(--principal-title);
+}
+.card__description{
+    padding: var(--space-xs) var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.5;
+}
+
+.card__button{
+    align-self: flex-end;
+    margin-top: auto;
+    padding: var(--space-sm);
+    background-color: var(--principal-title);
+    color: white;
+    font-family: var(--font-body);
+    padding: var(--space-md);
+    border-style: none;
+    border-radius: var(--radius-smooth);
+    cursor: pointer;
+    height: fit-content;
+}
+
+.card--block{
+    opacity: 0.5;
+}
+
+.card--block .card__button{
+    cursor: not-allowed;
+}
 
 
 
