@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
+//-----------CONFIGURACIÓN DE PLANTILLAS EJS-----------------
+app.set('view engine', 'ejs')//indica que se usará ejs como motor de plantillas
+app.use(express.static('public'));//hace pública la carpeta public para poder acceder a los archivos estáticos (css, js, imágenes, etc.)
+
+
+
+
+
+
 //importar la conexxion a bd
 const db = require('./config/db');
 const PORT = process.env.PORT || 3000;
@@ -9,8 +18,17 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-//prueba para verificar que express y mysql están funcionando
 
+
+/*este fragmento modifica la ruta principal para que, en lugar de mandar 
+texxto, "renderice" la vista del index.ejs*/
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+
+
+//prueba para verificar que express y mysql están funcionando
 app.get('/test', async (req, res) => {
     try{
         //consulta
