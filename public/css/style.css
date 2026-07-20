@@ -312,9 +312,97 @@ h6 {
     transform: translateX(0);
 }
 
-.sidebar__nav{
+/* .sidebar__nav{
 
+} */
+
+.sidebar__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    color:var(--background);
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--background);
+    margin-bottom: var(--space-md);
 }
+
+.submenu{
+    /* background-color: var(--cerise-200); */
+}
+
+.submenu__summary{
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
+    font-family: var(--font-body);   
+    color: var(--background);
+    cursor: pointer;
+    list-style: none;/*elimina la flecha fea*/
+    transition: color 0.25s ease-in-out;
+}
+
+.submenu__icon-deploy{
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+/*elimina la flecha del summary en navegadores viejos como chrome y safari*/
+.submenu__summary::-webkit-details-marker{
+    display: none;
+}
+
+.submenu__summary:hover, .menu__link:hover{
+    color: var(--bright-sun-200);
+    text-decoration: underline wavy;
+}
+
+/*cuando el details se abre, el ícono de flecha se voltea*/
+details[open] .submenu__icon-deploy{
+    transform: rotate(180deg);
+}
+
+/*estilos correspondientes a las listas desplegables*/
+.submenu__list{
+    padding-left: var(--space-lg);
+    padding-bottom: var(--space-sm);
+}
+
+.submenu__item{
+    padding: var(--space-xs);
+    
+}
+
+.submenu__link{
+    font-size: var(--font-size-small);
+    color: var(--background);
+    opacity: 0.9;
+}
+
+.submenu__link:hover{
+    color: var(--bright-sun-200);
+    text-decoration: underline wavy;
+    opacity: 1;
+    font-size: var(--font-size-small);
+    transition: none;
+}
+
+.submenu__link, 
+.menu__link{
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/*estilos de opciones fuera del submenu*/
+.menu__item{
+    
+    margin: var(--space-md) var(--space-sm);
+}
+
+.menu__link{
+    transition: color 0.25s ease-in-out;
+}
+
 .content{
     grid-area: main;
     background-color: transparent;
@@ -332,6 +420,7 @@ h6 {
     background-color: var(--footer-colour);
     /* border: var(--border); */
 }
+
 /*COMPONENTES ESPECÍFICOS*/
 
 .card{
