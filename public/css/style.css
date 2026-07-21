@@ -642,6 +642,8 @@ details[open] .submenu__icon-deploy{
     min-height: 250px;
     /* padding: var(--space-md); */
     width: 25%;
+    border: 1.5px solid var(--zumthor-600);
+    border-radius: var(--radius-smooth);
 }
 
 .card__header{
@@ -651,15 +653,19 @@ details[open] .submenu__icon-deploy{
     align-items: center;
     margin-bottom: var(--space-md);
     background-color: var(--cerulean-blue-300);
+    border-radius: var(--radius-smooth) var(--radius-smooth) 0 0;
+    z-index: var(--z-normal);
+    
 }
 
-.card__title{
-    
+.card__title, .card__icon{
+    justify-content: space-between;
     font-family: var(--font-titles);
     font-size: var(--font-size-h2);
-    font-weight: var(--weight-bold);
+    font-weight: var(--weight-normal);
     color: var(--principal-title);
 }
+
 .card__description{
     padding: var(--space-xs) var(--space-md);
     font-family: var(--font-body);
@@ -668,8 +674,12 @@ details[open] .submenu__icon-deploy{
 }
 
 .card__button{
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-sm);
+    align-items: center;
     align-self: flex-end;
-    margin-top: auto;
+    margin: auto var(--space-md) var(--space-md);
     padding: var(--space-sm);
     background-color: var(--principal-title);
     color: white;
