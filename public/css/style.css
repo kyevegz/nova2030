@@ -229,6 +229,7 @@ h6 {
     --z-normal: 1;
     --z-header: 10;
     --z-sidebar-nav: 50;
+    --z-intermediate: 75;
     --z-modal: 100;
 
     --border: 2px solid black;
@@ -278,6 +279,7 @@ h6 {
 .nav-mini__options{
     display: flex;
     gap: var(--space-lg);
+    align-items: center;
 }
 .nav-mini__item{
     font-size: var(--font-size-h3);
@@ -286,6 +288,63 @@ h6 {
     font-style: normal;
     color: var(--secundary-title);
 }
+
+.nav-mini__hamburguer-button{
+    font-size: var(--font-size-h2);
+    cursor: pointer;
+    z-index: var(--z-intermediate);
+    display:grid;
+    place-items: center;/*centra los dos íconos de forma perfecta*/
+    width: 32px;
+    height: 32px;
+}
+
+.nav-mini__icon{
+    grid-area: 1 / 1;/*los 2 íconos estarán en la misma celda, se enciman con grid*/
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/*estado por default: cerrado*/
+.nav-mini__icon--bars{
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: var(--principal-title);
+}
+
+.nav-mini__icon--xmark{
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/*estado activo: menú abierto*/
+.nav-mini__hamburguer-button--active .nav-mini__icon--bars{
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+
+.nav-mini__hamburguer-button--active .nav-mini__icon--xmark{
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: var(--background);
+}
+/* .nav-mini__hamburguer-button .nav-mini__icon--xmark{
+    display: none;
+}
+
+.nav-mini__hamburguer-button .nav-mini__icon--bars{
+    display: inline-block;
+    color: var(--principal-title);
+}
+
+/*cuando el menú se activa, se invierte el ícono a mostrar
+.nav-mini__hamburguer-button.nav-mini__hamburguer-button--active .nav-mini__icon--bars{
+    display: none;
+}
+
+.nav-mini__hamburguer-button.nav-mini__hamburguer-button--active .nav-mini__icon--xmark{
+    display: inline-block;
+    color: var(--background);
+} */
 
 .nav-mini__item--name{
     color: var(--principal-title);
@@ -323,6 +382,8 @@ h6 {
     padding: var(--space-md);
     border-bottom: 1px solid var(--background);
     margin-bottom: var(--space-md);
+    display: flex;
+    justify-content: end;
 }
 
 .submenu{
