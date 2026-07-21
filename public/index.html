@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="css/style.css">
+    <script src = "js/main.js" defer></script>
     <title>Pruebas index</title>
 </head>
 <body>
@@ -78,8 +79,11 @@
         <header class = "header">
             <nav class = "nav-mini">
                 <div class = "nav-mini__options">
-                    <a class="nav-mini__hamburguer-menu">--</a>
-                <a class = "nav-mini__item nav-mini__item--name">Nova 2030</a>
+                    <a class="nav-mini__hamburguer-button" aria-label="Botón para abrir menú de navegación">
+                        <i class="fa-solid fa-bars nav-mini__icon nav-mini__icon--bars"></i>
+                        <i class="fa-solid fa-xmark nav-mini__icon nav-mini__icon--xmark" aria-hidden="true"></i>
+                    </a>
+                    <a class = "nav-mini__item nav-mini__item--name">Nova 2030</a>
                 </div>
                 
 
