@@ -634,6 +634,13 @@ details[open] .submenu__icon-deploy{
 }
 /*COMPONENTES ESPECÍFICOS*/
 
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    padding: var(--space-md);
+    width: 100%;
+}
 .card{
     background-color: var(--cerulean-blue-50);
     display: flex;
@@ -641,7 +648,9 @@ details[open] .submenu__icon-deploy{
     border-radius: var(--radius-smooth);
     min-height: 250px;
     /* padding: var(--space-md); */
-    width: 25%;
+    color: var(--cerulean-blue-950);
+    border: 1.5px solid var(--zumthor-600);
+    border-radius: var(--radius-smooth);
 }
 
 .card__header{
@@ -650,16 +659,20 @@ details[open] .submenu__icon-deploy{
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--space-md);
-    background-color: var(--cerulean-blue-300);
+    background-color: var(--cerulean-blue-200);
+    border-radius: var(--radius-smooth) var(--radius-smooth) 0 0;
+    z-index: var(--z-normal);
+    
 }
 
-.card__title{
-    
+.card__title, .card__icon{
+    justify-content: space-between;
     font-family: var(--font-titles);
     font-size: var(--font-size-h2);
-    font-weight: var(--weight-bold);
+    font-weight: var(--weight-normal);
     color: var(--principal-title);
 }
+
 .card__description{
     padding: var(--space-xs) var(--space-md);
     font-family: var(--font-body);
@@ -668,8 +681,12 @@ details[open] .submenu__icon-deploy{
 }
 
 .card__button{
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-sm);
+    align-items: center;
     align-self: flex-end;
-    margin-top: auto;
+    margin: auto var(--space-md) var(--space-md);
     padding: var(--space-sm);
     background-color: var(--principal-title);
     color: white;
@@ -682,12 +699,27 @@ details[open] .submenu__icon-deploy{
 }
 
 .card--block{
-    opacity: 0.5;
+    background-color: var(--zumthor-300);
+    opacity: 0.85;
 }
 
-.card--block .card__button{
-    cursor: not-allowed;
+.card__header--block{
+    background-color: var(--zumthor-950);
 }
+
+.card__title--block,
+.card__icon--block{
+    color: var(--zumthor-200);
+}
+
+.card__button--block{
+    background-color: var(--zumthor-400);
+    color: var(--zumthor-700);
+    cursor: not-allowed;
+    
+}
+
+
 
 
 
