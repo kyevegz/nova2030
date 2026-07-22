@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
     <title>Document</title>
 </head>
 <body>
@@ -40,13 +41,25 @@
             <input type="email" class="form__input" id="correoConfirmar" name="correoConfirmar" placeholder = "" required>
             
             <label for="contrasena" class="form__label">contraseña:</label>
-            <input type="password" class="form__input" id="contrasena" name="contrasena" placeholder = "" required minlength="8" autocomplete="new-password">
+            <div class="form__input-wrapper">
+                <input type="password" class="form__input" id="contrasena" name="contrasena" placeholder = "" required minlength="8" autocomplete="new-password">
+                <button type="button" id="interruptorContrasena" class="form__button-toggle-psw">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+            
 
-            <label for="contrasenaConfirmar" class="form__label">contraseña:</label>
-            <input type="password" class="form__input" id="contrasenaConfirmar" name="contrasenaConfirmar" placeholder = "" required minlength="8" autocomplete="new-password">
+            <label for="contrasenaConfirmar" class="form__label">confirmar contraseña:</label>
+            <div class="form__input-wrapper">
+                <input type="password" class="form__input" id="contrasenaConfirmar" name="contrasenaConfirmar" placeholder = "" required minlength="8" autocomplete="new-password">
+                <button type="button" id="interruptorContrasenaConfirmar" class="form__button-toggle-psw">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+            
 
         </fieldset>
-        <button type="submit" class="form__button">Registrarse</button>
+        <button type="submit" class="form__button-send">Registrarse</button>
     </form>
 </body>
 </html>
