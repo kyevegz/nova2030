@@ -26,26 +26,8 @@
         <main class = "content">
             <div class="cards-container">
                 <% submodulos.forEach(sub => { %>
-                    
-                <article class = "card <%= sub.desbloqueado === 0 ? 'card--block' : '' %>">
-                    <header class = "card__header <%= sub.desbloqueado === 0 ? 'card__header--block' : '' %>">
-                        <h3 class = "card__title <%= sub.desbloqueado === 0 ? 'card__title--block' : '' %>">
-                            <!-- Cuestionario inicial   -->
-                            <%= sub.titulo  %>
-                        </h3>
-                        <i class = "card__icon fa-solid <%= sub.desbloqueado === 0 ? 'fa-lock card__icon--block' : sub.rutaIcono %>" aria-label=""></i>
-                    </header>
-                    <p class = "card__description">
-                        <!-- Analiza el punto de dónde partes, qué es lo que sabes y lo que te falta. -->
-                        <%= sub.descripcion %>
-                    </p>
-                    <button class="card__button <%= sub.desbloqueado === 0 ? 'card__button--block' : '' %>">
-                        <p class="card__button-text">
-                            <%= sub.desbloqueado === 1 ? 'Ir' : 'Bloqueado' %>
-                        </p> 
-                        <i class="fa-solid <%= sub.desbloqueado === 0 ? 'fa-lock' : 'fa-right-long' %>" aria-hidden="true"></i>
-                    </button>
-                </article> 
+                    <% include('partials/card-modulos', { sub: sub }) %>
+                
                 <% }) %>
             </div>
         </main>

@@ -6,7 +6,7 @@ const db = require('../config/db');
 router.get('/fase/1', async (req, res) => {
     try{
         const [submodulos] = await db.query('SELECT * FROM modulos WHERE fase = ?', [1]);
-        res.render('index', { submodulos });
+        res.render('fase1', { submodulos });
 
     }catch (error){
         console.error(error);
