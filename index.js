@@ -22,11 +22,16 @@ app.use(express.urlencoded({extended:true}));
 const fasesRoutes = require('./routes/fases.routes.js');
 app.use('/', fasesRoutes);
 
+//importar la ruta de registro
+const registroRoutes = require('./routes/registro.routes.js');
+app.use('/', registroRoutes);
 
 //para ver la página de registro
-app.get('/registro', (req, res) => {
-    res.render('registro');
-});
+// app.get('/registro', (req, res) => {
+//     res.render('registro');
+// });
+
+
 
 /*este fragmento modifica la ruta principal para que, en lugar de mandar 
 texxto, "renderice" la vista del index.ejs*/
