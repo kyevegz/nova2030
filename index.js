@@ -23,6 +23,11 @@ const fasesRoutes = require('./routes/fases.routes.js');
 app.use('/', fasesRoutes);
 
 
+//para ver la página de registro
+app.get('/registro', (req, res) => {
+    res.render('registro');
+});
+
 /*este fragmento modifica la ruta principal para que, en lugar de mandar 
 texxto, "renderice" la vista del index.ejs*/
 app.get('/', (req, res) => {

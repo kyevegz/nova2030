@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/registro" class="form" method="POST">
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">
+                Datos personales
+            </legend>
+
+            <label for="nombre" class="form__label">nombre(s):</label>
+            <input type="text" class="form__input" id="nombre" name="nombre" placeholder = "" required>
+            
+            <label for="apellidop" class="form__label">apellido paterno:</label>
+            <input type="text" class="form__input" id="apellidop" name="apellidop" placeholder = "" required>
+            
+            <label for="apellidom" class="form__label">apellido materno:</label>
+            <input type="text" class="form__input" id="apellidom" name="apellidom" placeholder = "" required>
+
+            <label for="fechaNacimiento" class="form__label">fecha nacimiento DD/MM/AAAA</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" min="1900-01-01" max="2026-07-22" required>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">
+                Datos de la cuenta
+            </legend>
+
+            <label for="usuario" class="form__label">nombre(s):</label>
+            <input type="text" class="form__input" id="usuario" name="usuario" placeholder = "" required>
+            
+            <label for="correo" class="form__label">nombre(s):</label>
+            <input type="email" class="form__input" id="correo" name="correo" placeholder = "" required>
+            
+            <label for="contrasena" class="form__label">nombre(s):</label>
+            <input type="password" class="form__input" id="contrasena" name="contrasena" placeholder = "" required>
+
+        </fieldset>
+    </form>
+</body>
+</html>
