@@ -648,7 +648,7 @@ details[open] .submenu__icon-deploy{
     border-radius: var(--radius-smooth);
     min-height: 250px;
     /* padding: var(--space-md); */
-    
+    color: var(--cerulean-blue-950);
     border: 1.5px solid var(--zumthor-600);
     border-radius: var(--radius-smooth);
 }
@@ -659,7 +659,7 @@ details[open] .submenu__icon-deploy{
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--space-md);
-    background-color: var(--cerulean-blue-300);
+    background-color: var(--cerulean-blue-200);
     border-radius: var(--radius-smooth) var(--radius-smooth) 0 0;
     z-index: var(--z-normal);
     
@@ -699,12 +699,27 @@ details[open] .submenu__icon-deploy{
 }
 
 .card--block{
-    opacity: 0.5;
+    background-color: var(--zumthor-300);
+    opacity: 0.85;
 }
 
-.card--block .card__button{
-    cursor: not-allowed;
+.card__header--block{
+    background-color: var(--zumthor-950);
 }
+
+.card__title--block,
+.card__icon--block{
+    color: var(--zumthor-200);
+}
+
+.card__button--block{
+    background-color: var(--zumthor-400);
+    color: var(--zumthor-700);
+    cursor: not-allowed;
+    
+}
+
+
 
 
 
