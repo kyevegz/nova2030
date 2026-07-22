@@ -14,7 +14,34 @@ router.post('/registro', async (req, res) => {
         //1 - extra los datos que bienen del for, un req.body
         const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, correoConfirmar, contrasena, contrasenaConfirmar } = req.body;
 
+        //1.? palabras reservadas para nombre de usuario
+        const palabrasReseverdas = ['admin', 'root', 'soporte', 'nova2030', 'nova', 'administrador', 'sistema'];
+        if(palabrasReseverdas.includes(usuario.toLowerCase())){
+            return res.status(400).send("ERROR. Ese nombre de usuario es reservado y no se permite");
+        }
 
+        //1. contraseña robusta, verificar su tamaño y que contenga caracteres seguros
+        const contieneMayus = /[A-Z]/.test(contrasena);
+        const contieneMinus = /[a-z]/.test(contrasena);
+        const contieneNumeros = /[0-9]/.test(contrasena);
+        const contieneSimbolos = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/;
+
+        //checar que cumpla con todas las reglas
+        if(contrasena.length < 8 ){
+            return res.status(400).send("ERROR. La contraseña debe tener 8 caracteres mínimo");
+        }
+        if(!contieneMayus ){
+            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 mayúscula");
+        }
+        if( !contieneMinus ){
+            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 minúscula");
+        }
+        if(!contieneNumeros ){
+            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 númeri");
+        }
+        if(!contieneSimbolos){
+            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 símbolo especial");
+        }
         //1.5 comparación de correos y contraseñas
         if(correo != correoConfirmar){
             return res.status(400).send("ERROR. los correos no coinciden");
