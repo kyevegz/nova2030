@@ -12,8 +12,18 @@ router.get('/registro', (req, res) =>{
 router.post('/registro', async (req, res) => {
     try{
         //1 - extra los datos que bienen del for, un req.body
-        const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, contrasena } = req.body;
+        const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, correoConfirmar, contrasena, contrasenaConfirmar } = req.body;
 
+
+        //1.5 comparación de correos y contraseñas
+        if(correo != correoConfirmar){
+            return res.status(400).send("ERROR. los correos no coinciden");
+        }
+
+        if(contrasena != contrasenaConfirmar){
+            return res.status(400).send("ERROR. Contrasenas no coinciden");
+        }
+        
         //2 - verifica que no haya nombre de usuario o correo ya registrado
         const checkQuery = `SELECT * FROM usuarios WHERE correo = ? OR usuario = ?`;
         const [usuariosExistentes] = await db.query(checkQuery, [correo, usuario]);

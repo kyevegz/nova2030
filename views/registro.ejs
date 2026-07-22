@@ -31,13 +31,19 @@
             </legend>
 
             <label for="usuario" class="form__label">nombre de usuario:</label>
-            <input type="text" class="form__input" id="usuario" name="usuario" placeholder = "" required>
+            <input type="text" class="form__input" id="usuario" name="usuario" placeholder = "" required pattern="^[a-zA-Z0-9_-]{3,20}" title="El nombre de usuario debe tener entre 3 y 20 caracteres. Además, solo se permiten letras, números, guiones bajos y medios sin espacios">
             
             <label for="correo" class="form__label">correo:</label>
             <input type="email" class="form__input" id="correo" name="correo" placeholder = "" required>
+
+            <label for="correoConfirmar" class="form__label">confirmar correo:</label>
+            <input type="email" class="form__input" id="correoConfirmar" name="correoConfirmar" placeholder = "" required>
             
             <label for="contrasena" class="form__label">contraseña:</label>
-            <input type="password" class="form__input" id="contrasena" name="contrasena" placeholder = "" required minlength="8">
+            <input type="password" class="form__input" id="contrasena" name="contrasena" placeholder = "" required minlength="8" autocomplete="new-password">
+
+            <label for="contrasenaConfirmar" class="form__label">contraseña:</label>
+            <input type="password" class="form__input" id="contrasenaConfirmar" name="contrasenaConfirmar" placeholder = "" required minlength="8" autocomplete="new-password">
 
         </fieldset>
         <button type="submit" class="form__button">Registrarse</button>
