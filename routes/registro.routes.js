@@ -14,11 +14,23 @@ router.post('/registro', async (req, res) => {
         //1 - extra los datos que bienen del for, un req.body
         const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, contrasena } = req.body;
 
-        /* 2 - definición del número de rondas de salt, 10 es el estándar seguro y equilibrado
+        //2 - verifica que no haya nombre de usuario o correo ya registrado
+        const checkQuery = `SELECT * FROM usuarios WHERE correo = ? OR usuario = ?`;
+        const [usuariosExistentes] = await db.query(checkQuery, [correo, usuario]);
+
+        //si el array tiene al menos un elemento, quiere decir que ya existe
+        if(usuariosExistentes.length > 0){
+            //detiene el proces y manda error 400 de bad request
+            return res.status(400).send("ERROR. USUARIO O CORREO YA REGISTRADO");
+        }
+
+        //TRAS PASAR LA BARRERA DE VERIFICACIÓN
+
+        /* 3- definición del número de rondas de salt, 10 es el estándar seguro y equilibrado
         un salt es una cadena de caracteres que se añade a la contraseña antes de procesarlam garantiza que el hash (versión cifrada) sea única*/
         const saltRounds = 10;
 
-        //3 - encriptación de la contraseña
+        //4 - encriptación de la contraseña
         const hashedContrasena = await bcrypt.hash(contrasena, saltRounds);
         
         
@@ -26,7 +38,7 @@ router.post('/registro', async (req, res) => {
         //señal de que sí los recibió, meramente control
         //console.log("DATOS RECIBIDOS: ", req.body);
 
-        //4 - inserción en la bd, los ? evitan inyección SQL
+        //5 - inserción en la bd, los ? evitan inyección SQL
         const query = `INSERT INTO 
             usuarios (usuario, nombre, apellidop, apellidom, fechaNacimiento,correo, contrasena)
             VALUES (?, ?, ?, ?, ?, ?, ?)
