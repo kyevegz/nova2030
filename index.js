@@ -18,6 +18,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+//importar la ruta de fase 1
+const fasesRoutes = require('./routes/fases.routes.js');
+app.use('/', fasesRoutes);
 
 
 /*este fragmento modifica la ruta principal para que, en lugar de mandar 

@@ -634,6 +634,13 @@ details[open] .submenu__icon-deploy{
 }
 /*COMPONENTES ESPECÍFICOS*/
 
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    padding: var(--space-md);
+    width: 100%;
+}
 .card{
     background-color: var(--cerulean-blue-50);
     display: flex;
@@ -641,7 +648,7 @@ details[open] .submenu__icon-deploy{
     border-radius: var(--radius-smooth);
     min-height: 250px;
     /* padding: var(--space-md); */
-    width: 25%;
+    
     border: 1.5px solid var(--zumthor-600);
     border-radius: var(--radius-smooth);
 }
