@@ -1,65 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%- include('partials/head') %>
-    <title>Document</title>
+        <title>Document</title>
 </head>
+
 <body>
-    <form action="/registro" class="form" method="POST">
-        <fieldset class="form__fieldset">
-            <legend class="form__legend">
-                Datos personales
-            </legend>
+    <div class="page">
 
-            <label for="nombre" class="form__label">nombre(s):</label>
-            <input type="text" class="form__input" id="nombre" name="nombre" placeholder = "" required>
-            
-            <label for="apellidop" class="form__label">apellido paterno:</label>
-            <input type="text" class="form__input" id="apellidop" name="apellidop" placeholder = "" required>
-            
-            <label for="apellidom" class="form__label">apellido materno:</label>
-            <input type="text" class="form__input" id="apellidom" name="apellidom" placeholder = "" required>
+        <!--Llamada al sidebar-->
+        <%- include('partials/sidenavbar') %>
 
-            <label for="fechaNacimiento" class="form__label">fecha nacimiento DD/MM/AAAA</label>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" min="1900-01-01" max="2026-07-22" required>
-        </fieldset>
+            <!--Llamada al header-->
+            <%- include('partials/header') %>
 
-        <fieldset class="form__fieldset">
-            <legend class="form__legend">
-                Datos de la cuenta
-            </legend>
+                <main class="content">
 
-            <label for="usuario" class="form__label">nombre de usuario:</label>
-            <input type="text" class="form__input" id="usuario" name="usuario" placeholder = "" required pattern="^[a-zA-Z0-9_-]{3,20}" title="El nombre de usuario debe tener entre 3 y 20 caracteres. Además, solo se permiten letras, números, guiones bajos y medios sin espacios">
-            
-            <label for="correo" class="form__label">correo:</label>
-            <input type="email" class="form__input" id="correo" name="correo" placeholder = "" required>
+                    <div class="register-container">
+                        <section class="form__card">
+                            <h1 class="form__title">Crear una cuenta</h1>
+                            <p class="form__subtitle">+únete a Nova 2030 para que tus ideas crezcan, conecten con la
+                                sociedad y sean una solución real.</p>
+                            <form action="/registro" class="form" method="POST" novalidate>
+                                <fieldset class="form__fieldset">
+                                    <legend class="form__legend">
+                                        Datos personales
+                                    </legend>
 
-            <label for="correoConfirmar" class="form__label">confirmar correo:</label>
-            <input type="email" class="form__input" id="correoConfirmar" name="correoConfirmar" placeholder = "" required>
-            
-            <label for="contrasena" class="form__label">contraseña:</label>
-            <div class="form__input-wrapper">
-                <input type="password" class="form__input" id="contrasena" name="contrasena" placeholder = "" required minlength="8" autocomplete="new-password">
-                <button type="button" id="interruptorContrasena" class="form__button-toggle-psw">
-                    <i class="fa-solid fa-eye"></i>
-                </button>
-            </div>
-            
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" id="nombre" name="nombre" placeholder=" "
+                                            required>
+                                        <label for="nombre" class="form__label">Nombre(s)</label>
+                                    </div>
 
-            <label for="contrasenaConfirmar" class="form__label">confirmar contraseña:</label>
-            <div class="form__input-wrapper">
-                <input type="password" class="form__input" id="contrasenaConfirmar" name="contrasenaConfirmar" placeholder = "" required minlength="8" autocomplete="new-password">
-                <button type="button" id="interruptorContrasenaConfirmar" class="form__button-toggle-psw">
-                    <i class="fa-solid fa-eye"></i>
-                </button>
-            </div>
-            
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" id="apellidop" name="apellidop"
+                                            placeholder=" " required>
+                                        <label for="apellidop" class="form__label">Apellido paterno</label>
+                                    </div>
 
-        </fieldset>
-        <button type="submit" class="form__button-send">Registrarse</button>
-    </form>
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" id="apellidom" name="apellidom"
+                                            placeholder=" " required>
+                                        <label for="apellidom" class="form__label">Apellido materno</label>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <input type="date" class="form__input" id="fechaNacimiento"
+                                            name="fechaNacimiento" min="1900-01-01" max="2026-07-22" required>
+                                        <label for="fechaNacimiento" class="form__label form__label--fixed">Fecha
+                                            nacimiento DD/MM/AAAA</label>
+                                    </div>
+
+                                </fieldset>
+
+                                <fieldset class="form__fieldset">
+                                    <legend class="form__legend">
+                                        Datos de la cuenta
+                                    </legend>
+
+                                    <div class="form__group">
+                                        <input type="text" class="form__input" id="usuario" name="usuario"
+                                            placeholder=" " required pattern="^[a-zA-Z0-9_-]{3,20}"
+                                            title="El nombre de usuario debe tener entre 3 y 20 caracteres. Además, solo se permiten letras, números, guiones bajos y medios sin espacios">
+                                        <label for="usuario" class="form__label">nombre de usuario</label>
+
+                                    </div>
+
+
+                                    <div class="form__group">
+                                        <input type="email" class="form__input" id="correo" name="correo"
+                                            placeholder=" " required>
+                                        <label for="correo" class="form__label">correo</label>
+
+                                    </div>
+
+
+                                    <div class="form__group">
+                                        <input type="email" class="form__input" id="correoConfirmar"
+                                            name="correoConfirmar" placeholder=" " required>
+                                        <label for="correoConfirmar" class="form__label">confirmar correo</label>
+
+                                    </div>
+
+                                    <div class="form__input-wrapper">
+                                        <input type="password" class="form__input" id="contrasena" name="contrasena"
+                                            placeholder=" " required minlength="8" autocomplete="new-password">
+                                        <label for="contrasena" class="form__label">contraseña</label>
+
+                                        <button type="button" id="interruptorContrasena"
+                                            class="form__button-toggle-psw">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="form__input-wrapper">
+                                        <input type="password" class="form__input" id="contrasenaConfirmar"
+                                            name="contrasenaConfirmar" placeholder=" " required minlength="8"
+                                            autocomplete="new-password">
+                                        <label for="contrasenaConfirmar" class="form__label">confirmar
+                                            contraseña</label>
+                                        <button type="button" id="interruptorContrasenaConfirmar"
+                                            class="form__button-toggle-psw">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+
+
+                                </fieldset>
+                                <p class="form__footer-text">
+                                    Si ya tienes cuenta, <a href="/login" class="form__footer-link">da clic aquí para
+                                        iniciar sesión</a>
+                                </p>
+                                <button type="submit" class="form__button-send">Registrarse</button>
+                            </form>
+                        </section>
+
+                        <!-- <div class="register-container-image">
+                <img src="" alt="Mascota de Nova" class="register-img">
+            </div> -->
+                    </div>
+                </main>
+
+                <!--Llamada al footer-->
+                <%- include('partials/footer') %>
+    </div>
+
 </body>
+
 </html>

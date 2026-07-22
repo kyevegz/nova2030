@@ -476,6 +476,9 @@ details[open] .submenu__icon-deploy{
     border: var(--border);
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~
+            FOOTER
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .footer{
     grid-area: footer;
     background-color: var(--footer-colour);
@@ -632,7 +635,19 @@ details[open] .submenu__icon-deploy{
     color: var(--text-colour);
     opacity: 0.6;
 }
-/*COMPONENTES ESPECÍFICOS*/
+
+
+
+
+
+
+
+
+/*---------------------------
+
+    COMPONENTES ESPECÍFICOS
+
+-------------------------*/
 
 .cards-container{
     display: grid;
@@ -719,12 +734,216 @@ details[open] .submenu__icon-deploy{
     
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~
+Formulario registro
+~~~~~~~~~~~~~~~~~~~~~*/
+
+.register-container{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-xl);
+    max-width: 1200px;
+    margin: var(--space-md);
+    align-items: center;
+    padding: 0 var(--space-md);
+}
+
+.form-card{
+    background-color: var(--background-secundary);
+    padding: var(--space-xl);
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid var(--shark-200);
+}
+
+.form__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h1);
+    color: var(--principal-title);
+    margin-bottom: var(--space-xs);
+}
+
+.form__subtitle{
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    margin-bottom: var(--space-lg);
+    opacity: 0.85;
+}
+.form{
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md) var(--space-md);
+    margin-bottom: var(--space-md); */
 
 
 
+    max-width: 600px;
+    margin: var(--space-xl) auto;
+    padding: var(--space-xl);
+    background-color: var(--background-secundary);
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+}
+
+.form__fieldset{
+    border: none;/*elimina el borde feo*/
+    margin-top: var(--space-sm);
+}
+
+.form__legend{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    color: var(--principal-title);
+    margin-bottom: var(--space-lg);
+    width: 100%;
+}
+
+/*contenedor de cada campo, el group y lo de ver contraseña group*/
+.form__group, 
+.form__input-wrapper{
+    position: relative;
+    margin-bottom: var(--space-lg);/*espacio entre los inputs*/
+}
+
+/*input*/
+.form__input{
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    background-color: var(--background);
+    border: 2px solid var(--shark-300);
+    border-radius: var(--radius-smooth);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*espacio para que el la contraseña no choque con el ícono*/
+.form__input-wrapper .form__input{
+    padding-right: 3rem;
+}
+
+/*etiqueta flotante estado inactivo o como placeholder*/
+.form__label{
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--background);/*debe coincidir con el fondo para tapar el border del input sobre el cual se sobrepone*/
+    padding: 0 var(--space-xs);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--shark-500);
+    pointer-events: none;/*porque los clics atraviesan el label y tocan el input*/
+    transition: top 0.3s ease, transform 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
 
 
+/*La magia del label flotante
+para cuando el input ya tenga texto guardado, o bien, foco 0*/
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label{
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    color: var(--principal-title);
+    font-weight: var(--weight-medium);
+    background-color: var(--background-secundary);
+}
 
+/*caso especial input de fecha*/
+.form__label--fixed{
+    top: 0 !important;
+    transform: translateY(-50%) scale(0.85) !important;
+    color: var(--principal-title) !important;
+}
+
+/*para cuando el input recibe el foco, es decir, que el usaurio está escirbiendo*/
+.form__input:focus{
+    border-color: var(--principal-title);
+    box-shadow: 0 0 0 3px rgba(0, 86, 207, 0.15);
+}
+
+/*posicionamiento del botón de ojo, o sea, ver o esconder contraseña*/
+.form__button-toggle-psw{
+    position: absolute; 
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--shark-500);
+    cursor: pointer;
+    font-size: var(--font-size-h3);
+    transition: color 0.3s ease;
+    padding: 0;/*limpia los paddings heredados del btn*/
+    transition: color 0.3s ease;
+}
+
+.form__button-toggle-psw:hover,
+.form__button-toggle-psw:focus-visible{
+    color:var(--principal-title);
+    outline: none;
+}
+
+/*botón de enviar*/
+
+.form__button-send{
+    background-color: var(--principal-title);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-h3);
+    padding: 0.85rem var(--space-md);
+    border: none;
+    border-radius: var(--radius-smooth);
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 86, 207, 0.25);
+}
+
+.form__button-send:hover{
+    background-color: var(--cerulean-blue-700);
+}
+
+.form__button-send:active{
+    transform: scale(0.95);
+}
+
+/*texto de si ya tiene cuenta*/
+.form__footer-text{
+    text-align: center;
+    margin-top: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    color: var(--text-colour);
+}
+
+.form__footer-link{
+    color: var(--principal-title);
+    text-decoration: underline wavy;
+    font-weight: var(--weight-medium);
+}
+
+/*imagen de mascota*/
+
+/*
+
+*/
+.register-container-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-img{
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-smooth);
+}
 /*MEDIA QUERIES*/
 
 /*--------------------
@@ -732,6 +951,8 @@ details[open] .submenu__icon-deploy{
 ------------------------*/
 
 @media (max-width: 768px){
+
+    /*footer*/
     .footer__container{
         grid-template-columns: 1fr;
         text-align: center;
@@ -754,6 +975,16 @@ details[open] .submenu__icon-deploy{
         flex-direction: column;
         gap: var(--space-sm);
     }
+    
+    /*Form de registro responsivo*/
 
+    .register-container{
+        grid-template-columns: 1fr;
+    }
 
+    .form{
+        grid-template-columns: 1fr;
+    }
 }
+
+
