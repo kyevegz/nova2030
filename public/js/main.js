@@ -192,7 +192,15 @@ document.addEventListener("DOMContentLoaded", () => {
             inputsPaso1.forEach(input =>{
                 if(!input.checkValidity()){
                     todosValidos = false;
-                    let mensaje ="Por favor, complete este campo correctamente";
+                    let mensaje =input.validationMessage
+                    
+                    if(input.validity.valueMissing){
+                        mensaje = "Este campo es obligatorio"; //solo si no hay mensaje personalizado
+                    }else if(input.validity.patternMismatch && input.title){
+                        mensaje = input.title; // si falla el regex, jala el title del html
+                    }else if (!mensaje){
+                        mensaje = "Por favor, complete este campo correctamente"; //general, la última opción si todas las demás fallan
+                    }
                     mostrarErrorInput(input.id, mensaje);
 
                     input.classList.add('shake');
@@ -353,8 +361,20 @@ document.addEventListener("DOMContentLoaded", () => {
             limpiarErrores();
             //verifica si todo el form es válido
             if(!form.checkValidity()){
-                form.reportValidity();//muestra el aviso en el primer campo con error
-                return;
+                const todosInputs = form.querySelectorAll('input');
+                todosInputs.forEach(input => {
+                    if(!input.checkValidity()){
+                        let mensaje = input.validationMessage;
+                        if(input.validity.valueMissing) mensaje = "Este campo es obligatorio";
+                        else if (input.validity.patternMismatch && input.title) mensaje = input.title;
+
+                        mostrarErrorInput(input.id, mensaje);
+                        input.classList.add('shake');
+                        setTimeout(() => input.classList.remove('shake'), 400);
+                    }
+                });
+                //form.reportValidity();//muestra el aviso en el primer campo con error
+                return;//frena el envío
             }
 
             //si pasa todas las validaciones, se empaqueta y se manda por fetch
