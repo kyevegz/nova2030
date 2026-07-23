@@ -261,6 +261,9 @@ h6 {
     "footer footer footer";
 }
 
+.page--full{
+
+}
 .header{
     grid-area: header;
     background-color: transparent;
@@ -739,21 +742,37 @@ Formulario registro
 ~~~~~~~~~~~~~~~~~~~~~*/
 
 .register-container{
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: var(--space-xl);
-    max-width: 1200px;
+    max-width: 1200px; */
     margin: var(--space-md);
     align-items: center;
     padding: 0 var(--space-md);
+    
 }
 
-.form-card{
+.form__card{
+    
     background-color: var(--background-secundary);
     padding: var(--space-xl);
     border-radius: var(--radius-smooth);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px var(--cerulean-blue-950);
     border: 1px solid var(--shark-200);
+    max-width: 800px;
+    margin: var(--space-xl) auto;
+}
+
+.form__grid{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    margin-top: var(--space-lg);
+}
+.form__title,
+.form__subtitle{
+    text-align: center;
 }
 
 .form__title{
@@ -774,7 +793,7 @@ Formulario registro
     /* display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md) var(--space-md);
-    margin-bottom: var(--space-md); */
+    margin-bottom: var(--space-md); 
 
 
 
@@ -783,7 +802,8 @@ Formulario registro
     padding: var(--space-xl);
     background-color: var(--background-secundary);
     border-radius: var(--radius-smooth);
-    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2); */
+    width: 100%;
 }
 
 .form__fieldset{
@@ -849,7 +869,12 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     transform: translateY(-50%) scale(0.85);
     color: var(--principal-title);
     font-weight: var(--weight-medium);
-    background-color: var(--background-secundary);
+    background: linear-gradient(
+        to bottom, 
+        var(--background-secundary) 59%, 
+        var(--background) 59%
+    );
+    padding: 0 0.3rem;/*para que el texto no toque la línea del borde*/
 }
 
 /*caso especial input de fecha*/
@@ -933,13 +958,13 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 /*
 
 */
-.register-container-image{
+.form__image-wrapper{
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
 
-.register-img{
+.form__image{
     max-width: 100%;
     height: auto;
     border-radius: var(--radius-smooth);
