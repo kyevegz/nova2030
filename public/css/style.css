@@ -272,11 +272,11 @@ h6 {
     display: grid;
 
     /*define una grid de 3x3*/
-    grid-template-columns: 15% 66% 15%;
+    grid-template-columns: 15% 1fr 15%;
 
     grid-template-rows: auto 1fr auto;
 
-    gap: 2%;/*espacio de separación entre bloques*/
+    gap: 0 2%;/*espacio de separación entre bloques, solo separa columnas no, filas*/
     min-height: 100vh; /*altura mínima, el footer siempre se irá para abajo aunque haya poco contenido*/
     
     grid-template-areas: /*le da nombre a cada cuadrícula, para así crear el mapa del sitio*/
@@ -285,8 +285,15 @@ h6 {
     "footer footer footer";
 }
 
+/*full para layout sin anuncios*/
 .page--full{
-
+    /*se quita la tercera columna*/
+    grid-template-columns: 15% 1fr;
+    /*se borra el sidebar de ununcios (sidebar-add) del mapa*/
+    grid-template-areas: 
+    "header header"
+    ". main"
+    "footer footer";
 }
 .header{
     grid-area: header;
