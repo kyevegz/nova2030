@@ -142,6 +142,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
+        function obtenerMensajeError(input){
+            let mensaje =input.validationMessage
+                    
+            if(input.validity.customError){
+                mensaje = input.validationMessage;
+            }else if(input.validity.valueMissing){
+                mensaje = "Este campo es obligatorio"; //solo si no hay mensaje personalizado
+            }else if(input.validity.patternMismatch && input.title){
+                mensaje = input.title; // si falla el regex, jala el title del html
+            }else if (!mensaje){
+                mensaje = "Por favor, complete este campo correctamente"; //general, la última opción si todas las demás fallan
+            }        
+            return mensaje;
+        }
+
         const inputs = form.querySelectorAll('input');
         
         //al cargar la página, busca los datos que se hayan guardado en el localstorage
@@ -166,14 +181,10 @@ document.addEventListener("DOMContentLoaded", () => {
             //validar al salir del campo
             input.addEventListener("blur", () => {
                 if(!input.checkValidity()){
-                    let mensaje = input.validationMessage || "Este campo es obligatorio o tiene un formato inválido";
+                    //let mensaje = input.validationMessage || "Este campo es obligatorio o tiene un formato inválido";
 
-                    //si el error es porque falló el pattern, se jala el mensaje del atributo
-                    if(input.validity.patternMismatch && input.title){
-                        mensaje = input.title;
-                    }else if (!mensaje){
-                        mensaje = "Por favor, completa este campo correctamente";
-                    }
+                    const mensaje = obtenerMensajeError(input);
+
                     //si está vació o inválido, se muestra el error personalizado
                     mostrarErrorInput(input.id, mensaje);
 
@@ -192,17 +203,8 @@ document.addEventListener("DOMContentLoaded", () => {
             inputsPaso1.forEach(input =>{
                 if(!input.checkValidity()){
                     todosValidos = false;
-                    let mensaje =input.validationMessage
-                    
-                    if(input.validity.valueMissing){
-                        mensaje = "Este campo es obligatorio"; //solo si no hay mensaje personalizado
-                    }else if(input.validity.patternMismatch && input.title){
-                        mensaje = input.title; // si falla el regex, jala el title del html
-                    }else if (!mensaje){
-                        mensaje = "Por favor, complete este campo correctamente"; //general, la última opción si todas las demás fallan
-                    }
+                    const mensaje = obtenerMensajeError(input);
                     mostrarErrorInput(input.id, mensaje);
-
                     input.classList.add('shake');
                     setTimeout(() => input.classList.remove('shake'), 400);
                 }
@@ -364,9 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const todosInputs = form.querySelectorAll('input');
                 todosInputs.forEach(input => {
                     if(!input.checkValidity()){
-                        let mensaje = input.validationMessage;
-                        if(input.validity.valueMissing) mensaje = "Este campo es obligatorio";
-                        else if (input.validity.patternMismatch && input.title) mensaje = input.title;
+                        const mensaje = obtenerMensajeError(input);
 
                         mostrarErrorInput(input.id, mensaje);
                         input.classList.add('shake');
