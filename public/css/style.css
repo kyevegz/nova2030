@@ -203,7 +203,7 @@ h6 {
     --font-size-h3: 1.25rem; /* ~20px ->* subtítulos menores*/
     --font-size-body: 1rem; /*16px -> texto base*/
     --font-size-small: 0.875rem; /* 14px -> textos secundarios, como pies de fotos o alertas*/
-    
+    --font-size-jumbo: 6rem; /*~64px*/
     /*NOTA: MOMO TRUST DISPLAY SOLO TIENE GROSOR DE 400*/
 
     /*grosores de fuente*/
@@ -1079,7 +1079,82 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+/*para el sweetAlert2*/
+.swal-popup-personalized{
+    overflow: visible;
+    padding-top: 3.5rem;
+    background-color: var(--bridal-heath-100);
+    color: var(--text-colour);
+    border-radius: var(--radius-smooth);
+    border: 2px solid var(--bridal-heath-900);
+    font-family: var(--font-body);
+    padding: var(--space-lg);
+    box-shadow: 0 0 5px var(--bridal-heath-800);
+}
 
+/*titulo de la alerta*/
+.swal-title-personalized{
+    font-family: var(--details);
+    color: var(--principal-title);
+    font-size: var(--font-size-h1);
+    font-weight: var(--weight-bold);
+}
+
+/*botón personalizado*/
+.swal-button-personalized{
+    background-color: var(--cerise-600);
+    color: var(--bright-sun-50);
+    font-family: var(--font-body);
+    font-weight: var(--weight-medium);
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-smooth);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.swal-button-personalized:hover{
+    background-color: var(--navbar);
+}
+
+/*eliminar el círculo y borde que trae por defecto sweet*/
+.swal2-icon.swal-icon-fa{
+    border: none;
+    background: transparent;
+}
+
+.swal2-popup .swal-icon-fa{
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--bright-sun-100);
+    /* border: 2px solid var(--bridal-heath-900); */
+    
+    border-radius: var(--radius-full);
+    box-shadow: 0 0px 5px var(--bridal-heath-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/*da estilo al ícono de FA*/
+.swal-icon-fa svg,
+.swal-icon-fa i{
+    
+    /* font-size: var(--font-size-jumbo); */
+    width: 5.5rem;
+    height: 5.5rem;
+    color: var(--observatory-500);
+    
+}
+
+/*variante íconos de error o advertencia*/
+.swal-icon-fa.swal-icon-fa--error i{
+    color: var(--error, #e74c3c);
+}
 
 /*MEDIA QUERIES*/
 

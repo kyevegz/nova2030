@@ -362,7 +362,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     Swal.fire({
                         title: "Registro exitoso",
                         text: resultado.mensaje,
-                        icon: "success",
+                        iconHtml: '<i class="fa-solid fa-circle-check"></i>',
+                        buttonsStyling: false, 
+                        customClass:{
+                            popup: 'swal-popup-personalized',
+                            title: 'swal-title-personalized',
+                            confirmButton: 'swal-button-personalized',
+                            icon: 'swal-icon-fa'
+                        },
                         confirmButtonText: "Continuar"
                     }).then(() => {
                         window.location.href = resultado.redirectUrl || '/index';
