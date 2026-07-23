@@ -189,6 +189,9 @@ h6 {
     --sisal-900: #52443c;
     --sisal-950: #2b231f;
 
+    --error: #ff4d4d;
+
+
     /*familias de fuentes*/
     --font-body: "Nunito", sans-serif;
     --font-titles: "Momo Trust Display", sans-serif;
@@ -200,7 +203,7 @@ h6 {
     --font-size-h3: 1.25rem; /* ~20px ->* subtítulos menores*/
     --font-size-body: 1rem; /*16px -> texto base*/
     --font-size-small: 0.875rem; /* 14px -> textos secundarios, como pies de fotos o alertas*/
-    
+    --font-size-jumbo: 6rem; /*~64px*/
     /*NOTA: MOMO TRUST DISPLAY SOLO TIENE GROSOR DE 400*/
 
     /*grosores de fuente*/
@@ -219,8 +222,10 @@ h6 {
     /*borders y esquinas*/
     --border-thin: 1px solid #1a1a1a;
     --border-thick: 3px solid #1a1a1a;
+
     --radius-straight: 0px;       /* Esquinas completamente rectas */
     --radius-smooth: 8px;
+    --radius-full: 9999px;
 
     /*animaciones y transiciones*/
 
@@ -235,6 +240,25 @@ h6 {
     --border: 2px solid black;
 }
 /*ESTILOS BASE (ETIQUETAS LIMPIAS)*/
+
+/*ANIMACIONES GLOBALES*/
+@keyframes fadeIn{
+    from{ 
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0);}
+    20%,80% { transform: translate3d(2px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+    40%, 60% { transform: translate3d(4px, 0, 0);}
+}
 
 /*LAYOUTS MAYORES (ESTRUCTURA DE LA PÁGINA)*/
 .sidebar, .content, .footer{
@@ -261,6 +285,9 @@ h6 {
     "footer footer footer";
 }
 
+.page--full{
+
+}
 .header{
     grid-area: header;
     background-color: transparent;
@@ -386,10 +413,6 @@ h6 {
     justify-content: end;
 }
 
-.submenu{
-    /* background-color: var(--cerise-200); */
-}
-
 .submenu__summary{
     display: flex;
     align-items: center;
@@ -476,6 +499,9 @@ details[open] .submenu__icon-deploy{
     border: var(--border);
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~
+            FOOTER
+~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .footer{
     grid-area: footer;
     background-color: var(--footer-colour);
@@ -632,7 +658,19 @@ details[open] .submenu__icon-deploy{
     color: var(--text-colour);
     opacity: 0.6;
 }
-/*COMPONENTES ESPECÍFICOS*/
+
+
+
+
+
+
+
+
+/*---------------------------
+
+    COMPONENTES ESPECÍFICOS
+
+-------------------------*/
 
 .cards-container{
     display: grid;
@@ -719,11 +757,417 @@ details[open] .submenu__icon-deploy{
     
 }
 
+/*~~~~~~~~~~~~~~~~~~~~~
+Formulario registro
+~~~~~~~~~~~~~~~~~~~~~*/
+
+.register-container{
+    /* display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-xl);
+    max-width: 1200px; */
+    margin: var(--space-md);
+    align-items: center;
+    padding: 0 var(--space-md);
+    
+}
+
+.form__card{
+    
+    background-color: var(--background-secundary);
+    padding: var(--space-xl);
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 0 5px var(--cerulean-blue-950);
+    border: 1px solid var(--shark-200);
+    max-width: 800px;
+    margin: var(--space-xl) auto;
+}
+
+.form__grid{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+    margin-top: var(--space-lg);
+}
+.form__title,
+.form__subtitle{
+    text-align: center;
+}
+
+.form__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h1);
+    color: var(--principal-title);
+    margin-bottom: var(--space-xs);
+}
+
+.form__subtitle{
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    margin-bottom: var(--space-lg);
+    opacity: 0.85;
+}
+.form{
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md) var(--space-md);
+    margin-bottom: var(--space-md); 
 
 
 
+    max-width: 600px;
+    margin: var(--space-xl) auto;
+    padding: var(--space-xl);
+    background-color: var(--background-secundary);
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2); */
+    width: 100%;
+}
+
+.form__fieldset{
+    border: none;/*elimina el borde feo*/
+    margin-top: var(--space-sm);
+}
+
+.form__legend{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    color: var(--principal-title);
+    margin-bottom: var(--space-lg);
+    width: 100%;
+}
+
+/*contenedor de cada campo, el group y lo de ver contraseña group*/
+.form__group, 
+.form__input-wrapper{
+    position: relative;
+    margin-bottom: var(--space-lg);/*espacio entre los inputs*/
+}
+
+/*input*/
+.form__input{
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    background-color: var(--background);
+    border: 2px solid var(--shark-300);
+    border-radius: var(--radius-smooth);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*espacio para que el la contraseña no choque con el ícono*/
+.form__input-wrapper .form__input{
+    padding-right: 3rem;
+}
+
+/*etiqueta flotante estado inactivo o como placeholder*/
+.form__label{
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--background);/*debe coincidir con el fondo para tapar el border del input sobre el cual se sobrepone*/
+    padding: 0 var(--space-xs);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--shark-500);
+    pointer-events: none;/*porque los clics atraviesan el label y tocan el input*/
+    transition: top 0.3s ease, transform 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+}
 
 
+/*La magia del label flotante
+para cuando el input ya tenga texto guardado, o bien, foco 0*/
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label,
+.form__input.form__input--error + .form__label{
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    color: var(--principal-title);
+    font-weight: var(--weight-medium);
+    background: linear-gradient(
+        to bottom, 
+        var(--background-secundary) 59%, 
+        var(--background) 59%
+    );
+    padding: 0 0.3rem;/*para que el texto no toque la línea del borde*/
+}
+
+/*label rojo en error*/
+.form__input.form__input--error + .form__label{
+    color: var(--error);
+}
+/*caso especial input de fecha*/
+.form__label--fixed{
+    top: 0 !important;
+    transform: translateY(-50%) scale(0.85) !important;
+    color: var(--principal-title) !important;
+}
+
+/*para cuando el input recibe el foco, es decir, que el usaurio está escirbiendo*/
+.form__input:focus{
+    border-color: var(--principal-title);
+    box-shadow: 0 0 0 3px rgba(0, 86, 207, 0.15);
+}
+
+/*posicionamiento del botón de ojo, o sea, ver o esconder contraseña*/
+.form__button-toggle-psw{
+    position: absolute; 
+    right: 1rem;
+    top: 2rem;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--shark-500);
+    cursor: pointer;
+    font-size: var(--font-size-h3);
+    transition: color 0.3s ease;
+    padding: 0;/*limpia los paddings heredados del btn*/
+    transition: color 0.3s ease;
+}
+
+.form__button-toggle-psw:hover,
+.form__button-toggle-psw:focus-visible{
+    color:var(--principal-title);
+    outline: none;
+}
+
+/*botón de enviar*/
+
+.form__button-send{
+    background-color: var(--principal-title);
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-h3);
+    padding: 0.85rem var(--space-md);
+    border: none;
+    border-radius: var(--radius-smooth);
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 86, 207, 0.25);
+}
+
+.form__button-send:hover{
+    background-color: var(--cerulean-blue-700);
+}
+
+.form__button-send:active{
+    transform: scale(0.95);
+}
+
+/*texto de si ya tiene cuenta*/
+.form__footer-text{
+    text-align: center;
+    margin-top: var(--space-md);
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    color: var(--text-colour);
+}
+
+.form__footer-link{
+    color: var(--principal-title);
+    text-decoration: underline wavy;
+    font-weight: var(--weight-medium);
+}
+
+/*imagen de mascota*/
+
+/*
+
+*/
+.form__image-wrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.form__image{
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-smooth);
+}
+
+
+/*formulario por fases*/
+
+.form__step{
+    display: none;
+}
+
+.form__step--active{
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.form__step--hidden{
+    display: none;
+}
+
+/*estilos barra de progreso*/
+.form-progress{
+    margin-bottom: var(--space-lg);
+}
+
+.form-progress__container-bar{
+    background-color: var(--shark-300);
+    height: 8px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--space-xs);
+}
+
+.form-progress__bar{
+    background-color: var(--bright-sun-400);
+    height: 100%;
+    width: 50%;
+    transition: width 0.3s ease-in-out;
+}
+
+.form-progress__labels{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+    color: var(--shark-400);
+}
+
+.form-progress__label--active{
+    color: var(--principal-title);
+    font-weight: var(--weight-bold);
+}
+
+/*contenedor felxible para los botones finales*/
+.form__buttons-group{
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+/*modificadores para el botónde anterior*/
+.form__button-send--secondary{
+    background-color: var(--shark-400);
+}
+
+.form__button-send--secondary:hover{
+    background-color: var(--shark-500);
+}
+
+/*input error*/
+.form__input--error{
+    border-color: var(--error);
+    background-color: rgba(255, 77, 77, 0.05);
+}
+
+.form__error-text{
+    color: var(--error);
+    font-size: var(--font-size-small);
+    margin-top: var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    animation: fadeIn 0.3s ease;
+}
+
+.shake{
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/*para el sweetAlert2*/
+.swal-popup-personalized{
+    overflow: visible;
+    padding-top: 3.5rem;
+    background-color: var(--bridal-heath-100);
+    color: var(--text-colour);
+    border-radius: var(--radius-smooth);
+    border: 2px solid var(--bridal-heath-900);
+    font-family: var(--font-body);
+    padding: var(--space-lg);
+    box-shadow: 0 0 5px var(--bridal-heath-800);
+}
+
+/*titulo de la alerta*/
+.swal-title-personalized{
+    font-family: var(--font-details);
+    color: var(--observatory-700);
+    font-size: var(--font-size-h1);
+    font-weight: var(--weight-medium);
+}
+
+
+
+/*botón personalizado*/
+.swal-button-personalized{
+    background-color: var(--cerise-600);
+    color: var(--bright-sun-50);
+    font-family: var(--font-body);
+    font-weight: var(--weight-medium);
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-smooth);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.swal-button-personalized:hover{
+    background-color: var(--navbar);
+}
+
+/*eliminar el círculo y borde que trae por defecto sweet*/
+.swal2-icon.swal-icon-fa{
+    border: none;
+    background: transparent;
+}
+
+.swal2-popup .swal-icon-fa{
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--bright-sun-100);
+    /* border: 2px solid var(--bridal-heath-900); */
+    
+    border-radius: var(--radius-full);
+    box-shadow: 0 0px 5px var(--bridal-heath-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/*da estilo al ícono de FA*/
+.swal-icon-fa svg,
+.swal-icon-fa i{
+    
+    font-size: 5.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    color: var(--observatory-500, #0c7967);
+    
+}
+
+/*variante íconos de error o advertencia*/
+.swal-icon-fa.swal-icon-fa--error i,
+.swal-icon-fa.swal-icon-fa--error svg{
+    color: var(--error, #ff4d4d);
+}
+
+/*variante de título para cuando sea éxito*/
+/* .swal-title-personalized.swal-title-personalized--success{
+    color: var(--observatory-700);
+} */
+
+/*variante de título para cuando sea error*/
+.swal-title-personalized.swal-title-personalized--error{
+    color: var(--error, #ff4d4d) !important;
+}
 
 /*MEDIA QUERIES*/
 
@@ -732,6 +1176,8 @@ details[open] .submenu__icon-deploy{
 ------------------------*/
 
 @media (max-width: 768px){
+
+    /*footer*/
     .footer__container{
         grid-template-columns: 1fr;
         text-align: center;
@@ -754,6 +1200,16 @@ details[open] .submenu__icon-deploy{
         flex-direction: column;
         gap: var(--space-sm);
     }
+    
+    /*Form de registro responsivo*/
 
+    .form__grid{
+        grid-template-columns: 1fr;
+    }
 
+    /* .form{
+        grid-template-columns: 1fr;
+    } */
 }
+
+
