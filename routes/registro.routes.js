@@ -11,6 +11,16 @@ router.get('/registro', (req, res) =>{
 //ruta que procesará el registro
 router.post('/registro', async (req, res) => {
     try{
+        //0 Limpiar espacios en blanco (por si acaso)
+        Object.keys(req.body).forEach( key => {
+            if(typeof req.body[key] === 'string' && !key.includes('contrasena')){
+                req.body[key] = req.body[key].trim();
+            }
+        });
+
+        //0.1 - correo a minúsculas
+        if(req.body.correo) req.body.correo = req.body.correo.toLowerCase();
+
         //1 - extrae los datos que bienen del for, un req.body
         const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, correoConfirmar, contrasena, contrasenaConfirmar } = req.body;
 

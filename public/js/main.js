@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             //guardar los datos en tiempo real mientras el usuario está escirbiendi
             input.addEventListener("input", () => {
-                if(!esPassword) localStorage.setItem(input.name, input.value);
+                if(!esPassword) localStorage.setItem(input.name, input.value.trim() );
                 
                 //si el usuario empieza a corregir, se quita el mensaje de error
                 if(input.checkValidity()){
@@ -234,7 +234,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const contrasenaConfirmar = document.getElementById('contrasenaConfirmar');
 
             function validarCoincidencia(inputOrigen, inputDestino, mensajeError){
-                if(inputDestino.value !== inputOrigen.value &&  inputDestino.value !== ''){
+                const valorOrigen = inputOrigen.value.trim();
+                const valorDestino = inputDestino.value.trim();
+
+                const esCorreo = inputOrigen.id === 'correo';
+                const noCoinciden = esCorreo
+                    ? (valorDestino.toLocaleLowerCase() !== valorOrigen.toLowerCase())
+                    : (valorDestino !== valorOrigen);
+                
+                if(noCoinciden && valorDestino   !== ''){
                     inputDestino.setCustomValidity(mensajeError);
                     mostrarErrorInput(inputDestino.id, mensajeError);
                 }else{
@@ -243,18 +251,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            if(correoConfirmar){
-                correoConfirmar.addEventListener('input', () => validarCoincidencia(correo, correoConfirmar, "Los correos no coinciden"))
+            //escuchas cruzadas para correos
+            if(correo && correoConfirmar){
+                correoConfirmar.addEventListener('input', () => validarCoincidencia(correo, correoConfirmar, "Los correos no coinciden"));
+                correo.addEventListener('input', () => {
+                    if(correoConfirmar.value.trim() !== '') {
+                        validarCoincidencia(correo, correoConfirmar, "Los correos no coinciden");
+                    }
+                });
             }
-            if(contrasenaConfirmar){
-                contrasenaConfirmar.addEventListener('input', () => validarCoincidencia(contrasena, contrasenaConfirmar, "Las contraseñas no coinciden"))
+            //escucha cruzada para contraseña sensible a mayus
+            if(contrasena && contrasenaConfirmar){
+                contrasenaConfirmar.addEventListener('input', () => validarCoincidencia(contrasena, contrasenaConfirmar, "Las contraseñas no coinciden"));
+                contrasena.addEventListener('input', () => {
+                    if(contrasenaConfirmar.value.trim() !== '') {
+                        validarCoincidencia(contrasena, contrasenaConfirmar, "Las contraseñas no coinciden");
+                    }
+                });
             }
 
             const usuarioInput = document.getElementById('usuario');
 
             if(usuarioInput){
                 usuarioInput.addEventListener("input", () => {
-                    const valorUsuarioInput = usuarioInput.value;
+                    const valorUsuarioInput = usuarioInput.value.trim();
                     const palabrasReservadas = ['admin', 'root', 'soporte', 'nova2030', 'nova', 'administrador', 'sistema'];
                     if(palabrasReservadas.includes(valorUsuarioInput.toLowerCase())){
                         usuarioInput.setCustomValidity("Este nombre de usuario es reservado y no está permitido.");
@@ -307,6 +327,22 @@ document.addEventListener("DOMContentLoaded", () => {
             //si pasa todas las validaciones, se empaqueta y se manda por fetch
             const formData = new FormData(form);
             const datosObjeto = Object.fromEntries(formData.entries());
+
+            /*Limpiar espacios en blanco antes de enviarlo */
+
+            Object.keys(datosObjeto).forEach(key => {
+                //si es texto y no contraseña, quita espacios de los extremos
+                if(typeof datosObjeto[key] === 'string' && !key.includes('contrasena')){
+                    datosObjeto[key] = datosObjeto[key].trim();
+                }
+
+                //pasar correos a minúscula
+
+                if(key === 'correo'){
+                    datosObjeto[key] = datosObjeto[key].toLocaleLowerCase();
+                }
+
+            });
 
             try{
                 const respuesta = await fetch(form.action, {
