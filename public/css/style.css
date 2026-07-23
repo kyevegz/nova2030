@@ -219,8 +219,10 @@ h6 {
     /*borders y esquinas*/
     --border-thin: 1px solid #1a1a1a;
     --border-thick: 3px solid #1a1a1a;
+
     --radius-straight: 0px;       /* Esquinas completamente rectas */
     --radius-smooth: 8px;
+    --radius-full: 9999px;
 
     /*animaciones y transiciones*/
 
@@ -235,6 +237,18 @@ h6 {
     --border: 2px solid black;
 }
 /*ESTILOS BASE (ETIQUETAS LIMPIAS)*/
+
+/*ANIMACIONES GLOBALES*/
+@keyframes fadeIn{
+    from{ 
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /*LAYOUTS MAYORES (ESTRUCTURA DE LA PÁGINA)*/
 .sidebar, .content, .footer{
@@ -969,6 +983,73 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     height: auto;
     border-radius: var(--radius-smooth);
 }
+
+
+/*formulario por fases*/
+
+.form__step{
+    display: none;
+}
+
+.form__step--active{
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.form__step--hidden{
+    display: none;
+}
+
+/*estilos barra de progreso*/
+.form-progress{
+    margin-bottom: var(--space-lg);
+}
+
+.form-progress__container-bar{
+    background-color: var(--shark-300);
+    height: 8px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--space-xs);
+}
+
+.form-progress__bar{
+    background-color: var(--bright-sun-400);
+    height: 100%;
+    width: 50%;
+    transition: width 0.3s ease-in-out;
+}
+
+.form-progress__labels{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+    color: var(--shark-400);
+}
+
+.form-progress__label--active{
+    color: var(--principal-title);
+    font-weight: var(--weight-bold);
+}
+
+/*contenedor felxible para los botones finales*/
+.form__buttons-group{
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+/*modificadores para el botónde anterior*/
+.form__button-send--secondary{
+    background-color: var(--shark-400);
+}
+
+.form__button-send--secondary:hover{
+    background-color: var(--shark-500);
+}
+
+
+
 /*MEDIA QUERIES*/
 
 /*--------------------
