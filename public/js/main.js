@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
             inputsPaso1.forEach(input =>{
                 if(!input.checkValidity()){
                     todosValidos = false;
-                    const mensaje ="Por favor, complete este campo correctamente";
+                    let mensaje ="Por favor, complete este campo correctamente";
                     mostrarErrorInput(input.id, mensaje);
 
                     input.classList.add('shake');
@@ -294,6 +294,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 });
             }
+
+            //función que valida longitud de campos
+            function validarLongitudCampo(inputId, min, max, msg){
+                const input = document.getElementById(inputId);
+
+                if(input){
+                    input.addEventListener("input", () => {
+                        const valorInput = input.value.trim();
+
+                        //solo va a validar cuando haya texto escrito, pues si no, qué valida
+                        if(valorInput.length > 0 && (valorInput.length < min || valorInput.length > max)){
+                            input.setCustomValidity(msg);
+                        }else{
+                            input.setCustomValidity('');
+                        }
+
+                        //mostrar u ocultar el error en tiempo real con el uso de otras funciones
+                        if(!input.checkValidity()){
+                            mostrarErrorInput(input.id, input.validationMessage);
+                        }else{
+                            limpiarErrorIndividual(input.id);
+                        }
+                    });
+                }
+            }
+
+            //aplicar lo función a los campos
+
+            validarLongitudCampo('nombre', 2, 100, 'El nombre debe tener entre 2 y 100 caracteres');
+            validarLongitudCampo('apellidop', 2, 100, 'El apellido paterno debe tener entre 2 y 100 caracteres');
+            validarLongitudCampo('apellidom', 2, 100, 'El apellido materno debe tener entre 2 y 100 caracteres');
+            validarLongitudCampo('correo', 5, 150, 'El correo electrónico no puede superar los 150 caracteres');
+
             //validar correos iguales en tiempo real
             // correoConfirmar.addEventListener("input", () =>{
             //     if(correoConfirmar.value !== correo.value){

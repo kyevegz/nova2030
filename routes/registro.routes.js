@@ -24,6 +24,21 @@ router.post('/registro', async (req, res) => {
         //1 - extrae los datos que bienen del for, un req.body
         const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, correoConfirmar, contrasena, contrasenaConfirmar } = req.body;
 
+
+        //1.5 validación de longitudes
+        const reglasLongitud = [
+            {campo: "nombre", valor: nombre, min:2, max:100, msg: "El nombre debe tener entre 2 y 100 caracteres"},
+            {campo: "apellidop", valor: apellidop, min:2, max:100, msg: "El apellido paterno debe tener entre 2 y 100 caracteres"},
+            {campo: "apellidom", valor: apellidom, min:2, max:100, msg: "El apellido materno debe tener entre 2 y 100 caracteres"},
+            {campo: "correo", valor: nombre, min:5, max:150, msg: "El correo electrónico debe tener mínimo 5 caracteres y no puede superar los 150 caracteres"}
+        ];
+
+        for(let regla of reglasLongitud){
+            if(regla.valor && (regla.valor.length <regla.min || regla.valor.length > regla.max)){
+                return res.status(400).json({campo: regla.campo, error: regla.msg});
+            }
+        }
+
         //2 - palabras reservadas para nombre de usuario
         const palabrasReseverdas = ['admin', 'root', 'soporte', 'nova2030', 'nova', 'administrador', 'sistema'];
         if(palabrasReseverdas.includes(usuario.toLowerCase())){
