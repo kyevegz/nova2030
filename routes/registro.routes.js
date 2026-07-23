@@ -109,9 +109,6 @@ router.post('/registro', async (req, res) => {
 
         //6.2 - encriptación de la contraseña
         const hashedContrasena = await bcrypt.hash(contrasena, saltRounds);
-        
-        //señal de que sí los recibió, meramente control
-        //console.log("DATOS RECIBIDOS: ", req.body);
 
         //7 - inserción en la bd, los ? evitan inyección SQL
         const query = `INSERT INTO 

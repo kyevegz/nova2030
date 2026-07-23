@@ -16,20 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             //se cambia el ícono y el aria-label según el estado
             if (isOpen) {//cuando se abre el menú
-                // iconBars.style.display = "none";//oculta las 3 barritas
-                // iconBars.setAttribute("aria-hidden", "true"); //oculta del lector de pantalla
-
-                // iconXmark.style.display = "block"; //muestra la tacha
-                // iconXmark.removeAttribute("aria-hidden");//lo hace visible para lectores
-
                 hamburgerBtn.setAttribute("aria-label", "Cerrar menú de navegación");//cambia el valor del aria label
             } else {//cuando está cerrado
-                // iconXmark.style.display = "none";//quita la tacha
-                // iconXmark.setAttribute("aria-hidden", "true");//regresa las barritas de hamburguesa
-
-                // iconBars.style.display = "block"; //muestra las barras
-                // iconBars.removeAttribute("aria-hidden");//lo hace visible para lectores
-
                 hamburgerBtn.setAttribute("aria-label", "Abrir menú de navegación");//regresa el valor que tenía
             }
         });
@@ -45,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const passwordInput = document.getElementById(inputId);
 
         if (togglePassword && passwordInput) {
-            //console.log("archivo liugado");
 
             //aria label por cuestiones de accesibilidad
             togglePassword.setAttribute('aria-label', 'Mostrar contraseña');
@@ -58,19 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 //selecciona el ícono dentro del botón
                 const icono = this.querySelector('i, svg');
-                //console.log('evento escuchado');
 
                 //si es password, está 'oculta', si es text, ya está visible
                 if (tipoActual === 'password') {
                     passwordInput.setAttribute('type', 'text');
                     icono.classList.replace('fa-eye', 'fa-eye-slash');
-                    //this.textContent = '🙈';
                     this.setAttribute('aria-label', 'Ocultar contraseña');
-                    //console.log('entré aquí')
                 } else {
                     passwordInput.setAttribute('type', 'password');
                     icono.classList.replace('fa-eye-slash', 'fa-eye');
-                    //this.textContent = '👁️';//regresa al ojonpara que pueda ver
                     this.setAttribute('aria-label', 'Mostrar contraseña');
                 }
             });
@@ -116,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             errorSpan.innerHTML = `<i class = "fa-solid fa-circle-exclamation"></i> ${mensaje}`;
             input.setAttribute('aria-describedby', errorSpan.id);
-            //input.focus();
         }
 
         function limpiarErrorIndividual(inputId){
@@ -181,8 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
             //validar al salir del campo
             input.addEventListener("blur", () => {
                 if(!input.checkValidity()){
-                    //let mensaje = input.validationMessage || "Este campo es obligatorio o tiene un formato inválido";
-
                     const mensaje = obtenerMensajeError(input);
 
                     //si está vació o inválido, se muestra el error personalizado
@@ -337,25 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
             validarLongitudCampo('apellidom', 2, 100, 'El apellido materno debe tener entre 2 y 100 caracteres');
             validarLongitudCampo('correo', 5, 150, 'El correo electrónico no puede superar los 150 caracteres');
 
-            //validar correos iguales en tiempo real
-            // correoConfirmar.addEventListener("input", () =>{
-            //     if(correoConfirmar.value !== correo.value){
-            //         correoConfirmar.setCustomValidity("Los correos electrónicos no coinciden")
-            //     }else{
-            //         correoConfirmar.setCustomValidity("");//limpia el error por si se generó y ya coincidieron
-            //     }
-            // });
-
-            // //validar contraseñas iguales en tiempo real escribiendo en el campo de confirmación
-            // contrasenaConfirmar.addEventListener("input", () =>{
-            //     if(contrasenaConfirmar.value !== correo.value){
-            //         contrasenaConfirmar.setCustomValidity("Las contraseñas no coinciden")
-            //     }else{
-            //         contrasenaConfirmar.setCustomValidity("");//limpia el error por si se generó y ya coincidieron
-            //     }
-            // });
-
-
         //venvío por fetch AJAX moderno
         form.addEventListener("submit", async (e) =>{
             e.preventDefault();//evita que la página se recargue
@@ -373,7 +334,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(() => input.classList.remove('shake'), 400);
                     }
                 });
-                //form.reportValidity();//muestra el aviso en el primer campo con error
                 return;//frena el envío
             }
 
@@ -448,8 +408,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             confirmButtonText: "Entendido"
                         });
                     }
-                    //fallo al registrarse
-                    //console.error(resultado.error) || "Ocurrió un error al intentar el registro";
                 }
             }catch{
                 console.error("Error en la petición", error);
@@ -461,13 +419,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         });
-
-        //limpiar el localstorage al enviar con éxito el formulario        
-        // form.addEventListener("submit", () => {
-        //     inputs.forEach(input => {
-        //         localStorage.removeItem(input.name);
-        //     });
-        // });
     }
 });
 
