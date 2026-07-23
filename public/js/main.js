@@ -382,9 +382,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     }else{
                         Swal.fire({
-                            title: "Error",
+                            title: "Error. Algo salió mal",
                             text: resultado.error,
-                            icon: "error"
+                            iconHtml: '<i class = "fa-solid fa-circle-xmark"></i>',
+                            buttonsStyling: false,
+                            customClass:{
+                                popup: 'swal-popup-personalized',
+                                title: 'swal-title-personalized swal-title-personalized--error',
+                                confirmButton: 'swal-button-personalized',
+                                icon: 'swal-icon-fa swal-icon-fa--error'
+                            },
+                            confirmButtonText: "Entendido"
                         });
                     }
                     //fallo al registrarse

@@ -1094,11 +1094,13 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 
 /*titulo de la alerta*/
 .swal-title-personalized{
-    font-family: var(--details);
-    color: var(--principal-title);
+    font-family: var(--font-details);
+    color: var(--observatory-700);
     font-size: var(--font-size-h1);
-    font-weight: var(--weight-bold);
+    font-weight: var(--weight-medium);
 }
+
+
 
 /*botón personalizado*/
 .swal-button-personalized{
@@ -1144,16 +1146,27 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 .swal-icon-fa svg,
 .swal-icon-fa i{
     
-    /* font-size: var(--font-size-jumbo); */
+    font-size: 5.5rem;
     width: 5.5rem;
     height: 5.5rem;
-    color: var(--observatory-500);
+    color: var(--observatory-500, #0c7967);
     
 }
 
 /*variante íconos de error o advertencia*/
-.swal-icon-fa.swal-icon-fa--error i{
-    color: var(--error, #e74c3c);
+.swal-icon-fa.swal-icon-fa--error i,
+.swal-icon-fa.swal-icon-fa--error svg{
+    color: var(--error, #ff4d4d);
+}
+
+/*variante de título para cuando sea éxito*/
+/* .swal-title-personalized.swal-title-personalized--success{
+    color: var(--observatory-700);
+} */
+
+/*variante de título para cuando sea error*/
+.swal-title-personalized.swal-title-personalized--error{
+    color: var(--error, #ff4d4d) !important;
 }
 
 /*MEDIA QUERIES*/
