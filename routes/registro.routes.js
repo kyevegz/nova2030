@@ -11,16 +11,16 @@ router.get('/registro', (req, res) =>{
 //ruta que procesará el registro
 router.post('/registro', async (req, res) => {
     try{
-        //1 - extra los datos que bienen del for, un req.body
+        //1 - extrae los datos que bienen del for, un req.body
         const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, correoConfirmar, contrasena, contrasenaConfirmar } = req.body;
 
-        //1.? palabras reservadas para nombre de usuario
+        //2 - palabras reservadas para nombre de usuario
         const palabrasReseverdas = ['admin', 'root', 'soporte', 'nova2030', 'nova', 'administrador', 'sistema'];
         if(palabrasReseverdas.includes(usuario.toLowerCase())){
-            return res.status(400).send("ERROR. Ese nombre de usuario es reservado y no se permite");
+            return res.status(400).json({campo: "usuario", error: "El nombre de usuario ingresado es reservado, por lo que su uso no es permitido"});
         }
 
-        //1. contraseña robusta, verificar su tamaño y que contenga caracteres seguros
+        //3 - contraseña robusta, verificar su tamaño y que contenga caracteres seguros
         const contieneMayus = /[A-Z]/.test(contrasena);
         const contieneMinus = /[a-z]/.test(contrasena);
         const contieneNumeros = /[0-9]/.test(contrasena);
@@ -28,67 +28,85 @@ router.post('/registro', async (req, res) => {
 
         //checar que cumpla con todas las reglas
         if(contrasena.length < 8 ){
-            return res.status(400).send("ERROR. La contraseña debe tener 8 caracteres mínimo");
+            return res.status(400).json({campo: "contrasena", error: "La contraseña debe tener mínimo 8 caracteres"});
         }
         if(!contieneMayus ){
-            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 mayúscula");
+            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 mayúscula"});
         }
         if( !contieneMinus ){
-            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 minúscula");
+            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 minúscula"});
         }
         if(!contieneNumeros ){
-            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 númeri");
+            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 número"});
         }
         if(!contieneSimbolos){
-            return res.status(400).send("ERROR. La contraseña debbe tener mínimo 1 símbolo especial");
+            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 símbolo especial"});
         }
-        //1.5 comparación de correos y contraseñas
-        if(correo != correoConfirmar){
-            return res.status(400).send("ERROR. los correos no coinciden");
+
+
+        //4 - comparación de correos y contraseñas
+        if(correo !== correoConfirmar){
+            return res.status(400).json({campo: "correoConfirmar", error: "Los correos no coinciden"});
         }
 
         if(contrasena != contrasenaConfirmar){
-            return res.status(400).send("ERROR. Contrasenas no coinciden");
+            return res.status(400).json({campo: "contrasenaConfirmar", error: "Las contraseñas no coinciden"});
         }
         
-        //2 - verifica que no haya nombre de usuario o correo ya registrado
-        const checkQuery = `SELECT * FROM usuarios WHERE correo = ? OR usuario = ?`;
-        const [usuariosExistentes] = await db.query(checkQuery, [correo, usuario]);
-
-        //si el array tiene al menos un elemento, quiere decir que ya existe
+        //5 - verifica que no haya nombre de usuario o correo ya registrado
+        //5.1 si el usuario existe
+        const checkQueryUser = `SELECT * FROM usuarios WHERE usuario = ?`;
+        const [usuariosExistentes] = await db.query(checkQueryUser, [usuario]);
+        
         if(usuariosExistentes.length > 0){
             //detiene el proces y manda error 400 de bad request
-            return res.status(400).send("ERROR. USUARIO O CORREO YA REGISTRADO");
+            return res.status(400).json({campo: "usuario", error: "Este nombre de usuario ya está en uso"});
+        }
+        
+
+
+        //5.2 verifica si el correo existe
+        const checkQueryMail = `SELECT * FROM usuarios WHERE correo = ?`;
+        const [CorreosExistentes] = await db.query(checkQueryMail, [correo]);
+
+        //si el array tiene al menos un elemento, quiere decir que ya existe
+        if(CorreosExistentes.length > 0){
+            //detiene el proces y manda error 400 de bad request
+            return res.status(400).json({campo: "correo", error: "Este correo ya se encuentra registrado"});
         }
 
         //TRAS PASAR LA BARRERA DE VERIFICACIÓN
 
-        /* 3- definición del número de rondas de salt, 10 es el estándar seguro y equilibrado
+        //6 - encriptación de contraseña
+        /* 6.1 - definición del número de rondas de salt, 10 es el estándar seguro y equilibrado
         un salt es una cadena de caracteres que se añade a la contraseña antes de procesarlam garantiza que el hash (versión cifrada) sea única*/
         const saltRounds = 10;
 
-        //4 - encriptación de la contraseña
+        //6.2 - encriptación de la contraseña
         const hashedContrasena = await bcrypt.hash(contrasena, saltRounds);
-        
-        
         
         //señal de que sí los recibió, meramente control
         //console.log("DATOS RECIBIDOS: ", req.body);
 
-        //5 - inserción en la bd, los ? evitan inyección SQL
+        //7 - inserción en la bd, los ? evitan inyección SQL
         const query = `INSERT INTO 
-            usuarios (usuario, nombre, apellidop, apellidom, fechaNacimiento,correo, contrasena)
+            usuarios (usuario, nombre, apellidop, apellidom, fechaNacimiento, correo, contrasena)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         `;
 
-        await db.query(query, [usuario, nombre, apellidop, apellidom, fechaNacimiento,correo, hashedContrasena]);
+        await db.query(query, [usuario, nombre, apellidop, apellidom, fechaNacimiento, correo, hashedContrasena]);
 
-        //3 - respuesta temporal para checar si funcionó
-        res.send("USUARIO REGISTRADO con bcrypt");
+        //8 - respuesta de éxito
+        return res.status(201).json({
+            mensaje: "Cuenta creada con éxito",
+            redirectUrl: "/index"
+        });
+
+        //res.send("USUARIO REGISTRADO con bcrypt");
 
     }catch (error){
         console.error("ERROR AL REGISTRAR USUARIO: ", error);
-        res.status(500).send("ERROR EN EL SERVIDOR AL QUERER HACER EL REGISTRO");
+        res.status(500).json({error: "ERROR EN EL SERVIDOR AL QUERER HACER EL REGISTRO"});
     }
 });
 

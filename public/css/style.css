@@ -189,6 +189,9 @@ h6 {
     --sisal-900: #52443c;
     --sisal-950: #2b231f;
 
+    --error: #ff4d4d;
+
+
     /*familias de fuentes*/
     --font-body: "Nunito", sans-serif;
     --font-titles: "Momo Trust Display", sans-serif;
@@ -248,6 +251,13 @@ h6 {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0);}
+    20%,80% { transform: translate3d(2px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+    40%, 60% { transform: translate3d(4px, 0, 0);}
 }
 
 /*LAYOUTS MAYORES (ESTRUCTURA DE LA PÁGINA)*/
@@ -401,10 +411,6 @@ h6 {
     margin-bottom: var(--space-md);
     display: flex;
     justify-content: end;
-}
-
-.submenu{
-    /* background-color: var(--cerise-200); */
 }
 
 .submenu__summary{
@@ -877,8 +883,9 @@ Formulario registro
 
 /*La magia del label flotante
 para cuando el input ya tenga texto guardado, o bien, foco 0*/
-.form__input:focus ~ .form__label,
-.form__input:not(:placeholder-shown) ~ .form__label{
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label,
+.form__input.form__input--error + .form__label{
     top: 0;
     transform: translateY(-50%) scale(0.85);
     color: var(--principal-title);
@@ -891,6 +898,10 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     padding: 0 0.3rem;/*para que el texto no toque la línea del borde*/
 }
 
+/*label rojo en error*/
+.form__input.form__input--error + .form__label{
+    color: var(--error);
+}
 /*caso especial input de fecha*/
 .form__label--fixed{
     top: 0 !important;
@@ -908,7 +919,7 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 .form__button-toggle-psw{
     position: absolute; 
     right: 1rem;
-    top: 50%;
+    top: 2rem;
     transform: translateY(-50%);
     background: transparent;
     border: none;
@@ -1048,6 +1059,26 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     background-color: var(--shark-500);
 }
 
+/*input error*/
+.form__input--error{
+    border-color: var(--error);
+    background-color: rgba(255, 77, 77, 0.05);
+}
+
+.form__error-text{
+    color: var(--error);
+    font-size: var(--font-size-small);
+    margin-top: var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    animation: fadeIn 0.3s ease;
+}
+
+.shake{
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
 
 
 /*MEDIA QUERIES*/
@@ -1084,13 +1115,13 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     
     /*Form de registro responsivo*/
 
-    .register-container{
+    .form__grid{
         grid-template-columns: 1fr;
     }
 
-    .form{
+    /* .form{
         grid-template-columns: 1fr;
-    }
+    } */
 }
 
 
