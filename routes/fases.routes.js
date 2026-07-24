@@ -21,12 +21,39 @@ router.get('/fase/1', verificarToken, async (req, res) => {
             ORDER BY modul.id ASC
         `, [1, idUsuario]);
 
-        res.render('fase1', { submodulos });
+        res.render('fase1', { submodulos, mostrarProgreso: true, esModulo: false });
 
     }catch (error){
         console.error(error);
         res.status(500).send("Error en el servidor");
     }
 });
+
+
+//:idModulo es para dinamismo en la URL
+router.get('/fase/1/modulo/:idModulo', verificarToken, async (req, res) => {
+    try{
+        const idUsuario = req.usuario.id;        
+        const idModulo = req.params.idModulo; 
+        
+        //1 - consulta a la información del modulo actual, para obtener el contenido y su información en general
+        const [moduloActual] = await db.query(`
+            SELECT * FROM modulos WHERE id = ?
+            `, [idModulo]);
+        
+        //2 - aquí entrarán las consultas del contenido del modulo
+
+        //rederización de la vista del modulo, donde se puede cambiar fase1 por otra plantilla
+        res.render('contenido-modulo', {
+            moduloActual: moduloActual[0],
+            mostrarProgreso: true,
+            esModulo: true //activará el botón de regresar y cambiará los elementos de la barra
+        });
+        
+    }catch(error){
+        console.error(error);
+        res.status(500).send("Error en el servidor");
+    }
+})
 
 module.exports = router;

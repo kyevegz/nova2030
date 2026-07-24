@@ -5,22 +5,87 @@
                 <i class="fa-solid fa-bars nav-mini__icon nav-mini__icon--bars"></i>
                 <i class="fa-solid fa-xmark nav-mini__icon nav-mini__icon--xmark" aria-hidden="true"></i>
             </a>
-            <a href="/index" class="nav-mini__item nav-mini__item--name">Nova 2030</a>
+            <a href="/index" class="nav-mini__item nav-mini__item--name">Nova2030</a>
         </div>
+<% if(locals.mostrarProgreso) {%>
+
+                    <!--Barra de progreso para fases-->
+                    <div class="header__progress-container">
+
+                        <!--IZQUIERDA. Cuadrito para fase x y botón de regresar-->
+                        <div class="header__progressbar-action }">
+                            <% if(locals.esModulo) { %>
+                                <!--Si ya está en un modulo, pone el botón de regresar-->
+                                <a href="/fase/1" class="header__btn-back" aria-label="Regresar a Fase 1">
+                                    <i class="fa-solid fa-circle-left"></i>
+                                </a>
+                            <% } else{ %>
+                                <span class = "header__progressbar-action-phase">Fase 1</span>
+                            <% } %>   
+                        </div>
+
+                        <!--ARRIBA. Fila 1. arriba-->
+                        <div class="header__progress-row header__progress-row--top">
+                            <% if(locals.esModulo && locals.moduloActual) {%>
+                                <nav aria-label="Migas de pan"  class="header__breadcrumbs">
+                                    <a href="/fase/1" class="header__breadcrumb-link">Fase 1</a>
+                                    <span class="header__seperator">></span>
+                                    <!--Imprime dinámicamente el nombre del módulo-->
+                                    <a aria-current="page"><%= locals.moduloActual.nombre %></a>
+                                </nav>
+                            <% } else { %>
+                                <p class="header__progressbar-text">Progreso</p>
+                                <span class="header__progressbar-text">
+                                    50%
+                                </span>
+                            <% } %>
+
+                            <!--Alterna con-->
+                            <!-- <nav class="header_progressbar-breadcrumbs"></nav> -->
+
+                        </div>
+
+                        <!--CENTRO. Fila 2. en medio-->
+                        <div class="header__progress-row header__progress-row--middle">
+                            <% if(locals.esModulo){ %>
+                                <p class="header__progressbar-text">Progreso</p>
+                                <span class="header__progressbar-text">
+                                    50%
+                                </span>
+                            <% } else { %>
+                                <div class="header__container-progressbar progress-bar" role = "progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="header__progress-bar progress-bar__fill"></div>
+                                </div>
+                            <% } %>
+                        </div>
+
+                        <!--ABAJO. Fila 3. abajo-->
+                        <div class="header__progress-row header__progress-row--bottom">
+                            <% if(locals.esModulo){ %>
+                                <div class="header__container-progressbar progress-bar" role = "progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="header__progress-bar progress-bar__fill"></div>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <% } %>
 
         <!--Parte dinámica con cookie de jwt-->
         <div class="nav-mini__options">
             <% if(locals.usuarioVerificado){ %>
 
-                <!--Si ya inició sesión, se muestran datos de usuario-->
-                <span class = "nav-mini__item">Hola, <%= locals.usuarioVerificado.usuario %></span>
-                <a href="/perfil" class = "nav-mini__item">Mi perfil</a>
-            <% } else{ %>
-                <!--Si no hay sesión activa-->
-                <a href = "/login" class="nav-mini__item">Iniciar sesión</a>
-                <a href = "/registro" class="nav-mini__item">Registrarse</a>
-        <% } %>
+                
+
+                        <!--Si ya inició sesión, se muestran datos de usuario-->
+                        <span class="nav-mini__item">Hola, <%= locals.usuarioVerificado.usuario %></span>
+                        <a href="/perfil" class="nav-mini__item"><i class="fa-solid fa-circle-user"></i></a>
+                        <% } else{ %>
+                            <!--Si no hay sesión activa-->
+                            <a href="/login" class="nav-mini__item">Iniciar sesión</a>
+                            <a href="/registro" class="nav-mini__item">Registrarse</a>
+                            <% } %>
         </div>
-        
     </nav>
+
+
 </header>
