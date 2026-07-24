@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 //-----------CONFIGURACIÓN DE PLANTILLAS EJS-----------------
@@ -17,6 +20,30 @@ const PORT = process.env.PORT || 3000;
 //Middlewares para entender datos JSON y formularios
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+
+app.use(cookieParser());
+
+//Middleware global para el header dinámico
+app.use((req, res, next) => {
+    const token = req.cookies.jwt;//busca la cookie llamada jwt
+
+    if(token){
+        try{
+            //si el token existe, se verifica y se guardan los datos en res.locals
+            const usuarioVerificado = jwt.verify(token, process.env.JWT_SECRET);
+            res.locals.usuarioVerificado = usuarioVerificado;
+        }catch(error){
+            //si el token retorna false o expiró, se elimina la variable
+            res.locals.usuarioVerificado = null;
+        }
+    }else{
+        res.locals.usuarioVerificado = null;
+    }
+    next();
+});
+
+
+
 
 //importar la ruta de fase 1
 const fasesRoutes = require('./routes/fases.routes.js');
