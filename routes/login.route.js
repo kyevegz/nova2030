@@ -61,10 +61,17 @@ router.post('/login', async (req, res) => {
             }
         );
 
+        //guarda el token en una cookie HttpOnly, la cual es más segura que localStorage
+        res.cookie('jwt', token, {
+            httpOnly: true,//el cliente js no la puede robar
+            secure: process.env.NODE_ENV === 'production', //solo en https
+            maxAge: 2 * 60 * 60 * 1000//2 horas dd vida en ms
+        });
+
         // 6 - Respuesta exitosa enviando el token
         return res.status(200).json({
             mensaje: "Inicio de sesión exitoso",
-            token: token, //manda el jwt al cliente
+            //token: token, //manda el jwt al cliente
             redirectUrl: "/"
         });
 

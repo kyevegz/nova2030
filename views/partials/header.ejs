@@ -5,12 +5,22 @@
                 <i class="fa-solid fa-bars nav-mini__icon nav-mini__icon--bars"></i>
                 <i class="fa-solid fa-xmark nav-mini__icon nav-mini__icon--xmark" aria-hidden="true"></i>
             </a>
-            <a class="nav-mini__item nav-mini__item--name">Nova 2030</a>
+            <a href="/index" class="nav-mini__item nav-mini__item--name">Nova 2030</a>
         </div>
 
+        <!--Parte dinámica con cookie de jwt-->
         <div class="nav-mini__options">
-            <a class="nav-mini__item">Iniciar sesión</a>
-            <a class="nav-mini__item">Registrarse</a>
+            <% if(locals.usuarioVerificado){ %>
+
+                <!--Si ya inició sesión, se muestran datos de usuario-->
+                <span class = "nav-mini__item">Hola, <%= locals.usuarioVerificado.usuario %></span>
+                <a href="/perfil" class = "nav-mini__item">Mi perfil</a>
+            <% } else{ %>
+                <!--Si no hay sesión activa-->
+                <a href = "/login" class="nav-mini__item">Iniciar sesión</a>
+                <a href = "/registro" class="nav-mini__item">Registrarse</a>
+        <% } %>
         </div>
+        
     </nav>
 </header>

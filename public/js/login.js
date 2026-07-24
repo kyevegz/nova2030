@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (respuesta.ok) {
                     console.log("Respuesta completa del servidor:", resultado);
                     //guarda el token kwt recibido del servidor
-                    localStorage.setItem('token', resultado.token);
+                    //localStorage.setItem('token', resultado.token);
                     Swal.fire({
                         title: "Bienvenido de nuevo",
                         text: resultado.mensaje,
