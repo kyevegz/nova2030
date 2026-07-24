@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head') %>
+    <title>Iniciar sesión | Nova 2030</title>
+</head>
+<body>
+    <div class="page page--full">
+        <!--Llamada al sidebar-->
+        <%- include('partials/sidenavbar') %>
+        <!--Llamada al header-->
+        <%- include('partials/header') %>
+
+        <main class="content">
+            <div class="form-container">
+                <section class="form__card">
+                    <h1 class="form__title">Iniciar sesión</h1>
+                    <p class="form__subtitle">¡Qué bueno verte de nuevo por aquí! Ingresa tus credenciales para acceder a tu cuenta</p>
+
+                    <div class="form__grid">
+                        <form action="/login" class="form" id="loginForm" method="POST" novalidate>
+                            <fieldset class="form__fieldset">
+                                <div class="form__group">
+                                    <input type="text" class="form__input" id="identificador" name="identificador" placeholder=" " required="required">
+                                    <label for="identificador" class="form__label">Usuario o correo electrónico</label>
+                                </div>
+
+                                <div class="form__input-wrapper">
+                                    <input type="password" class="form__input" id="contrasena" name="contrasena" placeholder=" " required autocomplete="current-password">
+                                    <label for="contrasena" class="form__label">Contraseña</label>
+                                    <button type="button" id="interruptorContrasena" class="form__button-toggle-psw">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </fieldset>
+
+                            <button type="submit" class="form__button-send" id="btnIngresar">Ingresar</button>
+                            <p class="form__footer-text">
+                                ¿No tienes una cuenta<a href="/registro" class="form__footer-link">da clic aquí para registrarte</a>
+                            </p>
+                        </form>
+
+                        <div class="form__image-wrapper">
+                            <img src="/images/pingu.webp" alt="Mascota de nova" class="form__image">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+
+        <!--Llamada al footer-->
+        <%- include('partials/footer') %>
+
+    </div>
+
+    <!--script exclusivo para login-->
+    <script src="/js/login.js" defer></script>
+</body>
+</html>

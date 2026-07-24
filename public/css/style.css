@@ -768,7 +768,7 @@ details[open] .submenu__icon-deploy{
 Formulario registro
 ~~~~~~~~~~~~~~~~~~~~~*/
 
-.register-container{
+.form-container{
     /* display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: var(--space-xl);
