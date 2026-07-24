@@ -14,12 +14,13 @@ router.get('/fase/1', verificarToken, async (req, res) => {
         los módulos, se pegue el estado de el campo desbloqueado y completado 
         de el usuario actual*/
         const [submodulos] = await db.query(`
-            SELECT mod.*, progu.desbloqueado, progu.completado
-            FROM modulos mod
-            JOIN progreso_usuarios progu ON mod.id = progu.idModulo
-            WHERE mod.fase = ? AND progu.idUsuario = ?
+            SELECT modul.*, progu.desbloqueado, progu.completado
+            FROM modulos modul
+            JOIN progreso_usuarios progu ON modul.id = progu.idModulo
+            WHERE modul.fase = ? AND progu.idUsuario = ?
+            ORDER BY modul.id ASC
         `, [1, idUsuario]);
-        
+
         res.render('fase1', { submodulos });
 
     }catch (error){

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 //ruta para mostrar el form de registro
 router.get('/registro', (req, res) =>{
@@ -141,6 +142,26 @@ router.post('/registro', async (req, res) => {
             `, [valoresProgreso]);
         }
         
+        //8.4- generar el tokem jwt para auto login
+                const token = jwt.sign(
+                    {
+                        id: idNuevoUsuario,
+                        usuario: usuario
+                                            
+                    },
+                    process.env.JWT_SECRET,
+                    {
+                        expiresIn: '2h'//el token expira en 2 horas
+                    }
+                );
+        
+                //guarda el token en una cookie HttpOnly, la cual es más segura que localStorage
+                res.cookie('jwt', token, {
+                    httpOnly: true,//el cliente js no la puede robar
+                    secure: process.env.NODE_ENV === 'production', //solo en https
+                    maxAge: 2 * 60 * 60 * 1000//2 horas dd vida en ms
+                });
+
         
         //9 - respuesta de éxito
         return res.status(201).json({
