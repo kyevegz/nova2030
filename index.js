@@ -30,6 +30,10 @@ app.use('/', registroRoutes);
 const loginRoute = require('./routes/login.route.js');
 app.use('/', loginRoute);
 
+//ruta index
+const indexPage = require('./routes/index.route.js');
+app.use('/', indexPage);
+
 //para ver la página de registro
 // app.get('/registro', (req, res) => {
 //     res.render('registro');
