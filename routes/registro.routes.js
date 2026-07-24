@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 //ruta para mostrar el form de registro
 router.get('/registro', (req, res) =>{
@@ -116,9 +117,53 @@ router.post('/registro', async (req, res) => {
             VALUES (?, ?, ?, ?, ?, ?, ?)
         `;
 
-        await db.query(query, [usuario, nombre, apellidop, apellidom, fechaNacimiento, correo, hashedContrasena]);
+        const [resultado] = await db.query(query, [usuario, nombre, apellidop, apellidom, fechaNacimiento, correo, hashedContrasena]);
 
-        //8 - respuesta de éxito
+        //8 - crear las filas de este usuario en progreso_usuario
+        const idNuevoUsuario = resultado.insertId;
+
+        //8.1 - se traen todos los ids de los módulos que existen en la plataforma
+        const [todosModulos] = await db.query("SELECT id FROM modulos");
+
+        //8.2 - se prepara un arreglo masivo con los datos que se van a insertar para el usuario nuevo
+        const valoresProgreso = todosModulos.map(modulo => {
+            //si es el modulo 1, se desbloquea, a los demás se les deja en 0, o sea, bloqueados
+            const estadoDesbloqueado = (modulo.id === 1) ? 1 : 0;
+
+            //ordena las columnas por idusuario, idmodulo, desbloq y completado
+            return [idNuevoUsuario, modulo.id, estadoDesbloqueado, 0];
+        })
+
+        //8.3 - inserción múltiple en la bd de golpe
+        if(valoresProgreso.length > 0){
+            await db.query(`
+                INSERT INTO progreso_usuarios (idUsuario, idModulo, desbloqueado, completado)
+                VALUES ?    
+            `, [valoresProgreso]);
+        }
+        
+        //8.4- generar el tokem jwt para auto login
+                const token = jwt.sign(
+                    {
+                        id: idNuevoUsuario,
+                        usuario: usuario
+                                            
+                    },
+                    process.env.JWT_SECRET,
+                    {
+                        expiresIn: '2h'//el token expira en 2 horas
+                    }
+                );
+        
+                //guarda el token en una cookie HttpOnly, la cual es más segura que localStorage
+                res.cookie('jwt', token, {
+                    httpOnly: true,//el cliente js no la puede robar
+                    secure: process.env.NODE_ENV === 'production', //solo en https
+                    maxAge: 2 * 60 * 60 * 1000//2 horas dd vida en ms
+                });
+
+        
+        //9 - respuesta de éxito
         return res.status(201).json({
             mensaje: "Cuenta creada con éxito",
             redirectUrl: "/index"

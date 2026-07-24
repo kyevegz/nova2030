@@ -1,13 +1,15 @@
 const jwt = require('jsonwebtoken');
 
 function verificarToken(req, res, next){
-    //busca el token en los headers de la petición, o puede venir de una cookie
+    //busca el token en la cookie configurafas
+    const token = req.cookies.jwt;
 
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
+    // const authHeader = req.headers['authorization'];
+    // const token = authHeader && authHeader.split(' ')[1];
 
     if(!token){
-        return res.status(401).json({error: "Acceso denegado. No hay token de autenticación"});
+        //si no hay toke, redirigie al login
+        return res.redirect('/login');
     }
 
     try{
@@ -19,7 +21,10 @@ function verificarToken(req, res, next){
 
         next(); // indica que todo está bien, que se puede pasar a la siguiente función
     }catch(error){
-        return res.status(403).json({error: "Token invalido o expirado"});
+
+        //si el toke es inv+alido o expiró, se borra la cookie y manda al login
+        res.clearCookie('jwt');
+        return res.redirect('/login');
     }
 }
 
