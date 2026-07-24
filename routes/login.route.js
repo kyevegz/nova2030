@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
         // si el arreglo regresa vacío, el usuario no existe
         if(usuarios.length === 0){
             return res.status(401).json({
-                campo: "identificador",
+                
                 error: "Credenciales incorrectas. Por favor, verifica tu información"
             });
         }
@@ -45,7 +45,7 @@ router.post('/login', async (req, res) => {
 
         if(!contrasenaValida){
             return res.status(401).json({
-                campo: contrasena, 
+                
                 error: "Credenciales incorrectas. Por favor, verifica tu información"
             });
         }

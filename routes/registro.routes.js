@@ -56,16 +56,16 @@ router.post('/registro', async (req, res) => {
             return res.status(400).json({campo: "contrasena", error: "La contraseña debe tener mínimo 8 caracteres"});
         }
         if(!contieneMayus ){
-            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 mayúscula"});
+            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 mayúscula"});
         }
         if( !contieneMinus ){
-            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 minúscula"});
+            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 minúscula"});
         }
         if(!contieneNumeros ){
-            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 número"});
+            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 número"});
         }
         if(!contieneSimbolos){
-            return res.status(400).send({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 símbolo especial"});
+            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 símbolo especial"});
         }
 
 

@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         /* -----FUNCIONES DE ERROR------- */
         function mostrarErrorInput(inputId, mensaje){
+            
             const input = document.getElementById(inputId);
             if(!input) return;
 
