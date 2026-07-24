@@ -26,6 +26,10 @@ app.use('/', fasesRoutes);
 const registroRoutes = require('./routes/registro.routes.js');
 app.use('/', registroRoutes);
 
+//importar la ruta de login
+const loginRoute = require('./routes/login.route.js');
+app.use('/', loginRoute);
+
 //para ver la página de registro
 // app.get('/registro', (req, res) => {
 //     res.render('registro');
