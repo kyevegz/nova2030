@@ -11,10 +11,10 @@
         <!-- Analiza el punto de dónde partes, qué es lo que sabes y lo que te falta. -->
         <%= sub.descripcion %>
     </p>
-    <button class="card__button <%= sub.desbloqueado === 0 ? 'card__button--block' : '' %>">
-        <p class="card__button-text">
+    <a <%= sub.desbloqueado === 1 ? `href=/fase/1/modulo/${sub.id}` : '' %> class="card__button  <%= sub.desbloqueado === 0 ? 'card__button--block' : '' %>">
+        <span class="card__button-text">
             <%= sub.desbloqueado===1 ? 'Ir' : 'Bloqueado' %>
-        </p>
+        </span>
         <i class="fa-solid <%= sub.desbloqueado === 0 ? 'fa-lock' : 'fa-right-long' %>" aria-hidden="true"></i>
-    </button>
+    </a>
 </article>

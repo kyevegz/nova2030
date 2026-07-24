@@ -203,6 +203,7 @@ h6 {
     --font-size-h3: 1.25rem; /* ~20px ->* subtítulos menores*/
     --font-size-body: 1rem; /*16px -> texto base*/
     --font-size-small: 0.875rem; /* 14px -> textos secundarios, como pies de fotos o alertas*/
+    --font-size-big: 4rem;
     --font-size-jumbo: 6rem; /*~64px*/
     /*NOTA: MOMO TRUST DISPLAY SOLO TIENE GROSOR DE 400*/
 
@@ -361,24 +362,7 @@ h6 {
     transform: rotate(0deg) scale(1);
     color: var(--background);
 }
-/* .nav-mini__hamburguer-button .nav-mini__icon--xmark{
-    display: none;
-}
 
-.nav-mini__hamburguer-button .nav-mini__icon--bars{
-    display: inline-block;
-    color: var(--principal-title);
-}
-
-/*cuando el menú se activa, se invierte el ícono a mostrar
-.nav-mini__hamburguer-button.nav-mini__hamburguer-button--active .nav-mini__icon--bars{
-    display: none;
-}
-
-.nav-mini__hamburguer-button.nav-mini__hamburguer-button--active .nav-mini__icon--xmark{
-    display: inline-block;
-    color: var(--background);
-} */
 
 .nav-mini__item--name{
     color: var(--principal-title);
@@ -987,9 +971,6 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 
 /*imagen de mascota*/
 
-/*
-
-*/
 .form__image-wrapper{
     display: flex;
     justify-content: center;
@@ -1023,15 +1004,15 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     margin-bottom: var(--space-lg);
 }
 
-.form-progress__container-bar{
+.progress-bar{
     background-color: var(--shark-300);
     height: 8px;
     border-radius: var(--radius-full);
     overflow: hidden;
-    margin-bottom: var(--space-xs);
+    /* margin-bottom: var(--space-xs); */
 }
 
-.form-progress__bar{
+.progress-bar__fill{
     background-color: var(--bright-sun-400);
     height: 100%;
     width: 50%;
@@ -1166,14 +1147,130 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     color: var(--error, #ff4d4d);
 }
 
-/*variante de título para cuando sea éxito*/
-/* .swal-title-personalized.swal-title-personalized--success{
-    color: var(--observatory-700);
-} */
+
 
 /*variante de título para cuando sea error*/
 .swal-title-personalized.swal-title-personalized--error{
     color: var(--error, #ff4d4d) !important;
+}
+
+
+/*barra progreso de fases*/
+.header__progress-container{
+    /* border: 2px solid lightslategrey; */
+    width: 100%;
+    max-width: 700px;
+    margin: var(--space-md) auto;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: repeat(3, minmax(28px, auto));
+
+    grid-template-areas: 
+    "square row1"
+    "square row2"
+    "square row3";
+    /* padding: var(--space-sm) var(--space-md); */
+    
+}
+
+.header__progressbar-action{
+    grid-column: square;
+    border-right: 1.5px solid var(--shark-400);
+    /* border: 2px solid lightslategrey; */
+    
+    grid-row: 1/-1;
+    
+    padding: var(--space-xs);
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    justify-items: center;
+    font-weight: var(--weight-normal);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header__btn-back{
+    color: var(--principal-title);
+    font-size: var(--font-size-big);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    
+}
+
+.header__btn-back:hover{
+    transform: scale(1.1);
+    color: var(--cerulean-blue-900);
+}
+.header__progressbar-action-phase{
+    color: var(--secundary-title);
+}
+
+/*estilos para las 3 filas*/
+.header__progress-row{
+    padding: 0 var(--space-md);
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+/*Fila 1*/
+.header__progress-row--top{
+    /* display: flex; */
+    justify-content: space-between;
+    /* border: 2px solid lightslategrey; */
+    grid-area: row1;
+    
+}
+
+/*Fila 2*/
+.header__progress-row--middle{
+    grid-area: row2;
+    justify-content: space-between;
+}
+
+.header__progress-row--top,
+.header__progress-row--middle{
+    font-family: var(--font-details);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-small);
+    opacity: 0.9;
+    color: var(--text-colour);
+}
+
+/*Fila 3*/
+.header__progress-row--bottom{
+    /* border: 2px solid lightslategrey; */
+    grid-area: row3;
+}
+
+.header__progressbar-text{
+    font-family: var(--text-colour);
+}
+/*fix de la barra fantasma:
+dentro del header, la barra debe tomar todo el ancho 
+disponible para no perderse o colapsar
+*/
+
+.header__progress-row .progress-bar{
+    width: 100%;
+    margin: 0;
+}
+
+.header__breadcrumbs{
+    font-family: var(--font-details);
+    font-size: var(--font-size-small);
+    color: var(--text-colour);
+    display: flex;
+    gap: var(--space-xs);
+    
+
+}
+.header__separator{
+    color: var(--principal-title);
+    font-weight: var(--weight-bold);
 }
 
 /*MEDIA QUERIES*/
