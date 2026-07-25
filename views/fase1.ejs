@@ -13,6 +13,23 @@
         <%- include('partials/header') %>
 
         <main class = "content">
+
+            <div class="phase-container">
+                <h1 class="phase-title">Fase 1</h1>
+                <p class="phase-description">
+                    Inicia tu viaje de transformación. En esta fase explorarás tus 
+                    habilidades, los retos globales, la agenda 2030 y genererás ideas 
+                    antes de avanzar a la fase 2.</p>
+                <div class="notice notice--neutral" aria-hidden="true">
+                    <span class="notice__icon">
+                        <i class="fa-solid fa-info"></i>
+                    </span>
+                    <p class="notice__text">
+                        Completa los módulos progresivamente para ir desbloqueándolos de forma sucesiva.
+                    </p>
+                </div>
+            </div>
+
             <div class="cards-container">
                 <% submodulos.forEach(sub => { %>
                     <%- include('partials/card-modulos', {sub: sub }) %>
