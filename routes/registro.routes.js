@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
+const redirigirLogueado = require('../middlewares/redirigirLogueado.js');
+
 //Importar la función de token sy cookies
 const { generarYGuardarTokens } = require('../config/tokenUtils');
 
 //ruta para mostrar el form de registro
-router.get('/registro', (req, res) => {
+router.get('/registro', redirigirLogueado, (req, res) => {
     res.render('registro');
 });
 
