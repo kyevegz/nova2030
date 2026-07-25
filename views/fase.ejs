@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <title>Fase 1 | Nova 2030</title>
+</head>
+<body>
+    <div class="page">
+        <!--Llamada al sidebar-->
+        <%- include('partials/sidenavbar') %>
+
+        <!--Llamada al header-->
+        <%- include('partials/header') %>
+
+        <main class = "content">
+
+        <%- include('partials/fase-informacion') %>
+
+            <div class="cards-container">
+                <% submodulos.forEach(sub => { %>
+                    <%- include('partials/card-modulos', {sub: sub }) %>
+                
+                <% }) %>
+            </div>
+        </main>
+
+        <!--Llamada al sidebar anuncios-->
+        <%- include('partials/sidebar-anuncios') %>
+
+        <!--Llamada al footer-->
+        <%- include('partials/footer') %>
+        
+    </div>
+    
+</body>
+</html>

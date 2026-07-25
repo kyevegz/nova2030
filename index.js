@@ -28,6 +28,7 @@ const { generarYGuardarTokens } = require('./config/tokenUtils.js')
 //Middleware global para el header dinámico
 app.use(async (req, res, next) => {
     try {
+        //console.log("soy el 1");
         const accessToken = req.cookies.accessToken;//busca la cookie llamada jwt
         const refreshToken = req.cookies.refreshToken;//busca la cookie llamada jwt
 
@@ -35,6 +36,7 @@ app.use(async (req, res, next) => {
             try {
                 //si el token existe, se verifica y se guardan los datos en res.locals
                 const usuarioVerificado = jwt.verify(accessToken, process.env.JWT_SECRET);
+                //console.log(usuarioVerificado)
                 res.locals.usuarioVerificado = usuarioVerificado;
                 return next();
             } catch (error) {
@@ -42,6 +44,7 @@ app.use(async (req, res, next) => {
             }
         }
 
+        
         if (refreshToken) {
 
             try {
@@ -53,10 +56,12 @@ app.use(async (req, res, next) => {
                     [refreshToken, usuarioVerificado.id]
                 );
 
+               // console.log( "tokendb: ", tokenDB.length);
                 if (tokenDB.length > 0) {
                     //destruye el token viejo y busca los datos del usuario
                     await db.query(`DELETE FROM refresh_tokens WHERE token = ?`, [refreshToken]);
-                    const [usuarios] = await db.query(`SELECT id, usuario FROM usuarios WHERE id = ?`, [usuarioVerificado.id]);
+                    const [usuarios] = await db.query(`SELECT id, usuario, faseActual FROM usuarios WHERE id = ?`, [usuarioVerificado.id]);
+                    // console.log("del select en index", usuario)
                     const usuario = usuarios[0];
 
                     if (usuario) {
@@ -64,7 +69,7 @@ app.use(async (req, res, next) => {
                         await generarYGuardarTokens(usuario, res, usuarioVerificado.rememberMe);
 
                         //actualoza el header de manera global
-                        res.locals.usuarioVerificado = { id: usuario.id, usuario: usuario.usuario };
+                        res.locals.usuarioVerificado = { id: usuario.id, usuario: usuario.usuario, faseActual: usuario.faseActual };
                         return next();
                     }
                 }
@@ -112,9 +117,9 @@ app.use('/', indexPage);
 
 /*este fragmento modifica la ruta principal para que, en lugar de mandar 
 texxto, "renderice" la vista del index.ejs*/
-app.get('/', (req, res) => {
-    res.render('index');
-});
+// app.get('/', (req, res) => {
+//     res.render('index');
+// });
 
 
 
