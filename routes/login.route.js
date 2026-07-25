@@ -62,8 +62,9 @@ router.post('/login', async (req, res) => {
 
         //"recordarme" se convierte a booleando porque por default regresa on o su contrario, 
         // este booleano es escrito por si viene del fetch
-        const esRecordarme = recordarme === true || recordarme === 'true';
+        const esRecordarme = recordarme === true || recordarme === 'true' || recordarme === 'on';
 
+        //console.log(esRecordarme)
         //6 - se llama a la función , a la cual se delega la creación de tokens y cookies
 
         //se le pasa la decisón dinámica de mantener sesión, en este caso, esRecordarme
