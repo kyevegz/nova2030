@@ -147,7 +147,7 @@ router.post('/registro', async (req, res) => {
 
         //objeto rápido co los ddatos que la función necesita
 
-        const usuarioParaToken{
+        const usuarioParaToken = {
             id: idNuevoUsuario,
             usuario: usuario
         };

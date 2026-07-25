@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const db = require('../config/db');
 
 //importar la función
-const { generarGuardarTokens } = require('../config/tokenUtils');
+const { generarYGuardarTokens } = require('../config/tokenUtils');
 
 
 async function verificarToken(req, res, next) {
@@ -39,7 +39,7 @@ async function verificarToken(req, res, next) {
             //en tercer lugar, se genera un nuevo par de tokens usando la función de utils
             //pasa true para autologin
 
-            await generarGuardarTokens(usuario, res, true);
+            await generarYGuardarTokens(usuario, res, true);
             //guarda los datos del usuario decodificados en la petición para usarlos luego
             req.usuario = {id: usuario.id, usuario: usuario.usuario};
 

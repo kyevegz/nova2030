@@ -104,22 +104,22 @@ export function validarCoincidencia(inputOrigen, inputDestino, mensajeError) {
 export function validarNombreUsuario(inputId) {
     const input = document.getElementById(inputId);
     if (!input) return;
-    const valorUsuarioInput = usuarioInput.value.trim();
+    const valorUsuarioInput = input.value.trim();
     const palabrasReservadas = ['admin', 'root', 'soporte', 'nova2030', 'nova', 'administrador', 'sistema'];
     if (palabrasReservadas.includes(valorUsuarioInput.toLowerCase())) {
-        usuarioInput.setCustomValidity("Este nombre de usuario es reservado y no está permitido.");
+        input.setCustomValidity("Este nombre de usuario es reservado y no está permitido.");
         //mostrarErrorInput(usuarioInput.id, usuarioInput.validationMessage);
     } else if (valorUsuarioInput.length > 0 && (valorUsuarioInput.length < 3 || valorUsuarioInput.length > 20)) {
-        usuarioInput.setCustomValidity("Longitud de nombre de usuario superada, debe tener un mínimo de 3 caracteres y un máximo de 20");
+        input.setCustomValidity("Longitud de nombre de usuario superada, debe tener un mínimo de 3 caracteres y un máximo de 20");
     } else {
-        usuarioInput.setCustomValidity('');
-        if (usuarioInput.checkValidity()) limpiarErrorIndividual(usuarioInput.id);
+        input.setCustomValidity('');
+        if (input.checkValidity()) limpiarErrorIndividual(input.id);
     }
 
-    if (!usuarioInput.checkValidity()) {
-        mostrarErrorInput(usuarioInput.id, usuarioInput.validationMessage);
+    if (!input.checkValidity()) {
+        mostrarErrorInput(input.id, input.validationMessage);
     } else {
-        limpiarErrorIndividual(usuarioInput.id);
+        limpiarErrorIndividual(input.id);
     }
 }
 

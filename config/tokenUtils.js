@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const db = require('./db');
 
 //función exportable para gener ambos tokens
-async function generarGuardarTokens(usuarioEncontrado, res, mantenerSesion = false) {
+async function generarYGuardarTokens(usuarioEncontrado, res, mantenerSesion = false) {
 
     //6 - generar el access token vida corta
     const token = jwt.sign(
