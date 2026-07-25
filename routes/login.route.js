@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
+
+//importar la función chida de los tokens
+const { generarYGuardarTokens } = require('../config/tokenUtils');
 
 router.get('/login', (req, res) => {
     res.render('login');
@@ -10,7 +13,8 @@ router.get('/login', (req, res) => {
 
 router.post('/login', async (req, res) => {
     try{
-        let { identificador, contrasena } = req.body;
+        //extrae lo de "recordarme" del cuerpo de la petición
+        let { identificador, contrasena, recordarme } = req.body;
 
         //1 - Validación básica
         if(!identificador || !contrasena){
@@ -23,9 +27,8 @@ router.post('/login', async (req, res) => {
         const columnaFiltro = esCorreo ? 'correo': 'usuario';
 
         //si es correo, se pasa a minúsculas
-        if(esCorreo){
-            identificador = identificador.toLowerCase();
-        }
+        if(esCorreo) identificador = identificador.toLowerCase();
+        
 
         // 3 - Buscar en la base de datos dinamicamente
         const query = `SELECT id, ${columnaFiltro}, contrasena FROM usuarios WHERE ${columnaFiltro} = ?`;
@@ -49,30 +52,26 @@ router.post('/login', async (req, res) => {
             });
         }
 
-        //5 - generar el tokem jwt
-        const token = jwt.sign(
-            {
-                id: usuarioEncontrado.id,
-                [columnaFiltro]: usuarioEncontrado[columnaFiltro]
-            },
-            process.env.JWT_SECRET,
-            {
-                expiresIn: '2h'//el token expira en 2 horas
-            }
-        );
 
-        //guarda el token en una cookie HttpOnly, la cual es más segura que localStorage
-        res.cookie('jwt', token, {
-            httpOnly: true,//el cliente js no la puede robar
-            secure: process.env.NODE_ENV === 'production', //solo en https
-            maxAge: 2 * 60 * 60 * 1000//2 horas dd vida en ms
-        });
+        //SESIÓN AVANZADA
 
-        // 6 - Respuesta exitosa enviando el token
+        //6 - convertir el checkbox a un true o false estricto
+        //let {identificador, contrasena, recordarme} = req.body;
+
+        //"recordarme" se convierte a booleando porque por default regresa on o su contrario, 
+        // este booleano es escrito por si viene del fetch
+        const esRecordarme = recordarme === true || recordarme === 'true';
+
+        //6 - se llama a la función , a la cual se delega la creación de tokens y cookies
+
+        //se le pasa la decisón dinámica de mantener sesión, en este caso, esRecordarme
+        await generarYGuardarTokens(usuarioEncontrado, res, esRecordarme);
+
+        // 7 - Respuesta exitosa enviando el token
         return res.status(200).json({
             mensaje: "Inicio de sesión exitoso",
             //token: token, //manda el jwt al cliente
-            redirectUrl: "/"
+            redirectUrl: "/index"
         });
 
     }catch(error){
