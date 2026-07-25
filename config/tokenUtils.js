@@ -4,11 +4,14 @@ const db = require('./db');
 //función exportable para gener ambos tokens
 async function generarYGuardarTokens(usuarioEncontrado, res, mantenerSesion = false) {
 
-    //6 - generar el access token vida corta
-    const token = jwt.sign(
+    //1 - generar el access token de 15 minutos
+    
+    const accessToken = jwt.sign(
         {
             id: usuarioEncontrado.id,
-            [columnaFiltro]: usuarioEncontrado[columnaFiltro]
+            /*se asegura que usuario o correo vengan en el objeto, esto en el 
+            caso del login donde no podemos predecir con qué se va a loguear*/
+            usuario: usuarioEncontrado.usuario || usuarioEncontrado.correo
         },
         process.env.JWT_SECRET,
         {
@@ -16,10 +19,10 @@ async function generarYGuardarTokens(usuarioEncontrado, res, mantenerSesion = fa
         }
     );
 
-    //7 - generar el refresh token
+    //2 - generar el refresh token
     //si el usuario ha marcado "recordarme, dura 30 días, si no, será de 
     // sesión, por lo que no llevara expiresIn"
-    const opcionesRefresh = esRecordarme ? { expiresIn: '30d' } : {};
+    const opcionesRefresh = mantenerSesion ? { expiresIn: '30d' } : {};
 
     const refreshToken = jwt.sign(
         {
@@ -29,22 +32,26 @@ async function generarYGuardarTokens(usuarioEncontrado, res, mantenerSesion = fa
         opcionesRefresh
     );
 
-    //8 - guardar el refresh token en la bd (rotación base)
-    const insertQuery = `INSERT INT refresh_tokens (idUsuario, token) VALUES (?, ?)`;
+    //3 - guardar el refresh token en la bd (rotación base)
+    const insertQuery = `INSERT INTO refresh_tokens (idUsuario, token) VALUES (?, ?)`;
     await db.query(insertQuery, [usuarioEncontrado.id, refreshToken]);
 
-    const configRefreshCookie = {
+    //4 - configuracion para las cookies en HttpOnly
+    const cookieBaseConfig = {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production"
     };
 
-    res.cookie('accesToken', accessToken, {
-        ...cookieConfig,
+    //5 - enviar cookie del access token 15 minutos fijos
+    res.cookie('accessToken', accessToken, {
+        ...cookieBaseConfig,
         maxAge: 15 * 60 * 1000 //15 minutos en segundos
     });
 
+    // 6 - enviar la cookie del refresh de forma dinámica en base al recordarme
+    const configRefreshCookie = { ...cookieBaseConfig};
     if (mantenerSesion) {
-        cookieConfig.maxAge = 30 * 24 * 60 * 60 * 1000; // 30 días
+        configRefreshCookie.maxAge = 30 * 24 * 60 * 60 * 1000; // 30 días
     }
 
     res.cookie('refreshToken', refreshToken, configRefreshCookie);

@@ -31,7 +31,7 @@ router.post('/login', async (req, res) => {
         
 
         // 3 - Buscar en la base de datos dinamicamente
-        const query = `SELECT id, ${columnaFiltro}, contrasena FROM usuarios WHERE ${columnaFiltro} = ?`;
+        const query = `SELECT id, usuario, correo, contrasena FROM usuarios WHERE ${columnaFiltro} = ?`;
         const [usuarios] = await db.query(query, [identificador]);
 
         // si el arreglo regresa vacío, el usuario no existe
