@@ -61,7 +61,7 @@ app.use(async (req, res, next) => {
 
                     if (usuario) {
                         //genera el neuvo par de tokens y cookies sin interrumpir al usuario
-                        await generarYGuardarTokens(usuario, res, true);
+                        await generarYGuardarTokens(usuario, res, usuarioVerificado.rememberMe);
 
                         //actualoza el header de manera global
                         res.locals.usuarioVerificado = { id: usuario.id, usuario: usuario.usuario };

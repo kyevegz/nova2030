@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const db = require('./db');
 
 //función exportable para gener ambos tokens
-async function generarYGuardarTokens(usuarioEncontrado, res, mantenerSesion = false) {
+async function generarYGuardarTokens(usuarioEncontrado, res, mantenerSesion ) {
 
     //1 - generar el access token de 15 minutos
     
@@ -24,9 +24,11 @@ async function generarYGuardarTokens(usuarioEncontrado, res, mantenerSesion = fa
     // sesión, por lo que no llevara expiresIn"
     const opcionesRefresh = mantenerSesion ? { expiresIn: '30d' } : {};
 
+    //console.log("HOLa", mantenerSesion);
     const refreshToken = jwt.sign(
         {
             id: usuarioEncontrado.id, // el refresh token solo necesita el id
+            rememberMe: mantenerSesion
         },
         process.env.JWT_REFRESH_SECRET,//se usa la clave secreta
         opcionesRefresh
