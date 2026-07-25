@@ -220,6 +220,7 @@ h6 {
     --space-md: 16px;
     --space-lg: 24px;
     --space-xl: 32px;
+    --space-xxl: 80px;
 
     /*borders y esquinas*/
     --border-thin: 1px solid #1a1a1a;
@@ -1281,7 +1282,7 @@ disponible para no perderse o colapsar
     align-items: center;
     gap: var(--space-md);
     text-align: center;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-xxl);
 }
 
 .phase-title{
@@ -1303,23 +1304,30 @@ disponible para no perderse o colapsar
     gap: var(--space-sm);
     border-radius: var(--radius-full);
     font-family: var(--font-details);
-    font-weight: var(--weight-medium);
+    font-weight: var(--weight-bold);
     font-size: var(--font-size-xsmall);
     
     
 }
 
 .notice--neutral{
-    background-color: var(--cerulean-blue-100);
-    border: 1px solid var(--cerulean-blue-600);
+    background-color: color-mix(in srgb, var(--principal-title) 15%, transparent);
+    border: 1px solid var(--cerulean-blue-700);
     color: var(--cerulean-blue-950);
 }
 
 .notice__icon{
-    border: 1px solid var(--cerulean-blue-900);
+    border: 2px solid var(--cerulean-blue-950);
     border-radius: 50%;
     display: block;
     
+    /*para círculo perfecto*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--space-lg);
+    height: var(--space-lg);
+    flex-shrink: 0;/*evita que el círculo se deforme en las pantallas pequeñas*/
 }
 
 /*MEDIA QUERIES*/
