@@ -49,7 +49,7 @@ router.get('/fase/1/modulo/:idModulo', verificarToken, async (req, res) => {
         
         //2 - aquí entrarán las consultas del contenido del modulo
 
-        console.log(moduloActual[0]);
+        //console.log(moduloActual[0]);
         //rederización de la vista del modulo, donde se puede cambiar fase1 por otra plantilla
         res.render('contenido-modulo', {
             moduloActual: moduloActual[0],

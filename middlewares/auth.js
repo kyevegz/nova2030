@@ -19,11 +19,11 @@ async function verificarToken(req, res, next) {
 
         try{
             //verifica si el token de 15 minutos es válido
-        const usuarioVerificado = jwt.verify(accessToken, process.env.JWT_REFRESH_SECRET);
+        const usuarioVerificado = jwt.verify(accessToken, process.env.JWT_SECRET);
         
         //se los pasa a la ruta y al header con res.locals
         req.usuario = usuarioVerificado;
-        res.locals.usuarioVerificado = usuarioVerificado;
+        //res.locals.usuarioVerificado = usuarioVerificado;
 
         return next();//todo en orden, puede avanzar a la ruta sin tocar la bd
         }catch(error){
@@ -62,7 +62,7 @@ async function verificarToken(req, res, next) {
             
             //guarda los datos del usuario decodificados en la petición, se pasana ctualizados al req.usuario y el locals del header dinámico
             req.usuario = {id: usuario.id, usuario: usuario.usuario};
-            res.locals.usuarioVerificado = req.usuario;
+            //res.locals.usuarioVerificado = req.usuario;
 
             return next(); // indica que todo está bien, que se puede pasar a la siguiente función
         } catch (error) {
