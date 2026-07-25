@@ -2,48 +2,49 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+//Importar la función de token sy cookies
+const { generarYGuardarTokens } = require('../config/tokenUtils');
 
 //ruta para mostrar el form de registro
-router.get('/registro', (req, res) =>{
+router.get('/registro', (req, res) => {
     res.render('registro');
 });
 
 //ruta que procesará el registro
 router.post('/registro', async (req, res) => {
-    try{
+    try {
         //0 Limpiar espacios en blanco (por si acaso)
-        Object.keys(req.body).forEach( key => {
-            if(typeof req.body[key] === 'string' && !key.includes('contrasena')){
+        Object.keys(req.body).forEach(key => {
+            if (typeof req.body[key] === 'string' && !key.includes('contrasena')) {
                 req.body[key] = req.body[key].trim();
             }
         });
 
         //0.1 - correo a minúsculas
-        if(req.body.correo) req.body.correo = req.body.correo.toLowerCase();
+        if (req.body.correo) req.body.correo = req.body.correo.toLowerCase();
 
         //1 - extrae los datos que bienen del for, un req.body
-        const {nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, correoConfirmar, contrasena, contrasenaConfirmar } = req.body;
+        const { nombre, apellidop, apellidom, fechaNacimiento, usuario, correo, correoConfirmar, contrasena, contrasenaConfirmar } = req.body;
 
 
         //1.5 validación de longitudes
         const reglasLongitud = [
-            {campo: "nombre", valor: nombre, min:2, max:100, msg: "El nombre debe tener entre 2 y 100 caracteres"},
-            {campo: "apellidop", valor: apellidop, min:2, max:100, msg: "El apellido paterno debe tener entre 2 y 100 caracteres"},
-            {campo: "apellidom", valor: apellidom, min:2, max:100, msg: "El apellido materno debe tener entre 2 y 100 caracteres"},
-            {campo: "correo", valor: nombre, min:5, max:150, msg: "El correo electrónico debe tener mínimo 5 caracteres y no puede superar los 150 caracteres"}
+            { campo: "nombre", valor: nombre, min: 2, max: 100, msg: "El nombre debe tener entre 2 y 100 caracteres" },
+            { campo: "apellidop", valor: apellidop, min: 2, max: 100, msg: "El apellido paterno debe tener entre 2 y 100 caracteres" },
+            { campo: "apellidom", valor: apellidom, min: 2, max: 100, msg: "El apellido materno debe tener entre 2 y 100 caracteres" },
+            { campo: "correo", valor: nombre, min: 5, max: 150, msg: "El correo electrónico debe tener mínimo 5 caracteres y no puede superar los 150 caracteres" }
         ];
 
-        for(let regla of reglasLongitud){
-            if(regla.valor && (regla.valor.length <regla.min || regla.valor.length > regla.max)){
-                return res.status(400).json({campo: regla.campo, error: regla.msg});
+        for (let regla of reglasLongitud) {
+            if (regla.valor && (regla.valor.length < regla.min || regla.valor.length > regla.max)) {
+                return res.status(400).json({ campo: regla.campo, error: regla.msg });
             }
         }
 
         //2 - palabras reservadas para nombre de usuario
         const palabrasReseverdas = ['admin', 'root', 'soporte', 'nova2030', 'nova', 'administrador', 'sistema'];
-        if(palabrasReseverdas.includes(usuario.toLowerCase())){
-            return res.status(400).json({campo: "usuario", error: "El nombre de usuario ingresado es reservado, por lo que su uso no es permitido"});
+        if (palabrasReseverdas.includes(usuario.toLowerCase())) {
+            return res.status(400).json({ campo: "usuario", error: "El nombre de usuario ingresado es reservado, por lo que su uso no es permitido" });
         }
 
         //3 - contraseña robusta, verificar su tamaño y que contenga caracteres seguros
@@ -53,42 +54,42 @@ router.post('/registro', async (req, res) => {
         const contieneSimbolos = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/;
 
         //checar que cumpla con todas las reglas
-        if(contrasena.length < 8 ){
-            return res.status(400).json({campo: "contrasena", error: "La contraseña debe tener mínimo 8 caracteres"});
+        if (contrasena.length < 8) {
+            return res.status(400).json({ campo: "contrasena", error: "La contraseña debe tener mínimo 8 caracteres" });
         }
-        if(!contieneMayus ){
-            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 mayúscula"});
+        if (!contieneMayus) {
+            return res.status(400).json({ campo: "contrasena", error: "La contraseña debbe tener mínimo 1 mayúscula" });
         }
-        if( !contieneMinus ){
-            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 minúscula"});
+        if (!contieneMinus) {
+            return res.status(400).json({ campo: "contrasena", error: "La contraseña debbe tener mínimo 1 minúscula" });
         }
-        if(!contieneNumeros ){
-            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 número"});
+        if (!contieneNumeros) {
+            return res.status(400).json({ campo: "contrasena", error: "La contraseña debbe tener mínimo 1 número" });
         }
-        if(!contieneSimbolos){
-            return res.status(400).json({campo: "contrasena", error:"La contraseña debbe tener mínimo 1 símbolo especial"});
+        if (!contieneSimbolos) {
+            return res.status(400).json({ campo: "contrasena", error: "La contraseña debbe tener mínimo 1 símbolo especial" });
         }
 
 
         //4 - comparación de correos y contraseñas
-        if(correo !== correoConfirmar){
-            return res.status(400).json({campo: "correoConfirmar", error: "Los correos no coinciden"});
+        if (correo !== correoConfirmar) {
+            return res.status(400).json({ campo: "correoConfirmar", error: "Los correos no coinciden" });
         }
 
-        if(contrasena != contrasenaConfirmar){
-            return res.status(400).json({campo: "contrasenaConfirmar", error: "Las contraseñas no coinciden"});
+        if (contrasena != contrasenaConfirmar) {
+            return res.status(400).json({ campo: "contrasenaConfirmar", error: "Las contraseñas no coinciden" });
         }
-        
+
         //5 - verifica que no haya nombre de usuario o correo ya registrado
         //5.1 si el usuario existe
         const checkQueryUser = `SELECT * FROM usuarios WHERE usuario = ?`;
         const [usuariosExistentes] = await db.query(checkQueryUser, [usuario]);
-        
-        if(usuariosExistentes.length > 0){
+
+        if (usuariosExistentes.length > 0) {
             //detiene el proces y manda error 400 de bad request
-            return res.status(400).json({campo: "usuario", error: "Este nombre de usuario ya está en uso"});
+            return res.status(400).json({ campo: "usuario", error: "Este nombre de usuario ya está en uso" });
         }
-        
+
 
 
         //5.2 verifica si el correo existe
@@ -96,9 +97,9 @@ router.post('/registro', async (req, res) => {
         const [CorreosExistentes] = await db.query(checkQueryMail, [correo]);
 
         //si el array tiene al menos un elemento, quiere decir que ya existe
-        if(CorreosExistentes.length > 0){
+        if (CorreosExistentes.length > 0) {
             //detiene el proces y manda error 400 de bad request
-            return res.status(400).json({campo: "correo", error: "Este correo ya se encuentra registrado"});
+            return res.status(400).json({ campo: "correo", error: "Este correo ya se encuentra registrado" });
         }
 
         //TRAS PASAR LA BARRERA DE VERIFICACIÓN
@@ -135,34 +136,28 @@ router.post('/registro', async (req, res) => {
         })
 
         //8.3 - inserción múltiple en la bd de golpe
-        if(valoresProgreso.length > 0){
+        if (valoresProgreso.length > 0) {
             await db.query(`
                 INSERT INTO progreso_usuarios (idUsuario, idModulo, desbloqueado, completado)
                 VALUES ?    
             `, [valoresProgreso]);
         }
-        
-        //8.4- generar el tokem jwt para auto login
-                const token = jwt.sign(
-                    {
-                        id: idNuevoUsuario,
-                        usuario: usuario
-                                            
-                    },
-                    process.env.JWT_SECRET,
-                    {
-                        expiresIn: '2h'//el token expira en 2 horas
-                    }
-                );
-        
-                //guarda el token en una cookie HttpOnly, la cual es más segura que localStorage
-                res.cookie('jwt', token, {
-                    httpOnly: true,//el cliente js no la puede robar
-                    secure: process.env.NODE_ENV === 'production', //solo en https
-                    maxAge: 2 * 60 * 60 * 1000//2 horas dd vida en ms
-                });
 
-        
+        //8.4- auto login con doble token
+
+        //objeto rápido co los ddatos que la función necesita
+
+        const usuarioParaToken = {
+            id: idNuevoUsuario,
+            usuario: usuario
+        };
+
+        //se llama a la función, se delega la creación de tokens y cookies
+        //se le pasa true directamente por decisión de UX, porque al no haber 
+        // checkbox, simplemente se inciia el autologin
+        await generarYGuardarTokens(usuarioParaToken, res, true);
+
+
         //9 - respuesta de éxito
         return res.status(201).json({
             mensaje: "Cuenta creada con éxito",
@@ -171,9 +166,9 @@ router.post('/registro', async (req, res) => {
 
         //res.send("USUARIO REGISTRADO con bcrypt");
 
-    }catch (error){
+    } catch (error) {
         console.error("ERROR AL REGISTRAR USUARIO: ", error);
-        res.status(500).json({error: "ERROR EN EL SERVIDOR AL QUERER HACER EL REGISTRO"});
+        res.status(500).json({ error: "ERROR EN EL SERVIDOR AL QUERER HACER EL REGISTRO" });
     }
 });
 

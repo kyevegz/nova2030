@@ -13,7 +13,7 @@
                     <div class="header__progress-container">
 
                         <!--IZQUIERDA. Cuadrito para fase x y botón de regresar-->
-                        <div class="header__progressbar-action }">
+                        <div class="header__progressbar-action ">
                             <% if(locals.esModulo) { %>
                                 <!--Si ya está en un modulo, pone el botón de regresar-->
                                 <a href="/fase/1" class="header__btn-back" aria-label="Regresar a Fase 1">
@@ -31,7 +31,7 @@
                                     <a href="/fase/1" class="header__breadcrumb-link">Fase 1</a>
                                     <span class="header__seperator">></span>
                                     <!--Imprime dinámicamente el nombre del módulo-->
-                                    <a aria-current="page"><%= locals.moduloActual.nombre %></a>
+                                    <a aria-current="page"><%= locals.moduloActual.titulo %></a>
                                 </nav>
                             <% } else { %>
                                 <p class="header__progressbar-text">Progreso</p>
@@ -72,12 +72,12 @@
 
         <!--Parte dinámica con cookie de jwt-->
         <div class="nav-mini__options">
-            <% if(locals.usuarioVerificado){ %>
+            <% if(typeof usuarioVerificado !== 'undefined' && usuarioVerificado){ %>
 
                 
 
                         <!--Si ya inició sesión, se muestran datos de usuario-->
-                        <span class="nav-mini__item">Hola, <%= locals.usuarioVerificado.usuario %></span>
+                        <span class="nav-mini__item">Hola, <%= usuarioVerificado.usuario %></span>
                         <a href="/perfil" class="nav-mini__item"><i class="fa-solid fa-circle-user"></i></a>
                         <% } else{ %>
                             <!--Si no hay sesión activa-->

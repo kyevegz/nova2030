@@ -10,6 +10,7 @@ router.get('/fase/1', verificarToken, async (req, res) => {
         //nos aseguramos de que los nombres coincidan (esto con lo guardado en el token)
         const idUsuario = req.usuario.id;
 
+        
         /*en el select se hace un JOIN para que, trayendo toda la info de 
         los módulos, se pegue el estado de el campo desbloqueado y completado 
         de el usuario actual*/
@@ -21,7 +22,12 @@ router.get('/fase/1', verificarToken, async (req, res) => {
             ORDER BY modul.id ASC
         `, [1, idUsuario]);
 
-        res.render('fase1', { submodulos, mostrarProgreso: true, esModulo: false });
+        res.render('fase1', { 
+            submodulos, 
+            mostrarProgreso: true, 
+            esModulo: false,
+            usuarioVerificado: req.usuario // Inyección directa
+         });
 
     }catch (error){
         console.error(error);
@@ -43,11 +49,13 @@ router.get('/fase/1/modulo/:idModulo', verificarToken, async (req, res) => {
         
         //2 - aquí entrarán las consultas del contenido del modulo
 
+        //console.log(moduloActual[0]);
         //rederización de la vista del modulo, donde se puede cambiar fase1 por otra plantilla
         res.render('contenido-modulo', {
             moduloActual: moduloActual[0],
             mostrarProgreso: true,
-            esModulo: true //activará el botón de regresar y cambiará los elementos de la barra
+            esModulo: true, //activará el botón de regresar y cambiará los elementos de la barra
+            usuarioVerificado: req.usuario // Inyección directa
         });
         
     }catch(error){
