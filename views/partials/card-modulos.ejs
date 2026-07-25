@@ -11,7 +11,7 @@
         <!-- Analiza el punto de dónde partes, qué es lo que sabes y lo que te falta. -->
         <%= sub.descripcion %>
     </p>
-    <a <%= sub.desbloqueado === 1 ? `href=/fase/1/modulo/${sub.id}` : '' %> class="card__button  <%= sub.desbloqueado === 0 ? 'card__button--block' : '' %>">
+    <a <%= sub.desbloqueado === 1 ? `href=/fase/${sub.fase}/modulos/modulo-${sub.id}` : '' %> class="card__button  <%= sub.desbloqueado === 0 ? 'card__button--block' : '' %>">
         <span class="card__button-text">
             <%= sub.desbloqueado===1 ? 'Ir' : 'Bloqueado' %>
         </span>
