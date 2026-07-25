@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
+const redirigirLogueado = require('../middlewares/redirigirLogueado.js');
 //const jwt = require('jsonwebtoken');
 
 //importar la función chida de los tokens
 const { generarYGuardarTokens } = require('../config/tokenUtils');
 
-router.get('/login', (req, res) => {
+//redirigir logueado se coloca como parámetro antes de que renderice la vista
+router.get('/login', redirigirLogueado, (req, res) => {
     res.render('login');
 });
 
