@@ -240,6 +240,9 @@ h6 {
     --z-intermediate: 75;
     --z-modal: 100;
 
+    /*fill de progressbar*/
+    --progress-width: 50%;
+
     --border: 2px solid black;
 }
 /*ESTILOS BASE (ETIQUETAS LIMPIAS)*/
@@ -1017,7 +1020,7 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 .progress-bar__fill{
     background-color: var(--bright-sun-400);
     height: 100%;
-    width: 50%;
+    width: var(--progress-width, 50%);
     transition: width 0.3s ease-in-out;
 }
 
