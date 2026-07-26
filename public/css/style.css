@@ -1333,6 +1333,20 @@ disponible para no perderse o colapsar
     flex-shrink: 0;/*evita que el círculo se deforme en las pantallas pequeñas*/
 }
 
+.mailbox-faq{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    height: 100%;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    padding: var(--space-xs) var(--space-md);
+    border-left: 2px solid var(--shark-500);
+    margin: 0;
+    /* border-radius: var(--radius-smooth); */
+}
+
 /*MEDIA QUERIES*/
 
 /*--------------------
