@@ -36,7 +36,7 @@
                             <% } else { %>
                                 <p class="header__progressbar-text">Progreso</p>
                                 <span class="header__progressbar-text">
-                                    50%
+                                    <%= locals.porcentaje%> %
                                 </span>
                             <% } %>
 
@@ -50,10 +50,10 @@
                             <% if(locals.esModulo){ %>
                                 <p class="header__progressbar-text">Progreso</p>
                                 <span class="header__progressbar-text">
-                                    50%
+                                    <%= locals.porcentaje%> %
                                 </span>
                             <% } else { %>
-                                <div class="header__container-progressbar progress-bar" role = "progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                <div class="header__container-progressbar progress-bar" role = "progressbar" aria-valuenow=<%= locals.porcentaje%> aria-valuemin="0" aria-valuemax="100">
                                     <div class="header__progress-bar progress-bar__fill"></div>
                                 </div>
                             <% } %>

@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const verificarToken = require('../middlewares/auth');
+const {progresoPorFaseUsr} = require('../utils/progresoUtils.js');
 
 /*informacion fija de las fases de nova, se hace un diccionario 
- para no crear una tabla en la bd y aumentar las consultas 
+para no crear una tabla en la bd y aumentar las consultas 
 desde express*/
 const dicFases = {
     1: {
@@ -34,7 +35,11 @@ router.get('/fase/:numFase', verificarToken, async (req, res) => {
         `, [idUsuario]);
 
         //validar que el usuario existe en la bd porque peor si lo elominé por violar las reglas
-        if(rows.length === 0) return res.redirect('/login');
+        if(rows.length === 0) {
+            return res.redirect('/login');
+        }
+
+        const usuarioFase = rows[0];
         
         if(fasePedida > usuarioFase.faseActual){
             return res.redirect(`/fase/${usuarioFase.faseActual}`);
@@ -59,9 +64,15 @@ router.get('/fase/:numFase', verificarToken, async (req, res) => {
             ORDER BY modul.id ASC
         `, [numFase, idUsuario]);
 
+
+        //const modulosCompletados = 1, totalModulos = 5;
+        
+        const porcentajeActual = await progresoPorFaseUsr(idUsuario, numFase);
+        console.log(porcentajeActual)
         //usa unna sola vista para las 3 fases
         res.render('fase', {
             numFase, //cambia el título dinámicamente
+            porcentaje: porcentajeActual,
             submodulos,
             mostrarProgreso: true,
             esModulo: false,
@@ -110,10 +121,12 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', verificarToken, async (req
         /*Dado que cada módulo tiene contenido diferente, se buscará dinámicamente el
         archivo correspondiente, basado en la nomenclatura modulo-x, donde x es
         el número de modulo que intenta consultar */
+        const porcentajeActual = await progresoPorFaseUsr(idUsuario, numFase);
 
         res.render(`modulos/modulo-${idModulo}`, {
             moduloActual: moduloActual[0],
             numFase,
+            porcentaje: porcentajeActual,
             mostrarProgreso: true,
             esModulo: true, //activará el botón de regresar y cambiará los elementos de la barra
             usuarioVerificado: req.usuario // Inyección directa
