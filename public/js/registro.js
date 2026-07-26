@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById('registroForm');
     const paso1 = document.getElementById('paso1');
     const paso2 = document.getElementById('paso2');
-    const barraProgreso = document.getElementById('barraProgreso');
+    const barraProgreso = document.querySelector('.progress-bar__fill');
     const btnSig = document.getElementById('btnSig');
     const btnAnter = document.getElementById('btnAnter');
     const labelPaso1 = document.getElementById('labelPaso1');
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 //actualizar la barra de progreso a 100%
 
-                barraProgreso.style.width = "100%";
+                barraProgreso.style.setProperty('--progress-width', '100%');
                 labelPaso1.classList.remove('form-progress__label--active');
                 labelPaso2.classList.add('form-progress__label--active');
             } else {
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
             paso2.classList.replace('form__step--active', 'form__step--hidden');
             paso1.classList.replace('form__step--hidden', 'form__step--active');
 
-            barraProgreso.style.width = "50%";
+            barraProgreso.style.setProperty('--progress-width', '50%');
             labelPaso2.classList.remove('form-progress__label--active');
             labelPaso1.classList.add('form-progress__label--active');
         });
