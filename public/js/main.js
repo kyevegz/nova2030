@@ -32,15 +32,15 @@ document.addEventListener("DOMContentLoaded", () => {
     //se ejecuta solo si banner existe en la página
     if(banner){
         //si el usuario ya ha cerrado el banner en la sesión local actual, se oculta de inmediato
-        if(sessionStorage.getItem('bannerCerrado') === 'true'){
-            banner.style.display = 'none';
-        }else{
+        if(sessionStorage.getItem('bannerCerrado') !== 'true'){
+            banner.style.display = 'flex';
+        }
             //si no lo ha cerrado, se queda escuchando el clic de cerrar
             btnCerrar.addEventListener('click', () => {
                 banner.style.display = 'none';
                 sessionStorage.setItem('bannerCerrado', 'true');
             });
-        }
+        
     }
 });
 

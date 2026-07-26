@@ -660,7 +660,7 @@ details[open] .submenu__icon-deploy{
     BANNER PARA REGISTRO
 ~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .top-banner{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background: linear-gradient(
