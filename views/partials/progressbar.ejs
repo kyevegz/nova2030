@@ -1,0 +1,9 @@
+<div class="progress-bar" 
+    role="progressbar" 
+    aria-valuenow= "<%= porcentajeActual = (typeof locals.porcentaje !== 'undefined') ? locals.porcentaje : 50%>%";
+    aria-valuemin="0" aria-valuemax="100">
+
+    <div class="progress-bar__fill" 
+        style="--progress-width: <%= porcentajeActual = (typeof locals.porcentaje !== 'undefined') ? locals.porcentaje : 50%>%;">
+    </div>
+</div>
