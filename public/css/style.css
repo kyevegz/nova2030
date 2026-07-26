@@ -663,13 +663,16 @@ details[open] .submenu__icon-deploy{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--observatory-100);
+    background: linear-gradient(
+        45deg,  var(--cerise-200), var(--cerise-100), var(--cerise-50), var(--cerise-200)
+    );
+    /* background-color: var(--observatory-100); */
     padding: var(--space-xs) var(--space-md);
     font-family: var(--font-details);
     position: relative;
     text-align: center;
-    border-radius: var(--radius-smooth);
-    border: 1px solid var(--observatory-400);
+    /* border-radius: var(--radius-smooth); */
+    /* border: 1px solid var(--observatory-400); */
 }
 
 .top-banner__text{
