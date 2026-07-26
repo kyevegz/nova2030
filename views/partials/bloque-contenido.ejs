@@ -1,0 +1,22 @@
+<div class="content--lock">
+    <!--Fondo semitransparente-->
+    <div class="content-lock__overlay"></div>
+
+    <!--Caja central con el mensaje-->
+    <div class="content-lock__message">
+        <div class="content-lock__icon">
+            <i class="fa-solid fa-lock"></i>
+        </div>
+
+
+        <%id(tipo === 'sinCuenta'){ %>
+            <h2 class="content-lock__title">Contenido exclusivo</h2>
+            <p class="content-lock__text">Descubre todas las fases creando tu cuenta</p>
+
+        <% } else if(tipo === 'faseBloqueada') { %>
+            <h2 class="content-lock__title">Fase bloqueada</h2>
+            <p class="content-lock__text">Debes completar la fase anterior 
+                para acceder al contenido de esta etapa</p>
+        <% } %>
+    </div>
+</div>
