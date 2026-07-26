@@ -12,13 +12,13 @@
     <!--Llamada al header-->
     <%- include('../partials/header') %>
 
-    <main class="content <%= typeof estadoBloqueado != 'undefinided' && estadoBloqueado ? 'content--locked' : ''%>">
+    <main class="content <%= typeof estadoBloqueado != 'undefined' && estadoBloqueado ? 'content--locked' : ''%>">
         
-        <div class="content__restricted-area">
+        <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
             soy modulo 1, estoy desbloqueado
         </div>
         <% if(typeof estadoBloqueado !== 'undefined' && estadoBloqueado) { %>
-            <%- include('partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+            <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
         <% } %>
     </main>
 

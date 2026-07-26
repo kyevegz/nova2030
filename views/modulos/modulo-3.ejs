@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('partials/head') %>
+    <%- include('../partials/head') %>
     <title>hola</title>
 </head>
 <body>
     <div class="page">
 <!--Llamada al sidebar-->
-    <%- include('partials/sidenavbar') %>
+    <%- include('../partials/sidenavbar') %>
 
     <!--Llamada al header-->
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
-    <main class="content">
-soy modulo 3, no estoy desbloqueado    
+    <main class="content <%= typeof estadoBloqueado != 'undefined' && estadoBloqueado ? 'content--locked' : ''%>">
+        
+        <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            soy modulo 2, estoy bloqueado
+        </div>
+        <% if(typeof estadoBloqueado !== 'undefined' && estadoBloqueado) { %>
+            <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+        <% } %>
     </main>
 
 
     <!--Llamada al sidebar anuncios-->
-    <%- include('partials/sidebar-anuncios') %>
+    <%- include('../partials/sidebar-anuncios') %>
     <!--Llamada al footer-->
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
     </div>
     
 </body>

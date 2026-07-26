@@ -3,21 +3,25 @@
     <div class="content-lock__overlay"></div>
 
     <!--Caja central con el mensaje-->
-    <div class="content-lock__message">
-        <div class="content-lock__icon">
-            <i class="fa-solid fa-lock"></i>
+    <div class="content-lock__alert">
+        
+        <i class="fa-solid fa-lock content-lock__icon"></i>
+       
+        <div class="content-lock__body">
+            <%if(tipo === 'sinCuenta'){ %>
+                <h2 class="content-lock__title">Contenido exclusivo</h2>
+                <p class="content-lock__text">Descubre todas las fases creando tu cuenta</p>
+                <%- include('banner-registro') %>
+            <% } else if(tipo === 'faseBloqueada') { %>
+                <h2 class="content-lock__title">Fase bloqueada</h2>
+                <p class="content-lock__text">Debes completar la fase anterior 
+                    para acceder al contenido de esta etapa</p>
+                
+            <% } else if(tipo === 'moduloBloqueado') { %>
+                <h2 class="content-lock__title">Módulo bloqueado</h2>
+                <p class="content-lock__text">Completa los módulos progresivamente para irlos desbloqueando</p>
+                
+            <% } %>
         </div>
-
-
-        <%if(tipo === 'sinCuenta'){ %>
-            <h2 class="content-lock__title">Contenido exclusivo</h2>
-            <p class="content-lock__text">Descubre todas las fases creando tu cuenta</p>
-
-        <% } else if(tipo === 'faseBloqueada') { %>
-            <h2 class="content-lock__title">Fase bloqueada</h2>
-            <p class="content-lock__text">Debes completar la fase anterior 
-                para acceder al contenido de esta etapa</p>
-            <%- include('banner-registro') %>
-        <% } %>
     </div>
 </div>

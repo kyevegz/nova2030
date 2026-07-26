@@ -127,7 +127,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
         const { numFase, idModulo } = req.params;
 
         //Declaración de variables
-        let porcentajeActual = 0, estadoBloqueado = 'false';
+        let porcentajeActual = 0, estadoBloqueado = false;
         const [moduloActual] = await db.query(`
             SELECT * FROM modulos WHERE id = ?
             `, [idModulo]);
@@ -145,20 +145,21 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             estadoBloqueado = 'sinCuenta';
         } else {
             //CASOS 2 Y 3
-            const idUsuario = req.usuario.id;
+            const idUsuario = usuario.id;
             porcentajeActual = await progresoPorFaseUsr(idUsuario, numFase);
             const [progreso] = await db.query(`
                 SELECT desbloqueado 
                 FROM progreso_usuarios 
                 WHERE idUsuario = ? AND idModulo = ?
             `, [idUsuario, idModulo]);
-            if (progreso.length === 0 || progreso[0].desbloqueado === 0) estadoBloqueado = 'moduloBloqueado';
+            if (progreso.length === 0 || progreso[0].desbloqueado === 0) {estadoBloqueado = 'moduloBloqueado'};
         }
 
         //2 - renderización de moldes diferentes
         /*Dado que cada módulo tiene contenido diferente, se buscará dinámicamente el
         archivo correspondiente, basado en la nomenclatura modulo-x, donde x es
         el número de modulo que intenta consultar */
+        console.log(estadoBloqueado);
 
         res.render(`modulos/modulo-${idModulo}`, {
             moduloActual: moduloActual[0],

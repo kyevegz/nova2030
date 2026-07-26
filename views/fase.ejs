@@ -15,12 +15,12 @@
         <!--Si el estado = bloqueado existe, se añade el modifier --locked 
         apaga los clics en css
         -->
-        <main class = "content <%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content--locked' : %>">
+        <main class = "content <%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content--locked' :'' %>">
 
         
 
             <!--Agrupa para poder difumuniar-->
-            <div class="content__restricted-area">
+            <div class=" <%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
                 <%- include('partials/fase-informacion') %>
                 <div class="cards-container">
                     <% submodulos.forEach(sub => { %>
