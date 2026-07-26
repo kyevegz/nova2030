@@ -26,7 +26,7 @@ const progresoPorFaseUsr = async (idUsuario, numFase) => {
 
     if(!resultado) return 0;
 
-    console.log("totales: ", resultado.totalModF)
+    //console.log("totales: ", resultado.totalModF)
     return calcularPorcentajeProgreso(resultado.totalModCompletos, resultado.totalModF);
 }
 module.exports = {

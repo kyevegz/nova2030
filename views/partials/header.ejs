@@ -16,11 +16,11 @@
                         <div class="header__progressbar-action ">
                             <% if(locals.esModulo) { %>
                                 <!--Si ya está en un modulo, pone el botón de regresar-->
-                                <a href="/fase/1" class="header__btn-back" aria-label="Regresar a Fase 1">
+                                <a href="/fase/<%= locals.numFase %>" class="header__btn-back" aria-label="Regresar a Fase 1">
                                     <i class="fa-solid fa-circle-left"></i>
                                 </a>
                             <% } else{ %>
-                                <span class = "header__progressbar-action-phase">Fase 1</span>
+                                <span class = "header__progressbar-action-phase">Fase <%= locals.numFase%></span>
                             <% } %>   
                         </div>
 
@@ -28,7 +28,7 @@
                         <div class="header__progress-row header__progress-row--top">
                             <% if(locals.esModulo && locals.moduloActual) {%>
                                 <nav aria-label="Migas de pan"  class="header__breadcrumbs">
-                                    <a href="/fase/1" class="header__breadcrumb-link">Fase 1</a>
+                                    <a href="/fase/<%= locals.numFase%>" class="header__breadcrumb-link">Fase <%= locals.numFase%></a>
                                     <span class="header__seperator">></span>
                                     <!--Imprime dinámicamente el nombre del módulo-->
                                     <a aria-current="page"><%= locals.moduloActual.titulo %></a>
