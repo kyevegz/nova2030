@@ -709,7 +709,7 @@ details[open] .submenu__icon-deploy{
 /*BLOQUEO DE CONTENIDO*/
 .content--locked{
     position: relative;
-    
+    overflow:clip;
 }
 
 /*el contenido real detrás del candado*/
@@ -749,6 +749,7 @@ details[open] .submenu__icon-deploy{
 .content-lock__alert{
     position: sticky;
     top: 20%;
+    
     z-index: 20;
     pointer-events: auto;
     background-color: var(--cerise-100);
@@ -759,12 +760,13 @@ details[open] .submenu__icon-deploy{
     box-shadow: 0 10px 25px rgba(0, 86, 207, 0.15);
     width: 90%;
     max-width: 450px;
-    margin: 20vh auto 0 auto;
+    margin: 15vh auto;
     
 
 }
 
 .content-lock__title{
+    font-family: var(--font-details);
     color: var(--cerise-800);
     font-size: var(--font-size-h2);
     margin-bottom: var(--space-xs);
@@ -772,6 +774,7 @@ details[open] .submenu__icon-deploy{
 }
 
 .content-lock__text{
+    font-family: var(--font-body);
     color: var(--text-colour);
     font-size: var(--font-size-body);
     margin-bottom: 0;
@@ -792,7 +795,10 @@ details[open] .submenu__icon-deploy{
     width: 100%;
 }
 
-
+.content-lock__link{
+    color: var(--principal-title);
+    font-weight: var(--weight-bold);
+}
 /*---------------------------
 
     COMPONENTES ESPECÍFICOS
