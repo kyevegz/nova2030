@@ -1,7 +1,7 @@
 <header class="header">
     <!--Inyección de banner para usuarios invitados-->
-    <% if(typeof usuarioVerificado === 'undefined' && !usuarioVerificado){ %>
-        <%- include('partials/banner-registro') %>
+    <% if(typeof usuarioVerificado === 'undefined' || !usuarioVerificado){ %>
+        <%- include('banner-registro') %>
     <% } %>
     <nav class="nav-mini">
         <div class="nav-mini__options">
