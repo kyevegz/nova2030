@@ -1,4 +1,4 @@
-<div class="content--lock">
+<div class="content-lock">
     <!--Fondo semitransparente-->
     <div class="content-lock__overlay"></div>
 
@@ -9,7 +9,7 @@
         </div>
 
 
-        <%id(tipo === 'sinCuenta'){ %>
+        <%if(tipo === 'sinCuenta'){ %>
             <h2 class="content-lock__title">Contenido exclusivo</h2>
             <p class="content-lock__text">Descubre todas las fases creando tu cuenta</p>
 
@@ -17,6 +17,7 @@
             <h2 class="content-lock__title">Fase bloqueada</h2>
             <p class="content-lock__text">Debes completar la fase anterior 
                 para acceder al contenido de esta etapa</p>
+            <%- include('banner-registro') %>
         <% } %>
     </div>
 </div>

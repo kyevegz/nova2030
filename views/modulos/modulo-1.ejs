@@ -12,8 +12,14 @@
     <!--Llamada al header-->
     <%- include('../partials/header') %>
 
-    <main class="content">
-soy modulo 1, estoy desbloqueado
+    <main class="content <%= typeof estadoBloqueado != 'undefinided' && estadoBloqueado ? 'content--locked' : ''%>">
+        
+        <div class="content__restricted-area">
+            soy modulo 1, estoy desbloqueado
+        </div>
+        <% if(typeof estadoBloqueado !== 'undefined' && estadoBloqueado) { %>
+            <%- include('partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+        <% } %>
     </main>
 
 
