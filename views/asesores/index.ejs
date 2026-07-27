@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %>
+    <title>Asesores | Nova 2030</title>
+</head>
+<body>
+    <div class="page">
+
+        <%- include('../partials/sidenavbar') %>
+        <%- include('../partials/header') %>
+
+        <main class="content">
+
+            <!--Información de la página asesores-->
+            <div class="phase-container">
+                <h1 class="phase-title">Nuestros asesores</h1>
+                <p class="phase-description">
+                    Para desarrollar tu proyecto, encuentra al experto 
+                    ideal que aporte su experiencia y conocmientos para 
+                    potencia tu idea.
+                </p>
+            </div>
+
+            <!--Tabs, navegación por categorías-->
+            <nav class="tabs">
+                <a href="/asesores?categoria=" class="tabs__link tabs__link--active">Todos</a>
+                <a href="/asesores?categoria=" class="tabs__link">Tecnología</a>
+                <a href="/asesores?categoria=" class="tabs__link">Impacto social</a>
+                <a href="/asesores?categoria=" class="tabs__link">Negocios</a>
+            </nav>
+
+            <!--Aquí van las ca<rds-->
+            <div class="cards-container">
+                <article class="card">
+                    <img src="" alt="" class="card__image">
+                    <div class="card__info">
+                        <h2 class="card__title"></h2>
+                        <i class="card__icon fa-solid fa-user tie"></i>
+                        <h3 class="card__degree">
+                            <strong>Grado:</strong>
+                            Doctorado en Ciencias computacionales
+                        </h3>
+                        <p class="card__description">
+                            Especialista en desarrollo de 
+                            software accesible y emprendimiento 
+                            tecnológico
+                        </p>
+                        <span class="card__category">Tecnología</span>
+                    </div>
+                </article>
+            </div>
+
+            <!--Paginación-->
+            <div class="pagination">
+                <a href="#" class="pagination__btn"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="#" class="pagination__btn">1</a>
+                <a href="#" class="pagination__btn">2</a>
+                <a href="#" class="pagination__btn">3</a>
+                <a href="#" class="pagination__btn"><i class="fa-solid fa-chevron-right"></a>
+            </div>
+
+
+        </main>
+
+        <%- include('../partials/sidebar-anuncios') %>
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+</html>
