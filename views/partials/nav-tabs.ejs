@@ -6,9 +6,9 @@
 
     <% if(categorias && categorias.length >0) {%>
         <% categorias.forEach(cat=> { %>
-            <a href="/asesores?categoria=<%=cat.nombre%>" 
-                class="tabs__link <%= categoriaSeleccionada === cat.nombre ? 'tabs__link--active' : ''"%>">
-                <%=cat.nombre%>
+            <a href="/asesores?categoria=<%=cat.nombreCat%>" 
+                class="tabs__link <%= categoriaSeleccionada === cat.nombreCat ? 'tabs__link--active' : ''%>">
+                <%=cat.nombreCat%>
             </a>
         <% }); %>
     <% } %>    

@@ -2,7 +2,7 @@
     <img src="/images/asesores/image.png" alt="Fotografía del asesor" class="card__image">
     <div class="card__info">
         <div class="card__header card__header--profile">
-            <h3 class="card__title"><%= asesor.nombre  asesor.apellidop asesor.apellidom%> </h3>
+            <h3 class="card__title"><%= asesor.nombre %> <%= asesor.apellidop %> <%= asesor.apellidom%> </h3>
             <i class="card__icon fa-solid fa-user-gear"></i>
 
         </div>
@@ -15,7 +15,7 @@
         <p class="card__description">
             <%= asesor.descripcion %>
             <br>
-            <span class="card__category"><%= asesor.categoriaNombre %></span>
+            <span class="card__category"><%= asesor.nombreCat %></span>
         </p>
 
     </div>

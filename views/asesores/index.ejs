@@ -26,13 +26,13 @@
             <%- include('../partials/nav-tabs')%>
 
 
-            <!--Aquí van las ca<rds-->
+            <!--Aquí van las cards-->
             <div class="cards-container">
                 
 
-                <% asesor.forEach(asesor => {
+                <% asesores.forEach(asesor => { %>
                     <%- include('../partials/card-asesores', {asesor})%>
-                }); %>
+                <% }); %>
             </div>
 
             <!--Paginación-->
