@@ -5,14 +5,26 @@ const jwt = require('jsonwebtoken');
 
 const rutasValidas = ['enviar', 'faq'];
 
-router.get('/buzon/:option', (req, res) => {
+router.get('/buzon/:option', async (req, res) => {
     const {option} = req.params;
 
+    let datosVista= {};
     if(!rutasValidas.includes(option)){
         return res.status(404).render('404');
     }
 
-    res.render(`buzon/${option}`);
+    if(option === 'faq'){
+        const [resultados] = await db.query(`
+            SELECT pregunta, respuesta, orden
+            FROM preguntas_frecuentes 
+            WHERE activa = 1
+            ORDER BY orden ASC
+        `);
+
+        datosVista.preguntas = resultados;
+        
+    }
+res.render(`buzon/${option}`,datosVista);
 });
 
 module.exports = router;

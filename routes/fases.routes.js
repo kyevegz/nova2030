@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../config/db');
 const verificarToken = require('../middlewares/auth');
-const {progresoPorFaseUsr} = require('../utils/progresoUtils.js');
+const { progresoPorFaseUsr } = require('../utils/progresoUtils.js');
 
 /*informacion fija de las fases de nova, se hace un diccionario 
 para no crear una tabla en la bd y aumentar las consultas 
@@ -22,62 +22,98 @@ const dicFases = {
     }
 };
 //ruta para cualquier fase, verificando si hay sesión activa
-router.get('/fase/:numFase', verificarToken, async (req, res) => {
+router.get('/fase/:numFase', async (req, res) => {
     try {
-        
+
         const fasePedida = parseInt(req.params.numFase);
-        //obtener el id del usuario directamente del token con ayuda del middleware
-        //nos aseguramos de que los nombres coincidan (esto con lo guardado en el token)
-        const idUsuario = req.usuario.id;
         const { numFase } = req.params;
-        const [rows] =await db.query(`
-            SELECT faseActual FROM usuarios WHERE id = ?
-        `, [idUsuario]);
 
-        //validar que el usuario existe en la bd porque peor si lo elominé por violar las reglas
-        if(rows.length === 0) {
-            return res.redirect('/login');
-        }
-
-        const usuarioFase = rows[0];
-        
-        if(fasePedida > usuarioFase.faseActual){
-            return res.redirect(`/fase/${usuarioFase.faseActual}`);
-        }
-
-        const datosFase = dicFases[fasePedida];
 
         //por seguridad validad que la fase solicita exista
         if (!['1', '2', '3'].includes(numFase)) {
             return res.redirect('/index');
         }
 
+        const datosFase = dicFases[fasePedida];
 
-        /*en el select se hace un JOIN para que, trayendo toda la info de 
-        los módulos, se pegue el estado de el campo desbloqueado y completado 
-        de el usuario actual*/
-        const [submodulos] = await db.query(`
-            SELECT modul.*, progu.desbloqueado, progu.completado
-            FROM modulos modul
-            JOIN progreso_usuarios progu ON modul.id = progu.idModulo
-            WHERE modul.fase = ? AND progu.idUsuario = ?
-            ORDER BY modul.id ASC
-        `, [numFase, idUsuario]);
+        /* 
+            BLOQUE DE CONTENIDO
+            2. extraer el usuario del middleware global en index.js
+            cuando no hay usuario, o sea, sesión, lo deja como null
+        */
 
+        const usuario = res.locals.usuarioVerificado;
 
-        //const modulosCompletados = 1, totalModulos = 5;
-        
-        const porcentajeActual = await progresoPorFaseUsr(idUsuario, numFase);
-        console.log(porcentajeActual)
+        /*Declaraciones de variables para respetar dry, 
+        dejando incializados valores por defecto*/
+
+        let porcentajeActual = 0, submodulos = [],
+            mostrarProgreso = false, estadoBloqueado = false, 
+            modificadorContent = '';
+
+        //CASO 1: usuario SIN cuenta
+
+        if (!usuario) {
+            /*consulta la información de los módulos mas no hace join 
+            porque ese usuario no está en la bd*/
+            const [rows] = await db.query(`
+                SELECT * FROM modulos WHERE fase = ? ORDER BY id ASC
+            `, [numFase]);
+
+            submodulos = rows;
+            estadoBloqueado = 'sinCuenta';//activa el candado
+            //mostrarProgreso conserva su valor por default
+            modificadorContent = 'content--locked';
+
+        } else {
+            //CASOS 2 Y 3: USUARIOS CON CUENTA
+            const idUsuario = usuario.id;
+            const [rows] = await db.query(`
+                SELECT faseActual FROM usuarios WHERE id = ?
+            `, [idUsuario]);
+
+            //validar que el usuario existe en la bd porque peor si lo elominé por violar las reglas
+            if (rows.length === 0) {
+                res.clearCookie('accessToken');
+                res.clearCookie('refreshToken');
+                //detiene la ejecución y adiós
+                return res.redirect('/login');
+            }
+
+            const usuarioFase = rows[0];
+
+            /*en el select se hace un JOIN para que, trayendo toda la info de 
+            los módulos, se pegue el estado de el campo desbloqueado y completado 
+            de el usuario actual*/
+            const [modulosUsuario] = await db.query(`
+                SELECT modul.*, progu.desbloqueado, progu.completado
+                FROM modulos modul
+                JOIN progreso_usuarios progu ON modul.id = progu.idModulo
+                WHERE modul.fase = ? AND progu.idUsuario = ?
+                ORDER BY modul.id ASC
+            `, [numFase, idUsuario]);
+
+            submodulos = modulosUsuario;
+            porcentajeActual = await progresoPorFaseUsr(idUsuario, numFase);
+            mostrarProgreso = true;
+
+            if (fasePedida > usuarioFase.faseActual) {
+                estadoBloqueado = 'faseBloqueada';
+                modificadorContent = 'content--preview';
+            }
+        }
+
         //usa unna sola vista para las 3 fases
         res.render('fase', {
             numFase, //cambia el título dinámicamente
             porcentaje: porcentajeActual,
             submodulos,
-            mostrarProgreso: true,
+            mostrarProgreso,
             esModulo: false,
-            usuarioVerificado: req.usuario, // Inyección directa
-            datosFase
+            usuarioVerificado: usuario, // Inyección directa
+            datosFase,
+            estadoBloqueado,
+            modificadorContent
         });
 
     } catch (error) {
@@ -88,40 +124,47 @@ router.get('/fase/:numFase', verificarToken, async (req, res) => {
 
 //ruta para cualquier modulo
 //:idModulo es para dinamismo en la URL
-router.get('/fase/:numFase/modulos/modulo-:idModulo', verificarToken, async (req, res) => {
+router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
     try {
-        const idUsuario = req.usuario.id;
+
+        const usuario = res.locals.usuarioVerificado;
         const { numFase, idModulo } = req.params;
 
-        /*1 -
-        control de seguridad: verifica que el usuario actual tenga 
-        desbloqueado el módulo que intenta consultar
-        */
-
-
-        const [desbloqueado] = await db.query(`
-            SELECT desbloqueado 
-            FROM progreso_usuarios 
-            WHERE idUsuario = ? AND idModulo = ?
-        `, [idUsuario, idModulo]);
-
-        //dheca si el usuario no tiene registro o la casilla de desbloqueado en false, regresa a la vista de fase x
-
-
-        if (desbloqueado.length === 0 || desbloqueado[0].desbloqueado === 0) return res.redirect(`/fase/${numFase}`);
-
-        //2 - consulta a la información del modulo actual, para obtener el contenido y su información en general
+        //Declaración de variables
+        let porcentajeActual = 0, estadoBloqueado = false, modificadorContent = '';
         const [moduloActual] = await db.query(`
             SELECT * FROM modulos WHERE id = ?
             `, [idModulo]);
 
+        //Si el modulo no existe, redirige
         if (moduloActual.length === 0) return res.redirect(`fase${numFase}`);
+
+
+        /*
+        CONDCIONAL DE ACCESO
+        */
+
+        if (!usuario) {
+            //CASO 1 - usuario SIN cuenta
+            estadoBloqueado = 'sinCuenta';
+            modificadorContent = 'content--locked';
+        } else {
+            //CASOS 2 Y 3
+            const idUsuario = usuario.id;
+            porcentajeActual = await progresoPorFaseUsr(idUsuario, numFase);
+            const [progreso] = await db.query(`
+                SELECT desbloqueado 
+                FROM progreso_usuarios 
+                WHERE idUsuario = ? AND idModulo = ?
+            `, [idUsuario, idModulo]);
+            if (progreso.length === 0 || progreso[0].desbloqueado === 0) {estadoBloqueado = 'moduloBloqueado', modificadorContent = 'content--preview'};
+        }
 
         //2 - renderización de moldes diferentes
         /*Dado que cada módulo tiene contenido diferente, se buscará dinámicamente el
         archivo correspondiente, basado en la nomenclatura modulo-x, donde x es
         el número de modulo que intenta consultar */
-        const porcentajeActual = await progresoPorFaseUsr(idUsuario, numFase);
+        console.log(estadoBloqueado);
 
         res.render(`modulos/modulo-${idModulo}`, {
             moduloActual: moduloActual[0],
@@ -129,7 +172,9 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', verificarToken, async (req
             porcentaje: porcentajeActual,
             mostrarProgreso: true,
             esModulo: true, //activará el botón de regresar y cambiará los elementos de la barra
-            usuarioVerificado: req.usuario // Inyección directa
+            usuarioVerificado: usuario, // Inyección directa
+            estadoBloqueado,
+            modificadorContent
         });
 
     } catch (error) {

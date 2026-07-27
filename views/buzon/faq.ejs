@@ -32,8 +32,8 @@
 
                 <div class="faq__list">
 
-                    <% if(faq && faq.length >0) { %>
-                        <% faq.forEach(q => { %>
+                    <% if(preguntas && preguntas.length >0) { %>
+                        <% preguntas.forEach(q => { %>
                             <%- include('../partials/faq-item.ejs', {q: q}) %>
                         <% }); %>
                     <% }else{ %>
