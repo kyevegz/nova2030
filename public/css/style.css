@@ -788,7 +788,7 @@ Formulario registro
 }
 .form__title,
 .form__subtitle{
-    text-align: center;
+    text-align: left;
 }
 
 .form__title{
@@ -1045,11 +1045,14 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 
 /*modificadores para el botónde anterior*/
 .form__button-send--secondary{
-    background-color: var(--shark-400);
+    background-color: var(--cerise-600);
+    
+    
 }
 
 .form__button-send--secondary:hover{
-    background-color: var(--shark-500);
+    background-color: var(--cerise-800);
+    color: #ffffff;
 }
 
 /*input error*/
@@ -1333,19 +1336,60 @@ disponible para no perderse o colapsar
     flex-shrink: 0;/*evita que el círculo se deforme en las pantallas pequeñas*/
 }
 
+
+
+.mailbox-faq__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    color: var(--cerise-800);
+    margin-bottom: var(--space-sm);
+}
+
+.mailbox-faq__text{
+    font-family: var(--font-body);
+    font-size: var(--font-body);
+    color: var(--text-colour);
+    margin-bottom: var(--space-lg);
+}
+
+.form__input--textarea{
+    resize: none;
+}
+
+
+/*las 2 siguientes resetean el padding y el gap que form__card definió*/
+.form__card--split{
+    padding: 0;
+    overflow: hidden;
+}
+
+.form__card--split .form__grid{
+    gap: 0;
+    margin-top: 0;
+}
+
+/*le devuelve al form su padding*/
+.form--padded{
+    padding: var(--space-xl);
+}
+
 .mailbox-faq{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: transparent;
+    background-color: var(--zumthor-300);
     height: 100%;
-    font-family: var(--font-body);
-    font-size: var(--font-size-body);
-    padding: var(--space-xs) var(--space-md);
-    border-left: 2px solid var(--shark-500);
-    margin: 0;
-    /* border-radius: var(--radius-smooth); */
+    padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-xxl);/*este padding es propio de este container*/
 }
+
+.mailbox-faq__link{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    width: fit-content;
+}
+
+/**/
 
 /*MEDIA QUERIES*/
 

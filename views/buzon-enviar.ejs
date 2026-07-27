@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partials/head') %>
+    <title>Buzón | Nova 2030</title>
+
+    
+</head>
+
+<body>
+    <div class="page page--full">
+        <!--Llamada al sidebar-->
+        <%- include('partials/sidenavbar') %>
+        <!--Llamada al header-->
+        <%- include('partials/header') %>
+
+        <main class="content">
+            <div class="form-container">
+                    <!--  --split se añade como modificador para que 
+                    el lado derecho se pinte toda sin paddings que 
+                    form__card define-->
+                    <section class="form__card form__card--split">
+                        <div class="form__grid">          
+                            <form action="" class="form form--padded">
+                                <h1 class="form__title">Deja tus dudas</h1>
+                                <p class="form__subtitle">
+                                    En Nova2030 nos interesa que tu experiencia sea buena, 
+                                    así que habilitamos este espacio para resolver tus dudas de 
+                                    cualquier tipo, siempre y cuando estén relacionadas con Nova
+                                </p>
+
+                                <div class="form__group">
+                                    <input type="text" name="asunto" id="asunto" class="form__input" required placeholder=" ">
+                                    <label class="form__label" for="asunto">Mi pregunta es</label>
+                                </div>
+
+                                <div class="form__group">
+                                    <textarea class="form__input form__input--textarea" name="explicacion" id="explicacion" required placeholder=" " rows = "4"></textarea>
+                                    <label class="form__label" for="explicacion">Explicación detallada</label>
+                                </div>
+
+                                <button class="form__button-send" type="submit">Preguntar</button>
+                            </form>
+
+
+                            <!--Columna derecha, invita al FAQ-->
+                            <div class="mailbox-faq">
+                                <h2 class = "mailbox-faq__title"> ¿Quieres ver qué dicen los demás?</h2>
+                                <p class="mailbox-faq__text"> 
+                                    Descubre las preguntas más frecuentes e
+                                    interesantes, así como, la respuesta que les hemos dado
+                                </p>
+                                <a href = "/buzon/faq" class="form__button-send form__button-send--secondary mailbox-faq__link">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver respuestas
+                                </a>
+                            </div>
+                        </div>
+                    </section>       
+                </div>
+        </main>
+        
+        <!--Llamada al footer-->
+        <%- include('partials/footer') %>
+    </div>
+
+</body>
+
+</html>
