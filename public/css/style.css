@@ -1823,18 +1823,31 @@ con el del contenedor*/
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    
     font-family: var(--font-details);
     font-weight: var(--weight-bold);
-    color: var(--secundary-title);
-    background-color: var(--observatory-100);
-    border-radius: var(--radius-smooth);
-    border: 1px solid var(--observatory-100);
+    
+    
+    
+    
     transition: all 0.3s ease;
 }
 
-.pagination__btn:hover,
+.pagination__btn{
+    color: var(--observatory-800);
+    width: fit-content;
+    height: fit-content;
+}
+
+.pagination__page{
+    background-color: var(--observatory-50);
+    /* border: 0.5px solid var(--observatory-700); */
+    border-radius: var(--radius-smooth);
+    color: var(--secundary-title);
+    width: 44px;
+    height: 44px;
+}
+
 .pagination__page:hover{
     background-color: var(--secundary-title);
     color: var(--observatory-100);
@@ -1844,7 +1857,7 @@ con el del contenedor*/
 /*modificador para la página actual*/
 .pagination__page--active{
     background-color: var(--secundary-title);
-    color: var(--observatory-100);
+    color: var(--observatory-50);
     border-color: var(--secundary-title);
     pointer-events: none;/*así no le van a dar clic a una página donde ya está*/
 }
