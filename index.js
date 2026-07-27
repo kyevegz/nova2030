@@ -108,9 +108,9 @@ app.use('/', loginRoute);
 const indexPage = require('./routes/index.route.js');
 app.use('/', indexPage);
 
-//ruta enviar mail
-const buzonEnviar = require('./routes/buzonEnviar.routes.js');
-app.use('/', buzonEnviar);
+//ruta buzon mail
+const buzon = require('./routes/buzon.routes.js');
+app.use('/', buzon);
 
 //para ver la página de registro
 // app.get('/registro', (req, res) => {
