@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <%- include('partials/head') %>
     <title>Fase <%- numFase %> | Nova 2030</title>
@@ -13,14 +13,30 @@
         <%- include('partials/header') %>
 
         <!--Si el estado = bloqueado existe, se añade el modifier --locked 
-        apaga los clics en css
+        apaga los clics en css, si hay usuarui activo pero no tiene ese módulo o fase
+        desbloqueada, pone la alerta y coloca en grises el contenido
         -->
-        <main class = "content <%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content--locked' :'' %>">
 
+        <% 
+            let modificadorContent = '';
+            if(typeof estadoBloqueado !== 'undefined' && estadoBloqueado){
+                if(estadoBloqueado === 'sinCuenta'){
+                    modificadorContent = 'content--locked';
+                }else{
+                    modificadorContent = 'content--preview';
+                }
+            }  
+        %>
+
+
+        <main class = "content <%= modificadorContent%>">
+            <% if(modificadorContent === 'content--preview'){ %>
+                    <%- include('partials/alerta-preview', {tipo: estadoBloqueado})%>
+                <% } %>
         
 
             <!--Agrupa para poder difumuniar-->
-            <div class=" <%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            <div class="content__restricted-area">
                 <%- include('partials/fase-informacion') %>
                 <div class="cards-container">
                     <% submodulos.forEach(sub => { %>
@@ -29,7 +45,7 @@
                     <% }) %>
                 </div>
             </div>
-            <% if(typeof estadoBloqueado !== 'undefined' && estadoBloqueado){ %>
+            <% if(typeof modificadorContent === 'content--locked'){ %>
                 <%- include('partials/bloqueo-contenido', { tipo: estadoBloqueado}) %>
             <% } %>
         </main>

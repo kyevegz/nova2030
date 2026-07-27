@@ -799,6 +799,47 @@ details[open] .submenu__icon-deploy{
     color: var(--principal-title);
     font-weight: var(--weight-bold);
 }
+
+
+
+
+/*estilos para modo preview*/
+.content--preview{
+    position: relative;
+}
+
+/*dara un efecto vidriera, todo en grises pero con legibilidad*/
+.content--preview .content__restricted-area{
+    pointer-events: none;
+    user-select: none;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+.preview-alert{
+    display: flex;
+    align-items: center;
+    background-color: var(--cerise-100);
+    border-left: var(--cerise-600);
+    border-radius: var(--radius-smooth);
+    padding: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-xl);
+    box-shadow: 0 4px 15px 15px rgba(0, 0, 0, 0.05);
+}
+
+.preview-alert__icon{
+    color: var(--cerise-600);
+    font-size: var(--font-size-h2);
+    margin-right: var(--space-md);
+}
+
+.preview-alert__text{
+    color: var(--text-colour);
+    font-size: var(--font-size-body);
+    margin: 0;
+}
+
+
+
 /*---------------------------
 
     COMPONENTES ESPECÍFICOS

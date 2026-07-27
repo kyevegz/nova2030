@@ -1,0 +1,27 @@
+<!--Este bloque solo se inyecta cuando el usuario TIENE CUENTA
+sin embargo, todavía no desbloquea la fase a la que intenta acceder
+por lo que, es necesario bloquear la interacción de dicho contenido pero
+de modo menos "agresivo" que cuando es invitado y se sobrepone una notifiación
+con blur, pues este usuario ya está logueado.
+Permitir que vea el contenido lo puede incitar a completar sus modulos/fases 
+previas
+-->
+
+<div class="preview-alert">
+    <i class="fa-solid fa-lock preview-alert__icon"></i>
+    <div class="preview-alert__body">
+        <% if (tipo === 'faseBloqueada') { %>
+            <p class="preview-alert__text">
+                <strong>Fase bloqueada. </strong>
+                Debes completar los módulos de la fase <%= numFase %> 
+                para acceder a los contenidos de esta fase.
+            </p>
+        <% } else if (tipo === 'moduloBloqueado') { %>
+            <p class="preview-alert__text">
+                <strong>Módulo bloqueado. </strong>
+                Los modulos se completan progresivamente.
+            </p>
+
+        <% } %>
+    </div>
+</div>
