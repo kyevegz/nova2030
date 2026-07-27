@@ -12,8 +12,11 @@
     <!--Llamada al header-->
     <%- include('../partials/header') %>
 
-    <main class="content <%= typeof estadoBloqueado != 'undefined' && estadoBloqueado ? 'content--locked' : ''%>">
-        
+    <main class="content <%= modificadorContent%>">
+        <% if(modificadorContent === 'content--preview') { %>
+            <%- include('../partials/alerta-preview', {tipo: estadoBloqueado}) %>
+        <% } %>
+
         <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
             soy modulo 1, estoy desbloqueado
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias officiis consequuntur eius dignissimos consectetur culpa ipsam qui minus, illo molestiae cum, doloremque sunt velit, rem reprehenderit. Voluptatem amet ut a.
@@ -37,7 +40,7 @@
             Mollitia doloribus optio minima aut quisquam, dolorem hic quas, ipsa eum voluptates fugit praesentium quo corporis accusantium quidem quis nulla illo ullam laborum deserunt consequuntur! Maiores dolores fugit cupiditate ut!
             Fugit corporis quasi doloribus, tenetur sint aspernatur nesciunt? Quasi, aliquam fuga ex sint molestiae doloremque est impedit sequi porro autem similique distinctio officiis reprehenderit pariatur consequatur accusantium sed libero nam.
         </div>
-        <% if(typeof estadoBloqueado !== 'undefined' && estadoBloqueado) { %>
+        <% if( modificadorContent === 'content--locked') { %>
             <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
         <% } %>
     </main>

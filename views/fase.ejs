@@ -17,27 +17,18 @@
         desbloqueada, pone la alerta y coloca en grises el contenido
         -->
 
-        <% 
-            let modificadorContent = '';
-            if(typeof estadoBloqueado !== 'undefined' && estadoBloqueado){
-                if(estadoBloqueado === 'sinCuenta'){
-                    modificadorContent = 'content--locked';
-                }else{
-                    modificadorContent = 'content--preview';
-                }
-            }  
-        %>
 
 
         <main class = "content <%= modificadorContent%>">
-            <% if(modificadorContent === 'content--preview'){ %>
-                    <%- include('partials/alerta-preview', {tipo: estadoBloqueado})%>
-                <% } %>
+            
         
-
+<% if(modificadorContent === 'content--preview'){ %>
+                <%- include('partials/alerta-preview', {tipo: estadoBloqueado})%>
+            <% } %>
             <!--Agrupa para poder difumuniar-->
             <div class="content__restricted-area">
                 <%- include('partials/fase-informacion') %>
+                
                 <div class="cards-container">
                     <% submodulos.forEach(sub => { %>
                         <%- include('partials/card-modulos', {sub: sub }) %>
@@ -45,7 +36,7 @@
                     <% }) %>
                 </div>
             </div>
-            <% if(typeof modificadorContent === 'content--locked'){ %>
+            <% if(modificadorContent === 'content--locked'){ %>
                 <%- include('partials/bloqueo-contenido', { tipo: estadoBloqueado}) %>
             <% } %>
         </main>

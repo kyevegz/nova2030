@@ -48,7 +48,8 @@ router.get('/fase/:numFase', async (req, res) => {
         dejando incializados valores por defecto*/
 
         let porcentajeActual = 0, submodulos = [],
-            mostrarProgreso = false, estadoBloqueado = false;
+            mostrarProgreso = false, estadoBloqueado = false, 
+            modificadorContent = '';
 
         //CASO 1: usuario SIN cuenta
 
@@ -62,6 +63,7 @@ router.get('/fase/:numFase', async (req, res) => {
             submodulos = rows;
             estadoBloqueado = 'sinCuenta';//activa el candado
             //mostrarProgreso conserva su valor por default
+            modificadorContent = 'content--locked';
 
         } else {
             //CASOS 2 Y 3: USUARIOS CON CUENTA
@@ -97,6 +99,7 @@ router.get('/fase/:numFase', async (req, res) => {
 
             if (fasePedida > usuarioFase.faseActual) {
                 estadoBloqueado = 'faseBloqueada';
+                modificadorContent = 'content--preview';
             }
         }
 
@@ -109,7 +112,8 @@ router.get('/fase/:numFase', async (req, res) => {
             esModulo: false,
             usuarioVerificado: usuario, // Inyección directa
             datosFase,
-            estadoBloqueado
+            estadoBloqueado,
+            modificadorContent
         });
 
     } catch (error) {
@@ -127,7 +131,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
         const { numFase, idModulo } = req.params;
 
         //Declaración de variables
-        let porcentajeActual = 0, estadoBloqueado = false;
+        let porcentajeActual = 0, estadoBloqueado = false, modificadorContent = '';
         const [moduloActual] = await db.query(`
             SELECT * FROM modulos WHERE id = ?
             `, [idModulo]);
@@ -143,6 +147,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
         if (!usuario) {
             //CASO 1 - usuario SIN cuenta
             estadoBloqueado = 'sinCuenta';
+            modificadorContent = 'content--locked';
         } else {
             //CASOS 2 Y 3
             const idUsuario = usuario.id;
@@ -152,7 +157,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
                 FROM progreso_usuarios 
                 WHERE idUsuario = ? AND idModulo = ?
             `, [idUsuario, idModulo]);
-            if (progreso.length === 0 || progreso[0].desbloqueado === 0) {estadoBloqueado = 'moduloBloqueado'};
+            if (progreso.length === 0 || progreso[0].desbloqueado === 0) {estadoBloqueado = 'moduloBloqueado', modificadorContent = 'content--preview'};
         }
 
         //2 - renderización de moldes diferentes
@@ -168,7 +173,8 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             mostrarProgreso: true,
             esModulo: true, //activará el botón de regresar y cambiará los elementos de la barra
             usuarioVerificado: usuario, // Inyección directa
-            estadoBloqueado
+            estadoBloqueado,
+            modificadorContent
         });
 
     } catch (error) {
