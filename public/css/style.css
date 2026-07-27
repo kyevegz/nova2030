@@ -301,6 +301,8 @@ h6 {
     ". main"
     "footer footer";
 }
+
+
 .header{
     grid-area: header;
     background-color: transparent;
@@ -1391,7 +1393,12 @@ disponible para no perderse o colapsar
 
 
 /*página de faqs*/
+
+
+
 .faq-container{
+    position: relative;
+    z-index: var(--z-normal);
     margin: var(--space-md);
     padding: 0 var(--space-md);
 }
@@ -1529,6 +1536,7 @@ disponible para no perderse o colapsar
     margin-top: var(--space-xs);
     padding-top: var(--space-md);
 }
+
 /**/
 
 /*MEDIA QUERIES*/
