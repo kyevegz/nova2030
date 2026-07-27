@@ -92,7 +92,7 @@ app.use(async (req, res, next) => {
 
 
 
-//importar la ruta de fase 1
+//importar la ruta de fase
 const fasesRoutes = require('./routes/fases.routes.js');
 app.use('/', fasesRoutes);
 
@@ -107,6 +107,10 @@ app.use('/', loginRoute);
 //ruta index
 const indexPage = require('./routes/index.route.js');
 app.use('/', indexPage);
+
+//ruta buzon mail
+const buzon = require('./routes/buzon.routes.js');
+app.use('/', buzon);
 
 //para ver la página de registro
 // app.get('/registro', (req, res) => {

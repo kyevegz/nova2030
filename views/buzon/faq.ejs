@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head') %>
+    <title>FAQs | Nova 2030</title>
+
+    
+</head>
+
+<body>
+    <div class="page page--full">
+        <!--Llamada al sidebar-->
+        <%- include('../partials/sidenavbar') %>
+        <!--Llamada al header-->
+        <%- include('../partials/header') %>
+
+        <main class="content">
+            
+            <section class="faq__container">
+                <div class="faq__header">
+                    <h1 class="faq__title">
+                        Preguntas frecuentes (FAQ)
+                    </h1>
+                    <p class="faq__description">
+                        Explora las dudas más comunes que los usuarios han enviado.
+                        ¿No encuentras lo que te intriga? <a href="/buzon/enviar" class="faq__link-inline">ponte en contacto con nosotros</a>
+                    </p>
+                </div>
+
+
+
+                <div class="faq__list">
+
+                    <% if(preguntas && preguntas.length >0) { %>
+                        <% preguntas.forEach(q => { %>
+                            <%- include('../partials/faq-item.ejs', {q: q}) %>
+                        <% }); %>
+                    <% }else{ %>
+                        <p>Todavía no hay preguntas frecuentes registradas.</p>
+                    <% } %>
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            pregunta
+                            <div class="faq__icon-wrapper">
+                                <i class="fa-solid fa-plus faq__icon" aria-hidden="true"></i>
+                                <i class="fa-solid fa-minus faq__icon faq__icon--minus" aria-hidden="true"></i>
+                            </div>
+                            
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse optio est et, iste explicabo modi nulla blanditiis odit nostrum accusantium ipsum exercitationem magnam voluptatem recusandae voluptates? Reprehenderit perferendis nesciunt blanditiis?</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </main>
+        
+        <!--Llamada al footer-->
+        <%- include('../partials/footer') %>
+    </div>
+
+</body>
+
+</html>

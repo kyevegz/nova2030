@@ -302,6 +302,8 @@ h6 {
     ". main"
     "footer footer";
 }
+
+
 .header{
     grid-area: header;
     background-color: transparent;
@@ -966,7 +968,7 @@ Formulario registro
 }
 .form__title,
 .form__subtitle{
-    text-align: center;
+    text-align: left;
 }
 
 .form__title{
@@ -1223,11 +1225,14 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 
 /*modificadores para el botónde anterior*/
 .form__button-send--secondary{
-    background-color: var(--shark-400);
+    background-color: var(--cerise-600);
+    
+    
 }
 
 .form__button-send--secondary:hover{
-    background-color: var(--shark-500);
+    background-color: var(--cerise-800);
+    color: #ffffff;
 }
 
 /*input error*/
@@ -1510,6 +1515,207 @@ disponible para no perderse o colapsar
     height: var(--space-lg);
     flex-shrink: 0;/*evita que el círculo se deforme en las pantallas pequeñas*/
 }
+
+
+
+.mailbox-faq__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    color: var(--cerise-800);
+    margin-bottom: var(--space-sm);
+}
+
+.mailbox-faq__text{
+    font-family: var(--font-body);
+    font-size: var(--font-body);
+    color: var(--text-colour);
+    margin-bottom: var(--space-lg);
+}
+
+.form__input--textarea{
+    resize: none;
+}
+
+
+/*las 2 siguientes resetean el padding y el gap que form__card definió*/
+.form__card--split{
+    padding: 0;
+    overflow: hidden;
+}
+
+.form__card--split .form__grid{
+    gap: 0;
+    margin-top: 0;
+}
+
+/*le devuelve al form su padding*/
+.form--padded{
+    padding: var(--space-xl);
+}
+
+.mailbox-faq{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--zumthor-300);
+    height: 100%;
+    padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-xxl);/*este padding es propio de este container*/
+}
+
+.mailbox-faq__link{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    width: fit-content;
+}
+
+
+/*página de faqs*/
+
+
+
+.faq-container{
+    position: relative;
+    z-index: var(--z-normal);
+    margin: var(--space-md);
+    padding: 0 var(--space-md);
+}
+
+.faq__card{
+    background-color: var(--background-secundary);
+    padding: var(--space-lg);
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 0 5px var(--cerulean-blue-950);
+    border: 1px solid var(--shark-200);
+    max-width: 800px;
+    margin: var(--space-xl) auto;
+}
+
+.faq__header{
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.faq__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h1);
+    color: var(--principal-title);
+    margin-bottom: var(--space-xs);
+}
+
+.faq__subtitle{
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    opacity: 0.8;
+}
+
+.faq__link-inline{
+    color: var(--principal-title);
+    text-decoration: underline wavy;
+    font-weight: var(--weight-medium);
+}
+
+/*lista de preguntas, de los details*/
+.faq__list{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+/*contenedor de details*/
+.faq__item{
+    background-color: var(--background-secundary);
+    border: 2px solid var(--shark-300);
+    border-radius: var(--radius-smooth);
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq__item[open]{
+    border-color: var(--principal-title);
+}
+
+/*summary*/
+.faq__question{
+    padding: var(--space-md) var(--space-lg);
+    font-family: var(--font-details);
+    font-size: var(--font-size-h3);
+    font-weight: var(--weight-medium);
+    color: var(--secundary-title);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    list-style: none; /*quita la flecha rudimentarua*/
+    
+}
+
+.faq__icon-wrapper{
+    position: relative;
+    width: var(--font-size-small);
+    height: var(--font-size-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*ocultar el marcador por defeccto en webkit como chrome o safari*/
+.faq__question::-webkit-details-marker{
+    display: none;
+}
+
+.faq__question:hover{
+    color: var(--principal-title);
+}
+
+/*ícono de la flecha al abrirse, lo hacemos rotar*/
+.faq__icon{
+    font-size: var(--font-size-small);
+    color: var(--shark-500);
+    transition: transform 0.3s ease;
+}
+
+/*estado inicial del ícono de minimizar*/
+.faq__icon--minus{
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+/*cuando el details se abre*/
+.faq__item[open] .faq__question{
+    font-weight: var(--weight-bold);
+    color: var(--bright-sun-600);
+}
+/*el ícono de + gira 90 grados y se va desvaneciendo*/
+.faq__item[open] .faq__icon:not(.faq__icon--minus){
+    
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+/*el icono de - gira a su posicion original de 0 grados y aparece*/
+.faq__item[open] .faq__icon--minus{
+    color: var(--shark-950);
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/*el div con la respuesta*/
+.faq__answer{
+    padding: 0 var(--space-lg) var(--space-md) var(--space-lg);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    opacity: 0.9;
+    border-top: 2px solid var(--principal-title);
+    
+    margin-top: var(--space-xs);
+    padding-top: var(--space-md);
+}
+
+/**/
 
 /*MEDIA QUERIES*/
 
