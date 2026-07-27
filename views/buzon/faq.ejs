@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head') %>
+    <title>FAQs | Nova 2030</title>
+
+    
+</head>
+
+<body>
+    <div class="page page--full">
+        <!--Llamada al sidebar-->
+        <%- include('../partials/sidenavbar') %>
+        <!--Llamada al header-->
+        <%- include('../partials/header') %>
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#ffd700" fill-opacity="0.5" d="M0,256L34.3,250.7C68.6,245,137,235,206,218.7C274.3,203,343,181,411,160C480,139,549,117,617,128C685.7,139,754,181,823,202.7C891.4,224,960,224,1029,234.7C1097.1,245,1166,267,1234,256C1302.9,245,1371,203,1406,181.3L1440,160L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
+
+    </path>
+</svg> -->
+        <main class="content">
+            <section class="faq__container">
+                <div class="faq__header">
+                    <h1 class="faq__title">
+                        Preguntas frecuentes (FAQ)
+                    </h1>
+                    <p class="faq__description">
+                        Explora las dudas más comunes que los usuarios han enviado.
+                        ¿No encuentras lo que te intriga? <a href="/buzon/enviar" class="faq__link-inline">ponte en contacto con nosotros</a>
+                    </p>
+                </div>
+
+                <div class="faq__list">
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            pregunta
+                            <div class="faq__icon-wrapper">
+                                <i class="fa-solid fa-plus faq__icon" aria-hidden="true"></i>
+                                <i class="fa-solid fa-minus faq__icon faq__icon--minus" aria-hidden="true"></i>
+                            </div>
+                            
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse optio est et, iste explicabo modi nulla blanditiis odit nostrum accusantium ipsum exercitationem magnam voluptatem recusandae voluptates? Reprehenderit perferendis nesciunt blanditiis?</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+        </main>
+        
+        <!--Llamada al footer-->
+        <%- include('../partials/footer') %>
+    </div>
+
+</body>
+
+</html>
