@@ -12,6 +12,11 @@
             <strong>Grado:</strong>
             <%= asesor.gradoEscolar %>
         </h3>
+        <p class="card__schedule">
+            <i class="fa-solid fa-alarm-clock" aria-hidden="true"></i>
+            <strong>Horario: </strong>
+            <time datetime="<%= `${asesor.inicioTurno} - ${asesor.finTurno}`%>" class=""><%=  `${asesor.inicioTurno} - ${asesor.finTurno}`%></time>
+        </p>
         <p class="card__description">
             <%= asesor.descripcion %>
             <br>

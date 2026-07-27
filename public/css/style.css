@@ -896,10 +896,10 @@ details[open] .submenu__icon-deploy{
 
 .card__description, 
 .card__degree, 
-.card__category{
+.card__category, 
+.card__schedule{
     padding: var(--space-xs) var(--space-md);
-    font-family: var(--font-body);
-    
+    font-family: var(--font-body);   
     line-height: 1.5;
 }
 .card__description{
@@ -910,12 +910,22 @@ details[open] .submenu__icon-deploy{
 }
 
 .card__category{
+    padding: var(--space-xs);
+    font-family: var(--font-details);
+    font-weight: var(--weight-bold);
+    color: var(--cerulean-blue-950);
+    font-size: var(--font-size-small);
     display: block;
     width: fit-content;
-    background-color: var(--cerise-100);
+    
+    background-color: var(--bright-sun-200);
     border-radius: var(--radius-smooth);
-    border: 2px solid var(--cerise-600);
     margin: var(--space-md) 0;
+}
+
+.card__schedule{
+    font-size: var(--font-size-small);
+    margin-bottom: var(--space-sm);
 }
 
 .card__button{
