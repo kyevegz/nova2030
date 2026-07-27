@@ -1,0 +1,28 @@
+<div class="content-lock">
+    <!--Fondo semitransparente-->
+    <div class="content-lock__overlay"></div>
+
+    <!--Caja central con el mensaje-->
+    <div class="content-lock__alert">
+        
+        <i class="fa-solid fa-lock content-lock__icon"></i>
+       
+        <div class="content-lock__body">
+            <%if(tipo === 'sinCuenta'){ %>
+                <h2 class="content-lock__title">Contenido exclusivo</h2>
+                <p class="content-lock__text">Descubre todo el contenido que tenemos
+                    para desarrollo de proyecctos, <a href="../registro" class = "content-lock__link">regístrate gratis aquí</a></p>
+                <%- include('banner-registro') %>
+            <% } else if(tipo === 'faseBloqueada') { %>
+                <h2 class="content-lock__title">Fase bloqueada</h2>
+                <p class="content-lock__text">Debes completar la fase anterior 
+                    para acceder al contenido de esta etapa</p>
+                
+            <% } else if(tipo === 'moduloBloqueado') { %>
+                <h2 class="content-lock__title">Módulo bloqueado</h2>
+                <p class="content-lock__text">Completa los módulos progresivamente para irlos desbloqueando</p>
+                
+            <% } %>
+        </div>
+    </div>
+</div>

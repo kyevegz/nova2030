@@ -190,6 +190,7 @@ h6 {
     --sisal-950: #2b231f;
 
     --error: #ff4d4d;
+    
 
 
     /*familias de fuentes*/
@@ -705,8 +706,137 @@ details[open] .submenu__icon-deploy{
 }
 
 
+/*BLOQUEO DE CONTENIDO*/
+.content--locked{
+    position: relative;
+    overflow:clip;
+}
+
+/*el contenido real detrás del candado*/
+.content--locked .content__restricted-area{
+    /*apaga toda la interacción para un poco más de seguridad desde front*/
+    pointer-events: none;
+    user-select: none;
+
+    /*difumina un poco el fondo para enganchar visualmente*/
+    filter: blur(1px) grayscale(20%);
+    opacity: 0.3;
+    
+}
+
+/**Notificacion de bloqueado/
+/*contenedor principal de la pantalla de bloque (donde va el texto)*/
+.content-lock{
+    position: absolute;
+    inset: 0;
+    /*top: 25vh;se mantiene visible y centrado mientras se hace scroll*/
+    /* width: 100%; */
+    pointer-events: none;
+    z-index: var(--z-header);
+    /* margin: var(--space-lg) 0; */
+}
+
+.content-lock__overlay{
+    position: absolute;
+    inset: 0;
+    background-color: color-mix(in srgb, 
+    var(--shark-400) 20%, 
+    transparent);
+    pointer-events: auto;
+}
+
+/*contenerdor del texto e ícono*/
+.content-lock__alert{
+    position: sticky;
+    top: 20%;
+    
+    z-index: 20;
+    pointer-events: auto;
+    background-color: var(--cerise-100);
+    border-left: 6px solid var(--cerise-600);
+    border-radius: var(--radius-smooth);
+    padding: var(--space-lg) var(--space-md) var(--space-lg) calc(var(--space-xl) + var(--space-md));
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 86, 207, 0.15);
+    width: 90%;
+    max-width: 450px;
+    margin: 15vh auto;
+    
+
+}
+
+.content-lock__title{
+    font-family: var(--font-details);
+    color: var(--cerise-800);
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--space-xs);
+    font-weight: var(--weight-medium);
+}
+
+.content-lock__text{
+    font-family: var(--font-body);
+    color: var(--text-colour);
+    font-size: var(--font-size-body);
+    margin-bottom: 0;
+}
+
+.content-lock__icon{
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    
+    
+    color: var(--cerise-600);
+    font-size: var(--font-size-h2);
+}
+
+.content-lock__body{
+    text-align: center;
+    width: 100%;
+}
+
+.content-lock__link{
+    color: var(--principal-title);
+    font-weight: var(--weight-bold);
+}
 
 
+
+
+/*estilos para modo preview*/
+.content--preview{
+    position: relative;
+}
+
+/*dara un efecto vidriera, todo en grises pero con legibilidad*/
+.content--preview .content__restricted-area{
+    pointer-events: none;
+    user-select: none;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+.preview-alert{
+    display: flex;
+    align-items: center;
+    background-color: var(--cerise-100);
+    border-left: 4px solid var(--cerise-600);
+    border-radius: var(--radius-smooth);
+    padding: var(--space-md) var(--space-lg);
+    margin-bottom: var(--space-xl);
+    box-shadow: 4px 5px 1px rgb(176, 4, 95, 0.4);
+}
+
+.preview-alert__icon{
+    color: var(--cerise-600);
+    font-size: var(--font-size-h2);
+    margin-right: var(--space-md);
+}
+
+.preview-alert__text{
+    color: var(--text-colour);
+    font-size: var(--font-size-body);
+    margin: 0;
+}
 
 
 

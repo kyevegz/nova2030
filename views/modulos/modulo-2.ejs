@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('partials/head') %>
+    <%- include('../partials/head') %>
     <title>hola</title>
 </head>
 <body>
     <div class="page">
 <!--Llamada al sidebar-->
-    <%- include('partials/sidenavbar') %>
+    <%- include('../partials/sidenavbar') %>
 
     <!--Llamada al header-->
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
-    <main class="content">
-soy modulo 2, no estoy desbloqueado    
+    <main class="content <%= modificadorContent%>">
+        <% if(modificadorContent === 'content--preview') { %>
+            <%- include('../partials/alerta-preview', {tipo: estadoBloqueado}) %>
+        <% } %>
+
+        <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            soy modulo 1, estoy desbloqueado
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias officiis consequuntur eius dignissimos consectetur culpa ipsam qui minus, illo molestiae cum, doloremque sunt velit, rem reprehenderit. Voluptatem amet ut a.
+            Autem quidem impedit cupiditate, omnis harum alias aspernatur, obcaecati tempore, nostrum quibusdam sit! Illum, nobis. Vero nemo eligendi iste voluptatum unde esse vel repellendus! Dignissimos delectus modi recusandae voluptates iste!
+            Asperiores facilis maxime delectus. Ea eaque eius voluptas perspiciatis porro commodi, voluptatum molestiae. Ducimus neque sapiente veniam in! Veniam sit laboriosam odio ex, itaque esse minus quas quidem aliquid porro?
+            In provident sed tenetur, consequuntur totam reiciendis, deserunt laudantium rerum fugit odio quo non, quod nihil exercitationem quam sequi obcaecati dolores aliquid? Sed magni dignissimos inventore accusamus eveniet quam explicabo.
+            Minima, nostrum iusto corrupti cum laboriosam et error voluptates expedita qui eum a hic obcaecati, esse provident assumenda, placeat ullam numquam alias! Dolorem, voluptates cum corrupti amet corporis facilis dolor!
+            Quibusdam perspiciatis optio doloremque. Veritatis perferendis cupiditate est aliquid error modi commodi repudiandae, similique ipsa nulla fugit, beatae nemo dolor provident amet deleniti? Sit laboriosam ex cupiditate voluptate at harum!
+            Assumenda sint doloribus eum animi exercitationem porro ex corporis veritatis autem saepe, delectus quo sit repellat suscipit. At laborum illum cumque nam? Vitae, laborum omnis perspiciatis minima quasi soluta obcaecati.
+            Quo cupiditate repellat, eum est exercitationem necessitatibus neque atque nam, delectus facere accusamus vero, pariatur dolorum ratione adipisci. Incidunt libero enim illo, sapiente autem provident aspernatur quia voluptatum necessitatibus molestias.
+            Odit quos temporibus eum tempora blanditiis dolorum nobis earum unde consequuntur facilis quidem reiciendis, quas officia veritatis accusamus, consequatur vero fugit ipsum architecto aspernatur sunt consectetur quaerat? Doloribus, quis et.
+            Natus adipisci a sequi culpa exercitationem aliquid similique atque, ipsum dolorum minus inventore velit eos alias cumque commodi consectetur quasi ratione. Ipsa reiciendis et rem commodi fuga nemo laboriosam optio.
+            Delectus voluptates hic repudiandae aperiam dignissimos laborum ex tempora, eius similique molestias, alias, dolores explicabo. Similique ex corrupti laborum. Molestiae accusamus nesciunt facilis ipsam voluptate rem, debitis velit nihil eligendi?
+            Quis iure soluta enim facilis, tenetur explicabo accusantium quasi nostrum accusamus nesciunt voluptas dolorum blanditiis voluptate illo voluptatem facere repellendus! Deserunt architecto nostrum ut sapiente voluptatibus hic id, sequi necessitatibus!
+            Praesentium ipsam dolores odit ratione quidem atque deleniti nisi animi. Necessitatibus esse nulla error possimus repellendus ducimus laboriosam a alias! Quas saepe dignissimos voluptates quae. Necessitatibus, tempora minima! Quasi, libero?
+            Minus corrupti aut illum aliquam debitis sed reiciendis. Modi placeat minima asperiores rem rerum ut molestiae, quaerat, culpa quasi autem laboriosam ratione. Maxime itaque est voluptas rerum facere libero harum?
+            Quaerat enim fuga eligendi atque perferendis autem officia laudantium hic, consectetur odio facere, cupiditate aspernatur at, mollitia ad aut error perspiciatis quasi illum. Eligendi ad autem ut nostrum est unde!
+            Delectus ullam quos enim ducimus rerum itaque culpa dicta repellendus sequi ad provident eos ipsum corrupti, quibusdam ex reiciendis dolorem molestiae veritatis. Sed alias numquam quisquam aut delectus fugiat tempora!
+            Fugiat dicta, officiis obcaecati id quam provident odio, adipisci dolorem voluptatum deleniti illum neque ullam accusantium. Animi cupiditate assumenda consequatur doloribus quas esse quo sequi ipsam? Molestiae voluptatem repudiandae temporibus!
+            Quia vitae deleniti impedit vero sapiente, officia sed quisquam, consectetur sit nihil recusandae. Maxime necessitatibus atque nobis cumque mollitia at a odit, nostrum saepe assumenda praesentium fugit nisi animi sit!
+            Mollitia doloribus optio minima aut quisquam, dolorem hic quas, ipsa eum voluptates fugit praesentium quo corporis accusantium quidem quis nulla illo ullam laborum deserunt consequuntur! Maiores dolores fugit cupiditate ut!
+            Fugit corporis quasi doloribus, tenetur sint aspernatur nesciunt? Quasi, aliquam fuga ex sint molestiae doloremque est impedit sequi porro autem similique distinctio officiis reprehenderit pariatur consequatur accusantium sed libero nam.
+        </div>
+        <% if( modificadorContent === 'content--locked') { %>
+            <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+        <% } %>
     </main>
 
 
     <!--Llamada al sidebar anuncios-->
-    <%- include('partials/sidebar-anuncios') %>
+    <%- include('../partials/sidebar-anuncios') %>
     <!--Llamada al footer-->
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
     </div>
     
 </body>
