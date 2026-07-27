@@ -97,7 +97,7 @@ const fasesRoutes = require('./routes/fases.routes.js');
 app.use('/', fasesRoutes);
 
 //importar la ruta de registro
-const registroRoutes = require('./routes/registro.routes.js');
+const registroRoutes = require('./routes/registro.route.js');
 app.use('/', registroRoutes);
 
 //importar la ruta de login
@@ -109,9 +109,12 @@ const indexPage = require('./routes/index.route.js');
 app.use('/', indexPage);
 
 //ruta buzon mail
-const buzon = require('./routes/buzon.routes.js');
+const buzon = require('./routes/buzon.route.js');
 app.use('/', buzon);
 
+//importar la ruta de asesores
+const asesores =  require('./routes/asesores.route.js');
+app.use('/', asesores);
 //para ver la página de registro
 // app.get('/registro', (req, res) => {
 //     res.render('registro');
