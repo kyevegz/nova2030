@@ -879,6 +879,12 @@ details[open] .submenu__icon-deploy{
     
 }
 
+.card__header--profile{
+    border-radius: var(--radius-straight);
+    background-color: transparent;
+    
+}
+
 .card__title, .card__icon{
     justify-content: space-between;
     font-family: var(--font-titles);
@@ -887,11 +893,29 @@ details[open] .submenu__icon-deploy{
     color: var(--principal-title);
 }
 
-.card__description{
+
+.card__description, 
+.card__degree, 
+.card__category{
     padding: var(--space-xs) var(--space-md);
     font-family: var(--font-body);
-    font-size: var(--font-size-body);
+    
     line-height: 1.5;
+}
+.card__description{
+    font-size: var(--font-size-body);
+}
+.card__degree{
+    font-size: var(--font-size-h3);
+}
+
+.card__category{
+    display: block;
+    width: fit-content;
+    background-color: var(--cerise-100);
+    border-radius: var(--radius-smooth);
+    border: 2px solid var(--cerise-600);
+    margin: var(--space-md) 0;
 }
 
 .card__button{
@@ -933,6 +957,12 @@ details[open] .submenu__icon-deploy{
     
 }
 
+.card__image{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;   
+    border-radius: var(--radius-smooth) var(--radius-smooth) 0 0 ;
+}
 /*~~~~~~~~~~~~~~~~~~~~~
 Formulario registro
 ~~~~~~~~~~~~~~~~~~~~~*/
@@ -1715,7 +1745,102 @@ disponible para no perderse o colapsar
     padding-top: var(--space-md);
 }
 
-/**/
+/*card de asesores*/
+/*bloque de nav tab*/
+.tabs{
+    display: flex;
+    flex-wrap: wrap;/*así bajarán de línea en móviles*/
+    gap: 0;
+    justify-content: flex-start;
+    margin:0 auto var(--space-xl) auto;
+
+    /*corresponde a la caja principal*/
+    border: 2px solid var(--shark-400);
+    border-radius: var(--radius-smooth);
+    width: fit-content;
+
+    /*corta cualquier elemento hijo que se quiera salir del contenedor*/
+    overflow: hidden;
+}
+
+.tabs__link{
+    font-family: var(--font-details);
+    font-size: var(--font-size-small);
+    font-weight: var(--weight-medium);
+    color: var(--shark-500);
+    padding: var(--space-md) var(--space-lg);
+    
+    
+    border-right: 1px solid var(--shark-400);      
+    /* border-bottom: 3px solid transparent;     */
+
+    box-shadow: inset 0 -3px 0 transparent;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabs__link:hover{
+    background-color: var(--bright-sun-200);
+}
+.tabs__link--active{
+    color: var(--cerulean-blue-950);
+    box-shadow: inset 0 -3px 0 var(--cerulean-blue-950);
+}
+
+/*esti quita el brode derecho del 
+último tab link para que no se sobreponga 
+con el del contenedor*/
+.tabs__link:last-child{
+    border-right: none;
+}
+
+.tabs__link--active{
+    background-color: var(--bright-sun-200);
+    border-bottom-color: var(--cerulean-blue-950);
+}
+
+
+/*Parte de la paginacipon*/
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xxl);
+}
+
+.pagination__btn,
+.pagination__page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-family: var(--font-details);
+    font-weight: var(--weight-bold);
+    color: var(--secundary-title);
+    background-color: var(--observatory-100);
+    border-radius: var(--radius-smooth);
+    border: 1px solid var(--observatory-100);
+    transition: all 0.3s ease;
+}
+
+.pagination__btn:hover,
+.pagination__page:hover{
+    background-color: var(--secundary-title);
+    color: var(--observatory-100);
+    border-color: var(--secundary-title);
+}
+
+/*modificador para la página actual*/
+.pagination__page--active{
+    background-color: var(--secundary-title);
+    color: var(--observatory-100);
+    border-color: var(--secundary-title);
+    pointer-events: none;/*así no le van a dar clic a una página donde ya está*/
+}
+
+
+
 
 /*MEDIA QUERIES*/
 
