@@ -850,7 +850,7 @@ details[open] .submenu__icon-deploy{
 
 .cards-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--space-md);
     padding: var(--space-md);
     width: 100%;
@@ -879,6 +879,12 @@ details[open] .submenu__icon-deploy{
     
 }
 
+.card__header--profile{
+    border-radius: var(--radius-straight);
+    background-color: transparent;
+    
+}
+
 .card__title, .card__icon{
     justify-content: space-between;
     font-family: var(--font-titles);
@@ -887,11 +893,39 @@ details[open] .submenu__icon-deploy{
     color: var(--principal-title);
 }
 
-.card__description{
+
+.card__description, 
+.card__degree, 
+.card__category, 
+.card__schedule{
     padding: var(--space-xs) var(--space-md);
-    font-family: var(--font-body);
-    font-size: var(--font-size-body);
+    font-family: var(--font-body);   
     line-height: 1.5;
+}
+.card__description{
+    font-size: var(--font-size-body);
+}
+.card__degree{
+    font-size: var(--font-size-h3);
+}
+
+.card__category{
+    padding: var(--space-xs);
+    font-family: var(--font-details);
+    font-weight: var(--weight-bold);
+    color: var(--cerulean-blue-950);
+    font-size: var(--font-size-small);
+    display: block;
+    width: fit-content;
+    
+    background-color: var(--bright-sun-200);
+    border-radius: var(--radius-smooth);
+    margin: var(--space-md) 0;
+}
+
+.card__schedule{
+    font-size: var(--font-size-small);
+    margin-bottom: var(--space-sm);
 }
 
 .card__button{
@@ -933,6 +967,12 @@ details[open] .submenu__icon-deploy{
     
 }
 
+.card__image{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;   
+    border-radius: var(--radius-smooth) var(--radius-smooth) 0 0 ;
+}
 /*~~~~~~~~~~~~~~~~~~~~~
 Formulario registro
 ~~~~~~~~~~~~~~~~~~~~~*/
@@ -1715,7 +1755,152 @@ disponible para no perderse o colapsar
     padding-top: var(--space-md);
 }
 
-/**/
+/*card de asesores*/
+/*bloque de nav tab*/
+.tabs{
+    display: flex;
+    flex-wrap: wrap;/*así bajarán de línea en móviles*/
+    gap: 0;
+    justify-content: flex-start;
+    margin:0 auto var(--space-xl) auto;
+
+    /*corresponde a la caja principal*/
+    border: 2px solid var(--shark-400);
+    border-radius: var(--radius-smooth);
+    width: fit-content;
+
+    /*corta cualquier elemento hijo que se quiera salir del contenedor*/
+    overflow: hidden;
+}
+
+.tabs__link{
+    font-family: var(--font-details);
+    font-size: var(--font-size-small);
+    font-weight: var(--weight-medium);
+    color: var(--shark-500);
+    padding: var(--space-md) var(--space-lg);
+    
+    
+    border: 1px solid var(--shark-400);   
+
+    box-shadow: inset 0 -3px 0 transparent;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tabs__link:hover{
+    background-color: var(--bright-sun-200);
+}
+.tabs__link--active{
+    color: var(--cerulean-blue-950);
+    box-shadow: inset 0 -3px 0 var(--cerulean-blue-950);
+}
+
+/*esti quita el brode derecho del 
+último tab link para que no se sobreponga 
+con el del contenedor*/
+.tabs__link:last-child{
+    border-right: none;
+}
+
+.tabs__link--active{
+    background-color: var(--bright-sun-200);
+    border-bottom-color: var(--cerulean-blue-950);
+}
+
+
+/*Parte de la paginacipon*/
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: var(--space-xl) 0 var(--space-xxl) 0;
+}
+
+.pagination__btn,
+.pagination__page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: var(--font-details);
+    font-weight: var(--weight-bold);
+    
+    
+    
+    
+    transition: all 0.3s ease;
+}
+
+.pagination__btn{
+    color: var(--observatory-800);
+    width: fit-content;
+    height: fit-content;
+}
+
+.pagination__page{
+    background-color: var(--observatory-50);
+    /* border: 0.5px solid var(--observatory-700); */
+    border-radius: var(--radius-smooth);
+    color: var(--secundary-title);
+    width: 44px;
+    height: 44px;
+}
+
+.pagination__page:hover{
+    background-color: var(--secundary-title);
+    color: var(--observatory-100);
+    border-color: var(--secundary-title);
+}
+
+/*modificador para la página actual*/
+.pagination__page--active{
+    background-color: var(--secundary-title);
+    color: var(--observatory-50);
+    border-color: var(--secundary-title);
+    pointer-events: none;/*así no le van a dar clic a una página donde ya está*/
+}
+
+
+/*empty state*/
+.empty-state{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /*hará que abarque todas las columnas 
+    pese a que tenemos un contenedor grid*/
+    grid-column: 1/-1;
+    
+    padding: var(--space-xxl) var(--space-md);
+    background-color: var(--cerulean-blue-50);
+    border: 2px dashed var(--cerulean-blue-500);
+    border-radius: var(--radius-smooth);
+    margin-top: var(--space-md);
+
+}
+
+.empty-state__icon{
+    font-size: var(--font-size-big);
+    color: var(--cerulean-blue-400);
+    margin-bottom: var(--space-md);
+}
+
+.empty-state__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    color: var(--principal-title);
+    margin-bottom: var(--space-xs);
+}
+
+.empty-state__text{
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    max-width: 500px;
+}
 
 /*MEDIA QUERIES*/
 

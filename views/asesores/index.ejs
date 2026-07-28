@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %>
+    <title>Asesores | Nova 2030</title>
+</head>
+<body>
+    <div class="page">
+
+        <%- include('../partials/sidenavbar') %>
+        <%- include('../partials/header') %>
+
+        <main class="content">
+
+            <!--Información de la página asesores-->
+            <div class="phase-container">
+                <h1 class="phase-title"><%= descripcionAsesor.tipo %></h1>
+                <p class="phase-description">
+                    <%= descripcionAsesor.descripcion%>
+                    
+                </p>
+            </div>
+
+            <!--Tabs, navegación por categorías-->
+            <%- include('../partials/nav-tabs')%>
+            <!--Paginación superior-->
+            <%- include('../partials/pagination')%>
+
+            <!--Aquí van las cards y empty state-->
+            
+            <div class="cards-container">
+                
+                <% if(asesores && asesores.length > 0){ %>
+                    <% asesores.forEach(asesor => { %>
+                        <%- include('../partials/card-asesores', {asesor})%>
+                    <% }); %>
+                <% } else { %>
+                    <div class="empty-state">
+                        <i class="fa-solid fa-magnifying-glass-location empty-state__icon"></i>
+                        <h3 class="empty-state__title">Más asesores próximamente</h3>
+                        <p class="empty-state__text">
+                            Lo lamentamos, por el momento aún no contamos con expertos
+                            en la categoría <strong><%= categoriaSeleccionada%></strong>.
+                            Pero no te preocupes, en Nova 2030 estamos trabajando para sumar
+                            a los mejores expertos muy pronto.
+                        </p>
+                    </div>
+                <% } %>
+            </div>
+
+            <!--Paginación inferior-->
+            <%- include('../partials/pagination')%>    
+
+
+        </main>
+
+        <%- include('../partials/sidebar-anuncios') %>
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+</html>

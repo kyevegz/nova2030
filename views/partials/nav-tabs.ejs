@@ -1,0 +1,15 @@
+<nav class="tabs">
+    <a href="/asesores?categoria=" 
+        class="tabs__link <%= !categoriaSeleccionada || categoriaSeleccionada === 'todas' ? 'tabs__link--active' : ''%>">
+        Todos
+    </a>
+
+    <% if(categorias && categorias.length >0) {%>
+        <% categorias.forEach(cat=> { %>
+            <a href="/asesores?categoria=<%=cat.nombreCat%>" 
+                class="tabs__link <%= categoriaSeleccionada === cat.nombreCat ? 'tabs__link--active' : ''%>">
+                <%=cat.nombreCat%>
+            </a>
+        <% }); %>
+    <% } %>    
+</nav>
