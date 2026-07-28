@@ -290,6 +290,7 @@ h6 {
     "header header header"
     ". main sidebar-add"
     "footer footer footer";
+    min-width: 0; /*no se estirará por culpa de los elementos hijos*/
 }
 
 /*full para layout sin anuncios*/
@@ -490,6 +491,8 @@ details[open] .submenu__icon-deploy{
     grid-area: main;
     background-color: transparent;
     border: var(--border);
+    width: 100%;
+    min-width: 0;
 }
 
 .sidebar--ads{
@@ -1171,7 +1174,7 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
     box-shadow: 0 4px 12px rgba(0, 86, 207, 0.25);
 }
 
-.form__button-send:hover{
+.form__button-send:hover, .splide-call-card__button{
     background-color: var(--cerulean-blue-700);
 }
 
@@ -1902,6 +1905,127 @@ con el del contenedor*/
     max-width: 500px;
 }
 
+/*carrusel*/
+
+.splide-container-call{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    padding: var(--space-md);
+}
+.splide-call-card{
+    background-color: var(--bridal-heath-200);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.splide-container-call .splide{
+    min-width: 0;
+}
+
+.call-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);    
+    grid-template-rows: repeat(2, 1fr);    
+    gap: 1.5rem;
+    align-content: center;
+}
+
+.call-grid-card{
+    background-color: var(--bridal-heath-200);
+    border-radius: var(--radius-smooth);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1.5px solid var(--shark-300);
+}
+
+.call-grid-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.splide-call-card__image{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.splide-call-card__content{
+    padding: var(--space-md);
+    text-align: center;
+    /*display: flex;
+    flex-direction: column;
+    flex-grow: 1; empujará el botón hacia abajo cuando el texto sea corto*/
+}
+
+.splide-call-card__title{
+    font-size: var(--font-size-h3);
+    font-weight: var(--weight-bold);
+    color: var(--text-colour);
+    margin: 0;
+}
+
+.splide-call-card__text{
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    margin-bottom: var(--space-lg);
+    line-height: 1.5;
+}
+
+.splide-call-card__button{
+    margin-top: auto;
+    background-color: var(--principal-title);
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-smooth);
+    font-weight: var(--weight-bold);
+    transition: bakground-color 0.3s ease;
+}
+
+/*hacer miniaturas a los li del carrusel secundario*/
+
+#splideGrid .splide-call__image{
+    height: 100px;
+}
+
+#splideGrid .splide-call-card__text,
+#splideGrid .splide-call-card__button{
+    display: none;
+}
+
+#splideGrid .splide-call-card__content{
+    padding: var(--space-md);
+    justify-content: center;
+}
+
+#splideGrid .splide-call-card__title{
+    font-size: var(--font-size-body);
+    margin: 0;
+    text-align: center;
+}
+
+#splideGrid .splide-call-card{
+    cursor: pointer;
+}
+
+/*quitar el brode horroroso del splide*/
+#splideGrid .splide__slide.is-active{
+    border: none;
+}
+
+#splideGrid .splide__slide{
+    border: none;
+    opacity: 1.;
+}
 /*MEDIA QUERIES*/
 
 /*--------------------
