@@ -26,13 +26,26 @@
             <%- include('../partials/nav-tabs')%>
 
 
-            <!--Aquí van las cards-->
+            <!--Aquí van las cards y empty state-->
+            
             <div class="cards-container">
                 
-
-                <% asesores.forEach(asesor => { %>
-                    <%- include('../partials/card-asesores', {asesor})%>
-                <% }); %>
+                <% if(asesores && asesores.length > 0){ %>
+                    <% asesores.forEach(asesor => { %>
+                        <%- include('../partials/card-asesores', {asesor})%>
+                    <% }); %>
+                <% } else { %>
+                    <div class="empty-state">
+                        <i class="fa-solid fa-magnifying-glass-location empty-state__icon"></i>
+                        <h3 class="empty-state__title">Más asesores próximamente</h3>
+                        <p class="empty-state__text">
+                            Lo lamentamos, por el momento aún no contamos con expertos
+                            en la categoría <strong><%= categoriaSeleccionada%></strong>.
+                            Pero no te preocupes, en Nova 2030 estamos trabajando para sumar
+                            a los mejores expertos muy pronto.
+                        </p>
+                    </div>
+                <% } %>
             </div>
 
             <!--Paginación-->

@@ -1863,7 +1863,45 @@ con el del contenedor*/
 }
 
 
+/*empty state*/
+.empty-state{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
+    /*hará que abarque todas las columnas 
+    pese a que tenemos un contenedor grid*/
+    grid-column: 1/-1;
+    
+    padding: var(--space-xxl) var(--space-md);
+    background-color: var(--cerulean-blue-50);
+    border: 2px dashed var(--cerulean-blue-500);
+    border-radius: var(--radius-smooth);
+    margin-top: var(--space-md);
+
+}
+
+.empty-state__icon{
+    font-size: var(--font-size-big);
+    color: var(--cerulean-blue-400);
+    margin-bottom: var(--space-md);
+}
+
+.empty-state__title{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    color: var(--principal-title);
+    margin-bottom: var(--space-xs);
+}
+
+.empty-state__text{
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--text-colour);
+    max-width: 500px;
+}
 
 /*MEDIA QUERIES*/
 
