@@ -1815,7 +1815,7 @@ con el del contenedor*/
     justify-content: center;
     align-items: center;
     gap: var(--space-sm);
-    margin-top: var(--space-xxl);
+    margin: var(--space-xl) 0 var(--space-xxl) 0;
 }
 
 .pagination__btn,
