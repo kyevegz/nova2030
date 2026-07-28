@@ -7,13 +7,9 @@ router.get('/asesores', async (req, res) =>{
     try{
         //consultar todos los registros de cateforías
         const [categorias ] =await db.query('SELECT * FROM categorias');
-        const [asesores] = await db.query(
-            `SELECT nombre, apellidop, apellidom, gradoEscolar, 
-            descripcion, inicioTurno, finTurno, cat.nombreCat 
-            FROM asesores
-            JOIN categorias cat ON asesores.idCategoria = cat.id
-            `
-        );
+        let asesores = [];
+
+
         /*se lee la categorías que el usuario seleccionó en la url, 
         por ejemplo, ?categoria=emprendimiento
         Si no encuentra, se sobreentiende que quiere ver todos los asesores
@@ -21,7 +17,28 @@ router.get('/asesores', async (req, res) =>{
 
         //esta línea es la que extrae eso, el || asigna un valor por defecto cuando no 
         // se escribe un filtro ?filtro=valor en la url
-        const categoriaSeleccionada = req.query.categoria || 'todas';
+        let categoriaSeleccionada = req.query.categoria || 'todas';
+        const existeCategoria = categorias.some(cat => cat.nombreCat === categoriaSeleccionada);
+
+        console.log(categoriaSeleccionada)
+
+        if(!existeCategoria){
+            categoriaSeleccionada = 'todas';
+            [asesores] = await db.query(
+                `SELECT nombre, apellidop, apellidom, gradoEscolar, 
+                descripcion, inicioTurno, finTurno, cat.nombreCat 
+                FROM asesores
+                JOIN categorias cat ON asesores.idCategoria = cat.id`
+            );
+        }else{
+            [asesores] = await db.query(
+                `SELECT nombre, apellidop, apellidom, gradoEscolar, 
+                descripcion, inicioTurno, finTurno, cat.nombreCat 
+                FROM asesores
+                JOIN categorias cat ON asesores.idCategoria = cat.id
+                WHERE cat.nombreCat = ?`
+            ,[categoriaSeleccionada]);
+        }
 
         console.log(categorias)
         //se envían los datos de la vista para que en ejs sean dibujados y plasmados en el navtabs
