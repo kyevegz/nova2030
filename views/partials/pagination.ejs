@@ -1,7 +1,20 @@
 <div class="pagination">
-    <a href="#" class="pagination__btn"><i class="fa-solid fa-chevron-left"></i></a>
-    <a href="#" class="pagination__page pagination__page--active">1</a>
+    <% if(paginaActual > 1){ %>
+        <a href="/asesores?categoria= <%=categoriaSeleccionada%>&page=<%= paginaActual -1%>" class="pagination__btn"><i class="fa-solid fa-chevron-left"></i></a>
+    <% } %>
+    
+    <% for( let i = 1; i <= totalPaginas; i++ ) { %>
+        <a href="/asesores?categoria=<%=categoriaSeleccionada%>&page=<%= i %>" 
+            class="pagination__page <%= i === paginaActual ? 'pagination__page--active' : ''%>">
+            <%= i %>
+        </a>
+    <% } %>
+
+    <% if(paginaActual < totalPaginas){ %>
+        <a href="/asesores?categoria= <%=categoriaSeleccionada%>&page=<%= paginaActual +1%>" class="pagination__btn"><i class="fa-solid fa-chevron-right"></i></a>
+    <% } %>
+    
+    <!-- <a href="#" class="pagination__page pagination__page--active">1</a>
     <a href="#" class="pagination__page">2</a>
-    <a href="#" class="pagination__page">300</a>
-    <a href="#" class="pagination__btn"><i class="fa-solid fa-chevron-right"></i></a>
+    <a href="#" class="pagination__page">300</a>-->
 </div>
