@@ -1,0 +1,61 @@
+<!--Botón que flotará-->
+<button class="chatbot-trigger" id="chatbotBtn">
+    <i class="fa-solid fa-robot"></i>
+</button>
+
+<!--Ventana del mini chat-->
+<aside class="chatbot chatbot--hidden" id="ventanaChatbot">
+
+    <!--Header de la ventanita-->
+    <header class="chatbot__header">
+        <div class="chatbot__profile">
+            <img src="" alt="" class="chatbot__avatar">
+            <div class="chatbot__info">
+                <h3 class="chatbot__name">MarIA</h3>
+                <span class="chatbot__statuts">Compañero virtual</span>
+            </div>
+        </div>
+    </header>
+
+    <!--Área de mensajes-->
+
+    <div class="chatbot__messages" id="chatbotMensajes">
+
+        <!--Burburja/mensaje de la IA-->
+        <div class="chatbot__message chatbot__message--ai">
+            <img src="" alt="" class="chatbot__message-avatar">
+            <div class="chatbot__bubble">
+                <p>lorem0</p>
+                <span class="chatbot__time">00:00</span>
+            </div>
+        </div>
+
+        <!--Burbuja-/mensaje del usuario-->
+        <div class="chatbot__message chatbot__message--user">
+            <div class="chatbot__bubble">
+                <p>lorem0</p>
+                <span class="chatbot__time">00:00</span>
+            </div>
+            <img src="" alt="" class="chatbot__message-avatar">
+        </div>
+
+        <!--zona de envío de mensajes-->
+        <footer class="chatboot__footer">
+            <form action="" class="chatbot__form" id="chatbotForm">
+
+                <!--Adjuntar archivo-->
+                <button type="button" class="chatbot__attach-btn">
+                    <i class="fa-solid fa-paperclip"></i>
+                </button>
+                <input type="text" class="chatbot__send-btn" placeholder="Escribir..." required="required" autocomplete="off">
+                
+                <button class="chatbot__send-btn" type="submit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </footer>
+
+    </div>
+
+
+</aside>
