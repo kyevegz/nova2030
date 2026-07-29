@@ -490,57 +490,46 @@ const odsData = {
         ]
     },
     "12": {
-        numero: 12,//número de ods
-        titulos: "",
+        numero: 12,
+        titulos: "PRODUCCION Y CONSUMO RESPONSABLE",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 12 pretende garantizar modalidades de consumo y producción sostenibles, algo fundamental para sostener los medios de subsistencia de las generaciones actuales y futuras.",
+            "Nuestro planeta se está quedando sin recursos, pero el índice de población sigue creciendo. En caso de que la población mundial alcance los 9800 millones de personas en 2050, se podría necesitar el equivalente a casi tres planetas para proporcionar los recursos naturales necesarios para mantener los estilos de vida actuales.",
+            "Para reducir nuestros niveles de consumo, debemos cambiar nuestros hábitos de consumo, y una de las principales medidas que debemos adoptar es sustituir los sistemas de suministro energético por otros más sostenibles. Las crisis mundiales provocaron un resurgimiento de las subvenciones a los combustibles fósiles, que casi se duplicaron de 2020 a 2021.",
+            "Se están produciendo cambios prometedores en las empresas, como la tendencia al aumento de la elaboración de informes de sostenibilidad ―que en apenas unos años se ha visto casi triplicada―, lo que demuestra un mayor nivel de compromiso y concienciación sobre la necesidad de dar prioridad a las prácticas sostenibles en todos los sectores empresariales.",
+            "El desperdicio de alimentos es otro indicio del consumo excesivo. Abordar la pérdida de alimentos es urgente y requiere políticas específicas basadas en datos, así como inversiones en tecnologías, infraestructuras, enseñanza y supervisión. A pesar de que una gran parte de la población mundial pasa hambre, cada año se desperdicia la asombrosa cantidad de 931 millones de toneladas de alimentos."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué debemos cambiar nuestros hábitos de consumo?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "El progreso económico y social conseguido durante el último siglo ha estado acompañado de una degradación medioambiental que está poniendo en peligro los mismos sistemas de los que depende nuestro desarrollo futuro y, ciertamente, nuestra supervivencia.",
+                    "Para que la transición tenga éxito, es necesario potenciar el aprovechamiento eficaz de los recursos, tener en cuenta todo el ciclo de vida de las actividades económicas y participar activamente en los acuerdos multilaterales sobre el medio ambiente."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué tiene que cambiar?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Son muchos los hábitos de consumo que, si se modifican ligeramente, pueden tener un gran impacto en la sociedad.",
+                    "Los gobiernos deben implantar y poner en práctica políticas y normativas que recojan medidas como el establecimiento de objetivos para reducir la generación de residuos, el fomento de prácticas de economía circular, y el apoyo a políticas de contratación sostenible.",
+                    "La adopción de una economía circular implica diseñar productos duraderos, reparables y reciclables. También implica promover prácticas como la reutilización, el reacondicionamiento y el reciclaje de productos para minimizar los residuos y el agotamiento de los recursos.",
+                    "Además, se puede adoptar un estilo de vida más sostenible: consumir menos, elegir productos con menor impacto ambiental y reducir la huella de carbono de nuestras actividades cotidianas."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "Como empresa, ¿cómo puedo ayudar?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "A las empresas les conviene encontrar nuevas soluciones que permitan modelos de consumo y producción sostenibles. Es necesario conocer más a fondo las repercusiones medioambientales y sociales que tienen ciertos productos y servicios, tanto en lo que respecta a su ciclo de vida como al modo en que se ven alterados por su uso en los diferentes estilos de vida.",
+                    "Las soluciones innovadoras y de diseño facilitan e inspiran a las personas a adoptar estilos de vida más sostenibles, lo que reduce su impacto y mejora su bienestar."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "Como consumidor, ¿cómo puedo ayudar?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Hay dos maneras principales de ayudar:",
+                    "Reducir los residuos generados y 2. Pensar bien lo que se compra y elegir una opción sostenible siempre que sea posible.",
+                    "Evitar tirar comida y reducir el consumo de plástico, una de las causas principales de contaminación de los océanos. Tener siempre encima una bolsa reutilizable, negarse a usar pajitas de plástico y reciclar botellas de plástico son buenas formas de contribuir en el día a día.",
+                    "Tomar decisiones inteligentes acerca de las compras también ayuda. Comprar productos sostenibles y locales puede suponer una diferencia, además de que presiona a las empresas para que adopten prácticas sostenibles."
                 ]
             }
         ]
