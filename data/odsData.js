@@ -717,57 +717,55 @@ const odsData = {
         ]
     },
     "17": {
-        numero: 17,//número de ods
-        titulos: "",
+        numero: 17,
+        titulos: "ALIANZAS PARA LOGRAR LOS OBJETIVOS",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 17 pretende revitalizar la alianza mundial para el desarrollo sostenible. La Agenda 2030 es universal y exige la implicación de todos los países, tanto desarrollados como en desarrollo, para garantizar que nadie se quede atrás. También requiere la colaboración entre los gobiernos, el sector privado y la sociedad civil.",
+            "Los Objetivos de Desarrollo Sostenible solo se pueden conseguir con asociaciones mundiales sólidas y cooperación para garantizar que nadie se quede atrás en nuestro camino hacia el desarrollo.",
+            "Sin embargo, no todos los países se encuentran en la misma situación de partida, y los países de ingresos bajos y medios afrontan enormes deudas que les impiden hacer avances en esta materia.",
+            "Después de la pandemia de la COVID-19, los países en desarrollo se enfrentan a un aumento sin precedentes de los niveles de deuda externa, agravado por retos como una inflación extrema, la escalada de las tasas de interés, prioridades contrapuestas y una capacidad fiscal limitada, lo que subraya la urgente necesidad de alivio de la deuda y asistencia financiera.",
+            "Aunque las corrientes de asistencia oficial para el desarrollo (AOD) siguen alcanzando máximos históricos, el aumento en 2022 se atribuye principalmente al gasto en refugiados en los países donantes y a la ayuda a Ucrania.",
+            "Para tener éxito, es necesario movilizar tanto los recursos existentes como los adicionales, y los países desarrollados deberán cumplir sus compromisos de aumentar la asistencia oficial para el desarrollo."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Las consecuencias de la pandemia de la COVID-19 han puesto en evidencia que reforzar el multilateralismo y las alianzas mundiales es más importante que nunca si queremos resolver los problemas del mundo."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Por qué debería importarme?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Luchamos juntos por el mismo motivo. La Agenda y sus 17 objetivos son universales y exigen la implicación de todos los países, tanto desarrollados como en desarrollo, para garantizar que nadie se quede atrás."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cuánto hemos avanzado?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los ODS han recibido un apoyo constante pero frágil, con importantes y persistentes desafíos.",
+                    "Los recursos financieros siguen siendo escasos, las tensiones comerciales han aumentado y siguen faltando datos cruciales.",
+                    "Una parte cada vez mayor de la población mundial tiene acceso a Internet y se ha creado un Banco de Tecnología para los Países Menos Adelantados, pero la brecha digital no ha desaparecido."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "Como socios, ¿qué tenemos que hacer para conseguirlo?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Necesitamos movilizar tanto los recursos existentes como los adicionales —desarrollo tecnológico, recursos financieros, capacidades— y los países desarrollados deberán cumplir sus compromisos de aumentar la asistencia oficial para el desarrollo.",
+                    "Las alianzas de múltiples partes interesadas serán cruciales para aprovechar las interrelaciones entre los Objetivos de Desarrollo Sostenible para mejorar su eficacia e impacto y acelerar el progreso en la consecución de los Objetivos."
+                ]
+            },
+            {
+                subtitulo: "¿Cómo podemos garantizar que los recursos necesarios se movilicen de manera eficaz?",
+                parrafos: [
+                    "Los países serán los principales responsables de que se realice eficazmente. Se deberán realizar exámenes periódicos de los progresos en cada país, con la participación de la sociedad civil, las empresas y los representantes de los distintos grupos de interés. A nivel regional, los países intercambiarán experiencias y abordarán cuestiones comunes, mientras que anualmente, en el Foro Político de Alto Nivel sobre el Desarrollo Sostenible (FPAN) de las Naciones Unidas, harán balance de los progresos realizados a nivel mundial, identificando carencias y problemas emergentes, y recomendando medidas correctoras."
+                ]
+            },
+            {
+                subtitulo: "¿Qué podemos hacer para ayudar?",
+                parrafos: [
+                    "Únase o cree un grupo en su comunidad local para promover la implementación de los ODS.",
+                    "Inste a sus gobiernos a que colaboren con las empresas e implementen los ODS."
                 ]
             }
         ]
