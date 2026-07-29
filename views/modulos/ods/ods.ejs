@@ -21,14 +21,14 @@
         <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
             <article class="ods-content">
                 <header class="ods-header">
-                    <h1>ODS <%= odsIn.numero%>: <%= odsIn.titulo%></h1>
+                    <h1 class="content__title">ODS <%= odsIn.numero%>: <%= odsIn.titulo%></h1>
                 </header>
 
                 <!--Renderización de la introducción párafo a párrafo, con un foreach-->
 
                 <section class="ods-introduction">
                     <% odsIn.introduccion.forEach(parrafo => { %>
-                        <p><%= parrafo %></p>
+                        <p class = "content__paragraph"><%= parrafo %></p>
                     <% }) %>
                 </section>
 
@@ -36,9 +36,9 @@
                 <section class="ods-sections">
                     <% odsIn.secciones.forEach(seccion => { %>
                         <div class="ods-block">
-                            <h2><%= seccion.subtitulo %></h2>
+                            <h2 class="content__subtitle"><%= seccion.subtitulo %></h2>
                             <% odsIn.parrafos.forEach(parrafo => { %>
-                                <p><%= parrafo %></p>
+                                <p class = "content__paragraph"><%= parrafo %></p>
                             <% }); %>
                         </div>>
                     <% }); %>

@@ -2123,8 +2123,10 @@ con el del contenedor*/
     margin-bottom: var(--space-xl);
 }
 
-.content__paragraph{
-
+.content__subtitle{
+    font-family: var(--font-titles);
+    color: var(--secundary-title);
+    font-size: var(--font-size-h2);
 }
 /*MEDIA QUERIES*/
 
