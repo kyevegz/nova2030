@@ -1,16 +1,18 @@
 <div class="cards-container">
-    <article class="flip-card" style="">
-        <div class="flip-card__inner">
-            <div class="flip-card__front">
-                <img src="" alt="" class="flip-card__image">
-                <h3 class="flip-card__title-front">Objetivo : </h3>
-            </div>
+    <% ods.forEach(objetivo => { %>
+        <article class="flip-card" style="--ods-color: <%= objetivo.color%>;">
+            <div class="flip-card__inner">
+                <div class="flip-card__front">
+                    <img src="" alt="" class="flip-card__image" src = "/images/ods/<%= objetivo.imagen%>">
+                    <h3 class="flip-card__title-front">Objetivo <%= objetivo.id%> : <%= objetivo.title %> </h3>
+                </div>
 
-            <div class="flip-card__back">
-                <h3 class="flip-card__title-back"></h3>
-                <p class="plip-card__description"></p>
-                <a href="" class="flip-card__button">Leer más</a>
+                <div class="flip-card__back">
+                    <h3 class="flip-card__title-back">Objetivo <%= objetivo.id%> : <%= objetivo.title %></h3>
+                    <p class="plip-card__description"><%= objetivo.description%></p>
+                    <a href="" class="flip-card__button">Leer más</a>
+                </div>
             </div>
-        </div>
-    </article>
+        </article>
+    <% }) %>
 </div>
