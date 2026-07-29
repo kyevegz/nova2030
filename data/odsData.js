@@ -107,77 +107,59 @@ const odsData = {
         numero: 3,//número de ods
         titulos: "SALUD Y BIENESTAR",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            ""
+            "En los últimos años se han logrado grandes avances en la mejora de la salud de las personas. 146 de 200 países o regiones ya han cumplido o están en camino de alcanzar la meta de los ODS sobre mortalidad en menores de 5 años. El tratamiento eficaz contra el VIH ha reducido las muertes relacionadas con el sida en un 52 % desde 2010 y se ha eliminado al menos una enfermedad tropical desatendida en 47 países.",//párrafos separados por comas
+            "Sin embargo, todavía persisten las desigualdades en el acceso a la atención sanitaria. La pandemia de la COVID-19 y otras crisis en curso han impedido el progreso hacia el objetivo 3. La vacunación infantil ha experimentado el mayor descenso en tres décadas y las muertes por tuberculosis y malaria han aumentado en comparación con los niveles previos a la pandemia.",
+            "Los Objetivos de Desarrollo Sostenible suponen un compromiso audaz para poner fin a las epidemias de sida, tuberculosis, malaria y otras enfermedades transmisibles para 2030. El objetivo es lograr la cobertura sanitaria universal y proporcionar acceso a medicamentos y vacunas seguros y asequibles para todos.",
+            "Para superar estos contratiempos y abordar las persistentes deficiencias en la atención de la salud, se necesita una mayor inversión en los sistemas sanitarios con el fin de apoyar a los países en su recuperación y desarrollar resiliencia contra futuras amenazas a la salud."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "Acceso a servicios sanitarios esenciales.",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Una parte significativa de la población mundial carece aún de acceso a servicios sanitarios vitales. Para cubrir esta carencia y garantizar una prestación de atención sanitaria equitativa, es fundamental abordar las disparidades. Es necesario prestar atención a varios determinantes de la salud, incluidos los factores ambientales y comerciales, para allanar el camino hacia el logro de nuestro objetivo común de salud para todas las personas y las metas de los Objetivos de Desarrollo Sostenible."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cómo podemos alcanzar estas metas?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Garantizar una vida saludable para todos requiere un fuerte compromiso, pero los beneficios superan los costes. Las personas sanas son la base de unas economías sanas. Se insta a los países de todo el mundo a tomar medidas inmediatas y decisivas para predecir y contrarrestar los desafíos en la salud.",
+                    "Esto resulta especialmente crucial para proteger a los grupos de población vulnerables y a las personas que residen en regiones con una elevada prevalencia de enfermedades. De este modo, podemos reforzar los sistemas sanitarios y fomentar la resiliencia frente a las adversidades sanitarias.",
+                    "La inmunización es una de las intervenciones sanitarias más exitosas y rentables del mundo. Sin embargo, el alarmante declive en la vacunación infantil (la mayor disminución sostenida de la vacunación infantil en aproximadamente 30 años) deja a millones de niños en riesgo de contraer enfermedades devastadoras pero prevenibles."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Tiene todo el mundo acceso a la atención sanitaria?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La cobertura sanitaria universal tiene como objetivo garantizar que todas las personas puedan acceder a servicios de salud de calidad sin afrontar dificultades financieras. Si bien los esfuerzos para combatir enfermedades infecciosas como el VIH, la tuberculosis y la malaria llevaron a ampliaciones significativas en la cobertura de los servicios entre 2000 y 2015, desde entonces el progreso se ha desacelerado.",
+                    "Las desigualdades siguen siendo un desafío fundamental para la cobertura sanitaria universal. La cobertura de servicios de salud reproductiva, materna, infantil y adolescente tiende a ser mayor entre quienes son más ricos, tienen una mejor formación y viven en áreas urbanas, especialmente en países de bajos ingresos."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cómo puedo ayudar?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Puedes empezar por promover y proteger tu propia salud y la de quienes te rodean, tomando decisiones bien informadas, practicando sexo seguro y vacunando a tus hijos. Puedes crear conciencia en tu propia comunidad sobre la importancia de la buena salud, estilos de vida saludables y del derecho de las personas a unos servicios de atención médica de calidad, especialmente para los más vulnerables, como las mujeres y los niños.",
+                    "También puedes pedir responsabilidades a tu gobierno, a los líderes locales y a otros responsables de la toma de decisiones sobre sus compromisos para mejorar el acceso de las personas a la salud y a la atención médica."
                 ]
             }
         ]
     },
     "4": {
         numero: 4,//número de ods
-        titulos: "",
+        titulos: "EDUCACION DE CALIDAD",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            ""
+            "El progreso hacia una educación de calidad ya era más lento de lo requerido antes de la pandemia, pero la covid-19 ha tenido impactos devastadores en la educación, provocando pérdidas de aprendizaje en cuatro de cada cinco países de un total de 104 analizados.",
+            "Sin medidas adicionales, se estima que 84 millones de niños y jóvenes no asistirán a la escuela de aquí a 2030 y aproximadamente 300 millones de estudiantes carecerán de las habilidades básicas de aritmética y alfabetización necesarias para tener éxito en la vida.",
+            "Además de la educación primaria y secundaria gratuita para todos los niños y niñas de aquí a 2030, el objetivo es proporcionar igualdad de acceso a una formación profesional asequible, eliminar las disparidades de género y riqueza y lograr el acceso universal a una educación superior de calidad.",
+            "La educación es la clave que permitirá alcanzar muchos otros objetivos de desarrollo sostenible (ODS). Cuando las personas pueden obtener una educación de calidad, pueden romper el ciclo de la pobreza. La educación ayuda a reducir las desigualdades y a alcanzar la igualdad de género. ",
+            "También ayuda a las personas de todo el mundo vivir una vida más saludable y sostenible. La educación también es importante para fomentar la tolerancia entre las personas y contribuye al desarrollo de sociedades más pacíficas.",
+            "Para cumplir el objetivo 4, la financiación de la educación debe convertirse en una prioridad de inversión nacional. Además, medidas como hacer que la educación sea gratuita y obligatoria, aumentar el número de docentes, mejorar la infraestructura escolar básica y adoptar la transformación digital son esenciales."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Qué avances se han hecho hasta ahora?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Si bien se han logrado avances hacia los objetivos educativos para 2030 establecidos por la organización de las naciones unidas, se requieren esfuerzos continuos para abordar los desafíos persistentes y garantizar que una educación de calidad sea accesible para todos, sin dejar a nadie atrás.",
+                    "Entre 2015 y 2021, hubo un aumento en la finalización de la escuela primaria, la finalización de la secundaria básica y la finalización de la secundaria superior en todo el mundo. Sin embargo, el progreso realizado durante este período fue notablemente más lento en comparación con los 15 años anteriores."
                 ]
             },
             {
