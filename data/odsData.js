@@ -546,7 +546,7 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "Acción inmediata",
+                subitulo: "Acción inmediata.",
                 parrafos: [
                     "La crisis climática no va a parar, y la comunidad internacional rehúye el compromiso necesario para revertirla. El período comprendido entre 2010 y 2019 fue la década más calurosa que se haya registrado jamás y trajo consigo incendios forestales, huracanes, sequías, inundaciones y otros desastres naturales masivos en todos los continentes.",
                     "El cambio climático está alterando las economías nacionales y afectando a las distintas vidas y medios de subsistencia de muchas personas, especialmente las más vulnerables.",
