@@ -299,13 +299,13 @@ const odsData = {
         ]
     },
     "8": {
-        numero: 8,//número de ods
-        titulos: "",
+        numero: 8,
+        titulos: "TRABAJO DECENTE Y CRECIMIENTO ECONOMICO",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 8 pretende promover el crecimiento económico inclusivo y sostenible, el empleo y el trabajo decente para todos.",
+            "Diversas crisis amenazan gravemente la economía mundial. Se prevé que el crecimiento real del PIB mundial per cápita se desacelere en 2023. Las difíciles condiciones económicas empujan a más trabajadores al empleo informal.",
+            "Se ha producido un incremento de la productividad laboral y un descenso de la tasa de desempleo a escala mundial. No obstante, es necesario seguir avanzando para mejorar las oportunidades de empleo, especialmente entre jóvenes, reducir el empleo informal y la desigualdad en el mercado laboral (sobre todo en lo que respecta a la brecha salarial entre hombres y mujeres), promover entornos de trabajo seguros y protegidos y mejorar el acceso a los servicios financieros para garantizar un crecimiento económico sostenido e inclusivo.",
+            "A medida que las economías empezaban a recuperarse de los efectos de la pandemia de la COVID-19, la tasa de desempleo mundial se redujo significativamente en 2022, cayendo hasta el 5,4% a partir de un pico máximo del 6,6% en 2020. Esta tasa fue inferior al nivel prepandémico del 5,5% de 2019."
         ],
         secciones: [
             {
