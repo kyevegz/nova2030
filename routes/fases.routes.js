@@ -10,15 +10,15 @@ desde express*/
 const dicFases = {
     1: {
         titulo: "Fase 1",
-        descripcion: "Inicia tu viaje de transformación. En esta fase explorarás tus habilidades, los retos globales, la agenda 2030 y generarás ideas antes de avanzar a la fase 2."
+        objetivo: "Brindar a los usuarios los conocimientos necesarios para comprender los principales retos del mundo, identificar sus intereses y habilidades, y orientarlos hacia el desarrollo de un proyecto que impacte socialmente en diferentes areas, y del mismo modo, estar alineado con los Objetivos de Desarrollo Sostenible (ODS)."
     },
     2: {
         titulo: "Fase 2",
-        descripcion: "Lorem"
+        objetivo: "Objetivo"
     },
     3: {
         titulo: "Fase 3",
-        descripcion: "Lorem"
+        objetivo: "Objetivo"
     }
 };
 
