@@ -389,56 +389,47 @@ const odsData = {
     },
     "10": {
         numero: 10,//número de ods
-        titulos: "",
+        titulos: "REDUCCION DE LAS DESIGUALDADES",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "La desigualdad amenaza el desarrollo social y económico a largo plazo, frena la reducción de la pobreza y destruye el sentido de realización y autoestima de las personas.",
+            "En la mayoría de los países, los ingresos del 40 % más pobre de la población aumentaron con mayor rapidez que la media nacional. Sin embargo, los últimos datos, aún no concluyentes, sugieren que la COVID-19 puede haber perjudicado esta tendencia positiva de reducción de la desigualdad dentro de los países."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué hay que reducir la desigualdad?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La desigualdad por razón de ingresos, sexo, edad, discapacidad, orientación sexual, raza, clase, etnia, religión, así como la desigualdad de oportunidades, sigue persistiendo en todo el mundo. La desigualdad amenaza el desarrollo social y económico a largo plazo, frena la reducción de la pobreza y destruye el sentido de realización y autoestima de las personas. Esto, a su vez, puede resultar en delincuencia, enfermedades y degradación ambiental.",
+                    "Es imposible lograr un desarrollo sostenible y mejorar el planeta si se priva a la gente de la oportunidad de tener una vida mejor."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué ejemplos de desigualdad hay?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Las mujeres y niños sin acceso a asistencia sanitaria mueren cada día de enfermedades prevenibles como el sarampión y la tuberculosis o durante el parto.",
+                    "Las personas mayores, los migrantes y los refugiados se enfrentan a la falta de oportunidades y la discriminación, un problema que afecta a todos los países del mundo. Una de cada cinco personas afirma haber sido discriminada por al menos un motivo de discriminación prohibido por el derecho internacional de los derechos humanos.",
+                    "Una de cada seis personas en el mundo ha sufrido algún tipo de discriminación, afectando de forma desproporcionada a mujeres y personas con discapacidad.",
+                    "La discriminación tiene múltiples formas interrelacionadas, desde la religión y la etnia hasta el género y la orientación sexual. Por ello, es urgente adoptar medidas contra todo tipo de prácticas discriminatorias y discursos de odio."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cómo acabamos con la discriminación?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "En el mundo de hoy, todos estamos interconectados. Los problemas y los desafíos, ya se trate de la pobreza, el cambio climático, las migraciones o las crisis económicas, no se limitan nunca a un país o a una región. Incluso en los países más ricos sigue habiendo comunidades que viven en la miseria. Las democracias más antiguas siguen enfrentándose al racismo, la homofobia y la transfobia, así como a la intolerancia religiosa. La desigualdad mundial nos afecta a todos, independientemente de quiénes somos o de nuestro lugar de procedencia."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Podemos lograr la igualdad para todos?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La igualdad puede y debe lograrse a fin de garantizar una vida digna para todos. Las políticas económicas y sociales deben ser universales y prestar especial atención a las necesidades de las comunidades desfavorecidas y marginadas."
+                ]
+            },
+            {
+                subtitulo: "¿Qué podemos hacer?",
+                parrafos: [
+                    "La reducción de la desigualdad exige un cambio transformador. Es preciso redoblar los esfuerzos para erradicar la pobreza extrema y el hambre, e invertir más en salud, educación, protección social y trabajo decente, especialmente en favor de los jóvenes, los migrantes y otras comunidades vulnerables.",
+                    "Dentro de los mismos países, es importante potenciar y promover el crecimiento económico y social inclusivo. Podemos garantizar la igualdad de oportunidades y reducir la desigualdad de los ingresos si eliminamos las leyes, políticas y prácticas discriminatorias.",
+                    "Entre países, debemos garantizar que los países en desarrollo estén mejor representados en el proceso de toma de decisiones sobre los problemas mundiales, a fin de que las soluciones sean más eficaces, más dignas de crédito y más responsables.",
+                    "Los gobiernos y otras partes interesadas pueden también promover la migración segura, regular y responsable, entre otras cosas mediante la aplicación de políticas migratorias planificadas y bien gestionadas, para los millones de personas que han abandonado sus hogares en busca de mejores condiciones de vida debido a la guerra, la discriminación, la pobreza, la falta de oportunidades y otras causas de la migración."
                 ]
             }
         ]
