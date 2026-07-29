@@ -1999,7 +1999,7 @@ con el del contenedor*/
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-smooth);
     font-weight: var(--weight-bold);
-    transition: bakground-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 /*hacer miniaturas a los li del carrusel secundario*/
@@ -2090,6 +2090,15 @@ con el del contenedor*/
     color: var(--text-colour);
     border-radius: var(--radius-smooth);
     font-family: var(--font-details);
+    font-weight: var(--weight-medium);
+    padding: var(--space-xs);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.flip-card__button:hover{
+    background-color: #000;
+    
+    color: #ffffff;
 }
 
 .flip-card__title-back{
