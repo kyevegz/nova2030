@@ -18,7 +18,7 @@
         <% } %>
 
         <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
-            
+            <%- include('../partials/card-ods')%>
         </div>
         <% if( modificadorContent === 'content--locked') { %>
             <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>

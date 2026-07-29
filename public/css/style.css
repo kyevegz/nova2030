@@ -2084,7 +2084,25 @@ con el del contenedor*/
     text-align: center;
 }
 
+.flip-card__button{
+    margin-top: var(--space-md);
+    background-color: #fff0fa;
+    color: var(--text-colour);
+    border-radius: var(--radius-smooth);
+    font-family: var(--font-details);
+}
 
+.flip-card__title-back{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    font-weight: var(--weight-normal);
+}
+
+.flip-card__description{
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.5;
+}
 /*MEDIA QUERIES*/
 
 /*--------------------

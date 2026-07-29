@@ -23,124 +23,124 @@ const dicFases = {
 };
 
 //diccionario de datos e informacipon para la flip card de los ods
-const odsData = [
+const ods = [
     {
         id: 1,
         title: 'Fin de la pobreza',
         color: '#E5243B',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Poner fin a la pobreza en todas sus formas y en todo el mundo'
     },
     {
         id: 2,
         title: 'Hambre cero',
         color: '#DDA63A',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Poner fin al hambre, lograr la seguridad alimentaria y la mejora de la nutrición y promover la agricultura sostenible'
     },
     {
         id: 3,
         title: 'Salud y bienestar',
         color: '#4C9F38',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Garantizar una vida sana y promover el bienestar de todos a todas las edades'
     },
     {
         id: 4,
         title: 'Educación de calidad',
         color: '#C5192D',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Garantizar una educación inclusiva y equitativa de calidad y promover oportunidades de aprendizaje permanente para todos'
     },
     {
         id: 5,
         title: 'Igualdad de género',
         color: '#FF3A21',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Lograr la igualdad de género y empoderar a todas las mujeres y las niñas'
     },
     {
         id: 6,
         title: 'Agua limpia y saneamiento',
         color: '#26BDE2',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos'
     },
     {
         id: 7,
         title: 'Energía asequible y no contaminante',
         color: '#FCC30B',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Garantizar el acceso a una energía asequible, fiable, sostenible y moderna para todos'
     },
     {
         id: 8,
         title: 'Trabajo decente y crecimiento económico',
         color: '#A21942',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Promover el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo y el trabajo decente para todos'
     },
     {
         id: 9,
         title: 'Industria, innovación e infraestructuras',
         color: '#FD6925',
-        image: 'S-WEB-Goal-01' ,
+        
         description: 'Construir infraestructuras resilientes, promover la industrialización inclusiva y sostenible y fomentar la innovación'
     },
     {
         id: 10,
         title: 'Reducción de las desigualdades',
         color: '#DD1367',
-        image: 'S-WEB-Goal-10' ,
+        
         description: 'Reducir la desigualdad en los países y entre ellos'
     },
     {
         id: 11,
         title: 'Ciudades y comunidades sostenibles',
         color: '#FD9D24',
-        image: 'S-WEB-Goal-11' ,
+        
         description: 'Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles'
     },
     {
         id: 12,
         title: 'Producción y consumo responsables',
         color: '#BF8B2E',
-        image: 'S-WEB-Goal-12' ,
+        
         description: 'Garantizar modalidades de consumo y producción sostenibles'
     },
     {
         id: 13,
         title: 'Acción por el clima',
         color: '#3F7E44',
-        image: 'S-WEB-Goal-13' ,
+        
         description: 'Adoptar medidas urgentes para combatir el cambio climático y sus efectos'
     },
     {
         id: 14,
         title: 'Vida submarina',
         color: '#0A97D9',
-        image: 'S-WEB-Goal-14' ,
+        
         description: 'Conservar y utilizar sosteniblemente los océanos, los mares y los recursos marinos para el desarrollo sostenible'
     },
     {
         id: 15,
         title: 'Vida de ecosistemas terrestres',
         color: '#56C02B',
-        image: 'S-WEB-Goal-15' ,
+        
         description: 'Proteger, restablecer y promover el uso sostenible de los ecosistemas terrestres, gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras y detener la pérdida de biodiversidad'
     },
     {
         id: 16,
         title: 'Paz, justicia e instituciones sólidas',
         color: '#00689D',
-        image: 'S-WEB-Goal-16' ,
+        
         description: 'Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar el acceso a la justicia para todos y construir a todos los niveles instituciones eficaces e inclusivas que rindan cuentas'
     },
     {
         id: 17,
         title: 'Alianzas para lograr los objetivos',
         color: '#19486A',
-        image: 'S-WEB-Goal-17' ,
+        
         description: 'Fortalecer los medios de implementación y revitalizar la Alianza Mundial para el Desarrollo Sostenible'
     }
 ];
@@ -283,11 +283,13 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             if (progreso.length === 0 || progreso[0].desbloqueado === 0) {estadoBloqueado = 'moduloBloqueado', modificadorContent = 'content--preview'};
         }
 
+        
+
         //2 - renderización de moldes diferentes
         /*Dado que cada módulo tiene contenido diferente, se buscará dinámicamente el
         archivo correspondiente, basado en la nomenclatura modulo-x, donde x es
         el número de modulo que intenta consultar */
-        console.log(estadoBloqueado);
+        
 
         res.render(`modulos/modulo-${idModulo}`, {
             moduloActual: moduloActual[0],
@@ -297,7 +299,8 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             esModulo: true, //activará el botón de regresar y cambiará los elementos de la barra
             usuarioVerificado: usuario, // Inyección directa
             estadoBloqueado,
-            modificadorContent
+            modificadorContent,
+            ods
         });
 
     } catch (error) {
