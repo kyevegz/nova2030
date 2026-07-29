@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../config/db');
 const verificarToken = require('../middlewares/auth');
 const { progresoPorFaseUsr } = require('../utils/progresoUtils.js');
-//const odsInfo = require('../data/odsData.js');
+const odsInfo = require('../data/odsData.js');
 /*informacion fija de las fases de nova, se hace un diccionario 
 para no crear una tabla en la bd y aumentar las consultas 
 desde express*/
@@ -23,7 +23,7 @@ const dicFases = {
 };
 
 //diccionario de datos e informacipon para la flip card de los ods
-const odsData = [
+const odsTarjetas = [
     {
         id: 1,
         title: 'Fin de la pobreza',
@@ -300,12 +300,12 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             usuarioVerificado: usuario, // Inyección directa
             estadoBloqueado,
             modificadorContent,
-            ods: odsData
+            
         };
 
         //condicional de inyección, solo mandar info para flipcards, si es el modulo 2
         if(idModulo === '2'){
-            opcionesRender.ods = odsData;
+            opcionesRender.ods = odsTarjetas;
         }
 
         res.render(`modulos/modulo-${idModulo}`, opcionesRender);
@@ -322,7 +322,8 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
         const {numFase, idModulo, odsId} = req.params;
 
         //valida que el ods exista en el diccionario, es decir, que esté entre 1-17
-        const informacionOds = odsData[odsId];
+        const informacionOds = odsInfo[odsId];
+        console.log(informacionOds);
 
         if(!informacionOds) return res.redirect(`/fase/${numFase}/modulos/modulo-${idModulo}`);
 
@@ -345,13 +346,14 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
             }
         }
         //renderizar la plantulla única de ods
-        res.render('ods', {
+        res.render('modulos/ods/ods', {
             numFase,
             idModulo,
             odsIn: informacionOds,
-            flipcard: 
+            usuarioVerificado: usuario,
             estadoBloqueado,
-            modificadorContent
+            modificadorContent,
+            
         });
     }catch(error){
         console.error('Error al cargar el ODS: ', error);

@@ -2129,7 +2129,9 @@ con el del contenedor*/
     font-size: var(--font-size-h2);
 }
 
-
+.ods-header__image{
+    width: 200px;
+}
 
 
 

@@ -18,20 +18,20 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Por qué debo preocuparme por la situación económica de otras personas?",
+                subtitulo: "¿Por qué debo preocuparme por la situación económica de otras personas?",
                 parrafos: [
                     "Razones hay muchas, pero, en definitiva, porque como seres humanos, nuestro bienestar está ligado al de los demás. La creciente desigualdad es perjudicial para el crecimiento económico y socava la cohesión social, aumentando las tensiones políticas y sociales y, en algunas circunstancias, provoca inestabilidad y conflictos."
                 ]
             },
             {
-                subitulo: "¿Por qué es tan importante la protección social?",
+                subtitulo: "¿Por qué es tan importante la protección social?",
                 parrafos: [
                     "Unos sistemas sólidos de protección social son esenciales para mitigar los efectos y evitar que muchas personas caigan en la pobreza. La pandemia de la COVID-19 tuvo consecuencias económicas tanto inmediatas como a largo plazo para personas de todo el mundo y, a pesar de la expansión de la protección social durante la crisis de la COVID-19, el 55 % de la población mundial (alrededor de 4000 millones de personas) está completamente desprotegida.",
                     "En respuesta a la crisis del coste de vida, 105 países y territorios anunciaron casi 350 medidas de protección social entre febrero de 2022 y febrero de 2023. Sin embargo, el 80 % de ellos fueron a corto plazo y, para alcanzar los objetivos, los países necesitarán implementar sistemas de protección social universales y sostenibles que sean apropiados a nivel nacional para todos."
                 ]
             },
             {
-                subitulo: "¿Qué puedo hacer al respecto?",
+                subtitulo: "¿Qué puedo hacer al respecto?",
                 parrafos: [
                     "Tu participación activa en la formulación de políticas puede contribuir a mejorar la situación a la hora de abordar la pobreza. Garantiza que se promuevan los derechos de las personas que la sufren y que se escuche su voz, que se comparta el conocimiento intergeneracional.",
                     "Asimismo, ayuda a que se fomente la innovación y el pensamiento crítico en todas las edades para apoyar un cambio transformador en las vidas y comunidades de las personas.",
@@ -57,34 +57,34 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Cuántas personas pasan hambre?",
+                subtitulo: "¿Cuántas personas pasan hambre?",
                 parrafos: [
                     "Se prevé que más de 600 millones de personas en todo el mundo se enfrentarán al hambre en 2030, lo que pone de relieve el inmenso desafío de alcanzar el objetivo de hambre cero.",
                     "Las personas que experimentan inseguridad alimentaria y moderada normalmente no pueden llevar una dieta sana y equilibrada de forma habitual debido a limitaciones de ingresos u otros recursos."
                 ]
             },
             {
-                subitulo: "¿Por qué hay tantas personas que pasan hambre?",
+                subtitulo: "¿Por qué hay tantas personas que pasan hambre?",
                 parrafos: [
                     "Sorprendentemente, el mundo ha vuelto a niveles de hambre no vistos desde 2005, y los precios de los alimentos siguen siendo más altos en más países que en el período 2015-2019. Junto con los conflictos, la crisis climática y el aumento del coste de la vida, la inseguridad civil y la disminución de la producción de alimentos han contribuido a la escasez y los altos precios de los alimentos.",
                     "La inversión en el sector agrícola es fundamental para reducir el hambre y la pobreza, mejorar la seguridad alimentaria, crear empleo y aumentar la resiliencia ante desastres y crisis."
                 ]
             },
             {
-                subitulo: "¿Por qué debería importarme?",
+                subtitulo: "¿Por qué debería importarme?",
                 parrafos: [
                     "Todos queremos que nuestras familias tengan suficientes alimentos para consumir productos seguros y nutritivos. Un mundo sin hambre puede tener un impacto positivo en nuestras economías, salud, educación, igualdad y desarrollo social.",
                     "Es una pieza clave para construir un futuro mejor para todos. Además, dado que el hambre limita el desarrollo humano, no podremos alcanzar otros objetivos de desarrollo sostenible, como la educación, la salud y la igualdad de género."
                 ]
             },
             {
-                subitulo: "¿Cómo podemos lograr el hambre cero?",
+                subtitulo: "¿Cómo podemos lograr el hambre cero?",
                 parrafos: [
                     "La seguridad alimentaria requiere un enfoque pluridimensional: desde la protección social para salvaguardar alimentos inocuos y nutritivos, especialmente para los niños, hasta la transformación de los sistemas alimentarios para lograr un mundo más inclusivo y sostenible. Será necesario realizar inversiones en zonas rurales y urbanas y en protección social para que las personas más pobres tengan acceso a los alimentos y puedan mejorar sus medios de subsistencia."
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer para ayudar?",
+                subtitulo: "¿Qué podemos hacer para ayudar?",
                 parrafos: [
                     "Puedes contribuir con cambios en tu propia vida (en casa, en el trabajo y en tu comunidad) apoyando a los agricultores o mercados locales y eligiendo alimentos sostenibles, defendiendo una buena nutrición para todos y luchando contra el desperdicio de alimentos.",
                     "También puedes usar tu poder como consumidor y votante, exigiendo a las empresas y a los gobiernos que tomen las decisiones y los cambios que harán realidad el hambre cero. Participa y únete a la conversación, ya sea en plataformas de redes sociales o en tus comunidades locales."
@@ -103,13 +103,13 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "Acceso a servicios sanitarios esenciales.",
+                subtitulo: "Acceso a servicios sanitarios esenciales.",
                 parrafos: [
                     "Una parte significativa de la población mundial carece aún de acceso a servicios sanitarios vitales. Para cubrir esta carencia y garantizar una prestación de atención sanitaria equitativa, es fundamental abordar las disparidades. Es necesario prestar atención a varios determinantes de la salud, incluidos los factores ambientales y comerciales, para allanar el camino hacia el logro de nuestro objetivo común de salud para todas las personas y las metas de los Objetivos de Desarrollo Sostenible."
                 ]
             },
             {
-                subitulo: "¿Cómo podemos alcanzar estas metas?",
+                subtitulo: "¿Cómo podemos alcanzar estas metas?",
                 parrafos: [
                     "Garantizar una vida saludable para todos requiere un fuerte compromiso, pero los beneficios superan los costes. Las personas sanas son la base de unas economías sanas. Se insta a los países de todo el mundo a tomar medidas inmediatas y decisivas para predecir y contrarrestar los desafíos en la salud.",
                     "Esto resulta especialmente crucial para proteger a los grupos de población vulnerables y a las personas que residen en regiones con una elevada prevalencia de enfermedades. De este modo, podemos reforzar los sistemas sanitarios y fomentar la resiliencia frente a las adversidades sanitarias.",
@@ -117,14 +117,14 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Tiene todo el mundo acceso a la atención sanitaria?",
+                subtitulo: "¿Tiene todo el mundo acceso a la atención sanitaria?",
                 parrafos: [
                     "La cobertura sanitaria universal tiene como objetivo garantizar que todas las personas puedan acceder a servicios de salud de calidad sin afrontar dificultades financieras. Si bien los esfuerzos para combatir enfermedades infecciosas como el VIH, la tuberculosis y la malaria llevaron a ampliaciones significativas en la cobertura de los servicios entre 2000 y 2015, desde entonces el progreso se ha desacelerado.",
                     "Las desigualdades siguen siendo un desafío fundamental para la cobertura sanitaria universal. La cobertura de servicios de salud reproductiva, materna, infantil y adolescente tiende a ser mayor entre quienes son más ricos, tienen una mejor formación y viven en áreas urbanas, especialmente en países de bajos ingresos."
                 ]
             },
             {
-                subitulo: "¿Cómo puedo ayudar?",
+                subtitulo: "¿Cómo puedo ayudar?",
                 parrafos: [
                     "Puedes empezar por promover y proteger tu propia salud y la de quienes te rodean, tomando decisiones bien informadas, practicando sexo seguro y vacunando a tus hijos. Puedes crear conciencia en tu propia comunidad sobre la importancia de la buena salud, estilos de vida saludables y del derecho de las personas a unos servicios de atención médica de calidad, especialmente para los más vulnerables, como las mujeres y los niños.",
                     "También puedes pedir responsabilidades a tu gobierno, a los líderes locales y a otros responsables de la toma de decisiones sobre sus compromisos para mejorar el acceso de las personas a la salud y a la atención médica."
@@ -145,35 +145,35 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Qué avances se han hecho hasta ahora?",
+                subtitulo: "¿Qué avances se han hecho hasta ahora?",
                 parrafos: [
                     "Si bien se han logrado avances hacia los objetivos educativos para 2030 establecidos por la organización de las naciones unidas, se requieren esfuerzos continuos para abordar los desafíos persistentes y garantizar que una educación de calidad sea accesible para todos, sin dejar a nadie atrás.",
                     "Entre 2015 y 2021, hubo un aumento en la finalización de la escuela primaria, la finalización de la secundaria básica y la finalización de la secundaria superior en todo el mundo. Sin embargo, el progreso realizado durante este período fue notablemente más lento en comparación con los 15 años anteriores."
                 ]
             },
             {
-                subitulo: "¿Qué desafíos nos quedan?",
+                subtitulo: "¿Qué desafíos nos quedan?",
                 parrafos: [
                     "Según los objetivos educativos nacionales, se prevé que el porcentaje de estudiantes que alcancen habilidades básicas de lectura al final de la escuela primaria aumente del 51 % en 2015 al 67 % en 2030. Sin embargo, se estima que en 2030 unos 300 millones de niños y jóvenes seguirán careciendo de conocimientos básicos de aritmética y alfabetización.",
                     "Las limitaciones económicas, sumadas a problemas relacionados con los resultados del aprendizaje y las tasas de abandono escolar, persisten en las zonas marginadas, lo que subraya la necesidad de un compromiso global continuo para garantizar una educación inclusiva y equitativa para todos. Los bajos niveles de habilidades en tecnologías de la información y las comunicaciones (tic) también son una barrera importante para lograr una conectividad universal y significativa."
                 ]
             },
             {
-                subitulo: "¿Dónde lucha más la gente para tener acceso a la educación?",
+                subtitulo: "¿Dónde lucha más la gente para tener acceso a la educación?",
                 parrafos: [
                     "El África Subsahariana se enfrenta a los mayores desafíos para dotar sus escuelas de recursos básicos. La situación es extrema en los niveles de educación primaria y secundaria básica, donde menos de la mitad de las escuelas del África Subsahariana tienen acceso a agua potable, electricidad, ordenadores e internet.",
                     "Las desigualdades también empeorarán a menos que se aborden las carencias digitales (la brecha entre los países con menos posibilidad de conexión y los países altamente digitalizados)."
                 ]
             },
             {
-                subitulo: "¿Hay grupos que tienen un acceso más difícil a la educación?",
+                subtitulo: "¿Hay grupos que tienen un acceso más difícil a la educación?",
                 parrafos: [
                     "Sí, las mujeres y niñas representan uno de esos grupos. Alrededor del 40 % de los países no han logrado la paridad de género en la educación primaria.",
                     "Estas desventajas en la educación también se traducen en falta de acceso a habilidades y oportunidades limitadas en el mercado laboral para las mujeres jóvenes."
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer?",
+                subtitulo: "¿Qué podemos hacer?",
                 parrafos: [
                     "Pedir a nuestros gobiernos que coloquen la educación como una prioridad tanto en las políticas como en la práctica. Presionar a nuestros gobiernos para que asuman compromisos firmes a fin de ofrecer una educación primaria gratuita a todos, incluidos los grupos vulnerables o marginados.",
                     "La educación es la clave que permitirá alcanzar muchos otros objetivos de desarrollo sostenible (ODS). Cuando las personas pueden obtener una educación de calidad, pueden romper el ciclo de la pobreza. La educación ayuda a reducir las desigualdades y a alcanzar la igualdad de género. ",
@@ -196,26 +196,26 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Cuánto hemos avanzado?",
+                subtitulo: "¿Cuánto hemos avanzado?",
                 parrafos: [
                     "Gracias a los compromisos internacionales para promover la igualdad de género se ha avanzado en algunos ámbitos: los casos de matrimonio infantil y mutilación genital femenina (MGF) han disminuido en los últimos años, y la representación de la mujer en la esfera política es mayor que nunca. Aún así, sigue sin cumplirse la promesa de un mundo en el que todas las mujeres y niñas disfruten de plena igualdad de género y en el que se hayan eliminado todas las barreras jurídicas, sociales y económicas que impiden su empoderamiento. De hecho, ese objetivo está probablemente aún más lejano que antes, ya que las mujeres y niñas están siendo duramente castigadas por la pandemia de la COVID-19."
                 ]
             },
             {
-                subitulo: "¿Existen otros desafíos relacionados con la igualdad de género?",
+                subtitulo: "¿Existen otros desafíos relacionados con la igualdad de género?",
                 parrafos: [
                     "Sí. En todo el mundo, casi la mitad de las mujeres casadas no tienen poder de decisión sobre su salud y sus derechos sexuales y reproductivos. El 35 % de las mujeres entre 15 y 49 años habían sido víctimas de violencia física o sexual por parte de su pareja o por una persona que no era su pareja. 1 de cada 3 niñas de entre 15 y 19 años ha sufrido algún tipo de mutilación genital femenina o ablación en los 30 países de África y Oriente Medio, donde esta peligrosa práctica es más común, y que conlleva un alto riesgo de hemorragias prolongadas, infecciones (incluido el VIH), complicaciones en el parto, infertilidad y muerte.",
                     "Este tipo de violencia no solo perjudica a las mujeres y niñas a título individual, sino que también deteriora su calidad de vida en general y obstaculiza su participación activa en la sociedad."
                 ]
             },
             {
-                subitulo: "¿Por qué debería importarme la igualdad de género?",
+                subtitulo: "¿Por qué debería importarme la igualdad de género?",
                 parrafos: [
                     "La igualdad de género es un derecho humano fundamental, independientemente del país de residencia. Avanzar en la igualdad de género es fundamental para crear una sociedad sana en todos sus ámbitos, desde la reducción de la pobreza hasta la promoción de la salud, la educación, la protección y el bienestar de niñas y niños."
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer?",
+                subtitulo: "¿Qué podemos hacer?",
                 parrafos: [
                     "Si eres una niña, debes seguir estudiando, ayudar a tus compañeras a hacer lo mismo, y luchar por tu derecho a acceder a los servicios adecuados de salud sexual y reproductiva. Si eres una mujer, debes hacer frente a los prejuicios inconscientes y al sesgo de género implícito que crean una barrera involuntaria y a menudo invisible para la igualdad de oportunidades.",
                     "Si eres un hombre o un niño, debes acompañar a las mujeres y las niñas en la consecución de la igualdad de género y el fomento de unas relaciones sanas y respetuosas.",
@@ -237,7 +237,7 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué?",
+                subtitulo: "¿Por qué?",
                 parrafos: [
                     "El acceso al agua potable, el saneamiento y la higiene es un derecho humano. Las estrategias clave para encauzar este objetivo incluyen aumentar la inversión y la capacitación en todo el sector, promover la innovación y la acción a partir de pruebas, mejorar la coordinación y la cooperación intersectorial entre todas las partes interesadas y adoptar un enfoque más integrado y holístico de la gestión del agua.",
                     "El agua es esencial no solo para la salud, sino también para reducir la pobreza, y garantizar la seguridad alimentaria, la paz, los derechos humanos, los ecosistemas y la educación.",
@@ -245,14 +245,14 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Cuáles son los principales desafíos?",
+                subtitulo: "¿Cuáles son los principales desafíos?",
                 parrafos: [
                     "En el año 2022, 2200 millones de personas continuaban sin agua potable gestionada de manera segura, entre los que 703 millones no contaban con un servicio básico de agua; 3500 millones de personas carecían de saneamiento gestionado de manera segura, de los cuales 1500 millones no disponían de servicios básicos de saneamiento; y 2000 millones carecían de una instalación básica para lavarse las manos, lo que incluye a 653 millones de personas sin ninguna instalación para lavarse las manos.",
                     "Al gestionar el agua de forma sostenible, se mejora la gestión de la producción de alimentos y energía y se contribuye al trabajo digno y al crecimiento económico. Además, se preservan los ecosistemas acuáticos y su biodiversidad, y se lucha contra el cambio climático."
                 ]
             },
             {
-                subitulo: "¿Qué relación existe entre el cambio climático y el agua?",
+                subtitulo: "¿Qué relación existe entre el cambio climático y el agua?",
                 parrafos: [
                     "En muchos lugares del mundo, la disponibilidad de agua es cada vez menos previsible. En algunas regiones, las sequías agravan la escasez de agua y repercuten negativamente en la salud y la productividad de las personas, lo que a su vez amenaza el desarrollo sostenible y la biodiversidad en todo el mundo.",
                     "Por tanto, garantizar que todo el mundo tenga acceso a servicios sostenibles de agua potable y saneamiento es una estrategia fundamental para mitigar el cambio climático en los próximos años.",
@@ -260,7 +260,7 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer?",
+                subtitulo: "¿Qué podemos hacer?",
                 parrafos: [
                     "Las organizaciones de la sociedad civil deben exigir a los gobiernos que rindan cuentas, que se invierta en investigación y desarrollo sobre el agua y que se promueva la inclusión de las mujeres, los jóvenes y las comunidades indígenas en la gestión de los recursos hídricos.",
                     "Concienciar sobre la importancia de estas funciones y ponerlas en práctica dará lugar a resultados beneficiosos para todos y a una mayor sostenibilidad e integridad de los sistemas humanos y ecológicos.",
@@ -281,13 +281,13 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Cuáles son las consecuencias de no tener acceso a la energía?",
+                subtitulo: "¿Cuáles son las consecuencias de no tener acceso a la energía?",
                 parrafos: [
                     "Los servicios energéticos son fundamentales para prevenir enfermedades y luchar contra las pandemias: desde abastecer de energía a las instalaciones sanitarias y suministrar agua potable para la higiene esencial, hasta habilitar el agua para la higiene esencial, las comunicaciones y los servicios informáticos que posibilitan la comunicación entre las personas manteniendo el distanciamiento social."
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer para solucionar estos problemas?",
+                subtitulo: "¿Qué podemos hacer para solucionar estos problemas?",
                 parrafos: [
                     "Los países pueden acelerar la transición hacia un sistema energético asequible, seguro y sostenible al invertir en energías renovables, priorizar la implementación de prácticas de eficiencia energética y adoptar tecnologías e infraestructuras de energía limpia.",
                     "Las empresas pueden hacer un esfuerzo por mantener y proteger los ecosistemas y comprometerse a obtener el 100 % de la electricidad que necesitan de fuentes renovables.",
@@ -309,13 +309,13 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Qué significa «trabajo decente»?",
+                subtitulo: "¿Qué significa «trabajo decente»?",
                 parrafos: [
                     "Trabajo decente significa oportunidades para todos de conseguir un trabajo que sea productivo y proporcione unos ingresos dignos, seguridad en el lugar de trabajo y protección social para las familias, así como mejores perspectivas de desarrollo personal e integración social. La continua falta de oportunidades de trabajo decente, la insuficiente inversión y el bajo consumo producen una erosión del contrato social básico subyacente en las sociedades democráticas: el derecho de todos a compartir el progreso."
                 ]
             },
             {
-                subitulo: "¿Cuáles son los principales desafíos?",
+                subtitulo: "¿Cuáles son los principales desafíos?",
                 parrafos: [
                     "La continua falta de oportunidades de trabajo decente, la insuficiente inversión y el bajo consumo producen la erosión del contrato social básico subyacente en las sociedades: el derecho de todos a compartir el progreso. La creación de empleos de calidad sigue constituyendo un gran desafío para casi todas las economías.",
                     "La consecución del Objetivo 8 exigirá una reforma en profundidad del sistema financiero para hacer frente al aumento de la deuda, a la incertidumbre económica y a las tensiones comerciales, promoviendo al mismo tiempo una remuneración equitativa y un trabajo digno para los jóvenes.",
@@ -323,7 +323,7 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Cuántas personas hay en situación de desempleo?",
+                subtitulo: "¿Cuántas personas hay en situación de desempleo?",
                 parrafos: [
                     "Se calcula que en 2022 había 192 millones de desempleados en todo el mundo. Las previsiones indican que el desempleo mundial continuará disminuyendo hasta situarse en el 5,3 % en 2023, lo que equivale a 191 millones de personas.",
                     "La pandemia afectó de forma desproporcionada a las mujeres y los jóvenes en los mercados laborales. Las mujeres experimentaron una mayor recuperación de los puestos de trabajo y de su participación en la fuerza laboral que los hombres.",
@@ -331,7 +331,7 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer para solucionar estos problemas?",
+                subtitulo: "¿Qué podemos hacer para solucionar estos problemas?",
                 parrafos: [
                     "Para que los jóvenes tengan las mejores oportunidades de acceder a un empleo decente es necesario invertir en educación y formación de la mayor calidad posible, ajustar la formación de los jóvenes a las necesidades del mercado laboral, darles acceso al sistema de protección social y a los servicios básicos independientemente del tipo de contrato que tengan, e igualar las condiciones para que todos los jóvenes puedan acceder a un empleo productivo independientemente de su sexo, nivel de ingresos o situación socioeconómica.",
                     "Los gobiernos deben trabajar para construir economías dinámicas, sostenibles, innovadoras y centradas en las personas para promover el empleo juvenil y el empoderamiento económico de las mujeres, en particular, y el trabajo decente para todos.",
@@ -352,27 +352,27 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Cuánto hemos avanzado?",
+                subtitulo: "¿Cuánto hemos avanzado?",
                 parrafos: [
                     "En 2022, el 95 % de la población mundial tenía acceso a una red de banda ancha móvil, pero algunas zonas continúan desatendidas.",
                     "A nivel mundial, la inversión en investigación y desarrollo ―así como la financiación destinada a infraestructuras económicas en países en desarrollo― ha aumentado y se han logrado avances impresionantes en la conectividad móvil, con casi la totalidad de la población mundial (97 %) viviendo al alcance de una señal celular móvil."
                 ]
             },
             {
-                subitulo: "¿Qué se debe hacer?",
+                subtitulo: "¿Qué se debe hacer?",
                 parrafos: [
                     "Invertir en infraestructuras ―transporte, regadío, energía y tecnologías de la información y la comunicación― es crucial para lograr un desarrollo sostenible y empoderar a las comunidades de muchos países. Para alcanzar el Objetivo 9 en 2030, es esencial apoyar a los PMA, invertir en tecnologías avanzadas, reducir las emisiones de carbono y aumentar el acceso a la banda ancha móvil."
                 ]
             },
             {
-                subitulo: "¿Por qué debería importarme?",
+                subtitulo: "¿Por qué debería importarme?",
                 parrafos: [
                     "La industrialización inclusiva y sostenible, junto con la innovación y la infraestructura, pueden dar rienda suelta a las fuerzas económicas dinámicas y competitivas que generan empleo e ingresos. Estas desempeñan un papel clave a la hora de introducir y promover nuevas tecnologías, facilitar el comercio internacional y permitir el uso eficiente de los recursos.",
                     "La expansión de nuevas industrias significa una mejora del nivel de vida para gran parte de la población. El medioambiente se verá beneficiado si las industrias aplican prácticas sostenibles."
                 ]
             },
             {
-                subitulo: "¿Qué precio tendría la pasividad?",
+                subtitulo: "¿Qué precio tendría la pasividad?",
                 parrafos: [
                     "El precio a pagar sería elevado. Dado que la industria es uno de los principales impulsores de la agenda mundial para erradicar la pobreza y promover el desarrollo sostenible, acabar con la pobreza sería más difícil. Además, si no se mejoran las infraestructuras y se impulsa la innovación tecnológica, la asistencia sanitaria podría ser deficiente, el saneamiento inadecuado y el acceso a la educación limitado."
                 ]
@@ -396,14 +396,14 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué hay que reducir la desigualdad?",
+                subtitulo: "¿Por qué hay que reducir la desigualdad?",
                 parrafos: [
                     "La desigualdad por razón de ingresos, sexo, edad, discapacidad, orientación sexual, raza, clase, etnia, religión, así como la desigualdad de oportunidades, sigue persistiendo en todo el mundo. La desigualdad amenaza el desarrollo social y económico a largo plazo, frena la reducción de la pobreza y destruye el sentido de realización y autoestima de las personas. Esto, a su vez, puede resultar en delincuencia, enfermedades y degradación ambiental.",
                     "Es imposible lograr un desarrollo sostenible y mejorar el planeta si se priva a la gente de la oportunidad de tener una vida mejor."
                 ]
             },
             {
-                subitulo: "¿Qué ejemplos de desigualdad hay?",
+                subtitulo: "¿Qué ejemplos de desigualdad hay?",
                 parrafos: [
                     "Las mujeres y niños sin acceso a asistencia sanitaria mueren cada día de enfermedades prevenibles como el sarampión y la tuberculosis o durante el parto.",
                     "Las personas mayores, los migrantes y los refugiados se enfrentan a la falta de oportunidades y la discriminación, un problema que afecta a todos los países del mundo. Una de cada cinco personas afirma haber sido discriminada por al menos un motivo de discriminación prohibido por el derecho internacional de los derechos humanos.",
@@ -412,13 +412,13 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Cómo acabamos con la discriminación?",
+                subtitulo: "¿Cómo acabamos con la discriminación?",
                 parrafos: [
                     "En el mundo de hoy, todos estamos interconectados. Los problemas y los desafíos, ya se trate de la pobreza, el cambio climático, las migraciones o las crisis económicas, no se limitan nunca a un país o a una región. Incluso en los países más ricos sigue habiendo comunidades que viven en la miseria. Las democracias más antiguas siguen enfrentándose al racismo, la homofobia y la transfobia, así como a la intolerancia religiosa. La desigualdad mundial nos afecta a todos, independientemente de quiénes somos o de nuestro lugar de procedencia."
                 ]
             },
             {
-                subitulo: "¿Podemos lograr la igualdad para todos?",
+                subtitulo: "¿Podemos lograr la igualdad para todos?",
                 parrafos: [
                     "La igualdad puede y debe lograrse a fin de garantizar una vida digna para todos. Las políticas económicas y sociales deben ser universales y prestar especial atención a las necesidades de las comunidades desfavorecidas y marginadas."
                 ]
@@ -448,27 +448,27 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué no están las ciudades preparadas para el futuro?",
+                subtitulo: "¿Por qué no están las ciudades preparadas para el futuro?",
                 parrafos: [
                     "La mayor parte del crecimiento urbano ocurre en ciudades pequeñas y pueblos intermedios, exacerbando las desigualdades y la pobreza urbana.",
                     "Se estima que, en 2020, 1100 millones de residentes urbanos vivían en barrios marginales o en condiciones similares y, en los próximos 30 años, se espera que otros 2000 millones de personas vivan en tales asentamientos, principalmente en países en desarrollo."
                 ]
             },
             {
-                subitulo: "¿Cuáles son los retos más urgentes a los que se enfrentan las ciudades?",
+                subtitulo: "¿Cuáles son los retos más urgentes a los que se enfrentan las ciudades?",
                 parrafos: [
                     "La desigualdad y los niveles de consumo urbano de energía y de contaminación son algunos de los principales retos. Las ciudades apenas ocupan el 3% de la superficie terrestre, pero suponen entre el 60% y el 80% del consumo energético y el 75% de las emisiones de carbono.",
                     "Asimismo, muchas ciudades son más vulnerables a los efectos del cambio climático y a los desastres naturales debido a su elevada concentración de población y a su ubicación, por lo que mejorar la resiliencia urbana es crucial para evitar pérdidas humanas, sociales y económicas."
                 ]
             },
             {
-                subitulo: "¿En qué me afecta?",
+                subtitulo: "¿En qué me afecta?",
                 parrafos: [
                     "Con el tiempo, estos problemas afectarán a toda la población. La desigualdad puede generar malestar e inseguridad, la contaminación deteriora la salud de la población y afecta a la productividad de los trabajadores y, por tanto, a la economía, y los desastres naturales pueden alterar el estilo de vida de las personas. La contaminación del aire no es solo un problema urbano que perjudica la salud de millones de personas, sino que también afecta a los pueblos y las zonas rurales."
                 ]
             },
             {
-                subitulo: "¿Y si dejamos que las ciudades crezcan orgánicamente?",
+                subtitulo: "¿Y si dejamos que las ciudades crezcan orgánicamente?",
                 parrafos: [
                     "Los enormes barrios marginales, la congestión del tráfico, las emisiones de gases de efecto invernadero y la proliferación de suburbios en todo el mundo son algunas de las consecuencias del desarrollo urbano no planificado.",
                     "Al apostar por la sostenibilidad, elegimos construir ciudades en las que todos los ciudadanos tengan una calidad de vida digna y formen parte de la dinámica productiva de la ciudad, lo que genera prosperidad compartida y estabilidad social sin dañar el medio ambiente."
@@ -501,14 +501,14 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué debemos cambiar nuestros hábitos de consumo?",
+                subtitulo: "¿Por qué debemos cambiar nuestros hábitos de consumo?",
                 parrafos: [
                     "El progreso económico y social conseguido durante el último siglo ha estado acompañado de una degradación medioambiental que está poniendo en peligro los mismos sistemas de los que depende nuestro desarrollo futuro y, ciertamente, nuestra supervivencia.",
                     "Para que la transición tenga éxito, es necesario potenciar el aprovechamiento eficaz de los recursos, tener en cuenta todo el ciclo de vida de las actividades económicas y participar activamente en los acuerdos multilaterales sobre el medio ambiente."
                 ]
             },
             {
-                subitulo: "¿Qué tiene que cambiar?",
+                subtitulo: "¿Qué tiene que cambiar?",
                 parrafos: [
                     "Son muchos los hábitos de consumo que, si se modifican ligeramente, pueden tener un gran impacto en la sociedad.",
                     "Los gobiernos deben implantar y poner en práctica políticas y normativas que recojan medidas como el establecimiento de objetivos para reducir la generación de residuos, el fomento de prácticas de economía circular, y el apoyo a políticas de contratación sostenible.",
@@ -517,14 +517,14 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "Como empresa, ¿cómo puedo ayudar?",
+                subtitulo: "Como empresa, ¿cómo puedo ayudar?",
                 parrafos: [
                     "A las empresas les conviene encontrar nuevas soluciones que permitan modelos de consumo y producción sostenibles. Es necesario conocer más a fondo las repercusiones medioambientales y sociales que tienen ciertos productos y servicios, tanto en lo que respecta a su ciclo de vida como al modo en que se ven alterados por su uso en los diferentes estilos de vida.",
                     "Las soluciones innovadoras y de diseño facilitan e inspiran a las personas a adoptar estilos de vida más sostenibles, lo que reduce su impacto y mejora su bienestar."
                 ]
             },
             {
-                subitulo: "Como consumidor, ¿cómo puedo ayudar?",
+                subtitulo: "Como consumidor, ¿cómo puedo ayudar?",
                 parrafos: [
                     "Hay dos maneras principales de ayudar:",
                     "Reducir los residuos generados y 2. Pensar bien lo que se compra y elegir una opción sostenible siempre que sea posible.",
@@ -546,7 +546,7 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "Acción inmediata.",
+                subtitulo: "Acción inmediata.",
                 parrafos: [
                     "La crisis climática no va a parar, y la comunidad internacional rehúye el compromiso necesario para revertirla. El período comprendido entre 2010 y 2019 fue la década más calurosa que se haya registrado jamás y trajo consigo incendios forestales, huracanes, sequías, inundaciones y otros desastres naturales masivos en todos los continentes.",
                     "El cambio climático está alterando las economías nacionales y afectando a las distintas vidas y medios de subsistencia de muchas personas, especialmente las más vulnerables.",
@@ -554,21 +554,21 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Qué pasa si no se toman medidas?",
+                subtitulo: "¿Qué pasa si no se toman medidas?",
                 parrafos: [
                     "De no controlarse, los efectos del cambio climático elevarán la temperatura media mundial por encima de los 3 °C y afectarán negativamente a todos los ecosistemas.",
                     "Ya se puede observar cómo el cambio climático puede intensificar tormentas y catástrofes, así como hacer que amenazas como la escasez de alimentos y agua se conviertan en realidad y desemboquen en conflictos. Quedarnos de brazos cruzados acabará costándonos mucho más que si tomamos acción inmediata."
                 ]
             },
             {
-                subitulo: "La solución del problema.",
+                subtitulo: "La solución del problema.",
                 parrafos: [
                     "Es necesario aumentar la ambición y actuar en todos los niveles para hacer frente al cambio climático. Están sucediendo muchos cambios en todo el mundo, y las inversiones en energías renovables se han disparado. Aún así, queda mucho por hacer. Para limitar el aumento global de la temperatura muy por debajo de los 2 °C, o incluso de 1,5 °C, el mundo debe transformar sus sistemas energéticos, industriales, de transporte, alimentarios, agrícolas y forestales. El mundo dio un primer paso importante en diciembre de 2015 con la adopción del Acuerdo de París, en el que todos los países firmantes se comprometieron a tomar medidas para hacer frente al cambio climático. A pesar de ello, se necesitan más medidas para cumplir los objetivos.",
                     "Las empresas y los inversores deben asegurarse de que se reducen las emisiones, no solo porque es lo correcto, sino también porque es conveniente desde el punto de vista económico y empresarial."
                 ]
             },
             {
-                subitulo: "¿Hay suficiente inversión para combatir el cambio climático?",
+                subtitulo: "¿Hay suficiente inversión para combatir el cambio climático?",
                 parrafos: [
                     "Según la CMNUCC, los flujos financieros mundiales invertidos en acciones para combatir el cambio climático alcanzaron un promedio anual de 803.000 millones de dólares entre 2019 y 2020, un aumento del 12 % en comparación con años anteriores. Sin embargo, además de que esta cifra sigue estando por debajo de los niveles necesarios para frenar el calentamiento, los flujos financieros invertidos en combustibles fósiles superaron la financiación destinada a la adaptación y mitigación del cambio climático en 2020.",
                     "En 2019, al menos 120 de 153 países en desarrollo habían emprendido actividades para formular y aplicar Planes Nacionales de Adaptación para mejorar la adaptación y la resiliencia frente al cambio climático, lo que representa un aumento de 29 países respecto al año anterior. Además, los avances en el cumplimiento del objetivo para la reducción de los desastres de 2020 han sido lentos."
@@ -597,14 +597,14 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué?",
+                subtitulo: "¿Por qué?",
                 parrafos: [
                     "Los océanos son el soporte vital de nuestro planeta y regulan el sistema climático mundial. Constituyen el mayor ecosistema del mundo, albergan casi un millón de especies conocidas y presentan un enorme potencial científico sin explotar.",
                     "Los océanos y la pesca siguen cubriendo las necesidades económicas, sociales y medioambientales de la población mundial. A pesar de lo importante que es proteger los océanos, décadas de explotación irresponsable de los recursos han provocado un nivel alarmante de degradación."
                 ]
             },
             {
-                subitulo: "Entonces, ¿cuál es el problema?",
+                subtitulo: "Entonces, ¿cuál es el problema?",
                 parrafos: [
                     "Los océanos absorben alrededor del 23 % de las emisiones anuales de CO2 generadas por la actividad humana y contribuyen a mitigar los efectos del cambio climático. Además, absorben el 90 % del exceso de calor causado por el cambio climático. El calentamiento de los océanos está alcanzando niveles récord, lo que provoca olas de calor marinas generalizadas, amenaza sus ricos ecosistemas y destruye los arrecifes de coral de todo el mundo.",
                     "El aumento de los niveles de residuos en los océanos del mundo también supone un importante impacto medioambiental y económico. Se calcula que cada año llegan a los mares y océanos entre 5 y 12 millones de toneladas métricas de plástico, con un coste aproximado de 13.000 millones de dólares anuales, entre los que se incluyen los costes de limpieza y las pérdidas financieras sufridas por la pesca y otras industrias. Cerca del 89 % de los residuos plásticos encontrados en el fondo de los océanos son artículos de un solo uso, como bolsas de plástico.",
@@ -613,14 +613,14 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Qué relación tienen los océanos con nuestra salud?",
+                subtitulo: "¿Qué relación tienen los océanos con nuestra salud?",
                 parrafos: [
                     "La salud de los océanos está intrínsecamente ligada a la nuestra. La biodiversidad marina ofrece oportunidades muy importantes para la industria farmacéutica.",
                     "Además, el sector de la pesca marítima da empleo a 57 millones de personas en todo el mundo y constituye la principal fuente de proteínas de más del 50 % de la población de países menos desarrollados."
                 ]
             },
             {
-                subitulo: "Entonces, ¿qué podemos hacer?",
+                subtitulo: "Entonces, ¿qué podemos hacer?",
                 parrafos: [
                     "Para garantizar el desarrollo sostenible de las zonas de alta mar y de aguas profundas y proteger los hábitats más vulnerables, se necesita una mayor cooperación internacional. Para conservar la biodiversidad y garantizar un futuro sostenible al sector de la pesca, deben establecerse sistemas de gestión completos, eficaces y equitativos de áreas protegidas por el Estado."
                 ]
@@ -641,7 +641,7 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué debería importarnos?",
+                subtitulo: "¿Por qué debería importarnos?",
                 parrafos: [
                     "Los bosques cubren casi el 31 % de la superficie de nuestro planeta y albergan más del 80 % de todas las especies terrestres de animales, plantas e insectos. Sin embargo, el deterioro de la biodiversidad se está produciendo a un ritmo más rápido ahora que en cualquier otro momento de la historia de la humanidad.",
                     "A escala mundial, una quinta parte de la superficie terrestre del planeta está degradada, un área casi del tamaño de la India y Rusia juntas. La degradación de los suelos empuja a las especies a la extinción e intensifica los efectos del cambio climático.",
@@ -649,7 +649,7 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Qué supone la pérdida de los bosques?",
+                subtitulo: "¿Qué supone la pérdida de los bosques?",
                 parrafos: [
                     "La pérdida de los bosques implica la desaparición de los medios de subsistencia de las comunidades rurales, el aumento de las emisiones de carbono, el deterioro de la biodiversidad y la degradación del suelo. Aunque el ritmo de pérdida neta de bosques sigue siendo elevado, los datos de 2020 muestran que la proporción de bosques en áreas protegidas y bajo planes de gestión a largo plazo aumentó o se mantuvo estable a nivel mundial y en la mayoría de las regiones del mundo.",
                     "Un efecto irreversible de la actividad humana sobre el medio ambiente es la extinción de especies, lo que altera el equilibrio de la naturaleza y hace que los ecosistemas sean más frágiles y ofrezcan menos resistencia a las perturbaciones.",
@@ -657,14 +657,14 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Cómo afecta eso a la salud?",
+                subtitulo: "¿Cómo afecta eso a la salud?",
                 parrafos: [
                     "Una mayor demanda de proteínas animales, el aumento de una agricultura intensiva e insostenible, el uso y la explotación crecientes de la fauna salvaje y la crisis climática favorecen la aparición de enfermedades zoonóticas ―aquellas que pueden transmitirse entre animales y seres humanos― como la COVID-19.",
                     "Unos dos millones de personas mueren cada año a causa de enfermedades zoonóticas desatendidas, la mayoría en países de ingresos bajos y medios. Estos mismos brotes pueden causar graves enfermedades, muertes y pérdidas de productividad entre las poblaciones ganaderas del mundo en desarrollo, un grave problema que tiene sumidos en la extrema pobreza a cientos de millones de pequeños ganaderos. Las enfermedades zoonóticas han generado, solo en las dos últimas décadas, pérdidas económicas de más de 100 000 millones de dólares. Todo ello sin contar el coste de la pandemia de la COVID-19."
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer?",
+                subtitulo: "¿Qué podemos hacer?",
                 parrafos: [
                     "Reciclar, seguir una dieta basada en productos locales de origen sostenible y consumir solamente lo que necesitamos son algunas de las cosas que podemos hacer para ayudar.",
                     "Debemos ser respetuosos con la fauna y únicamente participar en actividades de ecoturismo gestionadas de forma responsable y ética para evitar perturbarla. Las áreas protegidas bien gestionadas contribuyen a la salud de los ecosistemas, lo que a su vez contribuye a la salud de las personas. Por ello, es fundamental que las comunidades locales participen en el desarrollo y la gestión de estas áreas protegidas."
@@ -684,14 +684,14 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué debería importarme?",
+                subtitulo: "¿Por qué debería importarme?",
                 parrafos: [
                     "Los altos niveles de violencia armada e inseguridad tienen consecuencias destructivas para el desarrollo de un país. La violencia sexual, los delitos, la explotación y la tortura son fenómenos generalizados donde existen conflictos o no hay Estado de derecho.",
                     "Los gobiernos, la sociedad civil y las comunidades deben colaborar para encontrar soluciones duraderas a los conflictos y al clima de inseguridad. El fortalecimiento del Estado de derecho y la promoción de los derechos humanos es fundamental en este proceso, así como la reducción del tráfico de armas ilícitas, la lucha contra la corrupción y el fomento de una participación inclusiva."
                 ]
             },
             {
-                subitulo: "¿Cómo se aplica esto a mi país?",
+                subtitulo: "¿Cómo se aplica esto a mi país?",
                 parrafos: [
                     "El Objetivo 16 se ajusta al marco más amplio de los derechos humanos al promover sociedades que respeten y defiendan los derechos individuales, así como el derecho a la intimidad, la libertad de expresión y el acceso a la información.",
                     "La paz es un requisito fundamental para el desarrollo social y económico. Cuando no hay paz, las sociedades suelen estar plagadas de conflictos, violencia e inestabilidad, lo que puede obstaculizar el progreso y resultar en la pérdida de vidas humanas y recursos.",
@@ -700,7 +700,7 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Qué pasa si no se toman medidas?",
+                subtitulo: "¿Qué pasa si no se toman medidas?",
                 parrafos: [
                     "La violencia armada y la inseguridad tienen un efecto destructivo en el desarrollo de un país, que afecta al crecimiento económico y que suele provocar agravios persistentes entre las comunidades.",
                     "La violencia afecta a la salud, al desarrollo y al bienestar de los niños, así como a su capacidad para prosperar. También les provoca traumas y debilita su inclusión social.",
@@ -709,7 +709,7 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "¿Qué podemos hacer?",
+                subtitulo: "¿Qué podemos hacer?",
                 parrafos: [
                     "Ejercer nuestro derecho a exigir que los funcionarios electos rindan cuentas de su actuación, a la libertad de información y a compartir nuestra opinión con los representantes electos. Promover la inclusión y el respeto hacia las personas de diferente origen étnico, religión, género, orientación sexual u opinión."
                 ]
@@ -729,19 +729,19 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "¿Por qué?",
+                subtitulo: "¿Por qué?",
                 parrafos: [
                     "Las consecuencias de la pandemia de la COVID-19 han puesto en evidencia que reforzar el multilateralismo y las alianzas mundiales es más importante que nunca si queremos resolver los problemas del mundo."
                 ]
             },
             {
-                subitulo: "¿Por qué debería importarme?",
+                subtitulo: "¿Por qué debería importarme?",
                 parrafos: [
                     "Luchamos juntos por el mismo motivo. La Agenda y sus 17 objetivos son universales y exigen la implicación de todos los países, tanto desarrollados como en desarrollo, para garantizar que nadie se quede atrás."
                 ]
             },
             {
-                subitulo: "¿Cuánto hemos avanzado?",
+                subtitulo: "¿Cuánto hemos avanzado?",
                 parrafos: [
                     "Los ODS han recibido un apoyo constante pero frágil, con importantes y persistentes desafíos.",
                     "Los recursos financieros siguen siendo escasos, las tensiones comerciales han aumentado y siguen faltando datos cruciales.",
@@ -749,7 +749,7 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "Como socios, ¿qué tenemos que hacer para conseguirlo?",
+                subtitulo: "Como socios, ¿qué tenemos que hacer para conseguirlo?",
                 parrafos: [
                     "Necesitamos movilizar tanto los recursos existentes como los adicionales —desarrollo tecnológico, recursos financieros, capacidades— y los países desarrollados deberán cumplir sus compromisos de aumentar la asistencia oficial para el desarrollo.",
                     "Las alianzas de múltiples partes interesadas serán cruciales para aprovechar las interrelaciones entre los Objetivos de Desarrollo Sostenible para mejorar su eficacia e impacto y acelerar el progreso en la consecución de los Objetivos."
