@@ -291,8 +291,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
         archivo correspondiente, basado en la nomenclatura modulo-x, donde x es
         el número de modulo que intenta consultar */
         
-
-        res.render(`modulos/modulo-${idModulo}`, {
+        const opcionesRender ={
             moduloActual: moduloActual[0],
             numFase,
             porcentaje: porcentajeActual,
@@ -302,7 +301,14 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             estadoBloqueado,
             modificadorContent,
             ods: odsData
-        });
+        };
+
+        //condicional de inyección, solo mandar info para flipcards, si es el modulo 2
+        if(idModulo === '2'){
+            opcionesRender.ods = odsData;
+        }
+
+        res.render(`modulos/modulo-${idModulo}`, opcionesRender);
 
     } catch (error) {
         console.error('error en la carga del módulo', error);
