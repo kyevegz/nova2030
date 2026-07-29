@@ -435,57 +435,56 @@ const odsData = {
         ]
     },
     "11": {
-        numero: 11,//número de ods
-        titulos: "",
+        numero: 11,
+        titulos: "CIUDADES Y COMUNIDADES SOSTENIBLES",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 11 pretende lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles.",
+            "Las ciudades representan el futuro del modo de vida global. La población mundial alcanzó los 8000 millones de personas en 2022, de las cuales más de la mitad viven en zonas urbanas. Se prevé que esta cifra aumente y que para 2050 el 70 % de la población vivirá en ciudades.",
+            "Aproximadamente 1100 millones de personas viven actualmente en barrios marginales, o en condiciones similares en las ciudades, y se espera que en los próximos 30 años haya 2000 millones más.",
+            "Sin embargo, muchas de estas ciudades no están preparadas para esta rápida urbanización, y el desarrollo de la vivienda, las infraestructuras y los servicios se ve superado, lo que provoca un crecimiento de los barrios marginales o de condiciones similares.",
+            "El crecimiento urbano descontrolado, la contaminación atmosférica y la escasez de espacios públicos abiertos persisten en las ciudades.",
+            "Desde la implementación de los ODS en 2015 se han realizado grandes progresos y, a día de hoy, el número de países con estrategias nacionales y locales de reducción del riesgo de catástrofes se ha duplicado. No obstante, siguen existiendo problemas y, en 2022, solo la mitad de la población urbana mundial tenía acceso al transporte público.",
+            "No es posible alcanzar el desarrollo sostenible sin transformar significativamente la forma en que se construyen y gestionan los espacios urbanos."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué no están las ciudades preparadas para el futuro?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La mayor parte del crecimiento urbano ocurre en ciudades pequeñas y pueblos intermedios, exacerbando las desigualdades y la pobreza urbana.",
+                    "Se estima que, en 2020, 1100 millones de residentes urbanos vivían en barrios marginales o en condiciones similares y, en los próximos 30 años, se espera que otros 2000 millones de personas vivan en tales asentamientos, principalmente en países en desarrollo."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cuáles son los retos más urgentes a los que se enfrentan las ciudades?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La desigualdad y los niveles de consumo urbano de energía y de contaminación son algunos de los principales retos. Las ciudades apenas ocupan el 3% de la superficie terrestre, pero suponen entre el 60% y el 80% del consumo energético y el 75% de las emisiones de carbono.",
+                    "Asimismo, muchas ciudades son más vulnerables a los efectos del cambio climático y a los desastres naturales debido a su elevada concentración de población y a su ubicación, por lo que mejorar la resiliencia urbana es crucial para evitar pérdidas humanas, sociales y económicas."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿En qué me afecta?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Con el tiempo, estos problemas afectarán a toda la población. La desigualdad puede generar malestar e inseguridad, la contaminación deteriora la salud de la población y afecta a la productividad de los trabajadores y, por tanto, a la economía, y los desastres naturales pueden alterar el estilo de vida de las personas. La contaminación del aire no es solo un problema urbano que perjudica la salud de millones de personas, sino que también afecta a los pueblos y las zonas rurales."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Y si dejamos que las ciudades crezcan orgánicamente?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los enormes barrios marginales, la congestión del tráfico, las emisiones de gases de efecto invernadero y la proliferación de suburbios en todo el mundo son algunas de las consecuencias del desarrollo urbano no planificado.",
+                    "Al apostar por la sostenibilidad, elegimos construir ciudades en las que todos los ciudadanos tengan una calidad de vida digna y formen parte de la dinámica productiva de la ciudad, lo que genera prosperidad compartida y estabilidad social sin dañar el medio ambiente."
+                ]
+            },
+            {
+                subtitulo: "¿Sale caro implementar prácticas sostenibles?",
+                parrafos: [
+                    "En comparación con los beneficios, el coste es mínimo. El coste de crear una red de transporte público funcional, por ejemplo, es elevado, pero los beneficios en términos de actividad económica, calidad de vida, medio ambiente y éxito general de una ciudad interconectada son aún mayores."
+                ]
+            },
+            {
+                subtitulo: "¿Qué puedo hacer para contribuir a lograr este objetivo?",
+                parrafos: [
+                    "Participe activamente en la administración y gestión de su ciudad. Defienda el tipo de ciudad que cree que necesita.",
+                    "Defina el concepto general de su edificio, calle y barrio, y actúe en consecuencia para conseguirlo. ¿Hay suficiente trabajo? ¿Pueden caminar sus hijos al colegio de forma segura? ¿Puede salir a pasear con su familia por la noche? ¿A qué distancia está la parada de transporte público más cercana? ¿Es buena la calidad del aire? ¿Cómo son los espacios públicos compartidos? Cuanto mejores sean las condiciones en que se desenvuelve la comunidad, mayor será el efecto sobre la calidad de vida."
                 ]
             }
         ]
