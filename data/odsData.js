@@ -222,71 +222,49 @@ const odsData = {
                     "Puedes contribuir a financiar campañas educativas para frenar prácticas culturales como la mutilación genital femenina y cambiar leyes perjudiciales que limitan los derechos de mujeres y niñas y les impiden desarrollar todo su potencial.",
                     "La Iniciativa Spotlight es una campaña conjunta de la Unión Europea y las Naciones Unidas, de carácter mundial y plurianual, orientada a eliminar todas las formas de violencia contra las mujeres y las niñas, y que supone el principal esfuerzo del mundo orientado a poner fin a todas las formas de violencia contra las mujeres y niñas."
                 ]
-            },
-            {
-                subitulo: "",
-                parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
             }
         ]
     },
     "6": {
         numero: 6,//número de ods
-        titulos: "",
+        titulos: "AGUA LIMPIA Y SANEAMIENTO",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El acceso al agua potable, el saneamiento y la higiene representan la necesidad humana más básica para el cuidado de la salud y el bienestar. Miles de millones de personas no tendrán acceso a estos servicios básicos en 2030 a menos que se cuadrupliquen los avances. El rápido crecimiento de la población, la urbanización y las crecientes necesidades en materia de agua de los sectores agrícola, industrial y energético están provocando un aumento de la demanda de agua.",
+            "La demanda de agua ha superado el crecimiento demográfico y la mitad de la población mundial actualmente sufre una escasez de agua grave durante al menos un mes al año. Se prevé que la escasez de agua aumente con el incremento de las temperaturas globales, provocado a su vez por el cambio climático.",
+            "Entre las medidas necesarias para garantizar el acceso universal al agua potable segura y asequible de aquí a 2030 se encuentran las inversiones en infraestructuras e instalaciones de saneamiento, la protección y el restablecimiento de los ecosistemas relacionados con el agua, así como la educación en materia de higiene.",
+            "Además, la mejora del uso eficiente de los recursos hídricos es una de las claves para reducir el estrés hídrico.",
+            "Se ha producido una evolución positiva. Entre los años 2015 y 2022, la proporción de la población mundial con acceso a servicios de agua potable gestionados de manera segura aumentó del 69% al 73%."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "El acceso al agua potable, el saneamiento y la higiene es un derecho humano. Las estrategias clave para encauzar este objetivo incluyen aumentar la inversión y la capacitación en todo el sector, promover la innovación y la acción a partir de pruebas, mejorar la coordinación y la cooperación intersectorial entre todas las partes interesadas y adoptar un enfoque más integrado y holístico de la gestión del agua.",
+                    "El agua es esencial no solo para la salud, sino también para reducir la pobreza, y garantizar la seguridad alimentaria, la paz, los derechos humanos, los ecosistemas y la educación.",
+                    "Sin embargo, los países se enfrentan a retos cada vez mayores relacionados con la escasez de agua, la contaminación de las aguas, la degradación de los ecosistemas relacionados con el agua y la cooperación transfronteriza sobre el agua."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cuáles son los principales desafíos?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "En el año 2022, 2200 millones de personas continuaban sin agua potable gestionada de manera segura, entre los que 703 millones no contaban con un servicio básico de agua; 3500 millones de personas carecían de saneamiento gestionado de manera segura, de los cuales 1500 millones no disponían de servicios básicos de saneamiento; y 2000 millones carecían de una instalación básica para lavarse las manos, lo que incluye a 653 millones de personas sin ninguna instalación para lavarse las manos.",
+                    "Al gestionar el agua de forma sostenible, se mejora la gestión de la producción de alimentos y energía y se contribuye al trabajo digno y al crecimiento económico. Además, se preservan los ecosistemas acuáticos y su biodiversidad, y se lucha contra el cambio climático."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué relación existe entre el cambio climático y el agua?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "En muchos lugares del mundo, la disponibilidad de agua es cada vez menos previsible. En algunas regiones, las sequías agravan la escasez de agua y repercuten negativamente en la salud y la productividad de las personas, lo que a su vez amenaza el desarrollo sostenible y la biodiversidad en todo el mundo.",
+                    "Por tanto, garantizar que todo el mundo tenga acceso a servicios sostenibles de agua potable y saneamiento es una estrategia fundamental para mitigar el cambio climático en los próximos años.",
+                    "De no mejorarse las infraestructuras y la gestión del agua, millones de personas seguirán muriendo cada año a causa de enfermedades relacionadas con el agua, como la malaria y la diarrea, y la pérdida de biodiversidad y el deterioro de la resistencia de los ecosistemas seguirán socavando la prosperidad de los países y los esfuerzos por lograr una sociedad más sostenible."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué podemos hacer?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Las organizaciones de la sociedad civil deben exigir a los gobiernos que rindan cuentas, que se invierta en investigación y desarrollo sobre el agua y que se promueva la inclusión de las mujeres, los jóvenes y las comunidades indígenas en la gestión de los recursos hídricos.",
+                    "Concienciar sobre la importancia de estas funciones y ponerlas en práctica dará lugar a resultados beneficiosos para todos y a una mayor sostenibilidad e integridad de los sistemas humanos y ecológicos.",
+                    "Otra opción sería participar en las campañas del Día Mundial del Agua y el Día Mundial del Retrete, las cuales tienen como objetivo proporcionar información e incentivar la adopción de medidas en materia de higiene."
                 ]
             }
         ]
