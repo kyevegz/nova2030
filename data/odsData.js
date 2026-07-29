@@ -585,57 +585,44 @@ const odsData = {
         ]
     },
     "14": {
-        numero: 14,//número de ods
-        titulos: "",
+        numero: 14,
+        titulos: "VIDA SUBMARINA",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 14 pretende conservar y utilizar sosteniblemente los océanos, los mares y los recursos marinos. La existencia humana y la vida en la Tierra dependen de unos océanos y mares sanos.",
+            "Los océanos son intrínsecos a nuestra vida en la Tierra. Cubren tres cuartas partes de la superficie terrestre, contienen el 97 % del agua de la Tierra y representan el 99 % del espacio vital del planeta por volumen.",
+            "Proporcionan recursos naturales clave como alimentos, medicinas, biocombustibles y otros productos; ayudan a descomponer y eliminar los residuos y a reducir la contaminación; y sus ecosistemas costeros contribuyen a reducir los daños causados por las tormentas. También constituyen el mayor sumidero de carbono del planeta.",
+            "La contaminación marina está alcanzando niveles extremos. Más de 17 millones de toneladas métricas contaminaban el océano en 2021, cifra que se duplicará o triplicará para el año 2040, lo que resulta preocupante. El plástico es el tipo de desecho marino más dañino.",
+            "En la actualidad, el pH medio del océano es de 8,1, aproximadamente un 30 % más ácido que en la época preindustrial. La acidificación de los océanos amenaza la supervivencia de la vida marina, perturba la cadena alimentaria y socava tanto los servicios vitales que prestan los océanos como nuestra propia seguridad alimentaria.",
+            "La gestión responsable de este vital recurso mundial es una de las claves de un futuro sostenible. Esto implica aumentar la financiación de la ciencia oceánica, intensificar los esfuerzos de conservación, y cambiar con urgencia el rumbo del cambio climático para salvaguardar el mayor ecosistema del planeta. Los esfuerzos actuales para proteger los océanos no responden aún a la urgente necesidad de salvaguardar este vasto, aunque frágil, recurso."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los océanos son el soporte vital de nuestro planeta y regulan el sistema climático mundial. Constituyen el mayor ecosistema del mundo, albergan casi un millón de especies conocidas y presentan un enorme potencial científico sin explotar.",
+                    "Los océanos y la pesca siguen cubriendo las necesidades económicas, sociales y medioambientales de la población mundial. A pesar de lo importante que es proteger los océanos, décadas de explotación irresponsable de los recursos han provocado un nivel alarmante de degradación."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "Entonces, ¿cuál es el problema?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los océanos absorben alrededor del 23 % de las emisiones anuales de CO2 generadas por la actividad humana y contribuyen a mitigar los efectos del cambio climático. Además, absorben el 90 % del exceso de calor causado por el cambio climático. El calentamiento de los océanos está alcanzando niveles récord, lo que provoca olas de calor marinas generalizadas, amenaza sus ricos ecosistemas y destruye los arrecifes de coral de todo el mundo.",
+                    "El aumento de los niveles de residuos en los océanos del mundo también supone un importante impacto medioambiental y económico. Se calcula que cada año llegan a los mares y océanos entre 5 y 12 millones de toneladas métricas de plástico, con un coste aproximado de 13.000 millones de dólares anuales, entre los que se incluyen los costes de limpieza y las pérdidas financieras sufridas por la pesca y otras industrias. Cerca del 89 % de los residuos plásticos encontrados en el fondo de los océanos son artículos de un solo uso, como bolsas de plástico.",
+                    "Cerca del 80 % del turismo se concentra en zonas costeras. Se calcula que la industria del turismo marítimo y costero genera 134.000 millones de dólares al año y, en algunos países, esta industria representa ya más de un tercio de la mano de obra.",
+                    "De no gestionarse de manera responsable, el turismo puede suponer una grave amenaza para los recursos naturales de los que depende, así como para la cultura e industria locales."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué relación tienen los océanos con nuestra salud?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La salud de los océanos está intrínsecamente ligada a la nuestra. La biodiversidad marina ofrece oportunidades muy importantes para la industria farmacéutica.",
+                    "Además, el sector de la pesca marítima da empleo a 57 millones de personas en todo el mundo y constituye la principal fuente de proteínas de más del 50 % de la población de países menos desarrollados."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "Entonces, ¿qué podemos hacer?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Para garantizar el desarrollo sostenible de las zonas de alta mar y de aguas profundas y proteger los hábitats más vulnerables, se necesita una mayor cooperación internacional. Para conservar la biodiversidad y garantizar un futuro sostenible al sector de la pesca, deben establecerse sistemas de gestión completos, eficaces y equitativos de áreas protegidas por el Estado."
                 ]
             }
         ]
