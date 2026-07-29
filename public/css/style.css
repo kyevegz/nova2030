@@ -2131,9 +2131,25 @@ con el del contenedor*/
 
 .ods-header__image{
     width: 200px;
+    height: auto;
+    object-fit: contain;
 }
 
+.ods-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    border-bottom: 2px solid var(--zumthor-300);
+}
 
+.ods-header__title{
+    margin: 0;
+}
+    /*se le qiota
+}
 
 
 

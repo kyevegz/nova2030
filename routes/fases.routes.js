@@ -323,7 +323,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
 
         //valida que el ods exista en el diccionario, es decir, que esté entre 1-17
         const informacionOds = odsInfo[odsId];
-        console.log(informacionOds);
+        
 
         if(!informacionOds) return res.redirect(`/fase/${numFase}/modulos/modulo-${idModulo}`);
 

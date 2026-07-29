@@ -20,9 +20,12 @@
 
         <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
             <article class="ods-content">
+
                 <header class="ods-header">
-                    <img src="/images/ods/S_SDG_Icons_Inverted_Transparent_WEB-<%= String(odsIn.numero).padStart(2, '0') %>.png" alt="" class="ods-header__image">
-                    <h1 class="content__title">ODS <%= odsIn.numero%>: <%= odsIn.titulos%></h1>
+                    <div class="ods-header__icon-wrapper">
+                        <img src="/images/ods/S_SDG_Icons_Inverted_Transparent_WEB-<%= String(odsIn.numero).padStart(2, '0') %>.png" alt="Ícono ODS <%= odsIn.numero %>: <%= odsIn.titulos%>" class="ods-header__image">
+                    </div>
+                    <h1 class="content__title ods-header__title">ODS <%= odsIn.numero%>: <%= odsIn.titulos%></h1>
                 </header>
 
                 <!--Renderización de la introducción párafo a párrafo, con un foreach-->
