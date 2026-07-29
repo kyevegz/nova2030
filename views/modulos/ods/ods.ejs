@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <%- include('../partials/head') %>
-    <title>ODS | Nova 2030</title>
+    <title>ODS <%= odsIn.numero %>: <%= odsIn.titulo%> | Nova 2030</title>
 </head>
 <body>
 
@@ -19,8 +19,34 @@
         <% } %>
 
         <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
-            
+            <article class="ods-content">
+                <header class="ods-header">
+                    <h1>ODS <%= odsIn.numero%>: <%= odsIn.titulo%></h1>
+                </header>
+
+                <!--Renderización de la introducción párafo a párrafo, con un foreach-->
+
+                <section class="ods-introduction">
+                    <% odsIn.introduccion.forEach(parrafo => { %>
+                        <p><%= parrafo %></p>
+                    <% }) %>
+                </section>
+
+                <!--Renderización de los subtítulos con sus respectivos contenidos-->
+                <section class="ods-sections">
+                    <% odsIn.secciones.forEach(seccion => { %>
+                        <div class="ods-block">
+                            <h2><%= seccion.subtitulo %></h2>
+                            <% odsIn.parrafos.forEach(parrafo => { %>
+                                <p><%= parrafo %></p>
+                            <% }); %>
+                        </div>>
+                    <% }); %>
+                </section>
+            </article>
         </div>
+
+
         <% if( modificadorContent === 'content--locked') { %>
             <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
         <% } %>

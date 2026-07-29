@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../config/db');
 const verificarToken = require('../middlewares/auth');
 const { progresoPorFaseUsr } = require('../utils/progresoUtils.js');
-
+//const odsInfo = require('../data/odsData.js');
 /*informacion fija de las fases de nova, se hace un diccionario 
 para no crear una tabla en la bd y aumentar las consultas 
 desde express*/
@@ -316,7 +316,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
         const {numFase, idModulo, odsId} = req.params;
 
         //valida que el ods exista en el diccionario, es decir, que esté entre 1-17
-        const informacionOds = odsData[id];
+        const informacionOds = odsData[odsId];
 
         if(!informacionOds) return res.redirect(`/fase/${numFase}/modulos/modulo-${idModulo}`);
 
@@ -342,7 +342,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
         res.render('ods', {
             numFase,
             idModulo,
-            ods: informacionOds,
+            odsIn: informacionOds,
             flipcard: 
             estadoBloqueado,
             modificadorContent
