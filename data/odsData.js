@@ -39,17 +39,6 @@ const odsData = {
                     "El sector privado tiene un papel crucial que desempeñar a la hora de determinar si el crecimiento que genera es inclusivo y contribuye a la reducción de la pobreza. Puede fomentar oportunidades económicas para la población pobre.",
                     "La contribución de la ciencia para acabar con la pobreza ha sido significativa. Por ejemplo, ha permitido el acceso al agua potable, ha reducido las muertes causadas por enfermedades transmitidas por el agua y ha mejorado la higiene para reducir los riesgos para la salud relacionados con el consumo de agua no potable y la falta de saneamiento."
                 ]
-            },
-            {
-                subitulo: "",
-                parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
             }
         ]
     },
@@ -163,87 +152,80 @@ const odsData = {
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué desafíos nos quedan?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Según los objetivos educativos nacionales, se prevé que el porcentaje de estudiantes que alcancen habilidades básicas de lectura al final de la escuela primaria aumente del 51 % en 2015 al 67 % en 2030. Sin embargo, se estima que en 2030 unos 300 millones de niños y jóvenes seguirán careciendo de conocimientos básicos de aritmética y alfabetización.",
+                    "Las limitaciones económicas, sumadas a problemas relacionados con los resultados del aprendizaje y las tasas de abandono escolar, persisten en las zonas marginadas, lo que subraya la necesidad de un compromiso global continuo para garantizar una educación inclusiva y equitativa para todos. Los bajos niveles de habilidades en tecnologías de la información y las comunicaciones (tic) también son una barrera importante para lograr una conectividad universal y significativa."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Dónde lucha más la gente para tener acceso a la educación?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "El África Subsahariana se enfrenta a los mayores desafíos para dotar sus escuelas de recursos básicos. La situación es extrema en los niveles de educación primaria y secundaria básica, donde menos de la mitad de las escuelas del África Subsahariana tienen acceso a agua potable, electricidad, ordenadores e internet.",
+                    "Las desigualdades también empeorarán a menos que se aborden las carencias digitales (la brecha entre los países con menos posibilidad de conexión y los países altamente digitalizados)."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Hay grupos que tienen un acceso más difícil a la educación?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Sí, las mujeres y niñas representan uno de esos grupos. Alrededor del 40 % de los países no han logrado la paridad de género en la educación primaria.",
+                    "Estas desventajas en la educación también se traducen en falta de acceso a habilidades y oportunidades limitadas en el mercado laboral para las mujeres jóvenes."
+                ]
+            },
+            {
+                subitulo: "¿Qué podemos hacer?",
+                parrafos: [
+                    "Pedir a nuestros gobiernos que coloquen la educación como una prioridad tanto en las políticas como en la práctica. Presionar a nuestros gobiernos para que asuman compromisos firmes a fin de ofrecer una educación primaria gratuita a todos, incluidos los grupos vulnerables o marginados.",
+                    "La educación es la clave que permitirá alcanzar muchos otros objetivos de desarrollo sostenible (ODS). Cuando las personas pueden obtener una educación de calidad, pueden romper el ciclo de la pobreza. La educación ayuda a reducir las desigualdades y a alcanzar la igualdad de género. ",
+                    "También ayuda a las personas de todo el mundo vivir una vida más saludable y sostenible. La educación también es importante para fomentar la tolerancia entre las personas y contribuye al desarrollo de sociedades más pacíficas.",
+                    "Para cumplir el objetivo 4, la financiación de la educación debe convertirse en una prioridad de inversión nacional. Además, medidas como hacer que la educación sea gratuita y obligatoria, aumentar el número de docentes, mejorar la infraestructura escolar básica y adoptar la transformación digital son esenciales.",
                 ]
             }
         ]
     },
     "5": {
         numero: 5,//número de ods
-        titulos: "",
+        titulos: "IGUALDAD DE GENERO",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "La igualdad de género no solo es un derecho humano fundamental, sino que es uno de los fundamentos esenciales para construir un mundo pacífico, próspero y sostenible. Se han conseguido algunos avances durante las últimas décadas, pero el mundo está lejos de alcanzar la igualdad de género para 2030.",
+            "Las mujeres y niñas constituyen la mitad de la población mundial y, por tanto, también la mitad de su potencial. Pero la desigualdad de género prevalece y estanca el progreso social.",
+            "De media, las mujeres ganan un 23 % menos que los hombres en el mercado laboral mundial y dedican el triple de horas al trabajo doméstico y de cuidados no remunerado que los hombres.",
+            "La violencia y la explotación sexuales, el reparto desigual del trabajo doméstico y de cuidados no remunerado y la discriminación en los cargos públicos siguen suponiendo enormes obstáculos. Todas estas desigualdades se han visto agravadas por la pandemia de la COVID-19: han aumentado las denuncias por violencia sexual, las mujeres han asumido más trabajo de cuidados debido al cierre de escuelas, y el 70 % del personal sanitario y social del mundo son mujeres.",
+            "Al ritmo actual, se calcula que se tardará 300 años en acabar con el matrimonio infantil, 286 años en subsanar las lagunas de protección jurídica y eliminar las leyes discriminatorias, 140 años en que las mujeres estén representadas en pie de igualdad en puestos de poder y liderazgo en el lugar de trabajo y 47 años en lograr la igualdad de representación en los parlamentos nacionales.",
+            "Es necesario un liderazgo político, unas inversiones y unas reformas políticas integrales para desmantelar las barreras sistémicas que impiden alcanzar el Objetivo 5. La igualdad de género es un objetivo transversal y debe ser un elemento clave en las políticas, presupuestos e instituciones nacionales."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Cuánto hemos avanzado?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Gracias a los compromisos internacionales para promover la igualdad de género se ha avanzado en algunos ámbitos: los casos de matrimonio infantil y mutilación genital femenina (MGF) han disminuido en los últimos años, y la representación de la mujer en la esfera política es mayor que nunca. Aún así, sigue sin cumplirse la promesa de un mundo en el que todas las mujeres y niñas disfruten de plena igualdad de género y en el que se hayan eliminado todas las barreras jurídicas, sociales y económicas que impiden su empoderamiento. De hecho, ese objetivo está probablemente aún más lejano que antes, ya que las mujeres y niñas están siendo duramente castigadas por la pandemia de la COVID-19."
+                ]
+            },
+            {
+                subitulo: "¿Existen otros desafíos relacionados con la igualdad de género?",
+                parrafos: [
+                    "Sí. En todo el mundo, casi la mitad de las mujeres casadas no tienen poder de decisión sobre su salud y sus derechos sexuales y reproductivos. El 35 % de las mujeres entre 15 y 49 años habían sido víctimas de violencia física o sexual por parte de su pareja o por una persona que no era su pareja. 1 de cada 3 niñas de entre 15 y 19 años ha sufrido algún tipo de mutilación genital femenina o ablación en los 30 países de África y Oriente Medio, donde esta peligrosa práctica es más común, y que conlleva un alto riesgo de hemorragias prolongadas, infecciones (incluido el VIH), complicaciones en el parto, infertilidad y muerte.",
+                    "Este tipo de violencia no solo perjudica a las mujeres y niñas a título individual, sino que también deteriora su calidad de vida en general y obstaculiza su participación activa en la sociedad."
+                ]
+            },
+            {
+                subitulo: "¿Por qué debería importarme la igualdad de género?",
+                parrafos: [
+                    "La igualdad de género es un derecho humano fundamental, independientemente del país de residencia. Avanzar en la igualdad de género es fundamental para crear una sociedad sana en todos sus ámbitos, desde la reducción de la pobreza hasta la promoción de la salud, la educación, la protección y el bienestar de niñas y niños."
+                ]
+            },
+            {
+                subitulo: "¿Qué podemos hacer?",
+                parrafos: [
+                    "Si eres una niña, debes seguir estudiando, ayudar a tus compañeras a hacer lo mismo, y luchar por tu derecho a acceder a los servicios adecuados de salud sexual y reproductiva. Si eres una mujer, debes hacer frente a los prejuicios inconscientes y al sesgo de género implícito que crean una barrera involuntaria y a menudo invisible para la igualdad de oportunidades.",
+                    "Si eres un hombre o un niño, debes acompañar a las mujeres y las niñas en la consecución de la igualdad de género y el fomento de unas relaciones sanas y respetuosas.",
+                    "Puedes contribuir a financiar campañas educativas para frenar prácticas culturales como la mutilación genital femenina y cambiar leyes perjudiciales que limitan los derechos de mujeres y niñas y les impiden desarrollar todo su potencial.",
+                    "La Iniciativa Spotlight es una campaña conjunta de la Unión Europea y las Naciones Unidas, de carácter mundial y plurianual, orientada a eliminar todas las formas de violencia contra las mujeres y las niñas, y que supone el principal esfuerzo del mundo orientado a poner fin a todas las formas de violencia contra las mujeres y niñas."
                 ]
             },
             {
                 subitulo: "",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                subitulo: "",
-                parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                subitulo: "",
-                parrafos: [
-                    "",
                     "",
                     "",
                     "",
