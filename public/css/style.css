@@ -2303,6 +2303,30 @@ con el del contenedor*/
     border: none;
     background-color: transparent;
 }
+.chatbot__attach-btn,
+.chatbot__send-btn{
+    font-size: var(--font-size-h3);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: var(--space-xs);
+}
+
+.chatbot__attach-btn{
+    color: var(--shark-500);
+}
+.chatbot__attach-btn:hover{
+    color: var(--principal-title);
+}
+
+.chatbot__send-btn{
+    color: var(--principal-title);
+}
+.chatbot__send-btn:hover{
+    color: var(--cerulean-blue-900);
+    transform: scale(1.1);
+}
+
+
 .chatbot__close-btn{
     
     position: absolute;
@@ -2333,12 +2357,24 @@ con el del contenedor*/
 
 .chatbot__input{
     
-    width: 75%;
+    width: 72%;
     background-color: transparent;
     padding: var(--space-sm);
-    border: 1px solid black;
+    border: 1px solid var(--shark-300);
     border-radius: var(--radius-ultra-smooth);
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-body);
+    font-family: var(--font-body);
+
+    /*para que el textarea sea tipo whatsapp y los usuarios no deformen el diseño*/
+    resize: none;/*evita que el usuario eestire la esquina inferior*/
+    overflow-y: hidden;/*mostrará el sroll hacia abajo o en el eje y*/
+    max-height: 120px; /*es lo más alto que puede llegar, si no, va a tapar el chat*/
+    transition: border-color 0.3s ease;
+}
+
+.chatbot__input:focus{
+    outline: none;
+    border-color: var(--principal-title);
 }
 .chatbot__message-top{
     
