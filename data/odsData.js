@@ -27,7 +27,10 @@ const odsData = {
     "2": {
         /*misma estructura que el primero, lo que varía es secciones, 
         ya que depende de cuántas preguntas clave tenga ese ods*/
-    }
+    },
+    "3": {
+
+    },
 };
 
 module.exports = odsData; //no quitar
