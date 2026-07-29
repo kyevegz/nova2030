@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head') %>
-    <title>hola</title>
+    <title>Modulo </title>
 </head>
 <body>
     <div class="page">
@@ -18,8 +18,44 @@
         <% } %>
 
         <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            <h1 class = "content__title">Objetivos de Desarrollo Sostenible (ODS)</h1>
+
+            <p class = "content__paragraph">Los Objetivos de Desarrollo Sostenible (ODS) son un conjunto de 17 
+                objetivos establecidos por la Organización de las Naciones Unidas 
+                (ONU) como parte de la Agenda 2030, con el propósito de construir 
+                un mundo más justo, inclusivo y sostenible para todas las personas.
+            </p>
+            <br>
+            <p class="content__paragraph">
+                Estos objetivos abordan algunos de los desafíos más importantes que 
+                enfrenta la humanidad, como la pobreza, el hambre, la desigualdad, el 
+                acceso a la educación y la salud, la igualdad de género, el cuidado del 
+                medio ambiente, la acción por el clima, la paz y la justicia, entre muchos 
+                otros. Todos ellos están conectados entre sí, por lo que el avance en uno 
+                también contribuye al progreso de los demás.
+            </p>
+
+            <br>
+            <p class="content__paragraph">
+                Más que una lista de metas, los ODS representan una invitación a actuar. 
+                Cada persona, comunidad, organización y gobierno tiene la oportunidad de 
+                aportar soluciones que generen un impacto positivo en su entorno. Las 
+                grandes transformaciones comienzan con pequeñas acciones, y una sola idea 
+                puede convertirse en un proyecto capaz de mejorar la vida de muchas personas.
+            </p>
+            <br>
+            <p class="content__paragraph">
+                En Nova 2030 creemos que los jóvenes tienen el talento, la creatividad y 
+                la capacidad de impulsar ese cambio. Por ello, cada proyecto desarrollado 
+                dentro de la plataforma se inspira en uno o más de los Objetivos de Desarrollo 
+                Sostenible, buscando transformar los desafíos actuales en oportunidades de 
+                innovación y generar un impacto real en las comunidades.
+            </p>
+            <br>
             <%- include('../partials/card-ods')%>
         </div>
+
+        
         <% if( modificadorContent === 'content--locked') { %>
             <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
         <% } %>

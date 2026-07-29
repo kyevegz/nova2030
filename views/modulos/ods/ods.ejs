@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>ODS | Nova 2030</title>
+</head>
+<body>
+
+    <div class="page">
+<!--Llamada al sidebar-->
+    <%- include('../partials/sidenavbar') %>
+
+    <!--Llamada al header-->
+    <%- include('../partials/header') %>
+
+    <main class="content <%= modificadorContent%>">
+        <% if(modificadorContent === 'content--preview') { %>
+            <%- include('../partials/alerta-preview', {tipo: estadoBloqueado}) %>
+        <% } %>
+
+        <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            
+        </div>
+        <% if( modificadorContent === 'content--locked') { %>
+            <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+        <% } %>
+    </main>
+
+
+    <!--Llamada al sidebar anuncios-->
+    <%- include('../partials/sidebar-anuncios') %>
+    <!--Llamada al footer-->
+    <%- include('../partials/footer') %>
+    </div>
+    
+</body>
+</html>

@@ -23,7 +23,7 @@ const dicFases = {
 };
 
 //diccionario de datos e informacipon para la flip card de los ods
-const ods = [
+const odsData = [
     {
         id: 1,
         title: 'Fin de la pobreza',
@@ -282,7 +282,8 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             `, [idUsuario, idModulo]);
             if (progreso.length === 0 || progreso[0].desbloqueado === 0) {estadoBloqueado = 'moduloBloqueado', modificadorContent = 'content--preview'};
         }
-
+        
+       
         
 
         //2 - renderización de moldes diferentes
@@ -300,7 +301,7 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             usuarioVerificado: usuario, // Inyección directa
             estadoBloqueado,
             modificadorContent,
-            ods
+            ods: odsData
         });
 
     } catch (error) {
@@ -337,7 +338,6 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
                 modificadorContent = "content--preview";
             }
         }
-
         //renderizar la plantulla única de ods
         res.render('ods', {
             numFase,
