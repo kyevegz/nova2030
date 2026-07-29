@@ -306,4 +306,52 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
     }
 });
 
+router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res) => {
+    try{
+        const usuario = res.locals.usuarioVerificado;
+        const {numFase, idModulo, odsId} = req.params;
+
+        //valida que el ods exista en el diccionario, es decir, que esté entre 1-17
+        const informacionOds = odsData[id];
+
+        if(!informacionOds) return res.redirect(`/fase/${numFase}/modulos/modulo-${idModulo}`);
+
+        let estadoBloqueado = false, modificadorContent = '';
+        //condicional para el acceso
+        if(!usuario){
+            estadoBloqueado = 'sinCuenta';
+            modificadorContent = 'content--locked';
+        }else{
+            const idUsuario = usuario.id;
+            const [progreso] = await db.query(`
+                SELECT desbloqueado
+                FROM progreso_usuarios
+                WHERE idUsuario = ? AND idModulo = ?
+            `, [idUsuario, idModulo]);
+
+            if(progreso.length === 0 || progreso[0].desbloqueado === 0){
+                estadoBloqueado = 'moduloBloqueado';
+                modificadorContent = "content--preview";
+            }
+        }
+
+        //renderizar la plantulla única de ods
+        res.render('ods', {
+            numFase,
+            idModulo,
+            ods: informacionOds,
+            flipcard: 
+            estadoBloqueado,
+            modificadorContent
+        });
+    }catch(error){
+        console.error('Error al cargar el ODS: ', error);
+        res.status(500).send('Error en el servidor');
+    }
+    
+
+
+})
+//ruta para modulo-2, los ods
+
 module.exports = router;
