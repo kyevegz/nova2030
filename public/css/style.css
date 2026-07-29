@@ -2148,32 +2148,6 @@ con el del contenedor*/
 .ods-header__title{
     margin: 0;
 }
-    /*se le qiota
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .phase-goal{
     text-align: left;
@@ -2194,6 +2168,115 @@ con el del contenedor*/
 }
 .phase-goal__text{
     font-size: var(--font-size-small);
+}
+
+/*estilos para el chatbot*/
+
+/*botón flotante*/
+.chatbot-trigger{
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--navbar);
+    color: var(--cerise-50);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: var(--z-modal);
+    transition: transform 0.3s, background-color 0.3s ease-in-out;
+}
+
+.chatbot-trigger:hover{
+    background-color: var(--cerise-800);
+    transform: scale(1.05);
+}
+
+/*ventana del chat*/
+.chatbot{
+    position: fixed;
+    bottom: var(--space-xxl);
+    right: var(--space-lg);
+    width: 350px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: var(--z-intermediate);
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/*modificador para ocultar el chat*/
+.chatbot--hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* transition: opacity 0.3 ease, visibility 0.3s ease; */
+}
+
+/*mensajes*/
+.chatbot__messages{
+    flex: 1; /*para tomar todo el espacio disponible*/
+    padding: var(--space-md);
+    overflow-y: auto;/*permite el scroll cuando hay muchos mensajes*/
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background-color: var(--shark-100);
+}
+
+/*alinear burbujas*/
+.chatbot__message{
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-end;/*esto hará que el avatar se alinee a la hora*/
+}
+
+/*alineaciónburbuja para usuario*/
+.chatbot__message--user{
+    justify-content: flex-end;
+}
+
+/*estilo de las burjas*/
+.chatbot__bubble{
+    max-width: 75%;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-smooth);
+    font-size: var(--font-size-body);
+    position: relative;
+}
+
+/*burbuja para ia*/
+.chatbot__message--ai .chatbot__bubble{
+    background-color: red;
+    border: 1px solid #e0e0e0;
+    border-bottom-right-radius: 2px;
+}
+
+/*estilo para user*/
+.chatbot__message--user .chatbot__bubble{
+    background-color: blue;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+/*span donde se pone lo del tiempo*/
+.chatbot__time{
+    font-size: var(--font-size-xsmall);
+    color: #888;
+    display: block;
+    margin-top: var(--space-xs);
+    text-align: right;
+
+}
+
+.chatbot__message--user .chatbot__time{
+    color: #e0e0e0;/*hora más clara en fondo oscuro*/
 }
 
 /*MEDIA QUERIES*/
