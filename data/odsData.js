@@ -673,57 +673,45 @@ const odsData = {
         ]
     },
     "16": {
-        numero: 16,//número de ods
-        titulos: "",
+        numero: 16,
+        titulos: "PAZ, JUSTICIA E INSTITUCIONES SOLIDAS",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 16 pretende promover sociedades pacíficas e inclusivas, facilitar el acceso a la justicia para toda la población y crear instituciones eficaces, responsables e inclusivas a todos los niveles. Las personas de todo el mundo deben vivir libres del miedo a cualquier forma de violencia y sentirse seguras en su día a día, sea cual sea su origen étnico, religión u orientación sexual.",
+            "Sin embargo, los conflictos violentos, actuales y nuevos, en todo el mundo, están haciendo descarrilar el camino global hacia la paz y hacia la consecución del Objetivo 16.",
+            "Resulta alarmante que en el año 2022 se produjera un aumento en más del 50% en el número de muertes de civiles relacionadas con los conflictos, el primero desde la adopción de la Agenda 2030, debido en gran parte a la guerra de Ucrania.",
+            "Los altos niveles de violencia armada e inseguridad tienen consecuencias destructivas para el desarrollo de un país, mientras que la violencia sexual, los delitos, la explotación y la tortura son fenómenos generalizados donde existen conflictos o no hay Estado de derecho, por lo que los países deben tomar medidas para proteger a los sectores que corren más riesgos.",
+            "Los gobiernos, la sociedad civil y las comunidades deben colaborar para encontrar soluciones duraderas a los conflictos y al clima de inseguridad. El fortalecimiento del Estado de derecho y la promoción de los derechos humanos es fundamental en este proceso, así como la reducción del tráfico de armas ilícitas, la lucha contra la corrupción y el fomento de una participación inclusiva."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué debería importarme?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los altos niveles de violencia armada e inseguridad tienen consecuencias destructivas para el desarrollo de un país. La violencia sexual, los delitos, la explotación y la tortura son fenómenos generalizados donde existen conflictos o no hay Estado de derecho.",
+                    "Los gobiernos, la sociedad civil y las comunidades deben colaborar para encontrar soluciones duraderas a los conflictos y al clima de inseguridad. El fortalecimiento del Estado de derecho y la promoción de los derechos humanos es fundamental en este proceso, así como la reducción del tráfico de armas ilícitas, la lucha contra la corrupción y el fomento de una participación inclusiva."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cómo se aplica esto a mi país?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "El Objetivo 16 se ajusta al marco más amplio de los derechos humanos al promover sociedades que respeten y defiendan los derechos individuales, así como el derecho a la intimidad, la libertad de expresión y el acceso a la información.",
+                    "La paz es un requisito fundamental para el desarrollo social y económico. Cuando no hay paz, las sociedades suelen estar plagadas de conflictos, violencia e inestabilidad, lo que puede obstaculizar el progreso y resultar en la pérdida de vidas humanas y recursos.",
+                    "El acceso igualitario a la justicia es esencial para proteger los derechos de las personas, resolver disputas y garantizar que las poblaciones vulnerables no sean marginadas ni maltratadas.",
+                    "Los delitos que amenazan los cimientos de las sociedades pacíficas, incluidos los homicidios, la trata y otros tipos de delincuencia organizada, así como las leyes o las prácticas discriminatorias, afectan a todos los países."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué pasa si no se toman medidas?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La violencia armada y la inseguridad tienen un efecto destructivo en el desarrollo de un país, que afecta al crecimiento económico y que suele provocar agravios persistentes entre las comunidades.",
+                    "La violencia afecta a la salud, al desarrollo y al bienestar de los niños, así como a su capacidad para prosperar. También les provoca traumas y debilita su inclusión social.",
+                    "La falta de acceso a la justicia implica que los conflictos quedan sin resolver y que las personas no pueden obtener ni protección ni reparación. Las instituciones que no funcionan con arreglo a la ley son propensas a la arbitrariedad y al abuso de poder, y tienen menos capacidad para prestar servicios públicos para todos.",
+                    "La exclusión y la discriminación no solo violan los derechos humanos, sino que también causan resentimiento y animosidad, y pueden provocar actos de violencia."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué podemos hacer?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Ejercer nuestro derecho a exigir que los funcionarios electos rindan cuentas de su actuación, a la libertad de información y a compartir nuestra opinión con los representantes electos. Promover la inclusión y el respeto hacia las personas de diferente origen étnico, religión, género, orientación sexual u opinión."
                 ]
             }
         ]
