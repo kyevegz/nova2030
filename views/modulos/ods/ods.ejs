@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../../partials/head') %>
+    <title>ODS <%= odsIn.numero %>: <%= odsIn.titulos%> | Nova 2030</title>
+</head>
+<body>
+
+    <div class="page">
+<!--Llamada al sidebar-->
+    <%- include('../../partials/sidenavbar') %>
+
+    <!--Llamada al header-->
+    <%- include('../../partials/header') %>
+
+    <main class="content <%= modificadorContent%>">
+        <% if(modificadorContent === 'content--preview') { %>
+            <%- include('../../partials/alerta-preview', {tipo: estadoBloqueado}) %>
+        <% } %>
+
+        <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            <article class="ods-content">
+
+                <header class="ods-header">
+                    <div class="ods-header__icon-wrapper">
+                        <img src="/images/ods/S_SDG_Icons_Inverted_Transparent_WEB-<%= String(odsIn.numero).padStart(2, '0') %>.png" alt="Ícono ODS <%= odsIn.numero %>: <%= odsIn.titulos%>" class="ods-header__image">
+                    </div>
+                    <h1 class="content__title ods-header__title">ODS <%= odsIn.numero%>: <%= odsIn.titulos%></h1>
+                </header>
+
+                <!--Renderización de la introducción párafo a párrafo, con un foreach-->
+
+                <section class="ods-introduction">
+                    <% odsIn.introduccion.forEach(parrafo => { %>
+                        <p class = "content__paragraph"><%= parrafo %></p>
+                        <br>
+                    <% }) %>
+                </section>
+                <br>
+                <!--Renderización de los subtítulos con sus respectivos contenidos-->
+                <section class="ods-sections">
+                    <% odsIn.secciones.forEach(seccion => { %>
+                        <div class="ods-block">
+                            <h2 class="content__subtitle"><%= seccion.subtitulo %></h2>
+                            <% seccion.parrafos.forEach(parrafo => { %>
+                                <p class = "content__paragraph"><%= parrafo %></p>
+                                <br>
+                            <% }); %>
+                        </div>
+                    <% }); %>
+                </section>
+            </article>
+        </div>
+
+
+        <% if( modificadorContent === 'content--locked') { %>
+            <%- include('../../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+        <% } %>
+    </main>
+
+
+    <!--Llamada al sidebar anuncios-->
+    <%- include('../../partials/sidebar-anuncios') %>
+    <!--Llamada al footer-->
+    <%- include('../../partials/footer') %>
+    </div>
+    
+</body>
+</html>

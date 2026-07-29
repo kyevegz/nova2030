@@ -1999,7 +1999,7 @@ con el del contenedor*/
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-smooth);
     font-weight: var(--weight-bold);
-    transition: bakground-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 /*hacer miniaturas a los li del carrusel secundario*/
@@ -2084,11 +2084,72 @@ con el del contenedor*/
     text-align: center;
 }
 
+.flip-card__button{
+    margin-top: var(--space-md);
+    background-color: #fff0fa;
+    color: var(--text-colour);
+    border-radius: var(--radius-smooth);
+    font-family: var(--font-details);
+    font-weight: var(--weight-medium);
+    padding: var(--space-xs);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.flip-card__button:hover{
+    background-color: #000;
+    
+    color: #ffffff;
+}
+
+.flip-card__title-back{
+    font-family: var(--font-titles);
+    font-size: var(--font-size-h2);
+    font-weight: var(--weight-normal);
+}
+
+.flip-card__description{
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: 1.5;
+}
 
 
+/*modulo 2 fase 1*/
 
+.content__title{
+    font-family: var(--font-titles);
+    color: var(--principal-title);
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--space-xl);
+}
 
+.content__subtitle{
+    font-family: var(--font-titles);
+    color: var(--secundary-title);
+    font-size: var(--font-size-h2);
+}
 
+.ods-header__image{
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+.ods-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    border-bottom: 2px solid var(--zumthor-300);
+}
+
+.ods-header__title{
+    margin: 0;
+}
+    /*se le qiota
+}
 
 
 
