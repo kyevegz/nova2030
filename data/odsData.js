@@ -271,56 +271,29 @@ const odsData = {
     },
     "7": {
         numero: 7,//número de ods
-        titulos: "",
+        titulos: "ENERGIA ASEQUIBLE Y NO CONTAMINABLE",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 7 pretende garantizar el acceso a una energía limpia y asequible, clave para el desarrollo de la agricultura, las empresas, las comunicaciones, la educación, la sanidad y el transporte.",
+            "El mundo continúa avanzando para alcanzar las metas de energía sostenible, pero no lo suficientemente rápido. Al ritmo actual, alrededor de 660 millones de personas continuarán sin acceso a la energía eléctrica y casi 2000 millones de personas seguirán dependiendo de combustibles y tecnologías contaminantes para cocinar en 2030.",
+            "Nuestro día a día depende de una energía segura y asequible. No obstante, el consumo de energía sigue siendo la principal causa del cambio climático, ya que representa alrededor del 60 % de las emisiones mundiales de gases de efecto invernadero.",
+            "La tasa mundial de acceso a la energía eléctrica aumentó del 87 % en 2015 al 91 % en 2021.",
+            "Para garantizar acceso universal a electricidad asequible en 2030, es necesario invertir en fuentes de energía limpia, como la solar, eólica y termal. Ampliar las infraestructuras y mejorar la tecnología para suministrar energía limpia en todos los países en desarrollo son objetivos cruciales que contribuyen tanto al desarrollo como al medioambiente."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Cuáles son las consecuencias de no tener acceso a la energía?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los servicios energéticos son fundamentales para prevenir enfermedades y luchar contra las pandemias: desde abastecer de energía a las instalaciones sanitarias y suministrar agua potable para la higiene esencial, hasta habilitar el agua para la higiene esencial, las comunicaciones y los servicios informáticos que posibilitan la comunicación entre las personas manteniendo el distanciamiento social."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué podemos hacer para solucionar estos problemas?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                subitulo: "",
-                parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                subitulo: "",
-                parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los países pueden acelerar la transición hacia un sistema energético asequible, seguro y sostenible al invertir en energías renovables, priorizar la implementación de prácticas de eficiencia energética y adoptar tecnologías e infraestructuras de energía limpia.",
+                    "Las empresas pueden hacer un esfuerzo por mantener y proteger los ecosistemas y comprometerse a obtener el 100 % de la electricidad que necesitan de fuentes renovables.",
+                    "Los empresarios pueden reducir la demanda interna de transporte al dar prioridad a las telecomunicaciones e incentivar modalidades de transporte que exijan menos energía, como el tren, frente al automóvil y el avión.",
+                    "Los inversores pueden aumentar sus inversiones en servicios energéticos sostenibles con el fin de introducir en el mercado nuevas tecnologías procedentes de una base de proveedores diversos.",
+                    "A nivel personal, se puede ahorrar energía enchufando los electrodomésticos a una regleta y apagándolos completamente cuando no se utilicen, incluido el ordenador. También está la opción de ir en bicicleta, a pie o en transporte público para reducir las emisiones de carbono."
                 ]
             }
         ]
