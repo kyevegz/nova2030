@@ -535,57 +535,51 @@ const odsData = {
         ]
     },
     "13": {
-        numero: 13,//número de ods
-        titulos: "",
+        numero: 13,
+        titulos: "ACCION POR EL CLIMA",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El cambio climático afectará a todas las personas de todos los países de todos los continentes de alguna forma. Se avecina un cataclismo climático y no estamos preparados para las posibles consecuencias.",
+            "El cambio climático se debe a las actividades humanas y amenaza la vida en la Tierra tal como la conocemos. Con el aumento de las emisiones de gases de efecto invernadero, el cambio climático evoluciona a un ritmo mucho más rápido de lo previsto. Sus efectos pueden ser devastadores y pueden provocar fenómenos meteorológicos extremos y cambiantes, así como la subida del nivel del mar.",
+            "De no controlarse, el cambio climático echará por tierra muchos de los avances logrados en materia de desarrollo en los últimos años. También provocará migraciones masivas que derivarán en inestabilidad y guerras.",
+            "Para limitar el calentamiento global a 1,5 °C por encima de los niveles preindustriales, las emisiones ya deberían estar disminuyendo y necesitan reducirse casi a la mitad para 2030, dentro de solo siete años. Sin embargo, estamos muy lejos de lograr este objetivo.",
+            "Es crucial tomar medidas urgentes y transformadoras que vayan más allá de meros planes y promesas. Esto exige aumentar las ambiciones, abarcar economías enteras y avanzar hacia un desarrollo resiliente al clima, al tiempo que se traza una trayectoria clara para lograr cero emisiones netas. El tiempo se acaba y es necesario tomar medidas inmediatas para evitar consecuencias catastróficas y garantizar un futuro sostenible a las generaciones venideras."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "Acción inmediata",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La crisis climática no va a parar, y la comunidad internacional rehúye el compromiso necesario para revertirla. El período comprendido entre 2010 y 2019 fue la década más calurosa que se haya registrado jamás y trajo consigo incendios forestales, huracanes, sequías, inundaciones y otros desastres naturales masivos en todos los continentes.",
+                    "El cambio climático está alterando las economías nacionales y afectando a las distintas vidas y medios de subsistencia de muchas personas, especialmente las más vulnerables.",
+                    "Entre 2010 y 2020, las regiones altamente vulnerables en las que viven aproximadamente entre 3300 y 3600 millones de personas, experimentaron tasas de mortalidad humana por inundaciones, sequías y tormentas 15 veces superiores a las de las regiones con una vulnerabilidad muy baja."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué pasa si no se toman medidas?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "De no controlarse, los efectos del cambio climático elevarán la temperatura media mundial por encima de los 3 °C y afectarán negativamente a todos los ecosistemas.",
+                    "Ya se puede observar cómo el cambio climático puede intensificar tormentas y catástrofes, así como hacer que amenazas como la escasez de alimentos y agua se conviertan en realidad y desemboquen en conflictos. Quedarnos de brazos cruzados acabará costándonos mucho más que si tomamos acción inmediata."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "La solución del problema.",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Es necesario aumentar la ambición y actuar en todos los niveles para hacer frente al cambio climático. Están sucediendo muchos cambios en todo el mundo, y las inversiones en energías renovables se han disparado. Aún así, queda mucho por hacer. Para limitar el aumento global de la temperatura muy por debajo de los 2 °C, o incluso de 1,5 °C, el mundo debe transformar sus sistemas energéticos, industriales, de transporte, alimentarios, agrícolas y forestales. El mundo dio un primer paso importante en diciembre de 2015 con la adopción del Acuerdo de París, en el que todos los países firmantes se comprometieron a tomar medidas para hacer frente al cambio climático. A pesar de ello, se necesitan más medidas para cumplir los objetivos.",
+                    "Las empresas y los inversores deben asegurarse de que se reducen las emisiones, no solo porque es lo correcto, sino también porque es conveniente desde el punto de vista económico y empresarial."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Hay suficiente inversión para combatir el cambio climático?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Según la CMNUCC, los flujos financieros mundiales invertidos en acciones para combatir el cambio climático alcanzaron un promedio anual de 803.000 millones de dólares entre 2019 y 2020, un aumento del 12 % en comparación con años anteriores. Sin embargo, además de que esta cifra sigue estando por debajo de los niveles necesarios para frenar el calentamiento, los flujos financieros invertidos en combustibles fósiles superaron la financiación destinada a la adaptación y mitigación del cambio climático en 2020.",
+                    "En 2019, al menos 120 de 153 países en desarrollo habían emprendido actividades para formular y aplicar Planes Nacionales de Adaptación para mejorar la adaptación y la resiliencia frente al cambio climático, lo que representa un aumento de 29 países respecto al año anterior. Además, los avances en el cumplimiento del objetivo para la reducción de los desastres de 2020 han sido lentos."
+                ]
+            },
+            {
+                subtitulo: "¿Cómo puedo ayudar?",
+                parrafos: [
+                    "Fortalecer la resiliencia y la capacidad de adaptación a los riesgos relacionados con el clima y los desastres naturales en todos los países.",
+                    "Incorporar medidas relativas al cambio climático en las políticas, estrategias y planes nacionales.",
+                    "Mejorar la educación, la sensibilización y la capacidad humana e institucional respecto de la mitigación del cambio climático, la adaptación a él, la reducción de sus efectos y la alerta temprana."
                 ]
             }
         ]
