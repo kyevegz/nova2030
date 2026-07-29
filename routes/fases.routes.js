@@ -21,6 +21,115 @@ const dicFases = {
         descripcion: "Lorem"
     }
 };
+
+//diccionario de datos e informacipon para la flip card de los ods
+const odsData = [
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+    {
+        id: 1,
+        title: '',
+        color: '#',
+        image: 'S-WEB-Goal-01' ,
+        description: ''
+    },
+];
 //ruta para cualquier fase, verificando si hay sesión activa
 router.get('/fase/:numFase', async (req, res) => {
     try {
