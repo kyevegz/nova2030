@@ -2112,6 +2112,20 @@ con el del contenedor*/
     font-size: var(--font-size-body);
     line-height: 1.5;
 }
+
+
+/*modulo 2 fase 1*/
+
+.content__title{
+    font-family: var(--font-titles);
+    color: var(--principal-title);
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--space-xl);
+}
+
+.content__paragraph{
+
+}
 /*MEDIA QUERIES*/
 
 /*--------------------
