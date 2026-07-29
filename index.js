@@ -121,6 +121,9 @@ app.use('/', asesores);
 // });
 
 
+//importar la ruta del chatbot
+const chatbotRoutes = require('./routes/chatbot.routes.js');
+app.use('/', chatbotRoutes);
 
 /*este fragmento modifica la ruta principal para que, en lugar de mandar 
 texxto, "renderice" la vista del index.ejs*/
