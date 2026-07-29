@@ -71,4 +71,11 @@
             Pensado, programado y desarrollado con pasión y amor
         </p>
     </div>
+
+    <!--Inyección del botón del chatbot, solo si hay sesión activa-->
+    <% if (typeof usuarioVerificado !== 'undefined' && usuarioVerificado !== null) { %>
+        <%- include('chatbot') %>
+        <script src="/js/chatbot.js" defer></script>
+    <% } %>
+
 </footer>
