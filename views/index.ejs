@@ -2,10 +2,16 @@
 <html lang="es">
 <head>
     <%- include('partials/head') %>
+    <!-- Estilos base de Splide -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">  
+    <!--librería de Splide desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-grid@0.4.1/dist/js/splide-extension-grid.min.js"></script>
+    <script  defer src="/js/carrusel.js"></script>
     <title>Nova 2030</title>
 </head>
 <body>
-    <div class = "page">
+    <div class = "page page--full">
 
         <!--Llamada al sidebar-->
         <%- include('partials/sidenavbar') %>
@@ -18,10 +24,109 @@
         <!--Contenido específico de la página actual-->
         <main class = "content">
             <p>Holi</p>
+            <div class="splide-container-call">
+                <section class="splide" id = "splideUnidimensional" aria-label="Slide Container Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+
+                            <!--Inicio diapositiva-->
+                            <li class="splide__slide " data-index = "0">
+
+                                <!--Bloque independiente-->
+                                <article class="splide-call-card">
+                                    <img class = "splide-call-card__image" src="/images/pingu.webp">
+
+                                    <!--Contenido textual dentro de la diapositva-->
+                                    <div class="splide-call-card__content">
+                                        <h3 class="splide-call-card__title">UNO FOCUS Beca de Excelencia 2030</h3>
+                                        <p class="splide-call-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi fugiat voluptas deserunt dolorem numquam iure itaque eius earum, sit aut porro consequatur optio obcaecati neque, nulla expedita dolorum exercitationem?</p>
+                                        <a href="#" class="splide-call-card__button">Ver detalles</a>
+                                    </div>
+                                </article>
+                            </li>
+                            <!--Fin diapositiva-->
+
+                            <!--Inicio diapositiva-->
+                            <li class="splide__slide  " data-index = "1">
+
+                                <!--Bloque independiente-->
+                                <article class="splide-call-card">
+                                    <img class = "splide-call-card__image" src="/images/pingu.webp">
+
+                                    <!--Contenido textual dentro de la diapositva-->
+                                    <div class="splide-call-card__content">
+                                        <h3 class="splide-call-card__title">DOS Beca de Excelencia 2030</h3>
+                                        <p class="splide-call-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi fugiat voluptas deserunt dolorem numquam iure itaque eius earum, sit aut porro consequatur optio obcaecati neque, nulla expedita dolorum exercitationem?</p>
+                                        <a href="#" class="splide-call-card__button">Ver detalles</a>
+                                    </div>
+                                </article>
+                            </li>
+                            <!--Fin diapositiva-->
+
+                            <!--Inicio diapositiva-->
+                            <li class="splide__slide" data-index = "2">
+
+                                <!--Bloque independiente-->
+                                <article class="splide-call-card">
+                                    <img class = "splide-call-card__image" src="/images/pingu.webp">
+
+                                    <!--Contenido textual dentro de la diapositva-->
+                                    <div class="splide-call-card__content">
+                                        <h3 class="splide-call-card__title">TRES Beca de Excelencia 2030</h3>
+                                        <p class="splide-call-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi fugiat voluptas deserunt dolorem numquam iure itaque eius earum, sit aut porro consequatur optio obcaecati neque, nulla expedita dolorum exercitationem?</p>
+                                        <a href="#" class="splide-call-card__button">Ver detalles</a>
+                                    </div>
+                                </article>
+                            </li>
+                            <!--Fin diapositiva-->
+
+                            <!--Inicio diapositiva-->
+                            <li class="splide__slide" data-index = "3" >
+
+                                <!--Bloque independiente-->
+                                <article class="splide-call-card">
+                                    <img class = "splide-call-card__image" src="/images/pingu.webp">
+
+                                    <!--Contenido textual dentro de la diapositva-->
+                                    <div class="splide-call-card__content">
+                                        <h3 class="splide-call-card__title">CUATRO Beca de Excelencia 2030</h3>
+                                        <p class="splide-call-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi fugiat voluptas deserunt dolorem numquam iure itaque eius earum, sit aut porro consequatur optio obcaecati neque, nulla expedita dolorum exercitationem?</p>
+                                        <a href="#" class="splide-call-card__button">Ver detalles</a>
+                                    </div>
+                                </article>
+                            </li>
+                            <!--Fin diapositiva-->
+
+                            <!--Inicio diapositiva-->
+                            <li class="splide__slide" data-index = "4">
+
+                                <!--Bloque independiente-->
+                                <article class="splide-call-card">
+                                    <img class = "splide-call-card__image" src="/images/pingu.webp">
+
+                                    <!--Contenido textual dentro de la diapositva-->
+                                    <div class="splide-call-card__content">
+                                        <h3 class="splide-call-card__title">CINCO Beca de Excelencia 2030</h3>
+                                        <p class="splide-call-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi fugiat voluptas deserunt dolorem numquam iure itaque eius earum, sit aut porro consequatur optio obcaecati neque, nulla expedita dolorum exercitationem?</p>
+                                        <a href="#" class="splide-call-card__button">Ver detalles</a>
+                                    </div>
+                                </article>
+                            </li>
+                            <!--Fin diapositiva-->
+                        </ul>
+                    </div>
+                </section>
+                <div class="call-grid" id="callGrid">
+                
+                </div>
+            </div>
+             
         </main>
 
+       
+
         <!--Llamada al sidebar de anuncios-->
-        <%- include('partials/sidebar-anuncios') %>
+        <!-- <%- include('partials/sidebar-anuncios') %> -->
 
         <!--Llamada al footer-->
         <%- include('partials/footer') %>
