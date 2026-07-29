@@ -2085,6 +2085,56 @@ con el del contenedor*/
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.phase-goal{
+    text-align: left;
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--bright-sun-100);
+    border-radius: var(--radius-smooth);
+    border-left: 6px solid var(--details);
+    max-width: 605px;
+    margin: var(--space-md);
+    
+}
+
+.phase-goal__subtitle{
+    font-size: var(--font-size-body);
+    font-weight: var(--weight-normal);
+    font-family: var(--font-titles);
+    color: var(--secundary-title);
+}
+.phase-goal__text{
+    font-size: var(--font-size-small);
+}
+
 /*MEDIA QUERIES*/
 
 /*--------------------

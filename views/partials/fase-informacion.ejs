@@ -1,8 +1,16 @@
 <section class="phase-container">
     <h1 class="phase-title"><%= datosFase.titulo %></h1>
-    <p class="phase-description">
-        <%= datosFase.objetivo %>
-    </p>
+    
+    <div class="phase-goal" role="region" aria-label="Objetivo de la <%= datosFase.titulo %>">
+        <h2 class="phase-goal__subtitle">
+            
+            OBJETIVO DE LA FASE
+        </h2>
+        <p class="phase-goal__text">
+            <%= datosFase.objetivo %>
+        </p>
+    </div>
+    
 
 
     <div class="notice notice--neutral" role="note">
