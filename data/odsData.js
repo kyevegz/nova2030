@@ -629,56 +629,45 @@ const odsData = {
     },
     "15": {
         numero: 15,//número de ods
-        titulos: "",
+        titulos: "VIDA DE ECOSISTEMAS TERRESTRES",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 15 pretende conservar la vida de ecosistemas terrestres. Busca proteger y restablecer los ecosistemas terrestres, gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras, y detener la pérdida de biodiversidad.",
+            "Los ecosistemas terrestres son vitales para el sostenimiento de la vida humana, contribuyen a más de la mitad del PIB mundial e incluyen diversos valores culturales, espirituales y económicos.",
+            "Sin embargo, el mundo se enfrenta a una triple crisis del cambio climático, a la contaminación y a la pérdida de la biodiversidad.",
+            "Más de 100 millones de hectáreas de tierras sanas y productivas se degradaron anualmente entre 2015 y 2019, lo que afectó a la vida de 1300 millones de personas.",
+            "La expansión agrícola es el motor directo de casi el 90 % de la deforestación mundial. Esta cifra guarda relación directa con nuestros sistemas alimentarios, pues la cosecha de palma de aceite representó por sí sola el 7 % de la deforestación mundial entre los años 2000 y 2018.",
+            "Los esfuerzos mundiales y regionales para mantener los ecosistemas forestales, así como sus funciones sociales, económicas y medioambientales, son esenciales especialmente para los países en desarrollo y los trópicos.",
+            "Para cumplir el Objetivo 15, es esencial un cambio fundamental en la relación de la humanidad con la naturaleza, y tomar conciencia de que la naturaleza es la base de nuestra vida en la Tierra. El Marco Mundial Kunming-Montreal de la Diversidad Biológica, recientemente adoptado, ofrece al Objetivo 15 un impulso renovado al esbozar cuatro objetivos orientados a resultados que deben alcanzarse para 2050 y 23 metas que deben lograrse para 2030."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Por qué debería importarnos?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Los bosques cubren casi el 31 % de la superficie de nuestro planeta y albergan más del 80 % de todas las especies terrestres de animales, plantas e insectos. Sin embargo, el deterioro de la biodiversidad se está produciendo a un ritmo más rápido ahora que en cualquier otro momento de la historia de la humanidad.",
+                    "A escala mundial, una quinta parte de la superficie terrestre del planeta está degradada, un área casi del tamaño de la India y Rusia juntas. La degradación de los suelos empuja a las especies a la extinción e intensifica los efectos del cambio climático.",
+                    "La biodiversidad y los servicios de los ecosistemas que respalda también pueden sentar las bases de las estrategias de adaptación al cambio climático y reducción del riesgo de desastres, ya que pueden generar beneficios que aumenten la resiliencia de las personas."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué supone la pérdida de los bosques?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La pérdida de los bosques implica la desaparición de los medios de subsistencia de las comunidades rurales, el aumento de las emisiones de carbono, el deterioro de la biodiversidad y la degradación del suelo. Aunque el ritmo de pérdida neta de bosques sigue siendo elevado, los datos de 2020 muestran que la proporción de bosques en áreas protegidas y bajo planes de gestión a largo plazo aumentó o se mantuvo estable a nivel mundial y en la mayoría de las regiones del mundo.",
+                    "Un efecto irreversible de la actividad humana sobre el medio ambiente es la extinción de especies, lo que altera el equilibrio de la naturaleza y hace que los ecosistemas sean más frágiles y ofrezcan menos resistencia a las perturbaciones.",
+                    "Según un reciente informe de la ONU sobre biodiversidad, cerca de un millón de especies animales y vegetales están en peligro de extinción, en muchos casos en las próximas décadas, más que en cualquier otro momento en la historia de la humanidad."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cómo afecta eso a la salud?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Una mayor demanda de proteínas animales, el aumento de una agricultura intensiva e insostenible, el uso y la explotación crecientes de la fauna salvaje y la crisis climática favorecen la aparición de enfermedades zoonóticas ―aquellas que pueden transmitirse entre animales y seres humanos― como la COVID-19.",
+                    "Unos dos millones de personas mueren cada año a causa de enfermedades zoonóticas desatendidas, la mayoría en países de ingresos bajos y medios. Estos mismos brotes pueden causar graves enfermedades, muertes y pérdidas de productividad entre las poblaciones ganaderas del mundo en desarrollo, un grave problema que tiene sumidos en la extrema pobreza a cientos de millones de pequeños ganaderos. Las enfermedades zoonóticas han generado, solo en las dos últimas décadas, pérdidas económicas de más de 100 000 millones de dólares. Todo ello sin contar el coste de la pandemia de la COVID-19."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué podemos hacer?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Reciclar, seguir una dieta basada en productos locales de origen sostenible y consumir solamente lo que necesitamos son algunas de las cosas que podemos hacer para ayudar.",
+                    "Debemos ser respetuosos con la fauna y únicamente participar en actividades de ecoturismo gestionadas de forma responsable y ética para evitar perturbarla. Las áreas protegidas bien gestionadas contribuyen a la salud de los ecosistemas, lo que a su vez contribuye a la salud de las personas. Por ello, es fundamental que las comunidades locales participen en el desarrollo y la gestión de estas áreas protegidas."
                 ]
             }
         ]
