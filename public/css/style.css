@@ -1908,18 +1908,24 @@ con el del contenedor*/
 /*carrusel*/
 
 .splide-container-call{
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 2rem;
-    padding: var(--space-md);
+    gap: 1.5rem;
+    border-radius: var(--radius-smooth);
+    
 }
 .splide-call-card{
-    background-color: var(--bridal-heath-200);
+    background-color: var(--zumthor-200);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    border-radius: var(--radius-smooth);
+    padding: 0 var(--space-md) var(--space-md) var(--space-md);
 }
+
+
 
 .splide-container-call .splide{
     min-width: 0;
@@ -1929,19 +1935,21 @@ con el del contenedor*/
     display: grid;
     grid-template-columns: repeat(2, 1fr);    
     grid-template-rows: repeat(2, 1fr);    
-    gap: 1.5rem;
+    gap: 0.8rem;
     align-content: center;
+    
+    
 }
 
 .call-grid-card{
-    background-color: var(--bridal-heath-200);
+    background-color: var(--shark-300);
     border-radius: var(--radius-smooth);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1.5px solid var(--shark-300);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1.5px solid var(--shark-500);
 }
 
 .call-grid-card:hover{
@@ -1949,7 +1957,10 @@ con el del contenedor*/
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-
+.call-grid-card__image{
+    height: 70px;
+    
+}
 .splide-call-card__image{
     width: 100%;
     height: 100px;
