@@ -309,103 +309,80 @@ const odsData = {
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Qué significa «trabajo decente»?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Trabajo decente significa oportunidades para todos de conseguir un trabajo que sea productivo y proporcione unos ingresos dignos, seguridad en el lugar de trabajo y protección social para las familias, así como mejores perspectivas de desarrollo personal e integración social. La continua falta de oportunidades de trabajo decente, la insuficiente inversión y el bajo consumo producen una erosión del contrato social básico subyacente en las sociedades democráticas: el derecho de todos a compartir el progreso."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cuáles son los principales desafíos?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La continua falta de oportunidades de trabajo decente, la insuficiente inversión y el bajo consumo producen la erosión del contrato social básico subyacente en las sociedades: el derecho de todos a compartir el progreso. La creación de empleos de calidad sigue constituyendo un gran desafío para casi todas las economías.",
+                    "La consecución del Objetivo 8 exigirá una reforma en profundidad del sistema financiero para hacer frente al aumento de la deuda, a la incertidumbre económica y a las tensiones comerciales, promoviendo al mismo tiempo una remuneración equitativa y un trabajo digno para los jóvenes.",
+                    "Un crecimiento económico inclusivo y sostenido puede impulsar el progreso, crear empleos decentes para todos y mejorar los estándares de vida."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Cuántas personas hay en situación de desempleo?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Se calcula que en 2022 había 192 millones de desempleados en todo el mundo. Las previsiones indican que el desempleo mundial continuará disminuyendo hasta situarse en el 5,3 % en 2023, lo que equivale a 191 millones de personas.",
+                    "La pandemia afectó de forma desproporcionada a las mujeres y los jóvenes en los mercados laborales. Las mujeres experimentaron una mayor recuperación de los puestos de trabajo y de su participación en la fuerza laboral que los hombres.",
+                    "Sin embargo, los jóvenes de entre 15 y 24 años continúan sufriendo graves dificultades para conseguir un empleo digno, y la tasa mundial de desempleo juvenil en 2022 es muy superior a la de los adultos mayores de 25 años. A nivel mundial, casi uno de cada 4 jóvenes (289 millones) no cursaba estudios, ni trabajaba, ni recibía formación."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué podemos hacer para solucionar estos problemas?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Para que los jóvenes tengan las mejores oportunidades de acceder a un empleo decente es necesario invertir en educación y formación de la mayor calidad posible, ajustar la formación de los jóvenes a las necesidades del mercado laboral, darles acceso al sistema de protección social y a los servicios básicos independientemente del tipo de contrato que tengan, e igualar las condiciones para que todos los jóvenes puedan acceder a un empleo productivo independientemente de su sexo, nivel de ingresos o situación socioeconómica.",
+                    "Los gobiernos deben trabajar para construir economías dinámicas, sostenibles, innovadoras y centradas en las personas para promover el empleo juvenil y el empoderamiento económico de las mujeres, en particular, y el trabajo decente para todos.",
+                    "La aplicación de medidas adecuadas de salud y seguridad y la promoción de entornos de trabajo conciliadores será fundamental para proteger la seguridad de los trabajadores, especialmente en el caso del personal sanitario y de quienes prestan servicios esenciales."
                 ]
             }
         ]
     },
     "9": {
-        numero: 9,//número de ods
-        titulos: "",
+        numero: 9,
+        titulos: "INDUSTRIA, INNOVACION E INFRAESTRUCTURA",
         introduccion: [
-            "",//párrafos separados por comas
-            "",
-            "",
-            "",
+            "El Objetivo 9 pretende construir infraestructuras resilientes, promover la industrialización sostenible y fomentar la innovación.",
+            "El crecimiento económico, el desarrollo social y la acción por el clima dependen en gran medida de las inversiones en infraestructuras, el desarrollo industrial sostenible y el progreso tecnológico. Ante la rápida evolución del panorama económico mundial y el aumento de las desigualdades, el crecimiento sostenido debe implicar una industrialización que, en primer lugar, haga accesibles las oportunidades a todas las personas y, en segundo lugar, se apoye en la innovación y en infraestructuras resistentes.",
+            "La industria manufacturera mundial, considerada uno de los motores del crecimiento económico global, ha venido experimentando un declive constante debido a los aranceles y las tensiones comerciales, incluso antes del inicio de la pandemia de la COVID-19. El declive de la industria manufacturera provocado por la pandemia ha tenido graves repercusiones en la economía mundial.",
+            "Esto se debe principalmente a la elevada inflación, los cambios en el precio de la energía, las continuas interrupciones en el suministro de materias primas y productos intermedios, y la desaceleración de la economía mundial.",
+            "Mientras que los países menos adelantados (PMA) de Asia han realizado progresos considerables, los PMA de África tendrían que cambiar la trayectoria actual e intensificar significativamente sus avances para alcanzar el objetivo de aquí a 2030. Sin embargo, las industrias de tecnología media-alta y alta mostraron sólidas tasas de crecimiento."
         ],
         secciones: [
             {
-                subitulo: "",
+                subitulo: "¿Cuánto hemos avanzado?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "En 2022, el 95 % de la población mundial tenía acceso a una red de banda ancha móvil, pero algunas zonas continúan desatendidas.",
+                    "A nivel mundial, la inversión en investigación y desarrollo ―así como la financiación destinada a infraestructuras económicas en países en desarrollo― ha aumentado y se han logrado avances impresionantes en la conectividad móvil, con casi la totalidad de la población mundial (97 %) viviendo al alcance de una señal celular móvil."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué se debe hacer?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "Invertir en infraestructuras ―transporte, regadío, energía y tecnologías de la información y la comunicación― es crucial para lograr un desarrollo sostenible y empoderar a las comunidades de muchos países. Para alcanzar el Objetivo 9 en 2030, es esencial apoyar a los PMA, invertir en tecnologías avanzadas, reducir las emisiones de carbono y aumentar el acceso a la banda ancha móvil."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Por qué debería importarme?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "La industrialización inclusiva y sostenible, junto con la innovación y la infraestructura, pueden dar rienda suelta a las fuerzas económicas dinámicas y competitivas que generan empleo e ingresos. Estas desempeñan un papel clave a la hora de introducir y promover nuevas tecnologías, facilitar el comercio internacional y permitir el uso eficiente de los recursos.",
+                    "La expansión de nuevas industrias significa una mejora del nivel de vida para gran parte de la población. El medioambiente se verá beneficiado si las industrias aplican prácticas sostenibles."
                 ]
             },
             {
-                subitulo: "",
+                subitulo: "¿Qué precio tendría la pasividad?",
                 parrafos: [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
+                    "El precio a pagar sería elevado. Dado que la industria es uno de los principales impulsores de la agenda mundial para erradicar la pobreza y promover el desarrollo sostenible, acabar con la pobreza sería más difícil. Además, si no se mejoran las infraestructuras y se impulsa la innovación tecnológica, la asistencia sanitaria podría ser deficiente, el saneamiento inadecuado y el acceso a la educación limitado."
+                ]
+            },
+            {
+                subtitulo: "¿Qué podemos hacer para ayudar?",
+                parrafos: [
+                    "Establecer normas e impulsar regulaciones que garanticen que los proyectos e iniciativas de las empresas se gestionan de forma sostenible.",
+                    "Colaborar con las ONG y el sector público para impulsar el crecimiento sostenible en los países en desarrollo.",
+                    "Analizar el impacto de la industria en la vida y el bienestar de las personas y utilizar las redes sociales para presionar a los responsables políticos para que den prioridad a los ODS."
                 ]
             }
         ]
