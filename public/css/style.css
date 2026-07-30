@@ -205,8 +205,10 @@ h6 {
     --font-size-body: 1rem; /*16px -> texto base*/
     --font-size-small: 0.875rem; /* 14px -> textos secundarios, como pies de fotos o alertas*/
     --font-size-xsmall: 0.75rem; /*12px -> notificaciones*/
-    --font-size-big: 4rem;
-    --font-size-jumbo: 6rem; /*~64px*/
+    --font-size-5xl: 3rem;/*48px*/ 
+    --font-size-6xl: 3.75rem;/*60px*/
+    --font-size-7xl: 4rem;/*64px*/
+    --font-size-8xl: 6rem; /*96px*/
     /*NOTA: MOMO TRUST DISPLAY SOLO TIENE GROSOR DE 400*/
 
     /*grosores de fuente*/
@@ -1424,7 +1426,7 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 
 .header__btn-back{
     color: var(--principal-title);
-    font-size: var(--font-size-big);
+    font-size: var(--font-size-7xl);
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
     
@@ -1887,7 +1889,7 @@ con el del contenedor*/
 }
 
 .empty-state__icon{
-    font-size: var(--font-size-big);
+    font-size: var(--font-size-7xl);
     color: var(--cerulean-blue-400);
     margin-bottom: var(--space-md);
 }
@@ -2512,7 +2514,87 @@ con el del contenedor*/
     border: 1px solid var var(--observatory-700);
 }
 
+/*accesibilidad flotante*/
 
+.floating-menu{
+    position: fixed;
+    bottom: var(--space-lg);
+    left: var(--space-lg);
+    z-index: var(--z-modal);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    grid-area: var(--space-md);
+}
+
+.floating-menu__trigger{
+    width: 50px;
+    height: 50px;
+    margin-top: var(--space-sm) ;
+    border-radius: 50%;
+    color: var(--principal-title);
+    background-color: var(--cerulean-blue-50);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /*color: var(--cerulean-blue-50);*/
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* font-size: var(--font-size-5xl); */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out   ;
+}
+
+.floating-menu__trigger i,
+.floating-menu__trigger svg{
+    font-size: var(--font-size-5xl);
+    display: inline-block;
+    line-height: 1; /* Elimina el espacio extra vertical del icono */
+    /*font-size: inherit; /* Asegura que tome el tamaño asignado en el botón */
+}
+
+.floating-menu__trigger:hover{
+    background-color: var(--principal-title);
+    color: var(--cerulean-blue-50);
+    transform: scale(1.05);
+}
+
+.floating-menu__options{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-menu__options--hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(var(--space-sm));
+}
+
+.floating-menu__button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--shark-100);
+    color: var(--text-colour);
+    border: 1px solid var(--shark-400);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-h2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.floating-menu__button:hover{
+    background-color: var(--bright-sun-200);
+    transform: scale(1,1);
+}
 /*MEDIA QUERIES*/
 
 /*--------------------
