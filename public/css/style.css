@@ -2260,7 +2260,7 @@ con el del contenedor*/
     border-radius: var(--radius-smooth);
     font-size: var(--font-size-body);
     position: relative;
-    white-space: pre-wrap;
+    
 }
 
 /*burbuja para ia*/
