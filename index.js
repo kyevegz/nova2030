@@ -108,6 +108,10 @@ app.use('/', loginRoute);
 const indexPage = require('./routes/index.route.js');
 app.use('/', indexPage);
 
+//ruta qué es
+const aboutRoute = require('./routes/quees.route.js');
+app.use('/', aboutRoute);
+
 //ruta buzon mail
 const buzon = require('./routes/buzon.route.js');
 app.use('/', buzon);
@@ -121,6 +125,9 @@ app.use('/', asesores);
 // });
 
 
+//importar la ruta del chatbot
+const chatbotRoutes = require('./routes/chatbot.routes.js');
+app.use('/', chatbotRoutes);
 
 /*este fragmento modifica la ruta principal para que, en lugar de mandar 
 texxto, "renderice" la vista del index.ejs*/

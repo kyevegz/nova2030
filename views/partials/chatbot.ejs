@@ -1,0 +1,66 @@
+<!--Botón que flotará-->
+<button class="chatbot-trigger" id="chatbotBtn">
+    <i class="fa-solid fa-robot"></i>
+</button>
+
+<!--Ventana del mini chat-->
+<aside class="chatbot " id="chatbotVentana">
+
+    <!--Header de la ventanita-->
+    <header class="chatbot__header">
+        <button class="chatbot__close-btn" id="chatbotCerrar"><i class="fa-solid fa-xmark"></i></button>
+        <div class="chatbot__profile">
+            <img src="" alt="" class="chatbot__avatar">
+            <div class="chatbot__info">
+                <h3 class="chatbot__name">MarIA</h3>
+                <span class="chatbot__statuts">Compañero virtual</span>
+            </div>
+        </div>
+    </header>
+
+    <!--Área de mensajes-->
+    <div class="chatbot__messages" id="chatbotMensajes">
+
+        <!--Burburja/mensaje de la IA-->
+        <div class="chatbot__message chatbot__message--ai">
+            <div class="chatbot__message-container">
+                <div class="chatbot__message-top">
+                    <i class="fa-solid fa-user chatbot__message-avatar"></i>
+                    <span class="chat__message-name">MarIa</span>
+                    
+                    <!-- <img src="" alt="" class=""> -->
+                </div>
+                
+                <div class="chatbot__bubble">
+                    <p>¡Hola!, Qué alegría saludarte 😁. Bienvenido/a a Nova 2030, donde tus ideas pueden desarrollarse hasta ser una solución. Mi nombres es MarIA, tu guía en esta increíble aventura ✨. ¿En qué te puedo ayudar hoy? </p>
+                </div>
+                <div class="chatbot__message-bottom">
+                
+                </div>
+            </div>
+        </div>
+
+        <!--Indicador de escritura-->
+        
+    </div>
+
+        <!--zona de envío de mensajes-->
+    <footer class="chatboot__footer">
+        <form action="" class="chatbot__form" id="chatbotForm">
+                <!--Adjuntar archivo-->
+            <button type="button" class="chatbot__attach-btn">
+                <i class="fa-solid fa-paperclip"></i>
+            </button>
+            <textarea class="chatbot__input" id = "chatbotInput" rows = "1" placeholder="Escribir..."></textarea>
+                
+            <!--Enviar mensaje-->
+            <button class="chatbot__send-btn" type="submit">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </form>
+    </footer>    
+
+    
+
+
+</aside>

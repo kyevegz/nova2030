@@ -227,7 +227,8 @@ h6 {
     --border-thin: 1px solid #1a1a1a;
     --border-thick: 3px solid #1a1a1a;
 
-    --radius-straight: 0px;       /* Esquinas completamente rectas */
+    --radius-straight: 0px;  
+    --radius-ultra-smooth: 4px;      /* Esquinas completamente rectas */
     --radius-smooth: 8px;
     --radius-full: 9999px;
 
@@ -2148,32 +2149,6 @@ con el del contenedor*/
 .ods-header__title{
     margin: 0;
 }
-    /*se le qiota
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .phase-goal{
     text-align: left;
@@ -2195,6 +2170,290 @@ con el del contenedor*/
 .phase-goal__text{
     font-size: var(--font-size-small);
 }
+
+/*estilos para el chatbot*/
+
+/*botón flotante*/
+.chatbot-trigger{
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--navbar);
+    color: var(--cerise-50);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: var(--z-modal);
+    transition: transform 0.3s, background-color 0.3s ease-in-out;
+}
+
+.chatbot-trigger:hover{
+    background-color: var(--cerise-800);
+    transform: scale(1.05);
+}
+
+/*ventana del chat*/
+.chatbot{
+    overscroll-behavior-y: contain;
+
+    position: fixed;
+    bottom: var(--space-xxl);
+    right: var(--space-lg);
+    width: 350px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: var(--z-intermediate);
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/*modificador para ocultar el chat*/
+.chatbot--hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    /* transition: opacity 0.3 ease, visibility 0.3s ease; */
+}
+
+/*mensajes*/
+.chatbot__messages{
+    flex: 1; /*para tomar todo el espacio disponible*/
+    padding: var(--space-md);
+    overflow-y: auto;/*permite el scroll cuando hay muchos mensajes*/
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background-color: var(--shark-100);
+    background-color: var(--observatory-50);
+}
+
+/*alinear burbujas*/
+.chatbot__message{
+    
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-end;/*esto hará que el avatar se alinee a la hora*/
+}
+
+.chatbot__message-container{
+    max-width: 85%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/*alineaciónburbuja para usuario*/
+.chatbot__message--user{
+    justify-content: flex-end;
+}
+
+/*estilo de las burjas*/
+.chatbot__bubble{
+    width: fit-content;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-smooth);
+    font-size: var(--font-size-body);
+    position: relative;
+    
+}
+
+/*burbuja para ia*/
+.chatbot__message--ai .chatbot__bubble{
+    background-color: var(--observatory-100);
+    color: var(--observatory-900);
+    border-bottom-left-radius: 2px;
+}
+
+/*estilo para user*/
+.chatbot__message--user .chatbot__bubble{
+    background-color: var(--cerise-500);
+    color: var(--cerise-50);
+    border-bottom-right-radius: 2px;
+}
+
+/*span donde se pone lo del tiempo*/
+.chatbot__time, .chat__message-name
+{
+    font-size: var(--font-size-xsmall);
+    color: var(--observatory-700);
+    display: block;
+    margin-top: var(--space-xs);
+    
+
+}
+
+.chatbot__message--user .chatbot__time{
+    
+    text-align: right;
+}
+
+.chatbot__form{
+    width: 100%;
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chatbot__close-btn,
+.chatbot__attach-btn,
+.chatbot__send-btn{
+    border: none;
+    background-color: transparent;
+}
+.chatbot__attach-btn,
+.chatbot__send-btn{
+    font-size: var(--font-size-h3);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: var(--space-xs);
+}
+
+.chatbot__attach-btn{
+    color: var(--shark-500);
+}
+.chatbot__attach-btn:hover{
+    color: var(--principal-title);
+}
+
+.chatbot__send-btn{
+    color: var(--principal-title);
+}
+.chatbot__send-btn:hover{
+    color: var(--cerulean-blue-900);
+    transform: scale(1.1);
+}
+
+
+.chatbot__close-btn{
+    
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    font-size: var(--font-size-body);
+    color: var(--cerise-50);
+    transition: color 0.3s ease-in-out;
+}
+
+.chatbot__close-btn:hover{
+    color: var(--bright-sun-100);
+}
+
+.chatbot__header{
+    background-color: var(--navbar);
+    padding: var(--space-sm);
+    color: var(--cerise-50);
+}
+
+.chatbot__name{
+    font-size: var(--font-size-body);
+}
+
+.chatbot__statuts{
+    font-size: var(--font-size-small);
+}
+
+.chatbot__input{
+    
+    width: 80%;
+    background-color: transparent;
+    padding: var(--space-sm);
+    border: 1px solid var(--shark-300);
+    border-radius: var(--radius-ultra-smooth);
+    font-size: var(--font-size-body);
+    font-family: var(--font-body);
+
+    /*para que el textarea sea tipo whatsapp y los usuarios no deformen el diseño*/
+    resize: none;/*evita que el usuario eestire la esquina inferior*/
+    overflow-y: hidden;/*mostrará el sroll hacia abajo o en el eje y*/
+    max-height: 120px; /*es lo más alto que puede llegar, si no, va a tapar el chat*/
+    transition: border-color 0.3s ease;
+}
+
+.chatbot__input:focus{
+    outline: none;
+    border-color: var(--principal-title);
+}
+.chatbot__message-top{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+.chatbot__message--user .chatbot__message-top{
+    padding: 0 ;
+    justify-content: flex-end;
+}
+
+.chatbot__message--ai .chatbot__message-container{
+    
+    justify-content: flex-start;
+}
+
+.chatbot__message--user .chatbot__message-container{
+    justify-self: flex-end;
+}
+.chatbot__message--ai .chatbot__message-top{
+    
+    justify-content: flex-start;
+}
+
+.chatbot__message--user .chatbot__message-top{
+    justify-self: flex-end;
+}
+
+.chatboot__footer{
+    
+    border-top: 2px solid var(--observatory-500);
+    width: 100%;
+    min-width: 0;
+    padding: var(--space-md) var(--space-xs) ;
+
+}
+
+
+/*puntitos de escribiendo*/
+.chatbot__bubble--typing{
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+}
+
+/*el puntito*/
+.typing-dot{
+    width: 6px;
+    height: 6px;
+    background-color: var(--observatory-950);
+    border-radius: 50%;
+    animation:  bounce 1.4s infinite ease-in-out both;
+}
+
+/*se retrasan la animación del segundo y tercero para crear una animación de ola*/
+.typing-dot:nth-child(1) { animation-delay: -0.32s;}
+.typing-dot:nth-child(2) { animation-delay: -0.16s;}
+
+/*la animación del salto*/
+@keyframes bounce {
+    0%, 80%, 100%{
+        transform: scale(0);
+    }
+    40% {transform: scale(1);}
+}
+
+
+/*estilos markdowns para la respuesta de la IA*/
+
+
 
 /*MEDIA QUERIES*/
 
