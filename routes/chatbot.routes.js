@@ -8,16 +8,6 @@ const verificarToken = require('../middlewares/auth.js');
 //inicializar el sdk de gemini con la variable de entorno secreta
 const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
 
-//elegir el modelo, se usa flash porque el es más rápido y eficiente para chatbots
-// const modelo = genAI.getGenerativeModel({
-//     model: 'gemini-1.5-flash',
-//     systemInstruccion: `Eres MarIA, un asistente virtual amable y 
-//     experto en los Objetivos de Desarrollo Sostenible (ODS) y la 
-//     Agenda 2030. Trabajas para la plataforma Nova 2030. Tus 
-//     respuestas deben ser precisas, amigables y enfocadas en 
-//     guiar a los estudiantes a crear proyectos de impacto social. 
-//     Evita respuestas extremadamente largas.`
-// });
 
 //ruta post para recibir los mensajes, se protege con la función de verificar token
 router.post('/api/chat', verificarToken, async (req, res) => {
@@ -32,11 +22,11 @@ router.post('/api/chat', verificarToken, async (req, res) => {
         }
 
         //llamar al modelo, pasando la configuración integrada
-        const responde = await ai.models.generateContent({
-            model: 'gemini-1.5-flash',
+        const response = await ai.models.generateContent({
+            model: 'gemini-3.5-flash',
             contents: mensaje,
             config: {
-                systemInstruccion: `Eres MarIA, un asistente virtual amable y 
+                systemInstruction: `Eres MarIA, un asistente virtual amable y 
                 experto en los Objetivos de Desarrollo Sostenible (ODS) y la 
                 Agenda 2030. Trabajas para la plataforma Nova 2030. Tus 
                 respuestas deben ser precisas, amigables y enfocadas en 
@@ -45,7 +35,11 @@ router.post('/api/chat', verificarToken, async (req, res) => {
             }
         });
 
+        const models = await ai.models.list();
 
+console.log(models);
+        //console.log(response)
+        //console.log(" ", process.env.GEMINI_API_KEY)
         //enviar la repsuesta formateada al cliente
         return res.status(200).json({
             emisor: 'MarIA',
