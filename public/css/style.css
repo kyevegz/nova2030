@@ -528,7 +528,7 @@ details[open] .submenu__icon-deploy{
 }
 
 .footer__logo{
-    background-color: var(--background);
+    
     width: 150px;
     height: 150px;
     display: flex;
@@ -2175,6 +2175,7 @@ con el del contenedor*/
 
 /*botón flotante*/
 .chatbot-trigger{
+    padding: var(--space-sm);
     position: fixed;
     bottom: var(--space-lg);
     right: var(--space-lg);
