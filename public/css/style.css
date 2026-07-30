@@ -528,7 +528,7 @@ details[open] .submenu__icon-deploy{
 }
 
 .footer__logo{
-    background-color: var(--background);
+    
     width: 150px;
     height: 150px;
     display: flex;
