@@ -2294,6 +2294,9 @@ con el del contenedor*/
 }
 
 .chatbot__form{
+    width: 100%;
+    
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -2358,7 +2361,7 @@ con el del contenedor*/
 
 .chatbot__input{
     
-    width: 72%;
+    width: 80%;
     background-color: transparent;
     padding: var(--space-sm);
     border: 1px solid var(--shark-300);
@@ -2408,11 +2411,42 @@ con el del contenedor*/
 }
 
 .chatboot__footer{
+    
     border-top: 2px solid var(--observatory-500);
     width: 100%;
     min-width: 0;
-    padding: var(--space-md) 0 var(--space-xs) 0;
+    padding: var(--space-md) var(--space-xs) ;
 
+}
+
+
+/*puntitos de escribiendo*/
+.chatbot__bubble--typing{
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+}
+
+/*el puntito*/
+.typing-dot{
+    width: 6px;
+    height: 6px;
+    background-color: var(--observatory-950);
+    border-radius: 50%;
+    animation:  bounce 1.4s infinite ease-in-out both;
+}
+
+/*se retrasan la animación del segundo y tercero para crear una animación de ola*/
+.typing-dot:nth-child(1) { animation-delay: -0.32s;}
+.typing-dot:nth-child(2) { animation-delay: -0.16s;}
+
+/*la animación del salto*/
+@keyframes bounce {
+    0%, 80%, 100%{
+        transform: scale(0);
+    }
+    40% {transform: scale(1);}
 }
 /*MEDIA QUERIES*/
 
