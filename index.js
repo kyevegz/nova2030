@@ -108,6 +108,10 @@ app.use('/', loginRoute);
 const indexPage = require('./routes/index.route.js');
 app.use('/', indexPage);
 
+//ruta qué es
+const aboutRoute = require('./routes/quees.route.js');
+app.use('/', aboutRoute);
+
 //ruta buzon mail
 const buzon = require('./routes/buzon.route.js');
 app.use('/', buzon);
