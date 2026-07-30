@@ -2,13 +2,15 @@
 primero corresponde al mensaje a mostrar y, el segundo, el emisor, 
 quién lo envió, si el user o ai (inteligencia artificial) */
 
+
+
 function agregarMensajeAlChat(texto, emisor){
     //obtener la hora actual en formato HH:MM
     const horaActual = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 
     //configurar los nombres y las clases dependiendo de quién está hablando
     const esIA = emisor === 'ai';
-    const claseMensaje = esIA ? 'chatbot__message--ia' : 'chatbot__message--user';
+    const claseMensaje = esIA ? 'chatbot__message--ai' : 'chatbot__message--user';
     const nombre = esIA ? 'MarIA' : 'Tú';
 
     //construcicción de la estructura HTML con Template Literals (ES6+)
@@ -97,12 +99,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!textoUsuario) return;
 
+        //capturación de elementos a bloquear
+        const btEnviar = form.querySelector('.chatbot__send-btn');
+        const indicadorTyping = document.getElementById('typingIndicator');
+
+
+
         //el mensaje del usuario se muestra de inmediato
         agregarMensajeAlChat(textoUsuario, 'user');
+
 
         //se limpiar el input y se resetea la altura
         input.style.height = 'auto';
         input.value = '';//vaciar el input
+
+        //bloqueo de input y botóm
+        input.disabled = true;
+        btEnviar.disabled = true;
+        indicadorTyping.classList.remove('chatbot--hidden');
+
+        //scroll manual para que el usuario vea los 3 puntos
+        chatbotContenedorMensajes.scrollTop = chatbotContenedorMensajes.scrollHeight;
 
         try{
             //ejecutar la llamada asíncrona al servidor
@@ -124,12 +141,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             //si sí devolvió, se convierte el JSON a un objeto de JS
             const respuestaIA = await respuestaServidor.json();
-
+            //apagar los 3 puntitos antes de insertar la respuesta final
+            indicadorTyping.classList.add('chatbot--hidden');
+            
             //se dibuja la repsuesya de la ia
             agregarMensajeAlChat(respuestaIA.mensaje, 'ai');
         }catch(error){
             console.error("error al comunicarse con la api: ", error);
             agregarMensajeAlChat("Lo siento, tuve un problema de conexión. ¿Puedes reenvíar tu pregunta?", 'ai');
+        }finally{
+            //liberación, se va a ejecutar siempre, haya éxito o no
+            input.disabled = false;
+            btEnviar.disabled = false;
+            input.focus();//se le devuelve el cursor para que el usuario siga escirbiendo
         }
 
 
