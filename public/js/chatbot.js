@@ -51,6 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
         let contenido = texto;
         if(esIA){
             contenido = DOMPurify.sanitize(marked.parse(texto));
+            const temp = document.createElement('div');
+            temp.innerHTML = contenido;
+
+            temp.querySelectorAll('table').forEach(tabla => {
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('chatbot__table-wrapper');
+
+                tabla.parentNode.insertBefore(wrapper, tabla);
+                wrapper.appendChild(tabla);
+            });
+            contenido = temp.innerHTML;
         }else{
             contenido = '<p>' + contenido + '</p>';
         }
