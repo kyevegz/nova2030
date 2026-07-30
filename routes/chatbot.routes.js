@@ -53,7 +53,7 @@ router.post('/api/chat', verificarToken, async (req, res) => {
 
         const models = await ai.models.list();
 
-console.log(models);
+//console.log(models);
         //console.log(response)
         //console.log(" ", process.env.GEMINI_API_KEY)
         //enviar la repsuesta formateada al cliente

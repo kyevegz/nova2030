@@ -2197,6 +2197,8 @@ con el del contenedor*/
 
 /*ventana del chat*/
 .chatbot{
+    overscroll-behavior-y: contain;
+
     position: fixed;
     bottom: var(--space-xxl);
     right: var(--space-lg);
@@ -2230,7 +2232,6 @@ con el del contenedor*/
     gap: var(--space-md);
     background-color: var(--shark-100);
     background-color: var(--observatory-50);
-    overscroll-behavior-y: contain;
 }
 
 /*alinear burbujas*/
@@ -2448,6 +2449,12 @@ con el del contenedor*/
     }
     40% {transform: scale(1);}
 }
+
+
+/*estilos markdowns para la respuesta de la IA*/
+
+
+
 /*MEDIA QUERIES*/
 
 /*--------------------

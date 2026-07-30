@@ -1,3 +1,4 @@
+const { marked } = require("marked");
 
 
 
@@ -37,8 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function limpiarInput() {
         input.value = '';
+        input.style.height = '41.6px';
         input.style.height = 'auto';
-        input.style.height = '1px';
+        
         input.style.overflowY = 'hidden';
     }
 
@@ -52,7 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const nombre = esIA ? 'MarIA' : 'Tú';
 
         //construcicción de la estructura HTML con Template Literals (ES6+)
-
+        let contenido = texto;
+        if(esIA){
+            contenido = DOMPurify.sanitize(marked.parse(texto));
+        }else{
+            contenido = '<p>' + contenido + '</p>';
+        }
         const burbujaHtml = `
         <div class="chatbot__message ${claseMensaje}">
             <div class="chatbot__message-container">
@@ -62,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${!esIA ? '<i class="fa-solid fa-user chatbot__message-avatar"></i>' : ''}
                 </div>
                 <div class="chatbot__bubble">
-                    <p>${texto}</p>  
+                    ${contenido}
                 </div>
                 <div class="chatbot__message-bottom">
                     <span class="chatbot__time">${horaActual}</span>
@@ -178,6 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ocultarEscribiendo();
 
             //se dibuja la repsuesya de la ia
+            
+
             agregarMensajeAlChat(respuestaIA.mensaje, 'ai');
 
         } catch (error) {
