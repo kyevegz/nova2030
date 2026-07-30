@@ -2244,10 +2244,12 @@ con el del contenedor*/
 
 .chatbot__message-container{
     max-width: 85%;
+    min-width: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
 }
+
 
 /*alineaciónburbuja para usuario*/
 .chatbot__message--user{
@@ -2256,13 +2258,16 @@ con el del contenedor*/
 
 /*estilo de las burjas*/
 .chatbot__bubble{
-    width: fit-content;
+    display: inline-block;
+    max-width: 100%;
+    min-width: 0;
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-smooth);
     font-size: var(--font-size-body);
     position: relative;
     
 }
+
 
 /*burbuja para ia*/
 .chatbot__message--ai .chatbot__bubble{
@@ -2450,9 +2455,61 @@ con el del contenedor*/
     40% {transform: scale(1);}
 }
 
+.chatbot__table-wrapper{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.chatbot__markdown{
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
 
 /*estilos markdowns para la respuesta de la IA*/
+.chatbot__markdown h1{
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+.chatbot__markdown h2{
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+.chatbot__markdown p{
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+}
+.chatbot__markdown ul,
+.chatbot__markdown ol{
 
+    padding-left: 1.5rem;
+    padding-bottom: 0.8rem;
+    line-height: 1.5rem;
+}
+
+.chatbot__markdown code{
+    white-space: pre-wrap;
+    word-break: break-word;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+}
+
+.chatbot__markdown pre{
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.chatbot__markdown table{
+    width: max-content;
+    border-collapse: collapse;
+}
+
+.chatbot__markdown th,
+.chatbot__markdown td{
+    white-space: nowrap;
+    padding: 0.5rem;
+    border: 1px solid var var(--observatory-700);
+}
 
 
 /*MEDIA QUERIES*/

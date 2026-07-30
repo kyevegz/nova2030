@@ -1,9 +1,3 @@
-const { marked } = require("marked");
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const trigger = document.getElementById('chatbotBtn');
     const ventanaChat = document.getElementById('chatbotVentana');
@@ -57,6 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
         let contenido = texto;
         if(esIA){
             contenido = DOMPurify.sanitize(marked.parse(texto));
+            const temp = document.createElement('div');
+            temp.innerHTML = contenido;
+
+            temp.querySelectorAll('table').forEach(tabla => {
+                const wrapper = document.createElement('div');
+                wrapper.classList.add('chatbot__table-wrapper');
+
+                tabla.parentNode.insertBefore(wrapper, tabla);
+                wrapper.appendChild(tabla);
+            });
+            contenido = temp.innerHTML;
         }else{
             contenido = '<p>' + contenido + '</p>';
         }
@@ -69,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${!esIA ? '<i class="fa-solid fa-user chatbot__message-avatar"></i>' : ''}
                 </div>
                 <div class="chatbot__bubble">
-                    ${contenido}
+                    <div class="chatbot__markdown">
+                        ${contenido}
+                    </div>
                 </div>
                 <div class="chatbot__message-bottom">
                     <span class="chatbot__time">${horaActual}</span>
