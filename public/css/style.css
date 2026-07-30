@@ -2175,6 +2175,7 @@ con el del contenedor*/
 
 /*botón flotante*/
 .chatbot-trigger{
+    padding: var(--space-sm);
     position: fixed;
     bottom: var(--space-lg);
     right: var(--space-lg);
