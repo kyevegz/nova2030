@@ -2230,7 +2230,7 @@ con el del contenedor*/
     gap: var(--space-md);
     background-color: var(--shark-100);
     background-color: var(--observatory-50);
-    justify-content: space-between;
+    overscroll-behavior-y: contain;
 }
 
 /*alinear burbujas*/
