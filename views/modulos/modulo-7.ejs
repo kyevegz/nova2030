@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>hola</title>
+</head>
+<body>
+    <div class="page">
+<!--Llamada al sidebar-->
+    <%- include('../partials/sidenavbar') %>
+
+    <!--Llamada al header-->
+    <%- include('../partials/header') %>
+
+    <main class="content <%= modificadorContent%>">
+        <% if(modificadorContent === 'content--preview') { %>
+            <%- include('../partials/alerta-preview', {tipo: estadoBloqueado}) %>
+        <% } %>
+
+        <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            <section class="quiz">
+                <header class="quiz__header">
+                    <div class="quiz__wave"></div>
+                    <%- include('partials/progressbar') %>
+                </header>
+                <!--¿un div body que abarque el form?-->
+                <div class="quiz__body">
+                    <h2 class="quiz__question">PREGUNTA</h2>
+                    <form action="" class="quiz__form">
+                        <label class="quiz__option">
+                            <input type="radio" class="quiz__input" name="f1m7p1" value="opcion1">
+                            <span class="quiz__custom-circle"></span>
+                            <span class="quiz__answer">RESPUESTA</span>
+                        </label>
+
+                        <label class="quiz__option">
+                            <input type="radio" class="quiz__input" name="f1m7p2" value="opcion2">
+                            <span class="quiz__custom-circle"></span>
+                            <span class="quiz__answer">RESPUESTA</span>
+                        </label>
+
+                        <label class="quiz__option">
+                            <input type="radio" class="quiz__input" name="f1m7p3" value="opcion3">
+                            <span class="quiz__custom-circle"></span>
+                            <span class="quiz__answer">RESPUESTA</span>
+                        </label>
+
+                        <label class="quiz__option">
+                            <input type="radio" class="quiz__input" name="f1m7p4" value="opcion4">
+                            <span class="quiz__custom-circle"></span>
+                            <span class="quiz__answer">RESPUESTA</span>
+                        </label>
+
+                        
+                    </form>
+                </div>
+                
+
+                <footer class="quiz__footer">
+                    <button class="quiz__btn quiz__btn--prev" id ="btnQuizPrev">
+                        Anterior        
+                    </button>
+                    
+                    <button class="quiz__btn quiz__btn--next" id ="btnQuizNext">
+                        Siguiente
+                    </button>
+                </footer>
+            </section>
+        </div>
+        <% if( modificadorContent === 'content--locked') { %>
+            <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+        <% } %>
+    </main>
+
+
+    <!--Llamada al sidebar anuncios-->
+    <%- include('../partials/sidebar-anuncios') %>
+    <!--Llamada al footer-->
+    <%- include('../partials/footer') %>
+    </div>
+    
+</body>
+</html>
