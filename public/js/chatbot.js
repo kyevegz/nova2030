@@ -1,9 +1,3 @@
-const { marked } = require("marked");
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const trigger = document.getElementById('chatbotBtn');
     const ventanaChat = document.getElementById('chatbotVentana');
@@ -69,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${!esIA ? '<i class="fa-solid fa-user chatbot__message-avatar"></i>' : ''}
                 </div>
                 <div class="chatbot__bubble">
-                    ${contenido}
+                    <div class="chatbot__markdown">
+                        ${contenido}
+                    </div>
                 </div>
                 <div class="chatbot__message-bottom">
                     <span class="chatbot__time">${horaActual}</span>

@@ -2249,6 +2249,7 @@ con el del contenedor*/
     flex-direction: column;
 }
 
+
 /*alineaciónburbuja para usuario*/
 .chatbot__message--user{
     justify-content: flex-end;
@@ -2452,7 +2453,33 @@ con el del contenedor*/
 
 
 /*estilos markdowns para la respuesta de la IA*/
+.chatbot__markdown h1{
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+.chatbot__markdown h2{
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+.chatbot__markdown p{
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+}
+.chatbot__markdown ul,
+.chatbot__markdown ol{
 
+    padding: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.chatbot__markdown code{
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+}
+
+.chatbot__markdown pre{
+    overflow-x: auto;
+}
 
 
 /*MEDIA QUERIES*/
