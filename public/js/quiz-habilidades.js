@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //actualizar la barra de progreso
         const progressBarAvance = ((stepActual + 1) / totalSteps) * 100;
-        progressbar.style.width = `${progressBarAvance}`;
+        progressbar.style.width = `${progressBarAvance}%`;
         progressbar.parentElement.setAttribute('aria-valuenow', progressBarAvance);
 
 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //valida que el usaurio haya seleccionado mínimo una respuesta
 
         const inputsActuales = steps[stepActual].querySelectorAll('input:checked');
-        if(inputsActuales === 0){
+        if(inputsActuales.length === 0){
             //indicar que debe seleccionar al menos una respuesta
             alert("Por favor, selecciona una respuesta antes de proseguir.");
             return;
@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnPrev.addEventListener("click", (e) => {
+        e.preventDefault();
         if(stepActual > 0){//valida que no sea la primera pregunta
             stepActual--;
             actualizarVistaQuiz();
@@ -112,4 +113,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     //en cuanto carga la pagina, incializa la visst
+    actualizarVistaQuiz();
+
+    //límite de los check
+    /*se señeccionan solo los input de la pregunta 15, la de los
+    ods, va a buscar todo atributo que comience con 'pregunta15'*/
+
+    const checkboxods = document.querySelectorAll('input[type="checkbox"][name^="pregunta15"]');
+    const limite = 3;
+
+    //evalúa el estado y bloquea o desbloquea
+    const evaluarLimite = () => {
+        //obtiene solo los que están seleccionados
+        const seleccionados = document.querySelectorAll('input[type="checkbox"][name^="pregunta15"]:checked').length;
+
+        //iterar sobre los check, todos
+        checkboxods.forEach(check => {
+            //si el actual no está marcado, lo bloquea
+            if(!check.checked){
+                check.disabled =  (seleccionados >= limite);
+            }
+        });
+
+    };
+    
+    //asignar el listen a cada caja
+    checkboxods.forEach(check => {
+        check.addEventListener('change', evaluarLimite);
+    })
 });
