@@ -2816,6 +2816,61 @@ adyacente y lo va a cambiar*/
     }
 }
 
+
+/*accesibilidad para el quiz de habilidades*/
+.quiz__input:focus-visible + .quiz__custom-circle{
+    outline: 3px dotted var(--navbar);
+    outline-offset: 4px;
+    box-shadow: 0 0 15px rgba(0, 86, 207, 0.15);
+}
+
+/*transformar los rdb a chk cuando llegue a la pregunta 15+*/
+
+.quiz__options-wrapper:has(inpit[type="checkbox"]){
+    /*crea las columnas automáticas que se ajustan solas
+    para que las img de los ods salgan bonitas y no en fila*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--space-md);
+}
+
+/*rediseñar la tarjeta para que sea una columna*/
+.quiz__option:has(input[type="checkbox"]){
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 3.5rem;
+}
+
+/*convertir la bolita en un cuadrito en la esquina*/
+input[type="checkbox"] + .quiz__custom-circle{
+    border-radius: var(--radius-ultra-smooth);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+/*relleno cuadrado*/
+input[type="checkbox"]:checked + .quiz__custom-circle::after{
+    border-radius: 2px;
+}
+
+/*evitar desborde de tarjetas de los ods*/
+
+.quiz__ods-img{
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: var(--space-sm);
+    transition: transform 0.3s ease;
+}
+
+/*efecto de zoom para hover sobre la img*/
+.quiz__option:has(input[Type="checkbox"]):hover .quiz__ods-img{
+    transform: scale(1.05);
+}
 /*MEDIA QUERIES*/
 
 /*--------------------
