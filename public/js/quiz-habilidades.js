@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.quiz__form');
     //barra de progreso del formulario
     const progressbar = document.querySelector('.quiz .progress-bar__fill');
-
+    //contador para indicar la pregunta actual en el header
+    const quizContador = document.getElementById('contadorPregunta');
     //si no estamos en la vista del quiz, se aborta el proceso
     if(!steps.length) return;
 
@@ -30,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 paso.classList.remove('quiz__step--active');
                 paso.classList.add('quiz__step--hidden');
             }
+
+            quizContador.textContent =`Pregunta ${stepActual+1} de ${totalSteps}`;
         });
 
         //actualizar los botones

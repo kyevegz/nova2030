@@ -2626,7 +2626,16 @@ con el del contenedor*/
     z-index: 1;
 }
 
-
+.quiz__counter{
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-details);
+    font-size: var(--font-size-small);
+    font-weight: var(--weight-bold);
+    color: var(--principal-title);
+    text-align: right;
+    margin-top: var(--space-md);
+}
 .quiz__header .progress-bar{
     position: relative;
     z-index: 2;
