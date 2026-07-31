@@ -2595,6 +2595,111 @@ con el del contenedor*/
     background-color: var(--bright-sun-200);
     transform: scale(1,1);
 }
+
+
+/*módulo quiz de habilidades*/
+
+/*contenedor*/
+.quiz{
+    background-color: var(--background-secundary);
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /*para que la ola no se salga del borde*/
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz__header{
+    background-color: var(--observatory-700), #005f73;
+    padding: var(--space-xl) var(--space-lg);
+    position: relative;
+}
+.quiz__wave{
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTQ0MCAzMjAiPjxwYXRoIGZpbGw9IiMwMDk5ZmYiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTTAsMjI0TDQ4LDIxMy4zQzk2LDIwMywxOTIsMTgxLDI4OCwxNDkuM0MzODQsMTE3LDQ4MCw3NSw1NzYsNjRDNjcyLDUzLDc2OCw3NSw4NjQsMTA2LjdDOTYwLDEzOSwxMDU2LDE4MSwxMTUyLDE3NkMxMjQ4LDE3MSwxMzQ0LDExNywxMzkyLDkwLjdMMTQ0MCw2NEwxNDQwLDBMMTM5MiwwQzEzNDQsMCwxMjQ4LDAsMTE1MiwwQzEwNTYsMCw5NjAsMCw4NjQsMEM3NjgsMCw2NzIsMCw1NzYsMEM0ODAsMCwzODQsMCwyODgsMEMxOTIsMCw5NiwwLDQ4LDBMMCwwWiI+PC9wYXRoPjwvc3ZnPg==");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.quiz__body{
+    padding: var(--space-xl);
+}
+.quiz__question{
+    font-family: var(--font-titles), sans-serif;
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--space-lg);
+    color: var(--shark-900), #222;
+}
+.quiz__form{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+.quiz__option{
+    display: flex;
+    align-items: center;
+    grid-area: var(--space-md);
+    background-color: var(--observatory-50), #f0f8ff;
+    border: 2px solid transparent;
+    border-radius: var(--radius-smooth);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.quiz__option:hover{
+    background-color: var(--observatory-500);
+    transform: translateX(5px);
+}
+
+.quiz__input{
+    display: none;
+}
+.quiz__custom-circle{
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--shark-300, #ccc);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;/*no aplastará el círculo si el texto es muy largo*/
+}
+
+/*efect0 de selección
+si el input está en modo seleccionado, va a buscar a su hermano
+adyacente y lo va a cambiar*/
+.quiz__input:checked + .quiz__custom-circle{
+    border-color: var(--observatory-700, #005f73);
+}
+
+/*dibujar el minicírculo que sale cuando se está seleccionadoo*/
+.quiz__input:checked + .quiz__custom-circle::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--observatory-700, #005f73);
+    border-radius: 50%;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.855, 0.32, 1.275) forwards;
+}
+
+/*cambio al birde de la caja que contiene esa opción seleccionada*/
+.quiz__option:has(.quiz__input:checked){
+    border-color: var(--observatory-700, #005f73);
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 95, 115, 0.1);
+}
+
+/*animación de rebote*/
+@keyframes popIn {
+    0% { transform: translate(-50%, -50%) scale(0);}
+    100%{ transform: translate(-50%, -50%) scale(1);}
+}
+
 /*MEDIA QUERIES*/
 
 /*--------------------
