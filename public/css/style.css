@@ -2603,28 +2603,36 @@ con el del contenedor*/
 .quiz{
     background-color: var(--zumthor-50);
     border-radius: var(--radius-smooth);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
     overflow: hidden; /*para que la ola no se salga del borde*/
     max-width: 600px;
     margin: 0 auto;
 }
 
 .quiz__header{
-    background-color: var(--observatory-700), #005f73;
+    background-color: transparent;
     padding: var(--space-xl) var(--space-lg);
     position: relative;
+    overflow: hidden;
 }
+
+
 .quiz__wave{
     position: absolute;
-    bottom: -1px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTQ0MCAzMjAiPjxwYXRoIGZpbGw9IiMwMDk5ZmYiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTTAsMjI0TDQ4LDIxMy4zQzk2LDIwMywxOTIsMTgxLDI4OCwxNDkuM0MzODQsMTE3LDQ4MCw3NSw1NzYsNjRDNjcyLDUzLDc2OCw3NSw4NjQsMTA2LjdDOTYwLDEzOSwxMDU2LDE4MSwxMTUyLDE3NkMxMjQ4LDE3MSwxMzQ0LDExNywxMzkyLDkwLjdMMTQ0MCw2NEwxNDQwLDBMMTM5MiwwQzEzNDQsMCwxMjQ4LDAsMTE1MiwwQzEwNTYsMCw5NjAsMCw4NjQsMEM3NjgsMCw2NzIsMCw1NzYsMEM0ODAsMCwzODQsMCwyODgsMEMxOTIsMCw5NiwwLDQ4LDBMMCwwWiI+PC9wYXRoPjwvc3ZnPg==");
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: var(--z-normal);
+    height: 120px;
+    z-index: 1;
 }
+
+
+.quiz__header .progress-bar{
+    position: relative;
+    z-index: 2;
+    margin-top: var(--space-xl);
+}
+
 .quiz__body{
     padding: var(--space-xl);
 }
@@ -2656,8 +2664,14 @@ con el del contenedor*/
 .quiz__input{
     position: absolute;
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0, 0,0,0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /*circulito, inicialmente vacío*/
@@ -2770,6 +2784,7 @@ adyacente y lo va a cambiar*/
     width: fit-content;
     transition: background-color 0.3s ease, transform 0.1s ease;
     color: var(--observatory-950);
+    margin: var(--space-lg);
     
 }
 .quiz__footer{
@@ -2825,6 +2840,9 @@ adyacente y lo va a cambiar*/
     box-shadow: 0 0 15px rgba(0, 86, 207, 0.15);
 }
 
+.quiz__option:has(.quiz__input:focus-visible){
+    border-color:  var(--navbar);
+}
 /*transformar los rdb a chk cuando llegue a la pregunta 15+*/
 
 .quiz__options-wrapper:has(input[type="checkbox"]){
