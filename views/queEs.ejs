@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head') %>
+    <!-- Estilos base de Splide -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">  
+    <!--librería de Splide desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-grid@0.4.1/dist/js/splide-extension-grid.min.js"></script>
+    <script  defer src="/js/carrusel.js"></script>
+    <link rel = "stylesheet" href="css/style.css">
+    <script src = "js/main.js" defer></script>
+    <title>Qué es | Nova 2030</title>
+</head>
+<body>
+    <div class = "page page--full">
+
+        <!--Llamada al sidebar-->
+        <%- include('partials/sidenavbar') %>
+
+        <!--Llamada al header-->
+        <%- include('partials/header') %>
+
+        <!--Contenido específico de la página actual-->
+        <div class="content">
+            <main class="about">
+
+                <section class="about__head">
+                    <div class="about__head-media">
+                        <img class="about__image" src="./../images/mascota.png" alt="Mascota de Nova 2030">
+                    </div>
+                    <div class="about__head-content">
+                        <h1 class="about__title">¿Qué es Nova 2030?</h1> 
+                        <p class="about__text about__text--lead">Nova 2030 es una plataforma que funciona como un ecosistema de innovación, aprendizaje y emprendimiento, diseñada para acompañar a niñas, niños y jóvenes en el desarrollo de proyectos que generen un verdadero impacto en el desarrollo de un futuro más sostenible en el mundo.</p>
+                    </div>
+                </section>
+                
+                <section class="about__cards">
+                    <article class="about-card">
+                        <h2 class="about-card__title">Nuestra misión.</h2> 
+                        <p class="about-card__text">Demostrar que todo gran cambio comienza con una idea.<br> Por ello, brindamos las herramientas, el conocimiento y la orientación necesarios para que cada participante convierta sus ideas en proyectos reales capaces de generar un impacto positivo en su comunidad.</p>
+                    </article>
+
+                    <article class="about-card">
+                        <h2 class="about-card__title">Alineación con los ODS.</h2>
+                        <p class="about-card__text">Todos los proyectos desarrollados dentro de Nova 2030 se alinean con los 17 Objetivos de Desarrollo Sostenible (ODS) establecidos por la Organización de las Naciones Unidas (ONU) como parte de la Agenda 2030, promoviendo soluciones innovadoras para enfrentar los principales desafíos sociales, económicos y ambientales de la actualidad.</p>
+                    </article>
+
+                    <article class="about-card">
+                        <h2 class="about-card__title">Emprendimiento.</h2>
+                        <p class="about-card__text">Además del desarrollo de proyectos, Nova 2030 impulsa el espíritu emprendedor de los jóvenes, enseñándoles cómo presentar, comunicar y comercializar sus ideas, con el objetivo de que puedan transformarlas en emprendimientos sostenibles, organizaciones o incluso microempresas capaces de generar un impacto duradero.</p>
+                    </article>
+                </section>
+                
+                <section class="about__conclusion">
+                    <p class="about__conclusion-text">En Nova 2030 creemos que la creatividad, la innovación y el talento de las nuevas generaciones son fundamentales para construir un futuro más justo, sostenible e inclusivo.<br> Por ello, nuestra plataforma busca que ninguna idea se quede sin ser escuchada y que cada joven tenga la oportunidad de convertirse en un agente de cambio para su comunidad y para el mundo.</p>
+                </section>
+                
+            </main>
+        </div>
+
+        <!--Llamada al sidebar de anuncios-->
+        <!-- <%- include('partials/sidebar-anuncios') %> -->
+
+        <!--Llamada al footer-->
+        <%- include('partials/footer') %>
+        
+    </div>
+</body>
+</html>
