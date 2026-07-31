@@ -2601,7 +2601,7 @@ con el del contenedor*/
 
 /*contenedor*/
 .quiz{
-    background-color: var(--background-secundary);
+    background-color: var(--zumthor-50);
     border-radius: var(--radius-smooth);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     overflow: hidden; /*para que la ola no se salga del borde*/
@@ -2631,49 +2631,79 @@ con el del contenedor*/
     font-family: var(--font-titles), sans-serif;
     font-size: var(--font-size-h2);
     margin-bottom: var(--space-lg);
-    color: var(--shark-900), #222;
+    color: var(--secundary-title);
 }
-.quiz__form{
+.quiz__options-wrapper{
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
 }
+
 .quiz__option{
     display: flex;
     align-items: center;
-    grid-area: var(--space-md);
-    background-color: var(--observatory-50), #f0f8ff;
-    border: 2px solid transparent;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background-color: transparent;
+    border: 2px solid var(--zumthor-300);
     border-radius: var(--radius-smooth);
+    color: var(--text-colour);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.25s ease-out, border-color 0.25s ease-out, transform 0.15s ease-out;
 }
-.quiz__option:hover{
-    background-color: var(--observatory-500);
-    transform: translateX(5px);
+/*ocultar el input de forma accesible*/
+.quiz__input{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.quiz__input{
-    display: none;
-}
+/*circulito, inicialmente vacío*/
 .quiz__custom-circle{
     width: 24px;
     height: 24px;
-    border: 2px solid var(--shark-300, #ccc);
+    border: 2px solid var(--zumthor-400);
     border-radius: 50%;
     position: relative;
-    transition: all 0.3s ease;
+    transition: background-color 0.25s ease-out, border-color 0.25s ease-out, transform 0.15s ease-out, box-shadow 0.15s ease-out;
     flex-shrink: 0;/*no aplastará el círculo si el texto es muy largo*/
 }
+
+.quiz__answer{
+    font-size: var(--font-size-body);
+    transition: font-weight 0.25s ease-out, color 0.25s ease-out;
+}
+.quiz__option:hover{
+    background-color: #ecf8ffb5;
+    border-color: var(--cerulean-blue-400);
+}
+
+.quiz__option:hover .quiz__custom-circle{
+    border-color: var(--cerulean-blue-400);
+}
+
+
+
+
 
 /*efect0 de selección
 si el input está en modo seleccionado, va a buscar a su hermano
 adyacente y lo va a cambiar*/
-.quiz__input:checked + .quiz__custom-circle{
+
+.quiz__option:active{
+    transform: scale(0.98);/*ligera hundición de la tarjeta*/
+}
+
+.quiz__option:active .quiz__custom-circle{
+    transform: scale(0.85);
+    box-shadow: 0 0 0 8px rgba(0, 86, 207, 0.15);
+}
+/* .quiz__input:checked + .quiz__custom-circle{
     border-color: var(--observatory-700, #005f73);
 }
 
-/*dibujar el minicírculo que sale cuando se está seleccionadoo*/
+/*dibujar el minicírculo que sale cuando se está seleccionadoo
 .quiz__input:checked + .quiz__custom-circle::after{
     content: "";
     position: absolute;
@@ -2685,21 +2715,84 @@ adyacente y lo va a cambiar*/
     background-color: var(--observatory-700, #005f73);
     border-radius: 50%;
     animation: popIn 0.3s cubic-bezier(0.175, 0.855, 0.32, 1.275) forwards;
-}
+} */
 
 /*cambio al birde de la caja que contiene esa opción seleccionada*/
 .quiz__option:has(.quiz__input:checked){
-    border-color: var(--observatory-700, #005f73);
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 95, 115, 0.1);
+    background-color: var(--cerulean-blue-200);
+    border-color: var(--principal-title);
+}
+.quiz__option:has(.quiz__input:checked) .quiz__answer{
+    font-weight: var(--weight-bold);    
+    color: var(--principal-title);
 }
 
+.quiz__input:checked + .quiz__custom-circle{
+    background-color: var(--cerulean-blue-100);
+    border-color: var(--principal-title);
+    animation: popInCheck 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/*círculo interior*/
+.quiz__input:checked + .quiz__custom-circle::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--principal-title);
+    border-radius: 50%;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.855, 0.32, 1.275) forwards
+}
 /*animación de rebote*/
-@keyframes popIn {
+@keyframes popInCheck {
+    0% { transform: scale(0);}
+    50% { transform: scale(1.15);}
+    100%{ transform: scale(1);}
+}
+
+@keyframes popInDut {
     0% { transform: translate(-50%, -50%) scale(0);}
     100%{ transform: translate(-50%, -50%) scale(1);}
 }
 
+.quiz__btn{
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-h3);
+    padding: 0.85rem var(--space-md);
+    border: none;
+    border-radius: var(--radius-smooth);
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    color: var(--observatory-950);
+    
+}
+.quiz__footer{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: var(--space-xs) var(--space-md);
+}
+.quiz__btn--prev{
+    border:2px solid var(--observatory-400);
+}
+.quiz__btn--prev:hover{
+    background-color: var(--observatory-400);
+}
+.quiz__btn--next{
+    background-color: var(--observatory-400);
+    border: 2px solid transparent;
+}
+.quiz__btn--next:hover{
+    border-color:var(--observatory-400);
+    background-color: transparent;
+    
+}
 /*para transparantes y desplazados hacia abajo*/
 
 /* .quiz__option{
