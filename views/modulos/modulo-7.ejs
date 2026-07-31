@@ -21,51 +21,53 @@
             <section class="quiz">
                 <header class="quiz__header">
                     <div class="quiz__wave"></div>
-                    <%- include('partials/progressbar') %>
+                    <%- include('../partials/progressbar') %>
                 </header>
-                <!--¿un div body que abarque el form?-->
+                
+
                 <div class="quiz__body">
+
                     <h2 class="quiz__question">PREGUNTA</h2>
-                    <form action="" class="quiz__form">
-                        <label class="quiz__option">
-                            <input type="radio" class="quiz__input" name="f1m7p1" value="opcion1">
-                            <span class="quiz__custom-circle"></span>
-                            <span class="quiz__answer">RESPUESTA</span>
-                        </label>
-
-                        <label class="quiz__option">
-                            <input type="radio" class="quiz__input" name="f1m7p2" value="opcion2">
-                            <span class="quiz__custom-circle"></span>
-                            <span class="quiz__answer">RESPUESTA</span>
-                        </label>
-
-                        <label class="quiz__option">
-                            <input type="radio" class="quiz__input" name="f1m7p3" value="opcion3">
-                            <span class="quiz__custom-circle"></span>
-                            <span class="quiz__answer">RESPUESTA</span>
-                        </label>
-
-                        <label class="quiz__option">
-                            <input type="radio" class="quiz__input" name="f1m7p4" value="opcion4">
-                            <span class="quiz__custom-circle"></span>
-                            <span class="quiz__answer">RESPUESTA</span>
-                        </label>
-
-                        
+                    <form action="/api/enviar-quiz" method="post" class="quiz__form" id="quizForm">
+                        <% if (typeof preguntas !== 'undefined' && preguntas.length > 0) { %>
+                            <% preguntas.forEach((item, index) => {%>
+                                <div class = "quiz__step <%= index === 0 ? 'quiz__step--active' : 'quiz__step--hidden'%>" data-step="<%= index+1%>">
+                                    <h2 class = "quiz__question"><%= item.id%>. <%=item.pregunta%></h2>
+                                    
+                                    <div class = "quiz__options-wrapper">
+                                        <% item.opciones.forEach(opcion => { %>
+                                            <label class="quiz__option">
+                                                <input type="<%= item.tipo %>" class="quiz__input" name="pregunta<%= item.id %><%= item.tipo === 'checkbox' ? '[]' : '' %>" value="<%= opcion.valor %>">
+                                                <span class="quiz__custom-circle"></span> 
+                                                <% if (opcion.imagen) {%>
+                                                    <img src = "<%= opcion.imagen %>" alt = "Objetivo de desarrollo sostenible <%= opcion.valor %>" class ="quiz__ods-img">
+                                                <%}%>
+                                                <span class="quiz__answer"><%=opcion.texto%></span>
+                                            </label>
+                                        <% })%>
+                                    </div>
+                                </div>
+                            <%})%> 
+                        <% } else {%>
+                            <p>ERROR. No se pudieron cargar las preguntas</p>
+                        <% } %>
                     </form>
                 </div>
                 
 
                 <footer class="quiz__footer">
-                    <button class="quiz__btn quiz__btn--prev" id ="btnQuizPrev">
+                    <button class="quiz__btn quiz__btn--prev" id ="btnQuizPrev"disabled type = "button">
                         Anterior        
                     </button>
                     
-                    <button class="quiz__btn quiz__btn--next" id ="btnQuizNext">
+                    <button class="quiz__btn quiz__btn--next" id ="btnQuizNext" type="button">
                         Siguiente
                     </button>
                 </footer>
             </section>
+
+
+
         </div>
         <% if( modificadorContent === 'content--locked') { %>
             <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
