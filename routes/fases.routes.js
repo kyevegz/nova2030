@@ -144,6 +144,189 @@ const odsTarjetas = [
         description: 'Fortalecer los medios de implementación y revitalizar la Alianza Mundial para el Desarrollo Sostenible'
     }
 ];
+
+const cuestionario = [
+    {
+        id: 1,
+        pregunta: "Cuando surge un problema, normalmente tú...",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Tomas la iniciativa y propones una solución."},
+            {valor: "B", texto: "Piensas en una idea diferente."},
+            {valor: "C", texto: "Investigas por qué sucede el problema."},
+            {valor: "D", texto: "Escuchas a todos antes de tomar una decisión."}
+        ]
+    },
+    {
+        id: 2,
+        pregunta: "En un trabajo en equipo normalmente tú…",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Organizas al equipo."},
+            {valor: "B", texto: "Diseñas las ideas."},
+            {valor: "C", texto: "Buscas información."},
+            {valor: "D", texto: "Ayudas a que todos participen."}
+        ]
+    },
+    {
+        id: 3,
+        pregunta: "¿Qué actividad disfrutas más?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Dirigir proyectos"},
+            {valor: "B", texto: "Crear o diseñar"},
+            {valor: "C", texto: "Investigar."},
+            {valor: "D", texto: "Ayudar a otras personas"}
+        ]
+    },
+    {
+        id: 4,
+        pregunta: "Cuando tienes una nueva idea",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Empiezas a desarrollarla."},
+            {valor: "B", texto: "Haces un boceto o prototipo"},
+            {valor: "C", texto: "Investigas si ya existe."},
+            {valor: "D", texto: "La compartes con otras personas"}
+        ]
+    },
+    {
+        id: 5,
+        pregunta: "¿Qué materia te gusta más?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Matemáticas."},
+            {valor: "B", texto: "Ciencias."},
+            {valor: "C", texto: "Arte"},
+            {valor: "D", texto: "Formación Cívica o Ciencias Sociales."}
+        ]
+    },
+    {
+        id: 6,
+        pregunta: "Si pudieras resolver un problema, elegirías…",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "La contaminación."},
+            {valor: "B", texto: "La pobreza."},
+            {valor: "C", texto: "La falta de educación."},
+            {valor: "D", texto: "La falta de innovación tecnológica."}
+        ]
+    },
+    {
+        id:7 ,
+        pregunta: "",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Construir un prototipo."},
+            {valor: "B", texto: "Programar."},
+            {valor: "C", texto: "Investigar."},
+            {valor: "D", texto: "Organizar campañas sociales."}
+        ]
+    },
+    {
+        id: 8,
+        pregunta: " ¿Qué disfrutas más?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Crear."},
+            {valor: "B", texto: "Descubrir."},
+            {valor: "C", texto: "Enseñar."},
+            {valor: "D", texto: "Emprender."}
+        ]
+    },
+    {
+        id: 9,
+        pregunta: "Si participaras en una feria de ciencias, ¿qué proyecto elegirías?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Un robot."},
+            {valor: "B", texto: "Una investigación."},
+            {valor: "C", texto: "Una campaña social."},
+            {valor: "D", texto: "Un producto ecológico."}
+        ]
+    },
+    {
+        id: 10,
+        pregunta: "Cuando alguien tiene un problema normalmente tú…",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Lo ayudas."},
+            {valor: "B", texto: "Buscas una solución."},
+            {valor: "C", texto: "Investigas qué lo ocasionó."},
+            {valor: "D", texto: "Organizas personas para resolverlo."}
+        ]
+    },
+    {
+        id: 11,
+        pregunta: "¿Qué habilidad consideras que tienes más desarrollada?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Liderazgo."},
+            {valor: "B", texto: "Creatividad."},
+            {valor: "C", texto: "Pensamiento lógico."},
+            {valor: "D", texto: "Comunicación."}
+        ]
+    },
+    {
+        id: 12,
+        pregunta: "¿Cómo prefieres aprender?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Haciendo proyectos."},
+            {valor: "B", texto: "Investigando."},
+            {valor: "C", texto: "Viendo ejemplos."},
+            {valor: "D", texto: "Trabajando con otras personas."}
+        ]
+    },
+    {
+        id:13 ,
+        pregunta: "¿Qué te emociona más?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Crear una empresa."},
+            {valor: "B", texto: "Desarrollar nueva tecnología."},
+            {valor: "C", texto: "Ayudar a una comunidad."},
+            {valor: "D", texto:"Descubrir algo nuevo."}
+        ]
+    },
+    {
+        id: 14,
+        pregunta: "¿Qué tipo de proyecto te gustaría desarrollar?",
+        tipo: "radio",
+        opciones: [
+            {valor: "A", texto: "Tecnológico."},
+            {valor: "B", texto: "Científico."},
+            {valor: "C", texto: "Social."},
+            {valor: "D", texto: "Ambiental."}
+        ]
+    },
+    {
+        id: 15,
+        pregunta: "Selecciona tres Objetivos de Desarrollo Sostenible que más llamen tu atención.",
+        tipo: "checkbox",
+        limite: 3,
+        opciones: [
+            {valor: "ods1", texto: "1.Fin de la pobreza", imagen: "/images/content/ods/Goal-01.png"},
+            {valor: "ods2", texto: "2.Fin de la pobreza", imagen: "/images/content/ods/Goal-02.png"},
+            {valor: "ods3", texto: "3.Fin de la pobreza", imagen: "/images/content/ods/Goal-03.png"},
+            {valor: "ods4", texto: "4.Fin de la pobreza", imagen: "/images/content/ods/Goal-04.png"},
+            {valor: "ods5", texto: "5.Fin de la pobreza", imagen: "/images/content/ods/Goal-05.png"},
+            {valor: "ods6", texto: "6.Fin de la pobreza", imagen: "/images/content/ods/Goal-06.png"},
+            {valor: "ods7", texto: "7.Fin de la pobreza", imagen: "/images/content/ods/Goal-07.png"},
+            {valor: "ods8", texto: "8.Fin de la pobreza", imagen: "/images/content/ods/Goal-08.png"},
+            {valor: "ods9", texto: "9.Fin de la pobreza", imagen: "/images/content/ods/Goal-09.png"},
+            {valor: "ods10", texto: "10.Fin de la pobreza", imagen: "/images/content/ods/Goal-10.png"},
+            {valor: "ods11", texto: "11.Fin de la pobreza", imagen: "/images/content/ods/Goal-11.png"},
+            {valor: "ods12", texto: "12.Fin de la pobreza", imagen: "/images/content/ods/Goal-12.png"},
+            {valor: "ods13", texto: "13.Fin de la pobreza", imagen: "/images/content/ods/Goal-13.png"},
+            {valor: "ods14", texto: "14.Fin de la pobreza", imagen: "/images/content/ods/Goal-14.png"},
+            {valor: "ods15", texto: "15.Fin de la pobreza", imagen: "/images/content/ods/Goal-15.png"},
+            {valor: "ods16", texto: "16.Fin de la pobreza", imagen: "/images/content/ods/Goal-16.png"},
+            {valor: "ods17", texto: "17.Fin de la pobreza", imagen: "/images/content/ods/Goal-17.png"}
+            
+        ]
+    },
+]
 //ruta para cualquier fase, verificando si hay sesión activa
 router.get('/fase/:numFase', async (req, res) => {
     try {
@@ -308,6 +491,9 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
             opcionesRender.ods = odsTarjetas;
         }
 
+        if(idModulo === '7'){
+            opcionesRender.preguntas = cuestionario;
+        }
         res.render(`modulos/modulo-${idModulo}`, opcionesRender);
 
     } catch (error) {
