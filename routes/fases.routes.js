@@ -214,7 +214,7 @@ const cuestionario = [
     },
     {
         id:7 ,
-        pregunta: "",
+        pregunta: "¿Cuál de estas actividades te gustaría hacer?",
         tipo: "radio",
         opciones: [
             {valor: "A", texto: "Construir un prototipo."},
@@ -307,22 +307,22 @@ const cuestionario = [
         limite: 3,
         opciones: [
             {valor: "ods1", texto: "1.Fin de la pobreza", imagen: "/images/content/ods/Goal-01.png"},
-            {valor: "ods2", texto: "2.Fin de la pobreza", imagen: "/images/content/ods/Goal-02.png"},
-            {valor: "ods3", texto: "3.Fin de la pobreza", imagen: "/images/content/ods/Goal-03.png"},
-            {valor: "ods4", texto: "4.Fin de la pobreza", imagen: "/images/content/ods/Goal-04.png"},
-            {valor: "ods5", texto: "5.Fin de la pobreza", imagen: "/images/content/ods/Goal-05.png"},
-            {valor: "ods6", texto: "6.Fin de la pobreza", imagen: "/images/content/ods/Goal-06.png"},
-            {valor: "ods7", texto: "7.Fin de la pobreza", imagen: "/images/content/ods/Goal-07.png"},
-            {valor: "ods8", texto: "8.Fin de la pobreza", imagen: "/images/content/ods/Goal-08.png"},
-            {valor: "ods9", texto: "9.Fin de la pobreza", imagen: "/images/content/ods/Goal-09.png"},
-            {valor: "ods10", texto: "10.Fin de la pobreza", imagen: "/images/content/ods/Goal-10.png"},
-            {valor: "ods11", texto: "11.Fin de la pobreza", imagen: "/images/content/ods/Goal-11.png"},
-            {valor: "ods12", texto: "12.Fin de la pobreza", imagen: "/images/content/ods/Goal-12.png"},
-            {valor: "ods13", texto: "13.Fin de la pobreza", imagen: "/images/content/ods/Goal-13.png"},
-            {valor: "ods14", texto: "14.Fin de la pobreza", imagen: "/images/content/ods/Goal-14.png"},
-            {valor: "ods15", texto: "15.Fin de la pobreza", imagen: "/images/content/ods/Goal-15.png"},
-            {valor: "ods16", texto: "16.Fin de la pobreza", imagen: "/images/content/ods/Goal-16.png"},
-            {valor: "ods17", texto: "17.Fin de la pobreza", imagen: "/images/content/ods/Goal-17.png"}
+            {valor: "ods2", texto: "2.Hambre cero", imagen: "/images/content/ods/Goal-02.png"},
+            {valor: "ods3", texto: "3.Salud y bienestar", imagen: "/images/content/ods/Goal-03.png"},
+            {valor: "ods4", texto: "4.Educación de calidad", imagen: "/images/content/ods/Goal-04.png"},
+            {valor: "ods5", texto: "5.Igualdad de género", imagen: "/images/content/ods/Goal-05.png"},
+            {valor: "ods6", texto: "6.Agua limpia y saneamiento", imagen: "/images/content/ods/Goal-06.png"},
+            {valor: "ods7", texto: "7.Energía asequible y no contaminante", imagen: "/images/content/ods/Goal-07.png"},
+            {valor: "ods8", texto: "8.Trabajo decente y crecimiento económico", imagen: "/images/content/ods/Goal-08.png"},
+            {valor: "ods9", texto: "9.Industria, innovación e infraestructura", imagen: "/images/content/ods/Goal-09.png"},
+            {valor: "ods10", texto: "10.Reducción de las desigualdades", imagen: "/images/content/ods/Goal-10.png"},
+            {valor: "ods11", texto: "11.Ciudades y comunidades sostenibles", imagen: "/images/content/ods/Goal-11.png"},
+            {valor: "ods12", texto: "12.Producción y consumo responsables", imagen: "/images/content/ods/Goal-12.png"},
+            {valor: "ods13", texto: "13.Acción por el clima", imagen: "/images/content/ods/Goal-13.png"},
+            {valor: "ods14", texto: "14.Vida submarina", imagen: "/images/content/ods/Goal-14.png"},
+            {valor: "ods15", texto: "15.Vida de ecosistemas terrestres", imagen: "/images/content/ods/Goal-15.png"},
+            {valor: "ods16", texto: "16.Paz, justicia e instituciones sólidas", imagen: "/images/content/ods/Goal-16.png"},
+            {valor: "ods17", texto: "17.Alianza para lograr los objetivos", imagen: "/images/content/ods/Goal-17.png"}
             
         ]
     },
