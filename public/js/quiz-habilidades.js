@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //formulario del quiz
     const form = document.querySelector('.quiz__form');
     //barra de progreso del formulario
-    const progressbar = document.querySelector('.progress-bar__fill');
+    const progressbar = document.querySelector('.quiz .progress-bar__fill');
 
     //si no estamos en la vista del quiz, se aborta el proceso
     if(!steps.length) return;

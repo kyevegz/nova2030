@@ -2623,6 +2623,7 @@ con el del contenedor*/
     background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTQ0MCAzMjAiPjxwYXRoIGZpbGw9IiMwMDk5ZmYiIGZpbGwtb3BhY2l0eT0iMSIgZD0iTTAsMjI0TDQ4LDIxMy4zQzk2LDIwMywxOTIsMTgxLDI4OCwxNDkuM0MzODQsMTE3LDQ4MCw3NSw1NzYsNjRDNjcyLDUzLDc2OCw3NSw4NjQsMTA2LjdDOTYwLDEzOSwxMDU2LDE4MSwxMTUyLDE3NkMxMjQ4LDE3MSwxMzQ0LDExNywxMzkyLDkwLjdMMTQ0MCw2NEwxNDQwLDBMMTM5MiwwQzEzNDQsMCwxMjQ4LDAsMTE1MiwwQzEwNTYsMCw5NjAsMCw4NjQsMEM3NjgsMCw2NzIsMCw1NzYsMEM0ODAsMCwzODQsMCwyODgsMEMxOTIsMCw5NiwwLDQ4LDBMMCwwWiI+PC9wYXRoPjwvc3ZnPg==");
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: var(--z-normal);
 }
 .quiz__body{
     padding: var(--space-xl);
@@ -2826,7 +2827,7 @@ adyacente y lo va a cambiar*/
 
 /*transformar los rdb a chk cuando llegue a la pregunta 15+*/
 
-.quiz__options-wrapper:has(inpit[type="checkbox"]){
+.quiz__options-wrapper:has(input[type="checkbox"]){
     /*crea las columnas automáticas que se ajustan solas
     para que las img de los ods salgan bonitas y no en fila*/
     display: grid;
@@ -2841,6 +2842,7 @@ adyacente y lo va a cambiar*/
     text-align: center;
     position: relative;
     padding-top: 3.5rem;
+    width: fit-content;
 }
 
 /*convertir la bolita en un cuadrito en la esquina*/
