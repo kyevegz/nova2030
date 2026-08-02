@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const datosCrudos = contexto.dataset.puntajes;
     //se convierte de texto a un objeto js
     const puntajesRadar = JSON.parse(datosCrudos);
-    
+
     const labels = Object.keys(puntajesRadar);
     const dataValues = Object.values(puntajesRadar);
 
@@ -25,14 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 //estilos
                 backgroundColor: 'rgba(16, 168, 154, 0.2)',
                 borderColor: '#10bc9a',
+
                 pointBackgroundColor: '#099078',
-                pointBorderColor:'#fff',
-                pointHoverBackgroundColor:'#fff',
+                pointBorderColor:'#115749',
+
+                hoverBackgroundColor: 'rgba(16, 188, 154, 0.5)',
+                hoverBorderColor: '#10bc9a',
+
+                pointHoverBackgroundColor:'#099078',
                 pointHoverBorderColor: '#099078',
                 borderWidth: 2,
             }]
         },
         options: {
+            devicePixelRatio: 3,
             responsive: true,
             maintainAspectRatio: false,
             scales: {
