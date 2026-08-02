@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %>
+    <!--Importar chart.js desde su cdn, esto para el gráfico de arañas-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <title>Resultados del Quiz de habilidades | Nova2030</title>
+</head>
+<body>
+    <div class="page">
+
+        <%- include('../partials/sidenavbar') %>
+        <%- include('../partials/header') %>
+        <main class="content">
+            <div class="results-wrapper">
+                <header class="results-header">
+                    <h1 class="results-header__title">Evaluación completada</h1>
+                    <p class="results-header__subtitle">
+                        Conoce tu perfil en base a tus resultados. 
+                        Estas son tus fortalezas, intereses y el tipo de 
+                    proyecto que más se adapta a ti.</p>
+                </header>
+
+                <section class="results-section">
+                    <h2 class="results-section__title">
+                        <i class="fa-solid fa-medal"></i>
+                        Tus insignias
+                    </h2>
+                    <p class="results-section__description">Estas son tus fortalezas más destacadas</p>
+                    
+                    <div class="badges-grid">
+                        <article class="badge-card">
+                            <div class="badge-card__image">
+                                <span class="badge-card__image-text"></span>
+                            </div>
+
+                            <h3 class="badge-card__title"></h3>
+                            <p class="badge-card__text"></p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- perfil y radar -->
+                <div class="profile-grid">
+                    <section class="results-section results-section--fill">
+                        <h2 class="results-section__title">
+                            <i class="fa-solid fa-user"></i>
+                            Descripción de tu perfil
+                        </h2>
+                        <p class="results-section__text"></p>
+                        <p class="results-section__text"></p>
+                        <p class="results-section__text"></p>
+
+                        <blockquote class ="results-quote">
+                            <i class="fa-solid fa-leaf results-quote__icon"></i>
+                        </blockquote>
+
+                    </section>
+
+                    <!--Gráfico del radar-->
+                    <section class="results-section">
+                        <h2 class="results-section__title">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            Tus puntuaciones:
+                        </h2>
+                        <p class="results-section__description">
+                            Así se distribuyen los resultados de tu quiz
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="radarChart">
+
+                            </canvas>
+                        </div>
+                    </section>
+                </div>
+
+                <!--ODS relacionados-->
+                <section class="results-section">
+                    <h2 class="results-section__title">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        Tus ODS relacionados según el quiz
+                    </h2>
+                    <p class="results-section__description">
+                        Estos son los Objetivos de Desarrollo Sostenible que 
+                        elegiste y que más van contigo
+                    </p>
+
+                    <div class="ods-results">
+                        <div class="ods-results__grid">
+                            <div class="ods-results__card">
+                                <img src="/images/content/ods*<%=ods%>.png" alt="<%=ods%>" class="ods-result__img">
+                            </div>
+                        </div>
+                        <div class="ods-results__info">
+                            <p>
+                                Estos ODS reflejan tus intereses y las áreas 
+                                en las que tus proyectos podrían impactar
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="results-action">
+                    <a href="#" class="form__button-send results-actions__btn">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer') %>
+    </div>
+
+    <script>
+        const puntajesRadar = <%- JSON.stringify(puntajeCrudo) %>;
+    </script>
+
+    <script src = "/js/radarResultados.js" defer></script>
+</body>
+</html>
