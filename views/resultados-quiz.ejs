@@ -67,7 +67,7 @@
                             Así se distribuyen los resultados de tu quiz
                         </p>
                         <div class="chart-container">
-                            <canvas id="radarChart">
+                            <canvas id="radarChart" data-puntajes = "<%= JSON.stringify(puntajeCrudo) %>">
 
                             </canvas>
                         </div>
@@ -88,7 +88,7 @@
                     <div class="ods-results">
                         <div class="ods-results__grid">
                             <div class="ods-results__card">
-                                <img src="/images/content/ods*<%=ods%>.png" alt="<%=ods%>" class="ods-result__img">
+                                <img src="/images/content/ods/<%=ods%>.png" alt="<%=ods%>" class="ods-result__img">
                             </div>
                         </div>
                         <div class="ods-results__info">
@@ -110,9 +110,6 @@
         <%- include('../partials/footer') %>
     </div>
 
-    <script>
-        const puntajesRadar = <%- JSON.stringify(puntajeCrudo) %>;
-    </script>
 
     <script src = "/js/radar-resultados.js" defer></script>
 </body>

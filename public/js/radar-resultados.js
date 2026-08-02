@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //el canvas donde se va a dibujar el chart
     const contexto = document.getElementById('radarChart');
     if(!contexto) return;
 
     /*el puntajes radar, lo que se recibe desde 
     node, se inyecta con ejs en el html*/
 
+    //extra el json del canvas
+    const datosCrudos = contexto.dataset.puntajes;
+    //se convierte de texto a un objeto js
+    const puntajesRadar = JSON.parse(datosCrudos);
+    
     const labels = Object.keys(puntajesRadar);
     const dataValues = Object.values(puntajesRadar);
 
