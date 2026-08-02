@@ -4,6 +4,7 @@ const db = require('../config/db');
 const verificarToken = require('../middlewares/auth');
 const { progresoPorFaseUsr } = require('../utils/progresoUtils.js');
 const odsInfo = require('../data/odsData.js');
+
 /*informacion fija de las fases de nova, se hace un diccionario 
 para no crear una tabla en la bd y aumentar las consultas 
 desde express*/
@@ -551,4 +552,20 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
 })
 //ruta para modulo-2, los ods
 
+router.get('/fase/1/resultados-quiz', verificarToken, (req, res) => {
+    // Datos simulados (Mockup) para probar el diseño
+    const mockupPuntajes = {
+        "Liderazgo": 85,
+        "Pensamiento analítico": 88,
+        "Comunicación": 75,
+        "Innovación": 90,
+        "Creatividad": 80,
+        "Investigación": 70
+    };
+
+    res.render('resultados-quiz', {
+        puntajeCrudo: mockupPuntajes,
+        ods: '4' // Simulamos que ganó el ODS 4
+    });
+});
 module.exports = router;
