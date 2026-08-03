@@ -3146,6 +3146,101 @@ input[type="checkbox"]:checked + .quiz__custom-circle::after{
 }
 
 
+/* Estilos para que es */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.about__head{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about__head-media{
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+
+.about__image{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.about__head-content{
+    flex: 1;
+}
+
+.about__title{
+    color:var(--secundary-title);
+    margin-bottom: 1rem;
+    font: var(--font-titles);
+    font-size: var(--font-size-h1);
+}
+
+.about__text--lead{
+    line-height: 1.6;
+    font-size: var(--font-size-body);
+    font: var(--font-body);
+}
+
+.about__cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.about-card{
+    background-color: var(--secundary-title);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-card__title{
+    margin-bottom: 1.5rem;
+    color: var(--observatory-50);
+    font: var(--font-titles);
+    font-size: var(--font-size-h2);
+}
+
+.about-card__text{
+    line-height: 1.5;
+    font: var(--font-body);
+    color: var(--observatory-50);
+    font-size: var(--font-size-body);
+}
+
+.about__conclusion{
+    background-color: var(--secundary-title);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.about__conclusion-text{
+    line-height: 1.6;
+    color: var(--observatory-50);
+    font-size: var(--font-size-body);
+    font: var(--font-body);
+}
+
+@media (max-width: 768px){
+    .about__head{
+        flex-direction: column;
+    }
+    .about__head-media{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
 /*--------------------
     pantalla de resultados
 ------------------------*/
