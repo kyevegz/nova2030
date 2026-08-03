@@ -129,6 +129,10 @@ app.use('/', asesores);
 const chatbotRoutes = require('./routes/chatbot.routes.js');
 app.use('/', chatbotRoutes);
 
+//ruta para la revisión del quiz
+const quizHabilidades = require('./routes/quiz-habilidades.routes.js');
+app.use('/', quizHabilidades);
+
 /*este fragmento modifica la ruta principal para que, en lugar de mandar 
 texxto, "renderice" la vista del index.ejs*/
 // app.get('/', (req, res) => {

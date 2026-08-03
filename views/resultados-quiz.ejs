@@ -11,6 +11,7 @@
 
         <%- include('partials/sidenavbar') %>
         <%- include('partials/header') %>
+
         <main class="content">
             <div class="results-wrapper">
                 <header class="results-header">
@@ -21,37 +22,49 @@
                     proyecto que más se adapta a ti.</p>
                 </header>
 
+                <!--Sección de insignias con grid-->
                 <section class="results-section">
                     <h2 class="results-section__title">
                         <i class="fa-solid fa-medal"></i>
                         Tus insignias
                     </h2>
-                    <p class="results-section__description">Estas son tus fortalezas más destacadas</p>
+                    <p class="results-section__description">
+                        Estas son tus fortalezas más destacadas
+                    </p>
                     
                     <div class="badges-grid">
-                        <article class="badge-card">
-                            <div class="badge-card__image">
-                                <span class="badge-card__image-text"></span>
-                            </div>
+                        <!--Iteración sobre las habilidades ganadoras que devuelve el back-->
+                        <% insignias.forEach(insignia => { %>
+                            
+                        
+                            <article class="badge-card">
+                                <div class="badge-card__image">
+                                    <img class="badge-card__img" src="/images/content/insignias/<%= insignia.imagen%>" alt="Insignia de <%= insignia.nombre%>">
+                                    <!-- <span class="badge-card__image-text">
+                                        Insignia <br> <habilidad 
+                                    </span> -->
+                                </div>
 
-                            <h3 class="badge-card__title"></h3>
-                            <p class="badge-card__text"></p>
-                        </article>
+                                <h3 class="badge-card__title"><%= insignia.nombre %></h3>
+                                <p class="badge-card__text"><%= insignia.descripcion %></p>
+                            </article>
+                        <% }) %>
                     </div>
                 </section>
 
-                <!-- perfil y radar -->
+                <!-- perfil y radar, grid de dos columnas -->
                 <div class="profile-grid">
                     <section class="results-section results-section--fill">
                         <h2 class="results-section__title">
                             <i class="fa-solid fa-user"></i>
                             Descripción de tu perfil
                         </h2>
-                        <p class="results-section__text"></p>
-                        <p class="results-section__text"></p>
-                        <p class="results-section__text"></p>
+                        <p class="results-section__text">
+                            <%= descripcionIA%>
+                        </p>
 
                         <blockquote class ="results-quote">
+                            "La cosa no va de tener ideas, es de hacer que sucedan" -Scoot Belsky
                             <i class="fa-solid fa-leaf results-quote__icon"></i>
                         </blockquote>
 
@@ -87,9 +100,15 @@
 
                     <div class="ods-results">
                         <div class="ods-results__grid">
-                            <div class="ods-results__card">
-                                <img src="/images/content/ods/<%=ods%>.png" alt="<%=ods%>" class="ods-result__img">
-                            </div>
+                                <% odsSeleccionados.forEach(ods => {
+                                    let numStr = ods.replace('ods', '');
+                                    let numFormateado = numStr.padStart(2, '0');
+                                    let nombreArchivo = `Goal-${numFormateado}.png`;  
+                                %>
+                                    <div class="ods-results__card">
+                                        <img src="/images/content/ods/<%= nombreArchivo %>" alt="ODS <%=numStr%>" class="ods-result__img">
+                                    </div>
+                                <%})%>
                         </div>
                         <div class="ods-results__info">
                             <p>

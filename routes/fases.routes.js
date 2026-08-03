@@ -552,20 +552,79 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo/ods/:odsId', async (req, res
 })
 //ruta para modulo-2, los ods
 
-router.get('/fase/1/resultados-quiz', verificarToken, (req, res) => {
+router.get('/fase/1/resultados-quiz', verificarToken, async (req, res) => {
     // Datos simulados (Mockup) para probar el diseño
-    const mockupPuntajes = {
-        "Liderazgo": 85,
-        "Pensamiento analítico": 88,
-        "Comunicación": 75,
-        "Innovación": 90,
-        "Creatividad": 80,
-        "Investigación": 70
-    };
+    const idUsuario = req.usuario.id;
+
+    //consulta las insignias reales que tiene el user en la bd
+    const [insigniaUsuario] = await db.query(`
+        SELECT i.nombre, i.descripcion, i.imagen
+        FROM usuario_insignias ui
+        JOIN insignias i ON ui.idInsignia = i.id
+        WHERE ui.idUsuario = ?
+        `, [idUsuario]
+    );
+
+    //extraer el último resultado, para el id y la descripción del perfil
+    const [resultadoMaestro] = await db.query(
+        `
+        SELECT id, descripcionPerfil, puntajesRadar
+        FROM resultado_quiz_hab
+        WHERE idUsuario = ?
+        ORDER BY id DESC LIMIT 1
+        `, [idUsuario]
+    );
+
+    let textoPerfil = "Tu perfil es innovador y analítico. Tienes el potencial de cambiar el mundo";
+    let odsSeleccionados = [];
+    let puntajeCrudo = {};
+
+    //en caso de haber un resultado reciente, extra los ods que eligií
+    if(resultadoMaestro.length > 0){
+        textoPerfil = resultadoMaestro[0].descripcionPerfil;
+        const idResultadoActual = resultadoMaestro[0].id;
+
+        if(resultadoMaestro[0].puntajesRadar){
+            //convierte el texto a un JSON real
+            puntajeCrudo = JSON.parse(resultadoMaestro[0].puntajesRadar);
+        }
+
+        const [odsGuardados] = await db.query(`
+            SELECT ods FROM resultado_ods 
+            WHERE idResultado = ?
+            `, [idResultadoActual])
+
+            //transforma el array de objetos [{ods: 'ods4'}, {ods: 'ods5'}, {ods: 'ods8'}] a un array normal ['ods4', 'ods5', 'ods8']
+            odsSeleccionados = odsGuardados.map(fila => fila.ods);
+    }
+
+    //consulta los puntajes o resultados para el gráfico y descripciones
+
+
+    // const mockupPuntajes = {
+    //     "Liderazgo": 85,
+    //     "Pensamiento analítico": 88,
+    //     "Comunicación": 75,
+    //     "Innovación": 90,
+    //     "Creatividad": 80,
+    //     "Investigación": 70
+    // };
+
+    // // 2. Mockup del objeto ganadores (¡Lo que faltaba!)
+    // const mockupGanadores = {
+    //     habilidades: ["Liderazgo", "Innovación", "Pensamiento analítico"], // Simulamos 3 insignias
+    //     intereses: ["Medio ambiente", "Tecnología"],
+    //     proyectos: ["Tecnológico"]
+    // };
+
+    // 3. Mockup del arreglo de ODS (¡Lo que faltaba!)
+    // const mockupOds = ["ods4", "ods9", "ods13"];
 
     res.render('resultados-quiz', {
-        puntajeCrudo: mockupPuntajes,
-        ods: '4' // Simulamos que ganó el ODS 4
+        insignias: insigniaUsuario.length > 0 ? insigniaUsuario : [],
+        descripcionIA: textoPerfil,
+        puntajeCrudo: puntajeCrudo,
+        odsSeleccionados: odsSeleccionados
     });
 });
 module.exports = router;

@@ -141,7 +141,18 @@ const obtenerPuntuacion = (puntuaciones) => {
 
 const procesarResultadosQ = (respuestaUser) => {
     //sumar los puntos en base a las categorías
-    const puntajes = {habilidades: {}, intereses: {}, proyectos: {}};
+    const puntajes = {
+        habilidades: {
+            "Liderazgo": 0,
+            "Pensamiento analítico": 0,
+            "Comunicación": 0,
+            "Innovación": 0,
+            "Creatividad": 0,
+            "Investigación": 0
+        }, 
+        intereses: {}, 
+        proyectos: {}
+    };
 
     //función que suma los puntos al contenedor por cada categoría
     const sumarPuntajes = (categoria, regla, respuesta) => {
@@ -181,7 +192,8 @@ const procesarResultadosQ = (respuestaUser) => {
         habilidades: obtenerPuntuacion(puntajes.habilidades),
         intereses: obtenerPuntuacion(puntajes.intereses),
         proyectos: obtenerPuntuacion(puntajes.proyectos),
-        ods: odsSeleccionados
+        ods: odsSeleccionados,
+        puntajesBrutos: puntajes.habilidades
     };
 };
 
