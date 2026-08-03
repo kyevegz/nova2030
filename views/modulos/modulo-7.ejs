@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>hola</title>
+</head>
+<body>
+    <div class="page">
+<!--Llamada al sidebar-->
+    <%- include('../partials/sidenavbar') %>
+
+    <!--Llamada al header-->
+    <%- include('../partials/header') %>
+
+    <main class="content <%= modificadorContent%>">
+        <% if(modificadorContent === 'content--preview') { %>
+            <%- include('../partials/alerta-preview', {tipo: estadoBloqueado}) %>
+        <% } %>
+
+        <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
+            <section class="quiz">
+
+                <header class="quiz__header">
+                    
+                    <svg class="quiz__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                        <path fill="var(--observatory-100)" d="M0,96L48,101.3C96,107,192,117,288,101.3C384,85,480,43,576,48C672,53,768,107,864,144C960,181,1056,203,1152,197.3C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+                    </svg>
+                    
+                    <%- include('../partials/progressbar') %>
+                    <p class="quiz__counter" id="contadorPregunta"></p>
+                </header>
+                
+
+                <div class="quiz__body">
+
+                    
+                    <form action="/api/enviar-quiz-habilidades" method="post" class="quiz__form" id="quizForm">
+                        <% if (typeof preguntas !== 'undefined' && preguntas.length > 0) { %>
+                            <% preguntas.forEach((item, index) => {%>
+                                
+                                <div class = "quiz__step <%= index === 0 ? 'quiz__step--active' : 'quiz__step--hidden'%>" data-step="<%= index+1%>">
+                                    <h2 class = "quiz__question"><%= item.id%>. <%=item.pregunta%></h2>
+                                    
+                                    <div class = "quiz__options-wrapper">
+                                        <% item.opciones.forEach(opcion => { %>
+                                            <label class="quiz__option">
+                                                <input type="<%= item.tipo %>" class="quiz__input" name="pregunta<%= item.id %><%= item.tipo === 'checkbox' ? '[]' : '' %>" value="<%= opcion.valor %>">
+                                                <span class="quiz__custom-circle"></span> 
+                                                <% if (opcion.imagen) {%>
+                                                    <img src = "<%= opcion.imagen %>" alt = "Objetivo de desarrollo sostenible <%= opcion.valor %>" class ="quiz__ods-img">
+                                                <%}%>
+                                                <span class="quiz__answer"><%=opcion.texto%></span>
+                                            </label>
+                                        <% })%>
+                                    </div>
+                                </div>
+                            <%})%> 
+                        <% } else {%>
+                            <p>ERROR. No se pudieron cargar las preguntas</p>
+                        <% } %>
+                    </form>
+                </div>
+                
+
+                <footer class="quiz__footer">
+                    <button class="quiz__btn quiz__btn--prev" id ="btnQuizPrev"disabled type = "button">
+                        Anterior        
+                    </button>
+                    
+                    <button class="quiz__btn quiz__btn--next" id ="btnQuizNext" type="button">
+                        Siguiente
+                    </button>
+                </footer>
+            </section>
+
+
+
+        </div>
+        <% if( modificadorContent === 'content--locked') { %>
+            <%- include('../partials/bloqueo-contenido', {tipo: estadoBloqueado}) %>
+        <% } %>
+    </main>
+
+
+    <!--Llamada al sidebar anuncios-->
+    <%- include('../partials/sidebar-anuncios') %>
+    <!--Llamada al footer-->
+    <%- include('../partials/footer') %>
+    </div>
+    <script src="/js/quiz-habilidades.js" defer></script>
+</body>
+</html>
