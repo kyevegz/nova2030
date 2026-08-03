@@ -205,8 +205,10 @@ h6 {
     --font-size-body: 1rem; /*16px -> texto base*/
     --font-size-small: 0.875rem; /* 14px -> textos secundarios, como pies de fotos o alertas*/
     --font-size-xsmall: 0.75rem; /*12px -> notificaciones*/
-    --font-size-big: 4rem;
-    --font-size-jumbo: 6rem; /*~64px*/
+    --font-size-5xl: 3rem;/*48px*/ 
+    --font-size-6xl: 3.75rem;/*60px*/
+    --font-size-7xl: 4rem;/*64px*/
+    --font-size-8xl: 6rem; /*96px*/
     /*NOTA: MOMO TRUST DISPLAY SOLO TIENE GROSOR DE 400*/
 
     /*grosores de fuente*/
@@ -528,7 +530,7 @@ details[open] .submenu__icon-deploy{
 }
 
 .footer__logo{
-    background-color: var(--background);
+    
     width: 150px;
     height: 150px;
     display: flex;
@@ -1424,7 +1426,7 @@ para cuando el input ya tenga texto guardado, o bien, foco 0*/
 
 .header__btn-back{
     color: var(--principal-title);
-    font-size: var(--font-size-big);
+    font-size: var(--font-size-7xl);
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
     
@@ -1887,7 +1889,7 @@ con el del contenedor*/
 }
 
 .empty-state__icon{
-    font-size: var(--font-size-big);
+    font-size: var(--font-size-7xl);
     color: var(--cerulean-blue-400);
     margin-bottom: var(--space-md);
 }
@@ -2175,6 +2177,7 @@ con el del contenedor*/
 
 /*botón flotante*/
 .chatbot-trigger{
+    padding: var(--space-sm);
     position: fixed;
     bottom: var(--space-lg);
     right: var(--space-lg);
@@ -2244,10 +2247,12 @@ con el del contenedor*/
 
 .chatbot__message-container{
     max-width: 85%;
+    min-width: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
 }
+
 
 /*alineaciónburbuja para usuario*/
 .chatbot__message--user{
@@ -2256,13 +2261,16 @@ con el del contenedor*/
 
 /*estilo de las burjas*/
 .chatbot__bubble{
-    width: fit-content;
+    display: inline-block;
+    max-width: 100%;
+    min-width: 0;
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-smooth);
     font-size: var(--font-size-body);
     position: relative;
     
 }
+
 
 /*burbuja para ia*/
 .chatbot__message--ai .chatbot__bubble{
@@ -2450,8 +2458,647 @@ con el del contenedor*/
     40% {transform: scale(1);}
 }
 
+.chatbot__table-wrapper{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.chatbot__markdown{
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
 
 /*estilos markdowns para la respuesta de la IA*/
+.chatbot__markdown h1{
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+.chatbot__markdown h2{
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+.chatbot__markdown p{
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+}
+.chatbot__markdown ul,
+.chatbot__markdown ol{
+
+    padding-left: 1.5rem;
+    padding-bottom: 0.8rem;
+    line-height: 1.5rem;
+}
+
+.chatbot__markdown code{
+    white-space: pre-wrap;
+    word-break: break-word;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+}
+
+.chatbot__markdown pre{
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.chatbot__markdown table{
+    width: max-content;
+    border-collapse: collapse;
+}
+
+.chatbot__markdown th,
+.chatbot__markdown td{
+    white-space: nowrap;
+    padding: 0.5rem;
+    border: 1px solid var var(--observatory-700);
+}
+
+/*accesibilidad flotante*/
+
+.floating-menu{
+    position: fixed;
+    bottom: var(--space-lg);
+    left: var(--space-lg);
+    z-index: var(--z-modal);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    grid-area: var(--space-md);
+}
+
+.floating-menu__trigger{
+    width: 50px;
+    height: 50px;
+    margin-top: var(--space-sm) ;
+    border-radius: 50%;
+    color: var(--principal-title);
+    background-color: var(--cerulean-blue-50);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /*color: var(--cerulean-blue-50);*/
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    /* font-size: var(--font-size-5xl); */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out   ;
+}
+
+.floating-menu__trigger i,
+.floating-menu__trigger svg{
+    font-size: var(--font-size-5xl);
+    display: inline-block;
+    line-height: 1; /* Elimina el espacio extra vertical del icono */
+    /*font-size: inherit; /* Asegura que tome el tamaño asignado en el botón */
+}
+
+.floating-menu__trigger:hover{
+    background-color: var(--principal-title);
+    color: var(--cerulean-blue-50);
+    transform: scale(1.05);
+}
+
+.floating-menu__options{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-menu__options--hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(var(--space-sm));
+}
+
+.floating-menu__button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--shark-100);
+    color: var(--text-colour);
+    border: 1px solid var(--shark-400);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-h2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.floating-menu__button:hover{
+    background-color: var(--bright-sun-200);
+    transform: scale(1,1);
+}
+
+
+/*módulo quiz de habilidades*/
+
+/*contenedor*/
+.quiz{
+    background-color: var(--zumthor-50);
+    border-radius: var(--radius-smooth);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /*para que la ola no se salga del borde*/
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz__header{
+    background-color: transparent;
+    padding: var(--space-xl) var(--space-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.quiz__wave{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+}
+
+.quiz__counter{
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-details);
+    font-size: var(--font-size-small);
+    font-weight: var(--weight-bold);
+    color: var(--principal-title);
+    text-align: right;
+    margin-top: var(--space-md);
+}
+.quiz__header .progress-bar{
+    position: relative;
+    z-index: 2;
+    margin-top: var(--space-xl);
+}
+
+.quiz__body{
+    padding: var(--space-xl);
+}
+.quiz__question{
+    font-family: var(--font-titles), sans-serif;
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--space-lg);
+    color: var(--secundary-title);
+}
+.quiz__options-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.quiz__option{
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background-color: transparent;
+    border: 2px solid var(--zumthor-300);
+    border-radius: var(--radius-smooth);
+    color: var(--text-colour);
+    cursor: pointer;
+    transition: background-color 0.25s ease-out, border-color 0.25s ease-out, transform 0.15s ease-out;
+}
+/*ocultar el input de forma accesible*/
+.quiz__input{
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0, 0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/*circulito, inicialmente vacío*/
+.quiz__custom-circle{
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--zumthor-400);
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.25s ease-out, border-color 0.25s ease-out, transform 0.15s ease-out, box-shadow 0.15s ease-out;
+    flex-shrink: 0;/*no aplastará el círculo si el texto es muy largo*/
+}
+
+.quiz__answer{
+    font-size: var(--font-size-body);
+    transition: font-weight 0.25s ease-out, color 0.25s ease-out;
+}
+.quiz__option:hover{
+    background-color: #ecf8ffb5;
+    border-color: var(--cerulean-blue-400);
+}
+
+.quiz__option:hover .quiz__custom-circle{
+    border-color: var(--cerulean-blue-400);
+}
+
+
+
+
+
+/*efect0 de selección
+si el input está en modo seleccionado, va a buscar a su hermano
+adyacente y lo va a cambiar*/
+
+.quiz__option:active{
+    transform: scale(0.98);/*ligera hundición de la tarjeta*/
+}
+
+.quiz__option:active .quiz__custom-circle{
+    transform: scale(0.85);
+    box-shadow: 0 0 0 8px rgba(0, 86, 207, 0.15);
+}
+/* .quiz__input:checked + .quiz__custom-circle{
+    border-color: var(--observatory-700, #005f73);
+}
+
+/*dibujar el minicírculo que sale cuando se está seleccionadoo
+.quiz__input:checked + .quiz__custom-circle::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--observatory-700, #005f73);
+    border-radius: 50%;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.855, 0.32, 1.275) forwards;
+} */
+
+/*cambio al birde de la caja que contiene esa opción seleccionada*/
+.quiz__option:has(.quiz__input:checked){
+    background-color: var(--cerulean-blue-200);
+    border-color: var(--principal-title);
+}
+.quiz__option:has(.quiz__input:checked) .quiz__answer{
+    font-weight: var(--weight-bold);    
+    color: var(--principal-title);
+}
+
+.quiz__input:checked + .quiz__custom-circle{
+    background-color: var(--cerulean-blue-100);
+    border-color: var(--principal-title);
+    animation: popInCheck 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/*círculo interior*/
+.quiz__input:checked + .quiz__custom-circle::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--principal-title);
+    border-radius: 50%;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.855, 0.32, 1.275) forwards
+}
+/*animación de rebote*/
+@keyframes popInCheck {
+    0% { transform: scale(0);}
+    50% { transform: scale(1.15);}
+    100%{ transform: scale(1);}
+}
+
+@keyframes popInDut {
+    0% { transform: translate(-50%, -50%) scale(0);}
+    100%{ transform: translate(-50%, -50%) scale(1);}
+}
+
+.quiz__btn{
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    font-size: var(--font-size-h3);
+    padding: 0.85rem var(--space-md);
+    border: none;
+    border-radius: var(--radius-smooth);
+    cursor: pointer;
+    width: fit-content;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    color: var(--observatory-950);
+    margin: var(--space-lg);
+    
+}
+.quiz__footer{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: var(--space-xs) var(--space-md);
+}
+.quiz__btn--prev{
+    border:2px solid var(--observatory-400);
+}
+.quiz__btn--prev:hover{
+    background-color: var(--observatory-400);
+}
+.quiz__btn--next{
+    background-color: var(--observatory-400);
+    border: 2px solid transparent;
+}
+.quiz__btn--next:hover{
+    border-color:var(--observatory-400);
+    background-color: transparent;
+    
+}
+/*para transparantes y desplazados hacia abajo*/
+
+/* .quiz__option{
+    opacity: 0;
+    transform: translate(20px);
+} */
+
+/*oculta los pasos por completo del flujo del doc*/
+.quiz__step--hidden{
+    display: none;
+}
+
+.quiz__step--active{
+    display: block;
+}
+
+@keyframes slideInUp {
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*accesibilidad para el quiz de habilidades*/
+.quiz__input:focus-visible + .quiz__custom-circle{
+    outline: 3px dotted var(--navbar);
+    outline-offset: 4px;
+    box-shadow: 0 0 15px rgba(0, 86, 207, 0.15);
+}
+
+.quiz__option:has(.quiz__input:focus-visible){
+    border-color:  var(--navbar);
+}
+/*transformar los rdb a chk cuando llegue a la pregunta 15+*/
+
+.quiz__options-wrapper:has(input[type="checkbox"]){
+    /*crea las columnas automáticas que se ajustan solas
+    para que las img de los ods salgan bonitas y no en fila*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--space-md);
+}
+
+/*rediseñar la tarjeta para que sea una columna*/
+.quiz__option:has(input[type="checkbox"]){
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 3.5rem;
+    width: fit-content;
+}
+
+/*convertir la bolita en un cuadrito en la esquina*/
+input[type="checkbox"] + .quiz__custom-circle{
+    border-radius: var(--radius-ultra-smooth);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+/*relleno cuadrado*/
+input[type="checkbox"]:checked + .quiz__custom-circle::after{
+    border-radius: 2px;
+}
+
+/*evitar desborde de tarjetas de los ods*/
+
+.quiz__ods-img{
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: var(--space-sm);
+    transition: transform 0.3s ease;
+}
+
+/*efecto de zoom para hover sobre la img*/
+.quiz__option:has(input[Type="checkbox"]):hover .quiz__ods-img{
+    transform: scale(1.05);
+}
+
+/*resultados del quiz de habilidades*/
+.results-wrapper{
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: var(--radius-smooth);
+    overflow: hidden;
+}
+
+.results-header{
+    text-align: center;
+    padding: var(--space-xxl) var(--space-md) var(--space-xl);
+    background: linear-gradient(180deg, var(--observatory-50) 0%, var(--background) 100%);
+    border-radius: var(--radius-smooth) var(--radius-smooth) 0 0;
+
+}
+
+.results-header__title{
+    font-family: var(--font-titles);
+    color: var(--secundary-title);
+    font-size: var(--font-size-6xl);
+    margin-bottom: var(--space-xs);
+}
+.results-header__subtitle{
+    font-family: var(--font-body);
+    color: var(--text-colour);
+    font-size: var(--font-size-body);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.results-section{
+    background-color: var(--zumthor-50);
+    border: 1px solid var(--shark-200);
+    border-radius: var(--radius-smooth);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.results-section--fill{
+    display: flex;
+    flex-direction: column;
+}
+
+.results-section__title{
+    font-family: var(--font-titles);
+    color: var(--secundary-title);
+    font-size: var(--font-size-h2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.results-section__description{
+    font-size: var(--font-size-small);
+    color: var(--shark-500);
+    margin-bottom: var(--space-lg);
+}
+.results-section__text{
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+.badges-grid{
+    display: grid;
+    /*autofit para que si hay 1 se centre, si hay 3, se divide el espacio*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+.badge-card{
+    border: 1px solid var(--shark-200);
+    border-radius: var(--radius-smooth);
+    padding: var(--space-md);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.badge-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 86, 207, 0.05);
+}
+
+.badge-card__image{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--space-md);
+    background-color: var(--cerise-100);
+    border: var(--cerise-400);
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-card__image-text{
+    font-size: var(--font-size-xsmall);
+    color: var(--cerulean-blue-600);
+    font-weight: var(--weight-bold);
+}
+
+.badge-card__title{
+    font-family: var(--font-titles);
+    color: var(--principal-title);
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--space-sm);
+}
+
+.badge-card__text{
+    font-size: var(--font-size-small);
+    color: var(--text-colour);
+}
+
+.profile-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.results-quote{
+    margin-top: auto;
+    background-color: var(--observatory-50);
+    border-radius: var(--radius-smooth);
+    padding: var(--space-md) var(--space-lg);
+    font-family: var(--font-details);
+    font-weight: var(--weight-medium);
+    color: var(--observatory-800);
+    position: relative;
+    border-left: 4px solid var(--observatory-400);
+}
+
+.results-quote__icon{
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    font-size: var(--font-size-h1);
+    opacity: 0.5;
+}
+
+.chart-container{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.ods-results{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.ods-results__grid{
+    display: flex;
+    gap: var(--space-md);
+}
+
+.ods-results__card{
+    flex: 1;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-smooth);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ods-results__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ods-results__info{
+    border-left: 2px solid var(--shark-200);
+    padding-left: var(--space-md);
+    font-size: var(--font-size-body);
+    color: var(--shark-500);
+}
+
+.results-actions{
+    text-align: center;
+    padding: var(--space-lg) 0;
+}
+
+.results-actions__btn{
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: auto;
+    background-color: var(--secundary-title);
+}
+
+.results-actions__btn:hover{
+    background-color: var(--observatory-800);
+}
+
+
+
 
 
 
@@ -2594,3 +3241,19 @@ con el del contenedor*/
         max-width: 100%;
     }
 }
+/*--------------------
+    pantalla de resultados
+------------------------*/
+@media (max-width: 900px){
+    .profile-grid, .ods-results{
+        grid-template-columns: 1fr;
+    }
+
+    .ods-results__info{
+        border-left: none;
+        border-top: 2px solid var(--shark-200);
+        padding-left: 0;
+        padding-top: var(--space-md);
+    }
+}
+

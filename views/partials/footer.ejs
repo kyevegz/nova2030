@@ -2,7 +2,7 @@
     <div class="footer__container">
         <!--Parte del logo-->
         <div class="footer__brand">
-            <div class="footer__logo">LOGO</div>
+            <div class="footer__logo"><img src="/images/brand/logo-nova.png" alt="Logo del sitio Nova 2030"></div>
             <h2 class="footer__slogan">
                 Todo gran proyecto comenzó con una idea, ¿cuál es la tuya?
             </h2>
@@ -75,7 +75,13 @@
     <!--Inyección del botón del chatbot, solo si hay sesión activa-->
     <% if (typeof usuarioVerificado !== 'undefined' && usuarioVerificado !== null) { %>
         <%- include('chatbot') %>
+        
+
         <script src="/js/chatbot.js" defer></script>
+        
+    <% } else{%>
+        <%- include('accesibilidad') %>
+        <script src="/js/accesibilidad.js" defer></script>
     <% } %>
 
 </footer>
