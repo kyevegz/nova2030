@@ -1962,7 +1962,7 @@ con el del contenedor*/
 
 .call-grid-card__image{
     height: 70px;
-    
+   object-fit: cover; 
 }
 .splide-call-card__image{
     width: 100%;
