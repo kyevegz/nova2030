@@ -11,23 +11,36 @@ const {GoogleGenAI}= require('@google/genai')
 const genAi = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
 //ruta post para recibir las respuestas del quiz de habilidades, se protege con la función de verificar token
 router.post('/api/enviar-quiz-habilidades', verificarToken, async (req, res) => {
+    
+    const idUsuario = req.usuario.id; //se obtiene el id del usuario desde el token
+
+    const [existenteBool] = await db.query(`
+            SELECT idUsuario FROM resultado_quiz_hab WHERE idUsuario = ?
+            `, [idUsuario]) ;
+
+    if(existenteBool.length > 0){
+        return res.redirect('/fase/1/resultados-quiz');
+    }
+            
+    
+
     /*se ejecutan los cálculos fuera de la conexión para 
     no bloquear la base de datos*/
     const respuestaUsuario = req.body;
     const resultados = procesarResultadosQ(respuestaUsuario);
-    const idUsuario = req.usuario.id; //se obtiene el id del usuario desde el token
     
     /*generar el perdil del usuario en base a sus respuestas*/
     let descripcionIA ="Eres una persona con un gran potencial para cambiar el mundo";//tespaldo por si algo falla
     try{
         const prompt = `
-        Un estudiante obtuvo estos resultados:
+        Un estudiante obtuvo estos resultados en un quiz:
             - Fortalezas: ${resultados.habilidades.join(', ')}.
             - Intereses: ${resultados.intereses.join(', ')}.
             - Tipo de proyecto ideal: ${resultados.proyectos.join(', ')}.
             
             Redacta un solo párrafo de máximo 3 líneas, en segunda persona ("Eres una persona..."), 
-            conectando sus fortalezas con su proyecto ideal. Sé directo y empático.
+            conectando sus fortalezas con su proyecto ideal. Sé directo y empático. El texto debe integrar
+            los resultados con una gramática legible y sin muchos tecnicismos.
         ` ;
 
         const responde = await genAi.models.generateContent({
@@ -51,6 +64,9 @@ router.post('/api/enviar-quiz-habilidades', verificarToken, async (req, res) => 
         await conexion.beginTransaction();
 
         const stringPuntajes =JSON.stringify(resultados.puntajesBrutos);
+
+        
+
 
         //guardar los datos en la tabla de resultados del quiz, la tabla maestra
         const [resultadoInsercion] = await conexion.query(
