@@ -488,11 +488,11 @@ router.get('/fase/:numFase/modulos/modulo-:idModulo', async (req, res) => {
         };
 
         //condicional de inyección, solo mandar info para flipcards, si es el modulo 2
-        if(idModulo === '2'){
+        if(idModulo === '1'){
             opcionesRender.ods = odsTarjetas;
         }
 
-        if(idModulo === '7'){
+        if(idModulo === '2'){
             opcionesRender.preguntas = cuestionario;
             if(usuario){
                 const [existenteBool] = await db.query(`
