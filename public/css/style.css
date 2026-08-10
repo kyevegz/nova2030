@@ -505,7 +505,7 @@ details[open] .submenu__icon-deploy{
 .sidebar--ads{
     grid-area:sidebar-add;
     background-color: transparent;
-    border: var(--border);
+    
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2603,6 +2603,22 @@ con el del contenedor*/
 
 /*módulo quiz de habilidades*/
 
+.quiz__welcome{
+    text-align: center;
+    padding: var(--space-xxl) var(--space-md);
+
+}
+
+.quiz__welcome-text{
+    margin: var(--space-md) 0 var(--space-xl);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body) ;
+    color: var(--text-colour);
+}
+
+.quiz__section--hidden{
+    display: none;
+}
 /*contenedor*/
 .quiz{
     background-color: var(--zumthor-50);
@@ -2731,19 +2747,6 @@ adyacente y lo va a cambiar*/
     border-color: var(--observatory-700, #005f73);
 }
 
-/*dibujar el minicírculo que sale cuando se está seleccionadoo
-.quiz__input:checked + .quiz__custom-circle::after{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    background-color: var(--observatory-700, #005f73);
-    border-radius: 50%;
-    animation: popIn 0.3s cubic-bezier(0.175, 0.855, 0.32, 1.275) forwards;
-} */
 
 /*cambio al birde de la caja que contiene esa opción seleccionada*/
 .quiz__option:has(.quiz__input:checked){
