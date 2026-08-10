@@ -20,7 +20,14 @@
         <div class="<%= typeof estadoBloqueado !== 'undefined' && estadoBloqueado ? 'content__restricted-area' :'' %>">
             <section class="quiz">
 
-                <header class="quiz__header">
+                <!--Pantalla de inicio-->
+                <div id="pantallaInicio" class="quiz__welcome">
+                    <h2>¡Descubre tus habilidades, intereses y tipo de proyecto ideal!</h2>
+                    <p>Este breve cuestionario nos ayudará a identificar tus habilidades, intereses y los ODS qur quisieras resolver, lo cual te orientará en el desarrollo de tus proyectos.</p>
+                    <button type="button" id="btnComenzarQuiz" class="quiz__btn quiz__btn--next">Comenzar quiz</button>
+                </div>
+
+                <header class="quiz__header quiz__section--hidden" id = "quizHeader">
                     
                     <svg class="quiz__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
                         <path fill="var(--observatory-100)" d="M0,96L48,101.3C96,107,192,117,288,101.3C384,85,480,43,576,48C672,53,768,107,864,144C960,181,1056,203,1152,197.3C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
@@ -31,7 +38,7 @@
                 </header>
                 
 
-                <div class="quiz__body">
+                <div class="quiz__body quiz__section--hidden" id="quizBodyWrapper">
 
                     
                     <form action="/api/enviar-quiz-habilidades" method="post" class="quiz__form" id="quizForm">
@@ -62,12 +69,12 @@
                 </div>
                 
 
-                <footer class="quiz__footer">
-                    <button class="quiz__btn quiz__btn--prev" id ="btnQuizPrev"disabled type = "button">
+                <footer class="quiz__footer quiz__section--hidden" id="quizFooter">
+                    <button class="quiz__btn quiz__btn--prev quiz__section--hidden" id ="btnQuizPrev"disabled type = "button">
                         Anterior        
                     </button>
                     
-                    <button class="quiz__btn quiz__btn--next" id ="btnQuizNext" type="button">
+                    <button class="quiz__btn quiz__btn--next quiz__section--hidden" id ="btnQuizNext" type="button">
                         Siguiente
                     </button>
                 </footer>

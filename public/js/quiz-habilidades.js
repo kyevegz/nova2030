@@ -12,6 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressbar = document.querySelector('.quiz .progress-bar__fill');
     //contador para indicar la pregunta actual en el header
     const quizContador = document.getElementById('contadorPregunta');
+
+    const pantallaBienvenidad = document.getElementById('pantallaInicio');
+    const btnComenzar = document.getElementById('btnComenzarQuiz');
+    const quizHeader = document.getElementById('quizHeader');
+    const quizBodyWrapper = document.getElementById('quizBodyWrapper');
+    const quizFooter = document.getElementById('quizFooter');
+
+    //inicialización cuando den clic en comenzar
+    if(btnComenzar){
+        btnComenzar.addEventListener('click', () => {
+            //oculta la tarjeta de bienvenidad
+            pantallaBienvenidad.classList.add('quiz__section--hidden');
+
+            quizHeader.classList.remove('quiz__section--hidden');
+            quizBodyWrapper.classList.remove('quiz__section--hidden');
+            quizFooter.classList.remove('quiz__section--hidden');
+            btnNext.classList.remove('quiz__section--hidden');
+            btnPrev.classList.remove('quiz__section--hidden');
+        });
+    }
+
     //si no estamos en la vista del quiz, se aborta el proceso
     if(!steps.length) return;
 
