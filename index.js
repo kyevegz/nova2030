@@ -138,6 +138,10 @@ app.use('/', quizHabilidades);
 const configuracion = require('./routes/configuracion.route.js');
 app.use('/', configuracion);
 
+//ruta de configuracion
+const comoUsar = require('./routes/como-usar.route.js');
+app.use('/', comoUsar);
+
 //ruta de index perfil
 const perfil = require('./routes/perfil.route.js');
 app.use('/', perfil);
