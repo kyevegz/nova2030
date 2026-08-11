@@ -39,6 +39,10 @@
             <% if(modificadorContent === 'content--locked'){ %>
                 <%- include('partials/bloqueo-contenido', { tipo: estadoBloqueado}) %>
             <% } %>
+
+            <% if(numFase === '2') {%>
+            <%- include('partials/proximamente.ejs') %>
+        <%}%>
         </main>
 
         <!--Llamada al sidebar anuncios-->
