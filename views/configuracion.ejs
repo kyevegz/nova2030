@@ -20,29 +20,7 @@
 
 
         <main class = "content <%= modificadorContent%>">
-            
-        
-<% if(modificadorContent === 'content--preview'){ %>
-                <%- include('partials/alerta-preview', {tipo: estadoBloqueado})%>
-            <% } %>
-            <!--Agrupa para poder difumuniar-->
-            <div class="content__restricted-area">
-                <%- include('partials/fase-informacion') %>
-                
-                <div class="cards-container">
-                    <% submodulos.forEach(sub => { %>
-                        <%- include('partials/card-modulos', {sub: sub }) %>
-                    
-                    <% }) %>
-                </div>
-            </div>
-            <% if(modificadorContent === 'content--locked'){ %>
-                <%- include('partials/bloqueo-contenido', { tipo: estadoBloqueado}) %>
-            <% } %>
-
-            <% if(numFase === '2' || numFase === '3') {%>
             <%- include('partials/proximamente.ejs') %>
-        <%}%>
         </main>
 
         <!--Llamada al sidebar anuncios-->
