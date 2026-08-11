@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <%- include('partials/head') %>
-    <title>Configuración | Nova 2030</title>
+    <title>Fase <%- numFase %> | Nova 2030</title>
 </head>
 <body>
     <div class="page">
@@ -19,8 +19,8 @@
 
 
 
-        <main class = "content">
-            <%- include('partials/proximamente') %>
+        <main class = "content <%= modificadorContent%>">
+            <%- include('partials/proximamente.ejs') %>
         </main>
 
         <!--Llamada al sidebar anuncios-->
