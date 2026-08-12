@@ -3259,6 +3259,34 @@ input[type="checkbox"]:checked + .quiz__custom-circle::after{
     background-color: var(--cerise-600);
     cursor: pointer;
 }
+
+.soon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.soon{
+    background-color: var(--cerise-200);
+    border: 1px solid var(--cerise-500);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    border-radius: var(--radius-smooth);
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    max-width: 400px;
+}
+.soon__icon{
+    font-size: var(--font-size-8xl);
+    color: var(--cerise-900);
+}
+.soon__text{
+    font-family: var(--font-details);
+    text-align: center;
+    font-weight: var(--weight-bold);
+}
 /*MEDIA QUERIES*/
 
 /*--------------------

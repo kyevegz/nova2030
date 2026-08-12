@@ -27,8 +27,12 @@
             <% } %>
             <!--Agrupa para poder difumuniar-->
             <div class="content__restricted-area">
-                <%- include('partials/fase-informacion') %>
                 
+                <% if(numFase === '2' || numFase === '3') {%>
+                <%- include('partials/proximamente.ejs') %>
+            <%}else {%>
+<%- include('partials/fase-informacion') %>
+                <% } %>
                 <div class="cards-container">
                     <% submodulos.forEach(sub => { %>
                         <%- include('partials/card-modulos', {sub: sub }) %>
@@ -38,7 +42,10 @@
             </div>
             <% if(modificadorContent === 'content--locked'){ %>
                 <%- include('partials/bloqueo-contenido', { tipo: estadoBloqueado}) %>
+                
             <% } %>
+
+            
         </main>
 
         <!--Llamada al sidebar anuncios-->
