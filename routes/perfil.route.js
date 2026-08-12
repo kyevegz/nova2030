@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const verificarToken = require('../middlewares/auth');
 
 
-router.post('/perfil/index', verificarToken,  (req, res) => {
+router.get('/perfil', verificarToken,  (req, res) => {
 
 
     res.render('perfil/index');

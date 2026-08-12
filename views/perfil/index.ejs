@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include('partials/head') %>
-    <title>Fase <%- numFase %> | Nova 2030</title>
+    <%- include('../partials/head') %>
+    <title>Perfil | Nova 2030</title>
 </head>
 <body>
     <div class="page">
         <!--Llamada al sidebar-->
-        <%- include('partials/sidenavbar') %>
+        <%- include('../partials/sidenavbar') %>
 
         <!--Llamada al header-->
-        <%- include('partials/header') %>
+        <%- include('../partials/header') %>
 
         <!--Si el estado = bloqueado existe, se añade el modifier --locked 
         apaga los clics en css, si hay usuarui activo pero no tiene ese módulo o fase
@@ -19,15 +19,15 @@
 
 
 
-        <main class = "content <%= modificadorContent%>">
-            <%- include('partials/proximamente.ejs') %>
+        <main class = "content">
+            <%- include('../partials/proximamente.ejs') %>
         </main>
 
         <!--Llamada al sidebar anuncios-->
-        <%- include('partials/sidebar-anuncios') %>
+        <%- include('../partials/sidebar-anuncios') %>
 
         <!--Llamada al footer-->
-        <%- include('partials/footer') %>
+        <%- include('../partials/footer') %>
         
     </div>
     
